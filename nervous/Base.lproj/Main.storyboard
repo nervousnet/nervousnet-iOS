@@ -8,7 +8,7 @@
         <!--Social Network-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="MapViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -40,12 +40,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-293"/>
+            <point key="canvasLocation" x="750" y="-325"/>
         </scene>
         <!--Profile-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="ProfileViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -72,12 +72,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="293"/>
+            <point key="canvasLocation" x="750" y="369"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Agent Table View Controller-->
         <scene sceneID="YMu-If-rCe">
             <objects>
-                <tableViewController id="QwI-lc-hsm" sceneMemberID="viewController">
+                <tableViewController id="QwI-lc-hsm" customClass="AgentTableViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dWT-Cv-g8Q">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,19 +98,21 @@
                     <navigationItem key="navigationItem" id="mfk-MF-bqd">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="RNA-FL-4b8">
                             <connections>
-                                <segue destination="b2s-A5-amP" kind="show" id="Ycu-sm-bvj"/>
+                                <segue destination="b2s-A5-amP" kind="popoverPresentation" popoverAnchorBarButtonItem="RNA-FL-4b8" id="Ycu-sm-bvj">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVJ-Kc-oc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="690" y="1009"/>
+            <point key="canvasLocation" x="706" y="1179"/>
         </scene>
-        <!--View Controller-->
+        <!--Agent New View Controller-->
         <scene sceneID="Egk-qb-i2S">
             <objects>
-                <viewController id="b2s-A5-amP" sceneMemberID="viewController">
+                <viewController id="b2s-A5-amP" customClass="AgentNewViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dfB-CX-1LK"/>
                         <viewControllerLayoutGuide type="bottom" id="Ofd-WI-JNW"/>
@@ -118,12 +120,23 @@
                     <view key="view" contentMode="scaleToFill" id="vL5-rZ-SO0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irr-5h-10w">
+                                <rect key="frame" x="81" y="387" width="40" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closePopOver:" destination="b2s-A5-amP" eventType="touchUpInside" id="FFY-NY-BBc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsN-IO-Slo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1450" y="1009"/>
+            <point key="canvasLocation" x="1440" y="1179"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -162,7 +175,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hiD-kZ-Wd5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="1009"/>
+            <point key="canvasLocation" x="0.0" y="1179"/>
         </scene>
     </scenes>
     <resources>
