@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		22316DDD19BFB422006FD165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DDC19BFB422006FD165 /* AppDelegate.swift */; };
-		22316DDF19BFB422006FD165 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DDE19BFB422006FD165 /* MapViewController.swift */; };
-		22316DE119BFB422006FD165 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DE019BFB422006FD165 /* ProfileViewController.swift */; };
 		22316DE419BFB422006FD165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22316DE219BFB422006FD165 /* Main.storyboard */; };
 		22316DE619BFB422006FD165 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22316DE519BFB422006FD165 /* Images.xcassets */; };
 		22316DF219BFB422006FD165 /* nervousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DF119BFB422006FD165 /* nervousTests.swift */; };
+		22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B03E5419CE032B00E50D04 /* MapViewController.swift */; };
+		22B03E5719CE083A00E50D04 /* MapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B03E5619CE083A00E50D04 /* MapScene.swift */; };
+		22B03E5B19CE0D6700E50D04 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B03E5919CE0D6700E50D04 /* ball.png */; };
+		22B03E5C19CE0D6700E50D04 /* bottle.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B03E5A19CE0D6700E50D04 /* bottle.png */; };
+		22B03E6019CE102900E50D04 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E5F19CE102900E50D04 /* SpriteKit.framework */; };
+		22B03E6219CE11DA00E50D04 /* MapScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 22B03E6119CE11DA00E50D04 /* MapScene.sks */; };
+		22B03E6419D04BB500E50D04 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E6319D04BB500E50D04 /* CoreLocation.framework */; };
 		22BB43E619C1C20500A1F1FA /* AbstractMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43D819C1C20500A1F1FA /* AbstractMessage.swift */; };
 		22BB43E719C1C20500A1F1FA /* CodedInputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43D919C1C20500A1F1FA /* CodedInputStream.swift */; };
 		22BB43E819C1C20500A1F1FA /* CodedOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43DA19C1C20500A1F1FA /* CodedOutputStream.swift */; };
@@ -27,9 +32,7 @@
 		22BB43F119C1C20500A1F1FA /* UnknownFieldSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43E319C1C20500A1F1FA /* UnknownFieldSet.swift */; };
 		22BB43F219C1C20500A1F1FA /* UnknownFieldSetBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43E419C1C20500A1F1FA /* UnknownFieldSetBuilder.swift */; };
 		22BB43F319C1C20500A1F1FA /* WireFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43E519C1C20500A1F1FA /* WireFormat.swift */; };
-		22BB43F519C1C8EB00A1F1FA /* AgentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43F419C1C8EB00A1F1FA /* AgentTableViewController.swift */; };
-		22BB43F719C1C95400A1F1FA /* AgentNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43F619C1C95400A1F1FA /* AgentNewViewController.swift */; };
-		22D2D65C19C04C6500B11C54 /* map.html in Resources */ = {isa = PBXBuildFile; fileRef = 22D2D65B19C04C6500B11C54 /* map.html */; };
+		22D10CA919D598A1000D6942 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D10CA819D598A1000D6942 /* CFNetwork.framework */; };
 		22D2D66D19C0979E00B11C54 /* Sensorupload.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */; };
 		22D2D66F19C097F900B11C54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D2D66E19C097F900B11C54 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -48,13 +51,18 @@
 		22316DD719BFB422006FD165 /* nervous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nervous.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22316DDB19BFB422006FD165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22316DDC19BFB422006FD165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22316DDE19BFB422006FD165 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		22316DE019BFB422006FD165 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		22316DE319BFB422006FD165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22316DE519BFB422006FD165 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22316DEB19BFB422006FD165 /* nervousTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nervousTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22316DF019BFB422006FD165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22316DF119BFB422006FD165 /* nervousTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nervousTests.swift; sourceTree = "<group>"; };
+		22B03E5419CE032B00E50D04 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		22B03E5619CE083A00E50D04 /* MapScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScene.swift; sourceTree = "<group>"; };
+		22B03E5919CE0D6700E50D04 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		22B03E5A19CE0D6700E50D04 /* bottle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottle.png; sourceTree = "<group>"; };
+		22B03E5F19CE102900E50D04 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		22B03E6119CE11DA00E50D04 /* MapScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MapScene.sks; sourceTree = "<group>"; };
+		22B03E6319D04BB500E50D04 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		22BB43D819C1C20500A1F1FA /* AbstractMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractMessage.swift; sourceTree = "<group>"; };
 		22BB43D919C1C20500A1F1FA /* CodedInputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodedInputStream.swift; sourceTree = "<group>"; };
 		22BB43DA19C1C20500A1F1FA /* CodedOutputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodedOutputStream.swift; sourceTree = "<group>"; };
@@ -69,9 +77,7 @@
 		22BB43E319C1C20500A1F1FA /* UnknownFieldSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownFieldSet.swift; sourceTree = "<group>"; };
 		22BB43E419C1C20500A1F1FA /* UnknownFieldSetBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownFieldSetBuilder.swift; sourceTree = "<group>"; };
 		22BB43E519C1C20500A1F1FA /* WireFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireFormat.swift; sourceTree = "<group>"; };
-		22BB43F419C1C8EB00A1F1FA /* AgentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentTableViewController.swift; sourceTree = "<group>"; };
-		22BB43F619C1C95400A1F1FA /* AgentNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentNewViewController.swift; sourceTree = "<group>"; };
-		22D2D65B19C04C6500B11C54 /* map.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = map.html; sourceTree = "<group>"; };
+		22D10CA819D598A1000D6942 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensorupload.pb.swift; sourceTree = "<group>"; };
 		22D2D66E19C097F900B11C54 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -81,6 +87,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D10CA919D598A1000D6942 /* CFNetwork.framework in Frameworks */,
+				22B03E6419D04BB500E50D04 /* CoreLocation.framework in Frameworks */,
+				22B03E6019CE102900E50D04 /* SpriteKit.framework in Frameworks */,
 				22D2D66F19C097F900B11C54 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +110,9 @@
 				22316DD919BFB422006FD165 /* nervous */,
 				22316DEE19BFB422006FD165 /* nervousTests */,
 				22316DD819BFB422006FD165 /* Products */,
+				22D10CA819D598A1000D6942 /* CFNetwork.framework */,
+				22B03E6319D04BB500E50D04 /* CoreLocation.framework */,
+				22B03E5F19CE102900E50D04 /* SpriteKit.framework */,
 				22D2D66E19C097F900B11C54 /* Foundation.framework */,
 			);
 			sourceTree = "<group>";
@@ -117,16 +129,16 @@
 		22316DD919BFB422006FD165 /* nervous */ = {
 			isa = PBXGroup;
 			children = (
+				22316DE519BFB422006FD165 /* Images.xcassets */,
+				22316DDA19BFB422006FD165 /* Supporting Files */,
+				22B03E5819CE0D6700E50D04 /* images */,
 				22BB43D719C1C20500A1F1FA /* runtime-pb-swift */,
 				22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */,
 				22316DDC19BFB422006FD165 /* AppDelegate.swift */,
-				22316DDE19BFB422006FD165 /* MapViewController.swift */,
-				22BB43F419C1C8EB00A1F1FA /* AgentTableViewController.swift */,
-				22BB43F619C1C95400A1F1FA /* AgentNewViewController.swift */,
-				22316DE019BFB422006FD165 /* ProfileViewController.swift */,
 				22316DE219BFB422006FD165 /* Main.storyboard */,
-				22316DE519BFB422006FD165 /* Images.xcassets */,
-				22316DDA19BFB422006FD165 /* Supporting Files */,
+				22B03E5419CE032B00E50D04 /* MapViewController.swift */,
+				22B03E5619CE083A00E50D04 /* MapScene.swift */,
+				22B03E6119CE11DA00E50D04 /* MapScene.sks */,
 			);
 			path = nervous;
 			sourceTree = "<group>";
@@ -135,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				22316DDB19BFB422006FD165 /* Info.plist */,
-				22D2D65B19C04C6500B11C54 /* map.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -155,6 +166,15 @@
 				22316DF019BFB422006FD165 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22B03E5819CE0D6700E50D04 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				22B03E5919CE0D6700E50D04 /* ball.png */,
+				22B03E5A19CE0D6700E50D04 /* bottle.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		22BB43D719C1C20500A1F1FA /* runtime-pb-swift */ = {
@@ -262,7 +282,9 @@
 			files = (
 				22316DE419BFB422006FD165 /* Main.storyboard in Resources */,
 				22316DE619BFB422006FD165 /* Images.xcassets in Resources */,
-				22D2D65C19C04C6500B11C54 /* map.html in Resources */,
+				22B03E5B19CE0D6700E50D04 /* ball.png in Resources */,
+				22B03E5C19CE0D6700E50D04 /* bottle.png in Resources */,
+				22B03E6219CE11DA00E50D04 /* MapScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,9 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22BB43F119C1C20500A1F1FA /* UnknownFieldSet.swift in Sources */,
-				22316DE119BFB422006FD165 /* ProfileViewController.swift in Sources */,
 				22BB43E619C1C20500A1F1FA /* AbstractMessage.swift in Sources */,
-				22BB43F519C1C8EB00A1F1FA /* AgentTableViewController.swift in Sources */,
 				22BB43E819C1C20500A1F1FA /* CodedOutputStream.swift in Sources */,
 				22BB43EB19C1C20500A1F1FA /* ExtendableMessageBuilder.swift in Sources */,
 				22BB43ED19C1C20500A1F1FA /* ExtensionRegistry.swift in Sources */,
@@ -291,15 +311,15 @@
 				22BB43EA19C1C20500A1F1FA /* ExtendableMessage.swift in Sources */,
 				22BB43EE19C1C20500A1F1FA /* Field.swift in Sources */,
 				22BB43F219C1C20500A1F1FA /* UnknownFieldSetBuilder.swift in Sources */,
-				22BB43F719C1C95400A1F1FA /* AgentNewViewController.swift in Sources */,
 				22316DDD19BFB422006FD165 /* AppDelegate.swift in Sources */,
 				22BB43EC19C1C20500A1F1FA /* ExtensionField.swift in Sources */,
-				22316DDF19BFB422006FD165 /* MapViewController.swift in Sources */,
 				22BB43F019C1C20500A1F1FA /* RingBuffer.swift in Sources */,
 				22BB43EF19C1C20500A1F1FA /* GeneratedMessage.swift in Sources */,
 				22BB43E719C1C20500A1F1FA /* CodedInputStream.swift in Sources */,
 				22D2D66D19C0979E00B11C54 /* Sensorupload.pb.swift in Sources */,
+				22B03E5719CE083A00E50D04 /* MapScene.swift in Sources */,
 				22BB43F319C1C20500A1F1FA /* WireFormat.swift in Sources */,
+				22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,38 +1,37 @@
 //
-//  FirstViewController.swift
+//  MapViewController.swift
 //  nervous
 //
-//  Created by Sam Sulaimanov on 10/09/14.
+//  Created by Sam Sulaimanov on 20/09/14.
 //  Copyright (c) 2014 ethz. All rights reserved.
 //
-
 import UIKit
+import SpriteKit
 
 class MapViewController: UIViewController {
-                            
     
-    @IBOutlet var mapWebView: UIWebView!
-    
+    // 3
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+ 
         
-        var url = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("map", ofType: "html")!)
+        let scene = GameScene(fileNamed:"MapScene")
+        let skView = self.view as SKView
+        skView.showsFPS = true
+        skView.showsNodeCount = true
+        skView.showsPhysics = true
+        skView.ignoresSiblingOrder = true
         
-        var request = NSURLRequest(URL: url)
+        scene.scaleMode = .AspectFill
         
-        mapWebView.scrollView.bounces = false;
-        mapWebView.scrollView.scrollEnabled = false;
-        
-        mapWebView.loadRequest(request)
+        skView.presentScene(scene)
         
     }
-
+    
+    // 4
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
-
