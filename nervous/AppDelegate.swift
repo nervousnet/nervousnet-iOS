@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let beaconRegion:CLBeaconRegion = CLBeaconRegion(proximityUUID: beaconUUID,
             identifier: beaconIdentifier)
         
+        //do scan when display comes on
+        beaconRegion.notifyEntryStateOnDisplay = true
         
         //location manager
         locationManager = CLLocationManager()
@@ -42,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         locationManager!.startMonitoringForRegion(beaconRegion)
         locationManager!.startRangingBeaconsInRegion(beaconRegion)
+
         locationManager!.startUpdatingLocation()
         
         //permission request
@@ -83,83 +86,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
 }
 
+
 extension AppDelegate: CLLocationManagerDelegate {
-    
+
 
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!,
         inRegion region: CLBeaconRegion!) {
-           
-            NSLog("Bacon event")
-            
-            if(beacons.count > 0) {
-                
-                //encapsulate data in top nest
-                let date = NSDate()
-                let beaconUpload = SensorUpload.builder()
-
-                beaconUpload.huuid = 0x1
-                beaconUpload.luuid = 0xB
-                beaconUpload.uploadTime = UInt64(date.timeIntervalSince1970)
-                beaconUpload.sensorId = 0x000000000000000B
-                
-            
-                //iterate through found beacons
-                for (bNum, beacon) in enumerate(beacons) {
-                    
-                    NSLog("Bacon! %i", beacon.minor)
-                
-                    let nextBeacon:CLBeacon = beacon as CLBeacon
-                    let beaconMinorId:Int32 = Int32(nextBeacon.minor.integerValue)
-                    var beaconMajorId:Int32 = Int32(nextBeacon.major.integerValue)
-
-                    let beaconRSSI:Int32 = Int32(nextBeacon.rssi)
-
-                    let beaconTimestamp = UInt64(date.timeIntervalSince1970)
-                  
-
-                    
-                    //create beacon list item
-                    //according to https://github.com/mosgap/nervous/blob/cb5551d898725b969ff2c3bea37d21fa7ef402a9/android/src/ch/ethz/soms/nervous/android/sensors/SensorDescBLEBeacon.java
-                    let beaconList = SensorUploadSensorData.builder()
-                    beaconList.recordTime = beaconTimestamp
-                    beaconList.valueInt64 = [0, 0, 0, 0, 0]
-                    beaconList.valueInt32 = [beaconRSSI, beaconMajorId, beaconMinorId, 0]
-                    
-                    //add it to our nested protobuf message
-                    beaconUpload.sensorValues += [beaconList.build()]
-                    
-                }
-                
-                NSLog("Going to the net")
-                
-                
-                let addr = "bitmorse.com"
-                let port = 25600
-                
-                var inp :NSInputStream?
-                var out :NSOutputStream?
-                var pbSizeB :UInt8
-                
-                NSStream.getStreamsToHostWithName(addr, port: port, inputStream: &inp, outputStream: &out)
-
-                let inputStream = inp!
-                let outputStream = out!
-                inputStream.open()
-                outputStream.open()
-                
-                
-                beaconUpload.build().writeDelimitedToOutputStream(outputStream)
-                
-                
-                
-                
-                
-                outputStream.close()
-                
-            }
-            
-            
-            
+        
+            BLESensor(beacons: beacons, region: region)
             
     }
 }

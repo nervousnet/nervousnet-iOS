@@ -10,10 +10,8 @@ import SpriteKit
 
 class MapViewController: UIViewController {
     
-    // 3
-    override func viewDidLoad() {
-        super.viewDidLoad()
- 
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        
         
         let scene = GameScene(fileNamed:"MapScene")
         let skView = self.view as SKView
@@ -25,6 +23,13 @@ class MapViewController: UIViewController {
         scene.scaleMode = .AspectFill
         
         skView.presentScene(scene)
+
+        
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
     }
     

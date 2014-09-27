@@ -11,6 +11,12 @@
 		22316DE419BFB422006FD165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22316DE219BFB422006FD165 /* Main.storyboard */; };
 		22316DE619BFB422006FD165 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22316DE519BFB422006FD165 /* Images.xcassets */; };
 		22316DF219BFB422006FD165 /* nervousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DF119BFB422006FD165 /* nervousTests.swift */; };
+		22653FEF19D6D243004E1AA2 /* SensorDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FEE19D6D243004E1AA2 /* SensorDesc.swift */; };
+		22653FF119D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FF019D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift */; };
+		22653FF419D6E044004E1AA2 /* UploadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FF319D6E044004E1AA2 /* UploadTask.swift */; };
+		22653FF619D6E669004E1AA2 /* BLESensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FF519D6E669004E1AA2 /* BLESensor.swift */; };
+		22653FF919D6FBDB004E1AA2 /* NervousVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FF819D6FBDB004E1AA2 /* NervousVM.swift */; };
+		22653FFB19D70899004E1AA2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22653FFA19D70898004E1AA2 /* QuartzCore.framework */; };
 		22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B03E5419CE032B00E50D04 /* MapViewController.swift */; };
 		22B03E5719CE083A00E50D04 /* MapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B03E5619CE083A00E50D04 /* MapScene.swift */; };
 		22B03E5B19CE0D6700E50D04 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B03E5919CE0D6700E50D04 /* ball.png */; };
@@ -56,6 +62,12 @@
 		22316DEB19BFB422006FD165 /* nervousTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nervousTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22316DF019BFB422006FD165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22316DF119BFB422006FD165 /* nervousTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nervousTests.swift; sourceTree = "<group>"; };
+		22653FEE19D6D243004E1AA2 /* SensorDesc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDesc.swift; sourceTree = "<group>"; };
+		22653FF019D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescBLEBeacon.swift; sourceTree = "<group>"; };
+		22653FF319D6E044004E1AA2 /* UploadTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadTask.swift; sourceTree = "<group>"; };
+		22653FF519D6E669004E1AA2 /* BLESensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLESensor.swift; sourceTree = "<group>"; };
+		22653FF819D6FBDB004E1AA2 /* NervousVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousVM.swift; sourceTree = "<group>"; };
+		22653FFA19D70898004E1AA2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		22B03E5419CE032B00E50D04 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		22B03E5619CE083A00E50D04 /* MapScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScene.swift; sourceTree = "<group>"; };
 		22B03E5919CE0D6700E50D04 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
@@ -87,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22653FFB19D70899004E1AA2 /* QuartzCore.framework in Frameworks */,
 				22D10CA919D598A1000D6942 /* CFNetwork.framework in Frameworks */,
 				22B03E6419D04BB500E50D04 /* CoreLocation.framework in Frameworks */,
 				22B03E6019CE102900E50D04 /* SpriteKit.framework in Frameworks */,
@@ -110,6 +123,7 @@
 				22316DD919BFB422006FD165 /* nervous */,
 				22316DEE19BFB422006FD165 /* nervousTests */,
 				22316DD819BFB422006FD165 /* Products */,
+				22653FFA19D70898004E1AA2 /* QuartzCore.framework */,
 				22D10CA819D598A1000D6942 /* CFNetwork.framework */,
 				22B03E6319D04BB500E50D04 /* CoreLocation.framework */,
 				22B03E5F19CE102900E50D04 /* SpriteKit.framework */,
@@ -139,6 +153,9 @@
 				22B03E5419CE032B00E50D04 /* MapViewController.swift */,
 				22B03E5619CE083A00E50D04 /* MapScene.swift */,
 				22B03E6119CE11DA00E50D04 /* MapScene.sks */,
+				22653FF719D6FBB1004E1AA2 /* vm */,
+				22653FF219D6D3DB004E1AA2 /* sensors */,
+				22653FF319D6E044004E1AA2 /* UploadTask.swift */,
 			);
 			path = nervous;
 			sourceTree = "<group>";
@@ -166,6 +183,24 @@
 				22316DF019BFB422006FD165 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22653FF219D6D3DB004E1AA2 /* sensors */ = {
+			isa = PBXGroup;
+			children = (
+				22653FEE19D6D243004E1AA2 /* SensorDesc.swift */,
+				22653FF019D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift */,
+				22653FF519D6E669004E1AA2 /* BLESensor.swift */,
+			);
+			name = sensors;
+			sourceTree = "<group>";
+		};
+		22653FF719D6FBB1004E1AA2 /* vm */ = {
+			isa = PBXGroup;
+			children = (
+				22653FF819D6FBDB004E1AA2 /* NervousVM.swift */,
+			);
+			name = vm;
 			sourceTree = "<group>";
 		};
 		22B03E5819CE0D6700E50D04 /* images */ = {
@@ -305,19 +340,24 @@
 				22BB43F119C1C20500A1F1FA /* UnknownFieldSet.swift in Sources */,
 				22BB43E619C1C20500A1F1FA /* AbstractMessage.swift in Sources */,
 				22BB43E819C1C20500A1F1FA /* CodedOutputStream.swift in Sources */,
+				22653FEF19D6D243004E1AA2 /* SensorDesc.swift in Sources */,
 				22BB43EB19C1C20500A1F1FA /* ExtendableMessageBuilder.swift in Sources */,
 				22BB43ED19C1C20500A1F1FA /* ExtensionRegistry.swift in Sources */,
 				22BB43E919C1C20500A1F1FA /* ConcreteExtensionField.swift in Sources */,
 				22BB43EA19C1C20500A1F1FA /* ExtendableMessage.swift in Sources */,
 				22BB43EE19C1C20500A1F1FA /* Field.swift in Sources */,
+				22653FF919D6FBDB004E1AA2 /* NervousVM.swift in Sources */,
 				22BB43F219C1C20500A1F1FA /* UnknownFieldSetBuilder.swift in Sources */,
 				22316DDD19BFB422006FD165 /* AppDelegate.swift in Sources */,
 				22BB43EC19C1C20500A1F1FA /* ExtensionField.swift in Sources */,
+				22653FF119D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift in Sources */,
 				22BB43F019C1C20500A1F1FA /* RingBuffer.swift in Sources */,
 				22BB43EF19C1C20500A1F1FA /* GeneratedMessage.swift in Sources */,
+				22653FF419D6E044004E1AA2 /* UploadTask.swift in Sources */,
 				22BB43E719C1C20500A1F1FA /* CodedInputStream.swift in Sources */,
 				22D2D66D19C0979E00B11C54 /* Sensorupload.pb.swift in Sources */,
 				22B03E5719CE083A00E50D04 /* MapScene.swift in Sources */,
+				22653FF619D6E669004E1AA2 /* BLESensor.swift in Sources */,
 				22BB43F319C1C20500A1F1FA /* WireFormat.swift in Sources */,
 				22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */,
 			);

@@ -10,24 +10,35 @@ import SpriteKit
 
 
 class GameScene: SKScene {
+    
     override func didMoveToView(view: SKView) {
         
         self.physicsWorld.gravity = CGVector(0,0)
         
+        let lbc: Int = BeaconSingleton.shareInstance.count
         
-        for i in 1...10 {
-            let sprite: SKSpriteNode = SKSpriteNode(imageNamed: "ball.png")
-            sprite.position = CGPointMake(CGRectGetMidX(self.frame)+CGFloat(i), CGRectGetMidY(self.frame))
+        
+        NSLog("lb %i", lbc)
+        
+        if(lbc > 0){
+           
+        
+            for i in 1...lbc {
+                NSLog("node added")
+                
+                let sprite: SKSpriteNode = SKSpriteNode(imageNamed: "ball.png")
+                sprite.position = CGPointMake(CGRectGetMidX(self.frame)+CGFloat(i), CGRectGetMidY(self.frame))
 
-            sprite.physicsBody = SKPhysicsBody(circleOfRadius: 10)
-            sprite.physicsBody?.dynamic = true
-            sprite.physicsBody?.restitution = 2
-            sprite.physicsBody?.affectedByGravity = true
-            sprite.physicsBody?.allowsRotation = true
+                sprite.physicsBody = SKPhysicsBody(circleOfRadius: 10)
+                sprite.physicsBody?.dynamic = true
+                sprite.physicsBody?.restitution = 2
+                sprite.physicsBody?.affectedByGravity = true
+                sprite.physicsBody?.allowsRotation = true
 
-            
-            self.addChild(sprite)
-            
+                
+                self.addChild(sprite)
+                
+            }
         }
     }
 }
