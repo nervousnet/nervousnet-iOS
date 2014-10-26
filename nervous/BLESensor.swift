@@ -8,8 +8,6 @@
 
 import Foundation
 import CoreLocation
-import QuartzCore
-
 
 class BeaconSingleton: NSObject {
     
@@ -30,25 +28,20 @@ class BeaconSingleton: NSObject {
     
 }
 
-
 class BLESensor {
-
     
     init(beacons :[AnyObject], region :CLRegion){
-        
-    
         
         
         let nvm :NervousVM = NervousVM()
         var currentTime :NSDate = NSDate()
         
         if(beacons.count > 0) {
-            
+ 
             BeaconSingleton.shareInstance.count = beacons.count
             
             NSLog("%i", BeaconSingleton.shareInstance.count)
             
-             
             
             let date = NSDate()
             let beaconSensor = SensorUpload.builder()
@@ -69,6 +62,7 @@ class BLESensor {
                 beaconSensor.sensorValues += [SensorDescBLEBeacon(beacon: beacon as CLBeacon, timestamp: beaconTimestamp).toProtoSensor()]
                 
                 NSLog("Found beacon. %i", beacon.minor)
+                
             }
             
             
@@ -79,6 +73,6 @@ class BLESensor {
             
         }
     }
-    
+     
 
 }

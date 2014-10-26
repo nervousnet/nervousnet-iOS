@@ -18,12 +18,11 @@
 		22653FF919D6FBDB004E1AA2 /* NervousVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FF819D6FBDB004E1AA2 /* NervousVM.swift */; };
 		22653FFB19D70899004E1AA2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22653FFA19D70898004E1AA2 /* QuartzCore.framework */; };
 		22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B03E5419CE032B00E50D04 /* MapViewController.swift */; };
-		22B03E5719CE083A00E50D04 /* MapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B03E5619CE083A00E50D04 /* MapScene.swift */; };
 		22B03E5B19CE0D6700E50D04 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B03E5919CE0D6700E50D04 /* ball.png */; };
 		22B03E5C19CE0D6700E50D04 /* bottle.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B03E5A19CE0D6700E50D04 /* bottle.png */; };
 		22B03E6019CE102900E50D04 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E5F19CE102900E50D04 /* SpriteKit.framework */; };
-		22B03E6219CE11DA00E50D04 /* MapScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 22B03E6119CE11DA00E50D04 /* MapScene.sks */; };
 		22B03E6419D04BB500E50D04 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E6319D04BB500E50D04 /* CoreLocation.framework */; };
+		22B912E019D76F96006094C6 /* SensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B912DF19D76F96006094C6 /* SensorViewController.swift */; };
 		22BB43E619C1C20500A1F1FA /* AbstractMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43D819C1C20500A1F1FA /* AbstractMessage.swift */; };
 		22BB43E719C1C20500A1F1FA /* CodedInputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43D919C1C20500A1F1FA /* CodedInputStream.swift */; };
 		22BB43E819C1C20500A1F1FA /* CodedOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43DA19C1C20500A1F1FA /* CodedOutputStream.swift */; };
@@ -41,6 +40,10 @@
 		22D10CA919D598A1000D6942 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D10CA819D598A1000D6942 /* CFNetwork.framework */; };
 		22D2D66D19C0979E00B11C54 /* Sensorupload.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */; };
 		22D2D66F19C097F900B11C54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D2D66E19C097F900B11C54 /* Foundation.framework */; };
+		22E0A19919F15DEB001D4548 /* CCH31c3.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 22E0A19819F15DEB001D4548 /* CCH31c3.mbtiles */; };
+		22FF8A8719F14AFA00AC6783 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */; };
+		22FF8A8D19F14B3A00AC6783 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8C19F14B3A00AC6783 /* UIKit.framework */; };
+		F8C5EA35C0D248558EACC2AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E28EDAC66246A39191CAA9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,12 +72,11 @@
 		22653FF819D6FBDB004E1AA2 /* NervousVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousVM.swift; sourceTree = "<group>"; };
 		22653FFA19D70898004E1AA2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		22B03E5419CE032B00E50D04 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		22B03E5619CE083A00E50D04 /* MapScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScene.swift; sourceTree = "<group>"; };
 		22B03E5919CE0D6700E50D04 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		22B03E5A19CE0D6700E50D04 /* bottle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottle.png; sourceTree = "<group>"; };
 		22B03E5F19CE102900E50D04 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		22B03E6119CE11DA00E50D04 /* MapScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MapScene.sks; sourceTree = "<group>"; };
 		22B03E6319D04BB500E50D04 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		22B912DF19D76F96006094C6 /* SensorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorViewController.swift; sourceTree = "<group>"; };
 		22BB43D819C1C20500A1F1FA /* AbstractMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractMessage.swift; sourceTree = "<group>"; };
 		22BB43D919C1C20500A1F1FA /* CodedInputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodedInputStream.swift; sourceTree = "<group>"; };
 		22BB43DA19C1C20500A1F1FA /* CodedOutputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodedOutputStream.swift; sourceTree = "<group>"; };
@@ -92,6 +94,12 @@
 		22D10CA819D598A1000D6942 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensorupload.pb.swift; sourceTree = "<group>"; };
 		22D2D66E19C097F900B11C54 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		22E0A19719F15A0A001D4548 /* -Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "-Bridging-Header.h"; sourceTree = "<group>"; };
+		22E0A19819F15DEB001D4548 /* CCH31c3.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = CCH31c3.mbtiles; sourceTree = "<group>"; };
+		22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		22FF8A8C19F14B3A00AC6783 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6D24EEE2AF31448F9A8096AF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		C3E28EDAC66246A39191CAA9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +107,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22FF8A8719F14AFA00AC6783 /* CoreGraphics.framework in Frameworks */,
 				22653FFB19D70899004E1AA2 /* QuartzCore.framework in Frameworks */,
 				22D10CA919D598A1000D6942 /* CFNetwork.framework in Frameworks */,
 				22B03E6419D04BB500E50D04 /* CoreLocation.framework in Frameworks */,
 				22B03E6019CE102900E50D04 /* SpriteKit.framework in Frameworks */,
 				22D2D66F19C097F900B11C54 /* Foundation.framework in Frameworks */,
+				22FF8A8D19F14B3A00AC6783 /* UIKit.framework in Frameworks */,
+				F8C5EA35C0D248558EACC2AE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,11 +134,8 @@
 				22316DD919BFB422006FD165 /* nervous */,
 				22316DEE19BFB422006FD165 /* nervousTests */,
 				22316DD819BFB422006FD165 /* Products */,
-				22653FFA19D70898004E1AA2 /* QuartzCore.framework */,
-				22D10CA819D598A1000D6942 /* CFNetwork.framework */,
-				22B03E6319D04BB500E50D04 /* CoreLocation.framework */,
-				22B03E5F19CE102900E50D04 /* SpriteKit.framework */,
-				22D2D66E19C097F900B11C54 /* Foundation.framework */,
+				22FF8A8519F14ACB00AC6783 /* Frameworks */,
+				6D24EEE2AF31448F9A8096AF /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +151,7 @@
 		22316DD919BFB422006FD165 /* nervous */ = {
 			isa = PBXGroup;
 			children = (
+				22E0A19719F15A0A001D4548 /* -Bridging-Header.h */,
 				22316DE519BFB422006FD165 /* Images.xcassets */,
 				22316DDA19BFB422006FD165 /* Supporting Files */,
 				22B03E5819CE0D6700E50D04 /* images */,
@@ -150,12 +159,12 @@
 				22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */,
 				22316DDC19BFB422006FD165 /* AppDelegate.swift */,
 				22316DE219BFB422006FD165 /* Main.storyboard */,
+				22B912DF19D76F96006094C6 /* SensorViewController.swift */,
 				22B03E5419CE032B00E50D04 /* MapViewController.swift */,
-				22B03E5619CE083A00E50D04 /* MapScene.swift */,
-				22B03E6119CE11DA00E50D04 /* MapScene.sks */,
 				22653FF719D6FBB1004E1AA2 /* vm */,
 				22653FF219D6D3DB004E1AA2 /* sensors */,
 				22653FF319D6E044004E1AA2 /* UploadTask.swift */,
+				22E0A19A19F15DF2001D4548 /* maps */,
 			);
 			path = nervous;
 			sourceTree = "<group>";
@@ -234,6 +243,29 @@
 			path = "../../protobuf-swift/src/runtime-pb-swift";
 			sourceTree = "<group>";
 		};
+		22E0A19A19F15DF2001D4548 /* maps */ = {
+			isa = PBXGroup;
+			children = (
+				22E0A19819F15DEB001D4548 /* CCH31c3.mbtiles */,
+			);
+			name = maps;
+			sourceTree = "<group>";
+		};
+		22FF8A8519F14ACB00AC6783 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22FF8A8C19F14B3A00AC6783 /* UIKit.framework */,
+				22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */,
+				22653FFA19D70898004E1AA2 /* QuartzCore.framework */,
+				22D10CA819D598A1000D6942 /* CFNetwork.framework */,
+				22B03E6319D04BB500E50D04 /* CoreLocation.framework */,
+				22B03E5F19CE102900E50D04 /* SpriteKit.framework */,
+				22D2D66E19C097F900B11C54 /* Foundation.framework */,
+				C3E28EDAC66246A39191CAA9 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,9 +273,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22316DF519BFB422006FD165 /* Build configuration list for PBXNativeTarget "nervous" */;
 			buildPhases = (
+				02BA741033E14D45AEAB5DA9 /* Check Pods Manifest.lock */,
 				22316DD319BFB422006FD165 /* Sources */,
 				22316DD419BFB422006FD165 /* Frameworks */,
 				22316DD519BFB422006FD165 /* Resources */,
+				5A152F32C84D465795199FAE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,8 +352,8 @@
 				22316DE419BFB422006FD165 /* Main.storyboard in Resources */,
 				22316DE619BFB422006FD165 /* Images.xcassets in Resources */,
 				22B03E5B19CE0D6700E50D04 /* ball.png in Resources */,
+				22E0A19919F15DEB001D4548 /* CCH31c3.mbtiles in Resources */,
 				22B03E5C19CE0D6700E50D04 /* bottle.png in Resources */,
-				22B03E6219CE11DA00E50D04 /* MapScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +365,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02BA741033E14D45AEAB5DA9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5A152F32C84D465795199FAE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		22316DD319BFB422006FD165 /* Sources */ = {
@@ -351,12 +418,12 @@
 				22316DDD19BFB422006FD165 /* AppDelegate.swift in Sources */,
 				22BB43EC19C1C20500A1F1FA /* ExtensionField.swift in Sources */,
 				22653FF119D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift in Sources */,
+				22B912E019D76F96006094C6 /* SensorViewController.swift in Sources */,
 				22BB43F019C1C20500A1F1FA /* RingBuffer.swift in Sources */,
 				22BB43EF19C1C20500A1F1FA /* GeneratedMessage.swift in Sources */,
 				22653FF419D6E044004E1AA2 /* UploadTask.swift in Sources */,
 				22BB43E719C1C20500A1F1FA /* CodedInputStream.swift in Sources */,
 				22D2D66D19C0979E00B11C54 /* Sensorupload.pb.swift in Sources */,
-				22B03E5719CE083A00E50D04 /* MapScene.swift in Sources */,
 				22653FF619D6E669004E1AA2 /* BLESensor.swift in Sources */,
 				22BB43F319C1C20500A1F1FA /* WireFormat.swift in Sources */,
 				22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */,
@@ -472,25 +539,45 @@
 		};
 		22316DF619BFB422006FD165 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D24EEE2AF31448F9A8096AF /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = nervous/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Mapbox",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "nervous/-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		22316DF719BFB422006FD165 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D24EEE2AF31448F9A8096AF /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = nervous/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Mapbox",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "nervous/-Bridging-Header.h";
 			};
 			name = Release;
 		};

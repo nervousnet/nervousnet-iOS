@@ -10,76 +10,95 @@ import Foundation
 
 class UploadTask :NSObject, NSStreamDelegate {
     
-    var pbSensorupload :SensorUpload
+    var pbSensorupload :SensorUpload? = nil
+   
+    //router settings
+    let serverAddress = "www.inn.ac"
+    let serverPort = 25600
+    
+    var inputStream: NSInputStream?
+    var outputStream: NSOutputStream?
+
+    
     
     init(pbSensorupload :SensorUpload){
+        super.init()
+        
         self.pbSensorupload = pbSensorupload
+        
+        println("connecting...")
+        
+        NSStream.getStreamsToHostWithName(serverAddress, port: serverPort, inputStream: &self.inputStream, outputStream: &self.outputStream)
+        
+        
+        var inp:NSInputStream = self.inputStream!
+        var out:NSOutputStream = self.outputStream!
+        
+        inp.delegate = self
+        out.delegate = self
+        
+        inp.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+        out.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+        
+        inp.open()
+        out.open()
+        
     }
     
     
     func writeToRouter(){
         
-        let addr = "inn.ac"
-        let port = 25600
+        var sensorData :SensorUpload = self.pbSensorupload!
+        var out :NSOutputStream = self.outputStream!
+        var inp :NSInputStream = self.inputStream!
+        var i = 0
         
-        var inp :NSInputStream?
-        var out :NSOutputStream?
-        var pbSizeB :UInt8
+        //TODO: make this less hacky, add proper timers
+        while (out.streamStatus == NSStreamStatus.Opening){
+            i++
+            if(out.streamStatus == NSStreamStatus.Error){
+                NSLog("dies")
+                out.close()
+                inp.close()
+            }else if (i > 10000) {
+                NSLog("dies: timeout")
+                out.close()
+                inp.close()
+            }
+            
+        }
         
+        sensorData.writeDelimitedToOutputStream(out)
         
-        NSStream.getStreamsToHostWithName(addr, port: port, inputStream: &inp, outputStream: &out)
-        
-        let inputStream = inp!
-        let outputStream = out!
-        
-        inputStream.delegate = self
-        outputStream.delegate = self
-        
-        inputStream.open()
-        outputStream.open()
-        
-        
-        self.pbSensorupload.writeDelimitedToOutputStream(outputStream)
-        
-        outputStream.close()
-
-    
+        out.close()
+        inp.close()
     }
     
     
     func stream(theStream: NSStream!, handleEvent streamEvent: NSStreamEvent){
-        println("receive")
+        NSLog("receive")
+        
+        
         switch streamEvent {
-        case NSStreamEvent.None:
-            println("NSStreamEvent.None")
-        case NSStreamEvent.OpenCompleted:
-            NSLog("NSStreamEvent.OpenCompleted")
-        case NSStreamEvent.HasBytesAvailable:
-            println("NSStreamEvent.HasBytesAvailable")
-            if let inputStream = theStream as? NSInputStream {
-                println("is NSInputStream")
-                if inputStream.hasBytesAvailable {
-                    NSLog("hasBytesAvailable")
-                    let bufferSize = 1024
-                    var buffer = Array<UInt8>(count: bufferSize, repeatedValue: 0)
-                    var bytesRead: Int = inputStream.read(&buffer, maxLength: bufferSize)
-                    println(bytesRead)
-                    if bytesRead >= 0 {
-                        var output: String = NSString(bytes: &buffer, length: bytesRead, encoding: NSUTF8StringEncoding)
-                        println(output)
-                    } else {
-                        // Handle error
-                    }
-                }
-            }
-        case NSStreamEvent.HasSpaceAvailable:
-            println("NSStreamEvent.HasSpaceAvailable")
-        case NSStreamEvent.ErrorOccurred:
-            NSLog("NSStreamEvent.ErrorOccurred")
-        case NSStreamEvent.EndEncountered:
-            NSLog("NSStreamEvent.EndEncountered")
-        default:
-            NSLog("default")
+        
+            case NSStreamEvent.None:
+                NSLog("NSStreamEvent.None")
+            
+            case NSStreamEvent.OpenCompleted:
+                NSLog("opened")
+            
+            case NSStreamEvent.HasSpaceAvailable:
+                NSLog("NSStreamEvent.HasSpaceAvailable")
+            
+            case NSStreamEvent.ErrorOccurred:
+                NSLog("NSStreamEvent.ErrorOccurred")
+            
+            
+            case NSStreamEvent.EndEncountered:
+                NSLog("NSStreamEvent.EndEncountered")
+            
+            default:
+                NSLog("default")
         }
     }
 
