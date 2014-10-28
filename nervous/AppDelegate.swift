@@ -21,13 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        //setup beacon region
+        let beaconUUIDString = "3C77C2A5-5D39-420F-97FD-E7735CC7F317"
+        let beaconIdentifier = "ch.ethz.nervous"
+        let beaconUUID:NSUUID =  NSUUID(UUIDBytes: beaconUUIDString) //TODO
+        
         NSLog("Cooking bacon...")
         
         
-        //setup beacon region
-        let uuidString = "3C77C2A5-5D39-420F-97FD-E7735CC7F317"
-        let beaconIdentifier = "ch.ethz.nervous"
-        let beaconUUID:NSUUID = NSUUID(UUIDString: uuidString)
         let beaconRegion:CLBeaconRegion = CLBeaconRegion(proximityUUID: beaconUUID,
             identifier: beaconIdentifier)
         

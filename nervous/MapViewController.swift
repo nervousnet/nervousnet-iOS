@@ -56,7 +56,6 @@ class MapViewController: UIViewController {
         cchMapView.adjustTilesForRetinaDisplay = true
         cchMapView.centerCoordinate = CLLocationCoordinate2DMake(9.986 as CLLocationDegrees, 53.5624 as CLLocationDegrees)
         
-        cchMapView.
         
         self.view = cchMapView
         

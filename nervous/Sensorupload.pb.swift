@@ -629,9 +629,10 @@ class SensorUpload : GeneratedMessage {
             }
             input.popLimit(limit)
           }
-          else if tag == 58 {
+         /* IF YOU RE-ENABLE STRINGS, UNCOMMENT: else if tag == 58 {
             valueString += [input.readString()]
           }
+         */
           else {
                 if (!parseUnknownField(input,unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:tag)) {
                     unknownFields = unknownFieldsBuilder.build()
