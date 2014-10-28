@@ -21,7 +21,8 @@ class MapViewController: UIViewController {
         
         svc.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
         svc.modalPresentationStyle = UIModalPresentationStyle.Custom
-        
+        svc.view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.6)
+                
 
         
         self.presentViewController(svc, animated: true, completion: nil)

@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         //setup beacon region
         let beaconUUIDString = "3C77C2A5-5D39-420F-97FD-E7735CC7F317"
         let beaconIdentifier = "ch.ethz.nervous"
-        let beaconUUID:NSUUID =  NSUUID(UUIDBytes: beaconUUIDString) //TODO
+        let beaconUUID:NSUUID? = NSUUID(UUIDString: beaconUUIDString)
         
         NSLog("Cooking bacon...")
         

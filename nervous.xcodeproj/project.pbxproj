@@ -37,6 +37,7 @@
 		22C5D71319FF87E200CD8D26 /* UnknownFieldSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70519FF87E200CD8D26 /* UnknownFieldSet.swift */; };
 		22C5D71419FF87E200CD8D26 /* UnknownFieldSetBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70619FF87E200CD8D26 /* UnknownFieldSetBuilder.swift */; };
 		22C5D71519FF87E200CD8D26 /* WireFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70719FF87E200CD8D26 /* WireFormat.swift */; };
+		22C5D71919FFADBA00CD8D26 /* SensorDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D71819FFADBA00CD8D26 /* SensorDetailController.swift */; };
 		22D10CA919D598A1000D6942 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D10CA819D598A1000D6942 /* CFNetwork.framework */; };
 		22D2D66D19C0979E00B11C54 /* Sensorupload.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */; };
 		22D2D66F19C097F900B11C54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D2D66E19C097F900B11C54 /* Foundation.framework */; };
@@ -93,6 +94,7 @@
 		22C5D70519FF87E200CD8D26 /* UnknownFieldSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownFieldSet.swift; sourceTree = "<group>"; };
 		22C5D70619FF87E200CD8D26 /* UnknownFieldSetBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownFieldSetBuilder.swift; sourceTree = "<group>"; };
 		22C5D70719FF87E200CD8D26 /* WireFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireFormat.swift; sourceTree = "<group>"; };
+		22C5D71819FFADBA00CD8D26 /* SensorDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDetailController.swift; sourceTree = "<group>"; };
 		22D10CA819D598A1000D6942 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensorupload.pb.swift; sourceTree = "<group>"; };
 		22D2D66E19C097F900B11C54 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -164,6 +166,7 @@
 				22316DE219BFB422006FD165 /* Main.storyboard */,
 				22B912DF19D76F96006094C6 /* SensorViewController.swift */,
 				22B03E5419CE032B00E50D04 /* MapViewController.swift */,
+				22C5D71819FFADBA00CD8D26 /* SensorDetailController.swift */,
 				22653FF719D6FBB1004E1AA2 /* vm */,
 				22653FF219D6D3DB004E1AA2 /* sensors */,
 				22653FF319D6E044004E1AA2 /* UploadTask.swift */,
@@ -425,6 +428,7 @@
 				22C5D70819FF87E200CD8D26 /* AbstractMessage.swift in Sources */,
 				22653FF919D6FBDB004E1AA2 /* NervousVM.swift in Sources */,
 				22C5D71119FF87E200CD8D26 /* GeneratedMessage.swift in Sources */,
+				22C5D71919FFADBA00CD8D26 /* SensorDetailController.swift in Sources */,
 				22C5D70B19FF87E200CD8D26 /* ConcreteExtensionField.swift in Sources */,
 				22316DDD19BFB422006FD165 /* AppDelegate.swift in Sources */,
 				22653FF119D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift in Sources */,

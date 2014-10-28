@@ -8,19 +8,68 @@
 
 import UIKit
 
-class SensorViewController: UITableViewController {
+class SensorViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+    
+    var items: [[String]] = [["Phone", "Map"], ["Room", "Map"], ["Motion", "Tone"]]
 
-    @IBAction func closeView(sender: AnyObject) {
+    
+    @IBAction func closeSensorView(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    @IBOutlet var tableView: UITableView?
+
+    func closeView(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
 
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.tableView?.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+
+    }
     
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        
+        cell.textLabel.text = "If \(items[indexPath.row][0]) then \(items[indexPath.row][1])"
+        
+        cell.backgroundColor = UIColor.clearColor()
+        
+        
+        
+        //activation switch
+        var sensorSwitch :UISwitch = UISwitch()
+        sensorSwitch.on = false
+        
+        cell.addSubview(sensorSwitch)
+        
+        return cell
+    }
+    
+    // UITableViewDelegate methods
+    
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        
+        let alert = UIAlertController(title: "Item selected", message: "You selected item \(indexPath.row)", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "OK",
+            style: UIAlertActionStyle.Default,
+            handler: {
+                (alert: UIAlertAction!) in println("An alert of type \(alert.style.hashValue) was tapped!")
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
 
 }
