@@ -11,36 +11,49 @@ import SpriteKit
 
 class MapViewController: UIViewController {
     
+    var mapView :RMMapView!  //make this accessible so everyone can edit the map
     
-
     
     @IBAction func btnSettingsAction(sender: AnyObject) {
+    
         
         var svc = self.storyboard?.instantiateViewControllerWithIdentifier("SensorViewController") as SensorViewController
         
         svc.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
         svc.modalPresentationStyle = UIModalPresentationStyle.Custom
         svc.view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.6)
-                
-
         
         self.presentViewController(svc, animated: true, completion: nil)
         
     }
     
     
+    @IBAction func mapReset(sender: AnyObject) {
+        
+        //redownload the map (if stale) and center on me
+    
+        mapView.addAnnotation(RMPointAnnotation(mapView: mapView, coordinate: mapView.centerCoordinate, andTitle: "Na nu na na"))
+
+    }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-            }
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
+        
+        
+        
         let cchTileSource :RMMBTilesSource = RMMBTilesSource(tileSetResource: "CCH31c3")
         let cchMapView :RMMapView = RMMapView(frame: self.view.bounds, andTilesource: cchTileSource)
         
-        
+
         cchMapView.centerCoordinate = CLLocationCoordinate2DMake(9.986 as CLLocationDegrees, 53.5624 as CLLocationDegrees)
         
         cchMapView.userInteractionEnabled = true
@@ -54,10 +67,12 @@ class MapViewController: UIViewController {
         cchMapView.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
         cchMapView.adjustTilesForRetinaDisplay = false
         
-        self.view.addSubview(cchMapView)
+        
+        mapView = cchMapView
+
+        self.view.addSubview(mapView)
         
         
-        cchMapView.addAnnotation(RMPointAnnotation(mapView: cchMapView, coordinate: cchMapView.centerCoordinate, andTitle: "Na nu na na"))
 
     }
     
