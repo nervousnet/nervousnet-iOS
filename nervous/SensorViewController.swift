@@ -10,7 +10,7 @@ import UIKit
 
 class SensorViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
-    var items: [[String]] = [["Phone", "Map"], ["Room", "Map"], ["Motion", "Tone"]]
+    var items: [[String]] = [["Phone", "Map"], ["Room", "Map"], ["Motion", "Tone"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"]]
 
     
     @IBAction func closeSensorView(sender: AnyObject) {
@@ -46,10 +46,10 @@ class SensorViewController: UIViewController, UITableViewDataSource, UITableView
         cell.backgroundColor = UIColor.clearColor()
         
         
-        
         //activation switch
         var sensorSwitch :UISwitch = UISwitch()
         sensorSwitch.on = false
+        sensorSwitch.frame = CGRectMake(cell.bounds.width-60, 14, 44, 44)
         
         cell.addSubview(sensorSwitch)
         

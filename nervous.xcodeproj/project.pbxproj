@@ -19,8 +19,6 @@
 		22653FF919D6FBDB004E1AA2 /* NervousVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FF819D6FBDB004E1AA2 /* NervousVM.swift */; };
 		22653FFB19D70899004E1AA2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22653FFA19D70898004E1AA2 /* QuartzCore.framework */; };
 		22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B03E5419CE032B00E50D04 /* MapViewController.swift */; };
-		22B03E5B19CE0D6700E50D04 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B03E5919CE0D6700E50D04 /* ball.png */; };
-		22B03E5C19CE0D6700E50D04 /* bottle.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B03E5A19CE0D6700E50D04 /* bottle.png */; };
 		22B03E6019CE102900E50D04 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E5F19CE102900E50D04 /* SpriteKit.framework */; };
 		22B03E6419D04BB500E50D04 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E6319D04BB500E50D04 /* CoreLocation.framework */; };
 		22B912E019D76F96006094C6 /* SensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B912DF19D76F96006094C6 /* SensorViewController.swift */; };
@@ -76,8 +74,6 @@
 		22653FFA19D70898004E1AA2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2274F01F19FF85DD004FFAA6 /* libPods-ProtocolBuffers.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ProtocolBuffers.a"; path = "Pods/build/Debug-iphoneos/libPods-ProtocolBuffers.a"; sourceTree = "<group>"; };
 		22B03E5419CE032B00E50D04 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		22B03E5919CE0D6700E50D04 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
-		22B03E5A19CE0D6700E50D04 /* bottle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottle.png; sourceTree = "<group>"; };
 		22B03E5F19CE102900E50D04 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		22B03E6319D04BB500E50D04 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		22B912DF19D76F96006094C6 /* SensorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorViewController.swift; sourceTree = "<group>"; };
@@ -224,8 +220,6 @@
 		22B03E5819CE0D6700E50D04 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				22B03E5919CE0D6700E50D04 /* ball.png */,
-				22B03E5A19CE0D6700E50D04 /* bottle.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -370,9 +364,7 @@
 			files = (
 				22316DE419BFB422006FD165 /* Main.storyboard in Resources */,
 				22316DE619BFB422006FD165 /* Images.xcassets in Resources */,
-				22B03E5B19CE0D6700E50D04 /* ball.png in Resources */,
 				22E0A19919F15DEB001D4548 /* CCH31c3.mbtiles in Resources */,
-				22B03E5C19CE0D6700E50D04 /* bottle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
