@@ -11,8 +11,7 @@ import SpriteKit
 
 class MapViewController: UIViewController {
     
-
-
+    
 
     
     @IBAction func btnSettingsAction(sender: AnyObject) {
@@ -34,18 +33,17 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-    }
+            }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-     
         let cchTileSource :RMMBTilesSource = RMMBTilesSource(tileSetResource: "CCH31c3")
         let cchMapView :RMMapView = RMMapView(frame: self.view.bounds, andTilesource: cchTileSource)
         
         
+        cchMapView.centerCoordinate = CLLocationCoordinate2DMake(9.986 as CLLocationDegrees, 53.5624 as CLLocationDegrees)
         
-        
+        cchMapView.userInteractionEnabled = true
         // default zoom
         cchMapView.zoom = 16
         // hard code minimal zoom. Try to run in without it to see what happens.
@@ -54,12 +52,13 @@ class MapViewController: UIViewController {
         cchMapView.showLogoBug = false
         cchMapView.hideAttribution = true
         cchMapView.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
-        cchMapView.adjustTilesForRetinaDisplay = true
-        cchMapView.centerCoordinate = CLLocationCoordinate2DMake(9.986 as CLLocationDegrees, 53.5624 as CLLocationDegrees)
+        cchMapView.adjustTilesForRetinaDisplay = false
+        
+        self.view.addSubview(cchMapView)
         
         
-        self.view = cchMapView
-        
+        cchMapView.addAnnotation(RMPointAnnotation(mapView: cchMapView, coordinate: cchMapView.centerCoordinate, andTitle: "Na nu na na"))
+
     }
     
     override func didReceiveMemoryWarning() {

@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     var window: UIWindow?
     var locationManager: CLLocationManager? //Declaring the locationManager with a question mark is necessary because it is empty when the AppDelegate object is created. This means making it optional. It is created in the didFinishLaunchingWithOptions method. Because it is optional, it is important to use an exclamation mark after its name in following instances, as shown in the code above.
-
+ 
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -38,9 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         //location manager
         locationManager = CLLocationManager()
         
+
+
         if(locationManager!.respondsToSelector("requestAlwaysAuthorization")) {
             locationManager!.requestAlwaysAuthorization()
+            
         }
+        
         
         locationManager!.delegate = self
         locationManager!.pausesLocationUpdatesAutomatically = false
