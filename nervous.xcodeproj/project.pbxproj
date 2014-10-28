@@ -43,6 +43,7 @@
 		22E0A19919F15DEB001D4548 /* CCH31c3.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 22E0A19819F15DEB001D4548 /* CCH31c3.mbtiles */; };
 		22FF8A8719F14AFA00AC6783 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */; };
 		22FF8A8D19F14B3A00AC6783 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8C19F14B3A00AC6783 /* UIKit.framework */; };
+		311E82701A001D8500C176FE /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E826F1A001D8500C176FE /* FilterButtonView.swift */; };
 		F8C5EA35C0D248558EACC2AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E28EDAC66246A39191CAA9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		22E0A19819F15DEB001D4548 /* CCH31c3.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = CCH31c3.mbtiles; sourceTree = "<group>"; };
 		22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		22FF8A8C19F14B3A00AC6783 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		311E826F1A001D8500C176FE /* FilterButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
 		945DC94D19FB201D0BBE095C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AC5F25183B95B2D3730BA466 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C3E28EDAC66246A39191CAA9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +172,7 @@
 				22653FF319D6E044004E1AA2 /* UploadTask.swift */,
 				22E0A19A19F15DF2001D4548 /* maps */,
 				223589E419FFFAA80036E2EF /* MainToolbar.swift */,
+				311E826F1A001D8500C176FE /* FilterButtonView.swift */,
 			);
 			path = nervous;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				22C5D71419FF87E200CD8D26 /* UnknownFieldSetBuilder.swift in Sources */,
 				22653FEF19D6D243004E1AA2 /* SensorDesc.swift in Sources */,
 				22C5D70819FF87E200CD8D26 /* AbstractMessage.swift in Sources */,
+				311E82701A001D8500C176FE /* FilterButtonView.swift in Sources */,
 				22653FF919D6FBDB004E1AA2 /* NervousVM.swift in Sources */,
 				22C5D71119FF87E200CD8D26 /* GeneratedMessage.swift in Sources */,
 				22C5D71919FFADBA00CD8D26 /* SensorDetailController.swift in Sources */,
