@@ -23,20 +23,20 @@
 		22B03E6019CE102900E50D04 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E5F19CE102900E50D04 /* SpriteKit.framework */; };
 		22B03E6419D04BB500E50D04 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E6319D04BB500E50D04 /* CoreLocation.framework */; };
 		22B912E019D76F96006094C6 /* SensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B912DF19D76F96006094C6 /* SensorViewController.swift */; };
-		22BB43E619C1C20500A1F1FA /* AbstractMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43D819C1C20500A1F1FA /* AbstractMessage.swift */; };
-		22BB43E719C1C20500A1F1FA /* CodedInputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43D919C1C20500A1F1FA /* CodedInputStream.swift */; };
-		22BB43E819C1C20500A1F1FA /* CodedOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43DA19C1C20500A1F1FA /* CodedOutputStream.swift */; };
-		22BB43E919C1C20500A1F1FA /* ConcreteExtensionField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43DB19C1C20500A1F1FA /* ConcreteExtensionField.swift */; };
-		22BB43EA19C1C20500A1F1FA /* ExtendableMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43DC19C1C20500A1F1FA /* ExtendableMessage.swift */; };
-		22BB43EB19C1C20500A1F1FA /* ExtendableMessageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43DD19C1C20500A1F1FA /* ExtendableMessageBuilder.swift */; };
-		22BB43EC19C1C20500A1F1FA /* ExtensionField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43DE19C1C20500A1F1FA /* ExtensionField.swift */; };
-		22BB43ED19C1C20500A1F1FA /* ExtensionRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43DF19C1C20500A1F1FA /* ExtensionRegistry.swift */; };
-		22BB43EE19C1C20500A1F1FA /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43E019C1C20500A1F1FA /* Field.swift */; };
-		22BB43EF19C1C20500A1F1FA /* GeneratedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43E119C1C20500A1F1FA /* GeneratedMessage.swift */; };
-		22BB43F019C1C20500A1F1FA /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43E219C1C20500A1F1FA /* RingBuffer.swift */; };
-		22BB43F119C1C20500A1F1FA /* UnknownFieldSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43E319C1C20500A1F1FA /* UnknownFieldSet.swift */; };
-		22BB43F219C1C20500A1F1FA /* UnknownFieldSetBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43E419C1C20500A1F1FA /* UnknownFieldSetBuilder.swift */; };
-		22BB43F319C1C20500A1F1FA /* WireFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB43E519C1C20500A1F1FA /* WireFormat.swift */; };
+		22C5D70819FF87E200CD8D26 /* AbstractMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D6FA19FF87E200CD8D26 /* AbstractMessage.swift */; };
+		22C5D70919FF87E200CD8D26 /* CodedInputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D6FB19FF87E200CD8D26 /* CodedInputStream.swift */; };
+		22C5D70A19FF87E200CD8D26 /* CodedOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D6FC19FF87E200CD8D26 /* CodedOutputStream.swift */; };
+		22C5D70B19FF87E200CD8D26 /* ConcreteExtensionField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D6FD19FF87E200CD8D26 /* ConcreteExtensionField.swift */; };
+		22C5D70C19FF87E200CD8D26 /* ExtendableMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D6FE19FF87E200CD8D26 /* ExtendableMessage.swift */; };
+		22C5D70D19FF87E200CD8D26 /* ExtendableMessageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D6FF19FF87E200CD8D26 /* ExtendableMessageBuilder.swift */; };
+		22C5D70E19FF87E200CD8D26 /* ExtensionField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70019FF87E200CD8D26 /* ExtensionField.swift */; };
+		22C5D70F19FF87E200CD8D26 /* ExtensionRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70119FF87E200CD8D26 /* ExtensionRegistry.swift */; };
+		22C5D71019FF87E200CD8D26 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70219FF87E200CD8D26 /* Field.swift */; };
+		22C5D71119FF87E200CD8D26 /* GeneratedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70319FF87E200CD8D26 /* GeneratedMessage.swift */; };
+		22C5D71219FF87E200CD8D26 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70419FF87E200CD8D26 /* RingBuffer.swift */; };
+		22C5D71319FF87E200CD8D26 /* UnknownFieldSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70519FF87E200CD8D26 /* UnknownFieldSet.swift */; };
+		22C5D71419FF87E200CD8D26 /* UnknownFieldSetBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70619FF87E200CD8D26 /* UnknownFieldSetBuilder.swift */; };
+		22C5D71519FF87E200CD8D26 /* WireFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70719FF87E200CD8D26 /* WireFormat.swift */; };
 		22D10CA919D598A1000D6942 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D10CA819D598A1000D6942 /* CFNetwork.framework */; };
 		22D2D66D19C0979E00B11C54 /* Sensorupload.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */; };
 		22D2D66F19C097F900B11C54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D2D66E19C097F900B11C54 /* Foundation.framework */; };
@@ -71,26 +71,28 @@
 		22653FF519D6E669004E1AA2 /* BLESensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLESensor.swift; sourceTree = "<group>"; };
 		22653FF819D6FBDB004E1AA2 /* NervousVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousVM.swift; sourceTree = "<group>"; };
 		22653FFA19D70898004E1AA2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2274F01F19FF85DD004FFAA6 /* libPods-ProtocolBuffers.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ProtocolBuffers.a"; path = "Pods/build/Debug-iphoneos/libPods-ProtocolBuffers.a"; sourceTree = "<group>"; };
 		22B03E5419CE032B00E50D04 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		22B03E5919CE0D6700E50D04 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		22B03E5A19CE0D6700E50D04 /* bottle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottle.png; sourceTree = "<group>"; };
 		22B03E5F19CE102900E50D04 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		22B03E6319D04BB500E50D04 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		22B912DF19D76F96006094C6 /* SensorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorViewController.swift; sourceTree = "<group>"; };
-		22BB43D819C1C20500A1F1FA /* AbstractMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractMessage.swift; sourceTree = "<group>"; };
-		22BB43D919C1C20500A1F1FA /* CodedInputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodedInputStream.swift; sourceTree = "<group>"; };
-		22BB43DA19C1C20500A1F1FA /* CodedOutputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodedOutputStream.swift; sourceTree = "<group>"; };
-		22BB43DB19C1C20500A1F1FA /* ConcreteExtensionField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcreteExtensionField.swift; sourceTree = "<group>"; };
-		22BB43DC19C1C20500A1F1FA /* ExtendableMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendableMessage.swift; sourceTree = "<group>"; };
-		22BB43DD19C1C20500A1F1FA /* ExtendableMessageBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendableMessageBuilder.swift; sourceTree = "<group>"; };
-		22BB43DE19C1C20500A1F1FA /* ExtensionField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionField.swift; sourceTree = "<group>"; };
-		22BB43DF19C1C20500A1F1FA /* ExtensionRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionRegistry.swift; sourceTree = "<group>"; };
-		22BB43E019C1C20500A1F1FA /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
-		22BB43E119C1C20500A1F1FA /* GeneratedMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMessage.swift; sourceTree = "<group>"; };
-		22BB43E219C1C20500A1F1FA /* RingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
-		22BB43E319C1C20500A1F1FA /* UnknownFieldSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownFieldSet.swift; sourceTree = "<group>"; };
-		22BB43E419C1C20500A1F1FA /* UnknownFieldSetBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownFieldSetBuilder.swift; sourceTree = "<group>"; };
-		22BB43E519C1C20500A1F1FA /* WireFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireFormat.swift; sourceTree = "<group>"; };
+		22C5D6F719FF868E00CD8D26 /* libPods-ProtocolBuffers.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ProtocolBuffers.a"; path = "Pods/build/Debug-iphoneos/libPods-ProtocolBuffers.a"; sourceTree = "<group>"; };
+		22C5D6FA19FF87E200CD8D26 /* AbstractMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractMessage.swift; sourceTree = "<group>"; };
+		22C5D6FB19FF87E200CD8D26 /* CodedInputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodedInputStream.swift; sourceTree = "<group>"; };
+		22C5D6FC19FF87E200CD8D26 /* CodedOutputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodedOutputStream.swift; sourceTree = "<group>"; };
+		22C5D6FD19FF87E200CD8D26 /* ConcreteExtensionField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcreteExtensionField.swift; sourceTree = "<group>"; };
+		22C5D6FE19FF87E200CD8D26 /* ExtendableMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendableMessage.swift; sourceTree = "<group>"; };
+		22C5D6FF19FF87E200CD8D26 /* ExtendableMessageBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendableMessageBuilder.swift; sourceTree = "<group>"; };
+		22C5D70019FF87E200CD8D26 /* ExtensionField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionField.swift; sourceTree = "<group>"; };
+		22C5D70119FF87E200CD8D26 /* ExtensionRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionRegistry.swift; sourceTree = "<group>"; };
+		22C5D70219FF87E200CD8D26 /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		22C5D70319FF87E200CD8D26 /* GeneratedMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMessage.swift; sourceTree = "<group>"; };
+		22C5D70419FF87E200CD8D26 /* RingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
+		22C5D70519FF87E200CD8D26 /* UnknownFieldSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownFieldSet.swift; sourceTree = "<group>"; };
+		22C5D70619FF87E200CD8D26 /* UnknownFieldSetBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownFieldSetBuilder.swift; sourceTree = "<group>"; };
+		22C5D70719FF87E200CD8D26 /* WireFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireFormat.swift; sourceTree = "<group>"; };
 		22D10CA819D598A1000D6942 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensorupload.pb.swift; sourceTree = "<group>"; };
 		22D2D66E19C097F900B11C54 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -132,6 +134,7 @@
 		22316DCE19BFB422006FD165 = {
 			isa = PBXGroup;
 			children = (
+				22C5D6F919FF87E200CD8D26 /* runtime-pb-swift */,
 				22316DD919BFB422006FD165 /* nervous */,
 				22316DEE19BFB422006FD165 /* nervousTests */,
 				22316DD819BFB422006FD165 /* Products */,
@@ -156,7 +159,6 @@
 				22316DE519BFB422006FD165 /* Images.xcassets */,
 				22316DDA19BFB422006FD165 /* Supporting Files */,
 				22B03E5819CE0D6700E50D04 /* images */,
-				22BB43D719C1C20500A1F1FA /* runtime-pb-swift */,
 				22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */,
 				22316DDC19BFB422006FD165 /* AppDelegate.swift */,
 				22316DE219BFB422006FD165 /* Main.storyboard */,
@@ -222,26 +224,25 @@
 			path = images;
 			sourceTree = "<group>";
 		};
-		22BB43D719C1C20500A1F1FA /* runtime-pb-swift */ = {
+		22C5D6F919FF87E200CD8D26 /* runtime-pb-swift */ = {
 			isa = PBXGroup;
 			children = (
-				22BB43D819C1C20500A1F1FA /* AbstractMessage.swift */,
-				22BB43D919C1C20500A1F1FA /* CodedInputStream.swift */,
-				22BB43DA19C1C20500A1F1FA /* CodedOutputStream.swift */,
-				22BB43DB19C1C20500A1F1FA /* ConcreteExtensionField.swift */,
-				22BB43DC19C1C20500A1F1FA /* ExtendableMessage.swift */,
-				22BB43DD19C1C20500A1F1FA /* ExtendableMessageBuilder.swift */,
-				22BB43DE19C1C20500A1F1FA /* ExtensionField.swift */,
-				22BB43DF19C1C20500A1F1FA /* ExtensionRegistry.swift */,
-				22BB43E019C1C20500A1F1FA /* Field.swift */,
-				22BB43E119C1C20500A1F1FA /* GeneratedMessage.swift */,
-				22BB43E219C1C20500A1F1FA /* RingBuffer.swift */,
-				22BB43E319C1C20500A1F1FA /* UnknownFieldSet.swift */,
-				22BB43E419C1C20500A1F1FA /* UnknownFieldSetBuilder.swift */,
-				22BB43E519C1C20500A1F1FA /* WireFormat.swift */,
+				22C5D6FA19FF87E200CD8D26 /* AbstractMessage.swift */,
+				22C5D6FB19FF87E200CD8D26 /* CodedInputStream.swift */,
+				22C5D6FC19FF87E200CD8D26 /* CodedOutputStream.swift */,
+				22C5D6FD19FF87E200CD8D26 /* ConcreteExtensionField.swift */,
+				22C5D6FE19FF87E200CD8D26 /* ExtendableMessage.swift */,
+				22C5D6FF19FF87E200CD8D26 /* ExtendableMessageBuilder.swift */,
+				22C5D70019FF87E200CD8D26 /* ExtensionField.swift */,
+				22C5D70119FF87E200CD8D26 /* ExtensionRegistry.swift */,
+				22C5D70219FF87E200CD8D26 /* Field.swift */,
+				22C5D70319FF87E200CD8D26 /* GeneratedMessage.swift */,
+				22C5D70419FF87E200CD8D26 /* RingBuffer.swift */,
+				22C5D70519FF87E200CD8D26 /* UnknownFieldSet.swift */,
+				22C5D70619FF87E200CD8D26 /* UnknownFieldSetBuilder.swift */,
+				22C5D70719FF87E200CD8D26 /* WireFormat.swift */,
 			);
-			name = "runtime-pb-swift";
-			path = "../../protobuf-swift/src/runtime-pb-swift";
+			path = "runtime-pb-swift";
 			sourceTree = "<group>";
 		};
 		22E0A19A19F15DF2001D4548 /* maps */ = {
@@ -255,6 +256,8 @@
 		22FF8A8519F14ACB00AC6783 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22C5D6F719FF868E00CD8D26 /* libPods-ProtocolBuffers.a */,
+				2274F01F19FF85DD004FFAA6 /* libPods-ProtocolBuffers.a */,
 				22FF8A8C19F14B3A00AC6783 /* UIKit.framework */,
 				22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */,
 				22653FFA19D70898004E1AA2 /* QuartzCore.framework */,
@@ -414,29 +417,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22BB43F119C1C20500A1F1FA /* UnknownFieldSet.swift in Sources */,
-				22BB43E619C1C20500A1F1FA /* AbstractMessage.swift in Sources */,
-				22BB43E819C1C20500A1F1FA /* CodedOutputStream.swift in Sources */,
+				22C5D70E19FF87E200CD8D26 /* ExtensionField.swift in Sources */,
+				22C5D71519FF87E200CD8D26 /* WireFormat.swift in Sources */,
+				22C5D71219FF87E200CD8D26 /* RingBuffer.swift in Sources */,
+				22C5D71419FF87E200CD8D26 /* UnknownFieldSetBuilder.swift in Sources */,
 				22653FEF19D6D243004E1AA2 /* SensorDesc.swift in Sources */,
-				22BB43EB19C1C20500A1F1FA /* ExtendableMessageBuilder.swift in Sources */,
-				22BB43ED19C1C20500A1F1FA /* ExtensionRegistry.swift in Sources */,
-				22BB43E919C1C20500A1F1FA /* ConcreteExtensionField.swift in Sources */,
-				22BB43EA19C1C20500A1F1FA /* ExtendableMessage.swift in Sources */,
-				22BB43EE19C1C20500A1F1FA /* Field.swift in Sources */,
+				22C5D70819FF87E200CD8D26 /* AbstractMessage.swift in Sources */,
 				22653FF919D6FBDB004E1AA2 /* NervousVM.swift in Sources */,
-				22BB43F219C1C20500A1F1FA /* UnknownFieldSetBuilder.swift in Sources */,
+				22C5D71119FF87E200CD8D26 /* GeneratedMessage.swift in Sources */,
+				22C5D70B19FF87E200CD8D26 /* ConcreteExtensionField.swift in Sources */,
 				22316DDD19BFB422006FD165 /* AppDelegate.swift in Sources */,
-				22BB43EC19C1C20500A1F1FA /* ExtensionField.swift in Sources */,
 				22653FF119D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift in Sources */,
 				22B912E019D76F96006094C6 /* SensorViewController.swift in Sources */,
-				22BB43F019C1C20500A1F1FA /* RingBuffer.swift in Sources */,
-				22BB43EF19C1C20500A1F1FA /* GeneratedMessage.swift in Sources */,
+				22C5D70C19FF87E200CD8D26 /* ExtendableMessage.swift in Sources */,
+				22C5D70A19FF87E200CD8D26 /* CodedOutputStream.swift in Sources */,
+				22C5D70F19FF87E200CD8D26 /* ExtensionRegistry.swift in Sources */,
+				22C5D71319FF87E200CD8D26 /* UnknownFieldSet.swift in Sources */,
 				22653FF419D6E044004E1AA2 /* UploadTask.swift in Sources */,
-				22BB43E719C1C20500A1F1FA /* CodedInputStream.swift in Sources */,
 				22D2D66D19C0979E00B11C54 /* Sensorupload.pb.swift in Sources */,
 				22653FF619D6E669004E1AA2 /* BLESensor.swift in Sources */,
-				22BB43F319C1C20500A1F1FA /* WireFormat.swift in Sources */,
+				22C5D71019FF87E200CD8D26 /* Field.swift in Sources */,
 				22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */,
+				22C5D70D19FF87E200CD8D26 /* ExtendableMessageBuilder.swift in Sources */,
+				22C5D70919FF87E200CD8D26 /* CodedInputStream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +565,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Mapbox",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -585,6 +589,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Mapbox",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
