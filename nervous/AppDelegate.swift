@@ -43,7 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
         if(locationManager!.respondsToSelector("requestAlwaysAuthorization")) {
             locationManager!.requestAlwaysAuthorization()
-            
         }
         
         

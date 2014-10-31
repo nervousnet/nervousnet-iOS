@@ -45,7 +45,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Eo4-eP-4Cc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XUl-s9-h9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="yE1-cs-i8N" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -62,6 +61,7 @@
                         <segue destination="1Dr-A6-zMI" kind="relationship" relationship="rootViewController" id="8m2-71-Iak"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XUl-s9-h9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-620" y="-1093"/>
         </scene>
@@ -170,7 +170,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gG8-7C-pfn">
-                                <rect key="frame" x="16" y="285" width="37" height="30"/>
+                                <rect key="frame" x="22" y="513" width="48" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -178,13 +179,65 @@
                                     <action selector="saveSensorDetail:" destination="Q8l-Eb-nj9" eventType="touchUpInside" id="aBA-V3-29v"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Search for public sensors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysg-lu-bXX">
+                                <rect key="frame" x="219" y="492" width="201" height="71"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="When this happens," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBF-bY-jfh">
+                                <rect key="frame" x="16" y="44" width="262" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="do this:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ST-Rs-FBb">
+                                <rect key="frame" x="16" y="275" width="262" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKY-wv-s8E">
+                                <rect key="frame" x="0.0" y="95" width="600" height="162"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Q8l-Eb-nj9" id="ih7-XS-Q1l"/>
+                                    <outlet property="delegate" destination="Q8l-Eb-nj9" id="9bG-IW-rzc"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Connect a sensor kit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzT-H0-9We">
+                                <rect key="frame" x="436" y="492" width="262" height="71"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qe1-cV-wUH">
+                                <rect key="frame" x="0.0" y="322" width="600" height="162"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Q8l-Eb-nj9" id="f3s-zg-coV"/>
+                                    <outlet property="delegate" destination="Q8l-Eb-nj9" id="PkC-d2-hWT"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0ST-Rs-FBb" firstAttribute="top" secondItem="rKY-wv-s8E" secondAttribute="bottom" constant="18" id="AEz-62-a94"/>
+                            <constraint firstItem="rKY-wv-s8E" firstAttribute="top" secondItem="s0j-0z-vnr" secondAttribute="top" constant="95" id="Aar-0i-SNb"/>
+                            <constraint firstAttribute="trailing" secondItem="Qe1-cV-wUH" secondAttribute="trailing" id="JZS-wl-BQe"/>
+                            <constraint firstItem="WzT-H0-9We" firstAttribute="top" secondItem="Qe1-cV-wUH" secondAttribute="bottom" constant="8" symbolic="YES" id="LDS-l1-web"/>
+                            <constraint firstItem="rKY-wv-s8E" firstAttribute="top" secondItem="VBF-bY-jfh" secondAttribute="bottom" constant="3" id="WQQ-sg-8l7"/>
+                            <constraint firstItem="Ysg-lu-bXX" firstAttribute="top" secondItem="Qe1-cV-wUH" secondAttribute="bottom" constant="8" symbolic="YES" id="WqY-Kw-rhL"/>
+                            <constraint firstItem="Qe1-cV-wUH" firstAttribute="top" secondItem="rKY-wv-s8E" secondAttribute="bottom" constant="65" id="Yq4-nt-ael"/>
+                            <constraint firstItem="Qe1-cV-wUH" firstAttribute="trailing" secondItem="rKY-wv-s8E" secondAttribute="trailing" id="hq0-Rb-Ikb"/>
+                            <constraint firstItem="Qe1-cV-wUH" firstAttribute="leading" secondItem="s0j-0z-vnr" secondAttribute="leading" id="kl7-5d-1Uz"/>
+                            <constraint firstItem="Qe1-cV-wUH" firstAttribute="leading" secondItem="rKY-wv-s8E" secondAttribute="leading" id="t1c-Xp-rFJ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQW-u5-EMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851" y="-367"/>
+            <point key="canvasLocation" x="855" y="-367"/>
         </scene>
     </scenes>
     <resources>

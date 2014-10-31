@@ -31,10 +31,52 @@ class MapViewController: UIViewController {
     @IBAction func mapReset(sender: AnyObject) {
         
         //redownload the map (if stale) and center on me
-    
-        mapView.addAnnotation(RMPointAnnotation(mapView: mapView, coordinate: mapView.centerCoordinate, andTitle: "Na nu na na"))
-
+        var bc :String? = String(BeaconSingleton.shareInstance.count)
+        mapView.addAnnotation(RMPointAnnotation(mapView: mapView, coordinate: mapView.centerCoordinate, andTitle: bc))
+        
+        
+        /*
+        var circle :RMCircleAnnotation = RMCircleAnnotation(mapView: mapView, centerCoordinate: mapView.centerCoordinate, radiusInMeters: 10)
+        circle.lineColor = UIColor.redColor()
+        circle.fillColor = UIColor.orangeColor().colorWithAlphaComponent(0.3)
+        circle.clusteringEnabled = true
+        
+        mapView.addAnnotation(circle)
+        */
+        
     }
+    
+    
+    
+    
+    
+    /*
+    func mapLoad(manager:AFHTTPRequestOperationManager, layer:Int){
+        
+        
+        
+        var mapLayerJSONURLs:[[String]] = [[""], [""], [""], [""]]
+        
+        manager.GET(mapLayerJSONURLs[layer], parameters: nil, success: {
+                operation, responseObject in
+                
+                if let quote = responseObject?.objectForKey("query")?.objectForKey("results")?.objectForKey("quote") as? NSDictionary {
+                    
+                    let symbol = quote.objectForKey("Symbol") as? String
+                    let lastTradePriceOnly = quote.objectForKey("LastTradePriceOnly") as? String
+                    
+                    println("results: \(symbol) @ \(lastTradePriceOnly)")
+                } else {
+                    println("no quote")
+                }
+            },
+            failure: {
+                operation, error in
+                
+                println("Error: " + error.localizedDescription)
+        })
+    }
+    */
     
     
     
