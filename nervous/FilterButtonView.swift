@@ -20,8 +20,6 @@ class FilterButtonView: UIView {
         positionView()
         createButtons()
     }
-    
-    
 
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -34,7 +32,7 @@ class FilterButtonView: UIView {
         let screenHeight = UIScreen.mainScreen().bounds.height
         
         self.frame.origin.x = screenWidth - buttonSize - margin
-        self.frame.origin.y = screenHeight - buttonSize - margin - 30 // 30 BECAUSE SHITTY TOOLBAR
+        self.frame.origin.y = screenHeight - buttonSize - margin
         self.frame.size.width = buttonSize
         self.frame.size.height = buttonSize
     }
@@ -44,7 +42,7 @@ class FilterButtonView: UIView {
     func showFilterButtons() {
         for index in 2...numberOfButtons {
             UIView.animateWithDuration(0.5, delay: NSTimeInterval(Double(index - 1) * 0.05), usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: nil, animations: {
-                NSLog("try to remove this...")
+                NSLog("try to remove this...") //༼;´༎ຶ ۝ ༎ຶ༽
                 self.viewWithTag(index)?.transform = CGAffineTransformMakeScale(1, 1)
                 }, completion: { finished in
                     self.opened = true
@@ -57,7 +55,7 @@ class FilterButtonView: UIView {
     func hideFilterButtons() {
         for index in 2...numberOfButtons {
             UIView.animateWithDuration(0.18, delay: 0.05, options: nil, animations: {
-                NSLog("try to remove this...")
+               
                 self.viewWithTag(index)?.transform = CGAffineTransformMakeScale(0.001, 0.001)
                 self.viewWithTag(index)?.alpha = 0
                 }, completion: { finished in

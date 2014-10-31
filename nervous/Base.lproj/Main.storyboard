@@ -9,15 +9,7 @@
         <scene sceneID="Apl-NX-9fx">
             <objects>
                 <viewController id="1Dr-A6-zMI" customClass="MapViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems>
-                        <barButtonItem systemItem="refresh" id="jRs-ea-46K">
-                            <connections>
-                                <action selector="mapReset:" destination="1Dr-A6-zMI" id="0jK-UE-Bvc"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="jcA-Cy-D1m"/>
-                        <barButtonItem systemItem="bookmarks" id="YbY-kg-GDw"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="AQw-Vc-bt8">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="PgN-W7-ZaD">
                             <button key="customView" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="R4B-Nq-3Oj" userLabel="I">
@@ -36,7 +28,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYh-fk-sAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,7 +36,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Eo4-eP-4Cc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="yE1-cs-i8N" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yE1-cs-i8N" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5ox-wt-MFh">
@@ -54,9 +45,6 @@
                         <color key="tintColor" red="1" green="0.37528038530000002" blue="0.14839874559999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" contentMode="scaleToFill" translucent="NO" id="hP9-al-BMQ" customClass="MainToolbar" customModule="nervous" customModuleProvider="target">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
                         <segue destination="1Dr-A6-zMI" kind="relationship" relationship="rootViewController" id="8m2-71-Iak"/>
                     </connections>
