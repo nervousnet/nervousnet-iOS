@@ -12,7 +12,8 @@ import SpriteKit
 class MapViewController: UIViewController {
     
     var mapView :RMMapView!  //make this accessible so everyone can edit the map
-    
+    @IBOutlet var mapUIView :UIView!
+    @IBOutlet var toolbarUIView :UIView!
     
     @IBAction func btnSettingsAction(sender: AnyObject) {
     
@@ -89,10 +90,9 @@ class MapViewController: UIViewController {
         super.viewWillAppear(animated)
         
         
+        let cchTileSource :RMMBTilesSource = RMMBTilesSource(tileSetResource: "cch1")
         
         
-        
-        let cchTileSource :RMMBTilesSource = RMMBTilesSource(tileSetResource: "CCH31c3")
         let cchMapView :RMMapView = RMMapView(frame: self.view.bounds, andTilesource: cchTileSource)
         
 
@@ -109,14 +109,22 @@ class MapViewController: UIViewController {
         cchMapView.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
         cchMapView.adjustTilesForRetinaDisplay = false
         
+        var cchMapBGView :UIView! = UIView()
+        cchMapBGView.backgroundColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1)
+        
+        cchMapView.backgroundView = cchMapBGView
+        
+        cchMapView.bouncingEnabled = true
         
         mapView = cchMapView
 
-        self.view.addSubview(mapView)
+        self.mapUIView.addSubview(mapView)
+        
+        
         
         
         let filterButton = FilterButtonView(frame: CGRectZero)
-        self.view.addSubview(filterButton)
+        self.toolbarUIView.addSubview(filterButton)
         
         
     }

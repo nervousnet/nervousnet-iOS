@@ -9,6 +9,42 @@
         <scene sceneID="Apl-NX-9fx">
             <objects>
                 <viewController id="1Dr-A6-zMI" customClass="MapViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g27-Bq-WZJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="T9R-EO-oTR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ltQ-CC-TMQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="foX-rH-yCz">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0tQ-fz-lVO">
+                                <rect key="frame" x="0.0" y="276" width="600" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2D-uT-Tx4">
+                                        <rect key="frame" x="8" y="2" width="55" height="44"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Reset">
+                                            <color key="titleColor" red="1" green="0.37528038530000002" blue="0.14839874559999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="1" green="0.37528038530000002" blue="0.14839874559999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="mapReset:" destination="1Dr-A6-zMI" eventType="touchUpInside" id="bEF-eA-wEY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="0.37528038530000002" blue="0.14839874559999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T9R-EO-oTR" firstAttribute="top" secondItem="0tQ-fz-lVO" secondAttribute="bottom" id="jAG-bk-lJh"/>
+                        </constraints>
+                    </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="AQw-Vc-bt8">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="PgN-W7-ZaD">
@@ -28,6 +64,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapUIView" destination="foX-rH-yCz" id="upb-US-Nui"/>
+                        <outlet property="toolbarUIView" destination="0tQ-fz-lVO" id="yNx-Le-BJ5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYh-fk-sAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,6 +82,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5ox-wt-MFh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="0.37528038530000002" blue="0.14839874559999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
