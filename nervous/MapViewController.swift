@@ -115,7 +115,8 @@ class MapViewController: UIViewController {
         self.view.addSubview(mapView)
         
         
-
+        let filterButton = FilterButtonView(frame: CGRectZero)
+        self.view.addSubview(filterButton)
     }
     
     override func didReceiveMemoryWarning() {
