@@ -10,7 +10,7 @@ import UIKit
 
 class FilterButtonView: UIView {
     
-    var buttonSize: CGFloat = 40
+    var buttonSize: CGFloat = 50
     var margin: CGFloat = 10
     var numberOfButtons = 5
     var opened = false
