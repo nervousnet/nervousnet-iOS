@@ -35,6 +35,7 @@ class FilterButtonView: UIView {
         self.frame.origin.y = 0
         self.frame.size.width = buttonSize
         self.frame.size.height = buttonSize
+        
     }
     
     
@@ -42,12 +43,18 @@ class FilterButtonView: UIView {
     func showFilterButtons() {
         for index in 2...numberOfButtons {
             UIView.animateWithDuration(0.5, delay: NSTimeInterval(Double(index - 1) * 0.05), usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: nil, animations: {
-                NSLog("try to remove this...") //༼;´༎ຶ ۝ ༎ຶ༽
+                NSLog(".") //༼;´༎ຶ ۝ ༎ຶ༽
                 self.viewWithTag(index)?.transform = CGAffineTransformMakeScale(1, 1)
                 }, completion: { finished in
                     self.opened = true
             })
         }
+        
+        
+        self.frame.size.height = 240
+        self.frame.origin.y = self.frame.origin.y - 240
+        self.layer.backgroundColor = UIColor.redColor().CGColor
+        
     }
     
     
@@ -70,6 +77,7 @@ class FilterButtonView: UIView {
     
     func createButtons() {
         for index in 0...numberOfButtons - 1 {
+            var btnImageName :String = "maps"
             let button = UIButton(frame: CGRect(x: 0,
                                                 y: ((CGFloat(index) * buttonSize) + (CGFloat(index) * margin)) * -1,
                                             width: buttonSize,
@@ -81,10 +89,39 @@ class FilterButtonView: UIView {
             
             if (index > 0) {
                 button.transform = CGAffineTransformMakeScale(0, 0)
-                button.backgroundColor = UIColor.orangeColor()
+                
+                
+                switch(button.tag){
+                    case 2:
+                        btnImageName = "1st-floor-"
+                        break
+                    
+                    case 3:
+                        btnImageName = "2nd-floor-"
+                        break
+                    
+                    case 4:
+                        btnImageName = "3rd-floor-"
+                        break
+                    
+                    case 5:
+                        btnImageName = "relations-"
+                    break
+                    
+                    default:
+                        btnImageName = "close"
+                        break
+
+                }
+                
+                button.backgroundColor = UIColor.whiteColor()
             } else {
-                button.backgroundColor = UIColor.blackColor()
+                button.backgroundColor = UIColor.orangeColor()
             }
+            
+            button.setImage(UIImage(named: btnImageName+"0"), forState: UIControlState.Normal)
+            button.setImage(UIImage(named: btnImageName+"1"), forState: UIControlState.Highlighted)
+
             
             button.layer.cornerRadius = buttonSize / 2
             self.addSubview(button)

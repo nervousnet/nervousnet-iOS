@@ -14,6 +14,7 @@ class MapViewController: UIViewController {
     var mapView :RMMapView!  //make this accessible so everyone can edit the map
     @IBOutlet var mapUIView :UIView!
     @IBOutlet var toolbarUIView :UIView!
+    @IBOutlet weak var refreshMapButton: UIButton!
     
     @IBAction func btnSettingsAction(sender: AnyObject) {
     
@@ -34,6 +35,9 @@ class MapViewController: UIViewController {
         //redownload the map (if stale) and center on me
         var bc :String? = String(BeaconSingleton.shareInstance.count)
         mapView.addAnnotation(RMPointAnnotation(mapView: mapView, coordinate: mapView.centerCoordinate, andTitle: bc))
+        
+        var mapData = MapDataController()
+        mapData.downloadMapData()
         
         
         /*
@@ -89,6 +93,7 @@ class MapViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        refreshMapButton.layer.cornerRadius = 22
         
         let cchTileSource :RMMBTilesSource = RMMBTilesSource(tileSetResource: "cch1")
         

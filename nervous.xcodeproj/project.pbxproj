@@ -15,6 +15,7 @@
 		22392F381A044AEA008035FA /* cch0.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 22392F341A044AEA008035FA /* cch0.mbtiles */; };
 		22392F391A044AEA008035FA /* cch2.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 22392F351A044AEA008035FA /* cch2.mbtiles */; };
 		22392F3A1A044AEA008035FA /* cch1.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 22392F361A044AEA008035FA /* cch1.mbtiles */; };
+		22392F3E1A0CF421008035FA /* MapDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22392F3D1A0CF421008035FA /* MapDataController.swift */; };
 		22653FEF19D6D243004E1AA2 /* SensorDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FEE19D6D243004E1AA2 /* SensorDesc.swift */; };
 		22653FF119D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FF019D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift */; };
 		22653FF419D6E044004E1AA2 /* UploadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FF319D6E044004E1AA2 /* UploadTask.swift */; };
@@ -72,6 +73,7 @@
 		22392F341A044AEA008035FA /* cch0.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; name = cch0.mbtiles; path = maps/cch0.mbtiles; sourceTree = "<group>"; };
 		22392F351A044AEA008035FA /* cch2.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; name = cch2.mbtiles; path = maps/cch2.mbtiles; sourceTree = "<group>"; };
 		22392F361A044AEA008035FA /* cch1.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; name = cch1.mbtiles; path = maps/cch1.mbtiles; sourceTree = "<group>"; };
+		22392F3D1A0CF421008035FA /* MapDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDataController.swift; sourceTree = "<group>"; };
 		22653FEE19D6D243004E1AA2 /* SensorDesc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDesc.swift; sourceTree = "<group>"; };
 		22653FF019D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescBLEBeacon.swift; sourceTree = "<group>"; };
 		22653FF319D6E044004E1AA2 /* UploadTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadTask.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				22316DE219BFB422006FD165 /* Main.storyboard */,
 				22B912DF19D76F96006094C6 /* SensorViewController.swift */,
 				22B03E5419CE032B00E50D04 /* MapViewController.swift */,
+				22392F3D1A0CF421008035FA /* MapDataController.swift */,
 				311E826F1A001D8500C176FE /* FilterButtonView.swift */,
 				22C5D71819FFADBA00CD8D26 /* SensorDetailController.swift */,
 				22653FF719D6FBB1004E1AA2 /* vm */,
@@ -449,6 +452,7 @@
 				22D2D66D19C0979E00B11C54 /* Sensorupload.pb.swift in Sources */,
 				22653FF619D6E669004E1AA2 /* BLESensor.swift in Sources */,
 				22C5D71019FF87E200CD8D26 /* Field.swift in Sources */,
+				22392F3E1A0CF421008035FA /* MapDataController.swift in Sources */,
 				22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */,
 				22C5D70D19FF87E200CD8D26 /* ExtendableMessageBuilder.swift in Sources */,
 				22C5D70919FF87E200CD8D26 /* CodedInputStream.swift in Sources */,
