@@ -13,13 +13,13 @@ import CoreData
 @objc(MapNode)
 class MapNode: NSManagedObject {
     
-    @NSManaged var uuid: NSNumber
-    @NSManaged var color: NSNumber
-    @NSManaged var label: String
-    @NSManaged var size: NSNumber
-    @NSManaged var timestamp: NSNumber
-    @NSManaged var lat: NSNumber
-    @NSManaged var lon: NSNumber
+    @NSManaged var uuid: NSString?
+    @NSManaged var color: NSNumber?
+    @NSManaged var label: NSString?
+    @NSManaged var size: NSNumber?
+    @NSManaged var timestamp: NSNumber?
+    @NSManaged var lat: NSNumber?
+    @NSManaged var lon: NSNumber?
 
     
     

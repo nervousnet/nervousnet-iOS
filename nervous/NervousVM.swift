@@ -18,6 +18,20 @@ class NervousVM {
             NSLog("created new uuid")
         }else{
             NSLog("uuid exists")
+            NSLog(getHUUID().description)
+            NSLog(getLUUID().description)
+            
+            
+            //TODO TODO TODO TODO TODO
+            var UUIDBytes: UInt8 = 0
+            
+            var newUUID:NSUUID = NSUUID()
+            newUUID.getUUIDBytes(&UUIDBytes)
+            
+            let newUUIDData = NSData(bytes: &UUIDBytes, length: 16)
+            NSLog(newUUIDData.description)
+            
+
         }
         
     }
@@ -36,9 +50,11 @@ class NervousVM {
     func generateUUID() -> Bool {
         
         if(defaults.integerForKey("huuid") != 0){
+            
             return false
             
         }else{
+            
             
             defaults.setInteger(Int(arc4random()), forKey: "huuid")
             defaults.setInteger(Int(arc4random()), forKey: "luuid")

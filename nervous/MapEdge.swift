@@ -13,11 +13,11 @@ import CoreData
 @objc(MapEdge)
 class MapEdge: NSManagedObject {
    
-    @NSManaged var id: NSNumber
-    @NSManaged var source_uuid: NSNumber
-    @NSManaged var target_uuid: NSNumber
-    @NSManaged var weight: NSNumber
-    @NSManaged var timestamp: NSNumber    
+    @NSManaged var id: NSNumber?
+    @NSManaged var source_uuid: NSString?
+    @NSManaged var target_uuid: NSString?
+    @NSManaged var weight: NSNumber?
+    @NSManaged var timestamp: NSNumber?
     
     
 }

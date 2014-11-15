@@ -47,31 +47,30 @@ class UploadTask :NSObject, NSStreamDelegate {
     
     
     func writeToRouter(){
-        
-        var sensorData :SensorUpload = self.pbSensorupload!
-        var out :NSOutputStream = self.outputStream!
-        var inp :NSInputStream = self.inputStream!
-        var i = 0
-        
-        //TODO: make this less hacky, add proper timers
-        while (out.streamStatus == NSStreamStatus.Opening){
-            i++
-            if(out.streamStatus == NSStreamStatus.Error){
-                NSLog("dies")
-                out.close()
-                inp.close()
-            }else if (i > 10000) {
-                NSLog("dies: timeout")
-                out.close()
-                inp.close()
+            var sensorData :SensorUpload = self.pbSensorupload!
+            var out :NSOutputStream = self.outputStream!
+            var inp :NSInputStream = self.inputStream!
+            var i = 0
+            
+            //TODO: make this less hacky, add proper timers
+            while (out.streamStatus == NSStreamStatus.Opening){
+                i++
+                if(out.streamStatus == NSStreamStatus.Error){
+                    NSLog("dies")
+                    out.close()
+                    inp.close()
+                }else if (i > 10000) {
+                    NSLog("dies: timeout")
+                    out.close()
+                    inp.close()
+                }
+                
             }
             
-        }
-        
-        sensorData.writeDelimitedToOutputStream(out)
-        
-        out.close()
-        inp.close()
+            sensorData.writeDelimitedToOutputStream(out)
+            
+            out.close()
+            inp.close()
     }
     
     

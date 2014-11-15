@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol FilterButtonDelegate{
+    func filterButtonPressed(buttonTag:Int)
+}
+
+
 class FilterButtonView: UIView {
+    var delegate :FilterButtonDelegate? = nil
     
-    var buttonSize: CGFloat = 50
+    var buttonSize: CGFloat = 51
     var margin: CGFloat = 10
     var numberOfButtons = 5
     var opened = false
@@ -19,6 +25,8 @@ class FilterButtonView: UIView {
         super.init(frame: frame)
         positionView()
         createButtons()
+        
+        
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -28,14 +36,14 @@ class FilterButtonView: UIView {
     
     
     func positionView() {
-       let screenWidth = UIScreen.mainScreen().bounds.width
+        let screenWidth = UIScreen.mainScreen().bounds.width
         let screenHeight = UIScreen.mainScreen().bounds.height
         
         self.frame.origin.x = screenWidth - buttonSize - margin
-        self.frame.origin.y = 0
+        self.frame.origin.y = screenHeight - buttonSize - 9.5*margin
         self.frame.size.width = buttonSize
         self.frame.size.height = buttonSize
-        
+
     }
     
     
@@ -50,16 +58,16 @@ class FilterButtonView: UIView {
             })
         }
         
-        
-        self.frame.size.height = 240
-        self.frame.origin.y = self.frame.origin.y - 240
-        self.layer.backgroundColor = UIColor.redColor().CGColor
-        
+
+        self.frame.size.height = 240 + buttonSize
+        self.frame.origin.y = self.frame.origin.y - self.frame.size.height + buttonSize
+
     }
     
     
     
     func hideFilterButtons() {
+        positionView()
         for index in 2...numberOfButtons {
             UIView.animateWithDuration(0.18, delay: 0.05, options: nil, animations: {
                
@@ -77,7 +85,7 @@ class FilterButtonView: UIView {
     
     func createButtons() {
         for index in 0...numberOfButtons - 1 {
-            var btnImageName :String = "maps"
+            var btnImageName :String = "relations-"
             let button = UIButton(frame: CGRect(x: 0,
                                                 y: ((CGFloat(index) * buttonSize) + (CGFloat(index) * margin)) * -1,
                                             width: buttonSize,
@@ -86,6 +94,7 @@ class FilterButtonView: UIView {
             button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
             button.setTitle((index + 1).description, forState: UIControlState.Normal)
             button.tag = index + 1
+            button.autoresizingMask = (UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleRightMargin)
             
             if (index > 0) {
                 button.transform = CGAffineTransformMakeScale(0, 0)
@@ -109,14 +118,13 @@ class FilterButtonView: UIView {
                     break
                     
                     default:
-                        btnImageName = "close"
                         break
 
                 }
                 
                 button.backgroundColor = UIColor.whiteColor()
             } else {
-                button.backgroundColor = UIColor.orangeColor()
+                button.backgroundColor = UIColor(red:1, green:0.376, blue:0.149, alpha:1)
             }
             
             button.setImage(UIImage(named: btnImageName+"0"), forState: UIControlState.Normal)
@@ -129,19 +137,55 @@ class FilterButtonView: UIView {
         
     }
     
-    
-    
     func buttonAction(sender: UIButton!) {
-        switch sender.tag {
-        case 1:
-            if opened == false {
-                showFilterButtons()
-            } else {
-                hideFilterButtons()
-            }
-        default:
-            NSLog("nüt du")
-        }
-    }
+        
+        var currentBtn: UIButton = self.subviews.first as UIButton
+        var btnImageName: NSString = "relations-"
+        if(self.opened != true){
+            currentBtn.setImage(UIImage(named: "close"), forState: UIControlState.Normal)
+            currentBtn.setImage(UIImage(named: "close"), forState: UIControlState.Normal)
 
+        }else{
+            
+            
+            switch(sender.tag){
+                case 2:
+                    btnImageName = "1st-floor-"
+                    break
+                    
+                case 3:
+                    btnImageName = "2nd-floor-"
+                    break
+                    
+                case 4:
+                    btnImageName = "3rd-floor-"
+                    break
+                    
+                case 5:
+                    btnImageName = "relations-"
+                    break
+                
+                default:
+                    break
+            }
+
+            
+            currentBtn.setImage(UIImage(named: btnImageName+"0"), forState: UIControlState.Normal)
+            currentBtn.setImage(UIImage(named: btnImageName+"1"), forState: UIControlState.Highlighted)
+
+        
+        }
+        
+        
+        delegate?.filterButtonPressed(sender.tag)
+
+        if opened == false {
+            showFilterButtons()
+        } else {
+            hideFilterButtons()
+        }
+
+        
+    }
+    
 }

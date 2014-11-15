@@ -65,10 +65,12 @@ class BLESensor {
                 
             }
             
+            dispatch_async(dispatch_get_main_queue()) {
+
+                let up = UploadTask(pbSensorupload: beaconSensor.build())
+                up.writeToRouter()
             
-            let up = UploadTask(pbSensorupload: beaconSensor.build())
-            up.writeToRouter()
-            
+            }
         
             
         }
