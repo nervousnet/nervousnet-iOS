@@ -5,7 +5,7 @@
         <attribute name="source_uuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="target_uuid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="MapNode" syncable="YES">
         <attribute name="color" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>

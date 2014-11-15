@@ -109,17 +109,15 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
             
             if(m.title == "Phone"){
                 
-            
-                var edge : RMShape = RMShape(view: self.mapView)
-                edge.lineWidth = 3.0
-                edge.lineColor = UIColor.orangeColor()
+                var anls : [RMAnnotation] = []
                 
-                edge.moveToCoordinate(m.coordinate)
-                
-                            
                 for connectedNode in m.userInfo as NSArray {
                     
                     var connectedNodeProp: NSArray = connectedNode[1] as NSArray
+                    var size : Float = connectedNode[0] as Float
+                    
+                    NSLog(size.description)
+                    
                     
                     if(connectedNodeProp.count > 0){
                         
@@ -127,7 +125,13 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
                         var connectedNodeLat = connectedNodeProp.objectAtIndex(0).allValues[2].doubleValue
                         var connectedNodeLon = connectedNodeProp.objectAtIndex(0).allValues[3].doubleValue
                         
-                
+                        
+                        var edge :RMShape = RMShape(view: self.mapView)
+                        edge.lineWidth = 3.0
+                        edge.lineColor = UIColor.orangeColor()
+                        
+                        edge.moveToCoordinate(m.coordinate)
+                        edge.drawsAsynchronously = true
 
                         edge.addLineToCoordinate(CLLocationCoordinate2DMake(connectedNodeLon, connectedNodeLat))
 
@@ -137,12 +141,21 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
                         anl.layer = edge
                         
                         
-                        self.mapView.addAnnotation(anl)
+                        var phoneRadius:RMCircleAnnotation = RMCircleAnnotation(mapView: mapView, centerCoordinate: m.coordinate, radiusInMeters: 10.0)
+                        phoneRadius.lineWidth = 2
+                        phoneRadius.lineColor = UIColor.orangeColor()
+                        phoneRadius.fillColor = UIColor.orangeColor().colorWithAlphaComponent(0.4)
+                        
+                        anls.append(phoneRadius)
+                        anls.append(anl)
                         
                     }
                     
                     
                 }
+                
+                self.mapView.addAnnotations(anls)
+
                 
 
             }
@@ -151,17 +164,30 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
     }
     
 
+    func mapView(mapView: RMMapView!, annotation: RMAnnotation!, didChangeDragState newState: RMMapLayerDragState, fromOldState oldState: RMMapLayerDragState) {
+        
+        
+    }
     
     func mapView(mapView: RMMapView!, layerForAnnotation annotation: RMAnnotation!) -> RMMapLayer! {
-
+        
         
         var phoneMarker: RMMarker = RMMarker(UIImage: UIImage(named: "first"))
         phoneMarker.canShowCallout = true
-    
+        
+       /* var beaconRadius = RMCircle(view: mapView, radiusInMeters: 10.0)
+        beaconRadius.lineColor = UIColor.redColor()
+        beaconRadius.lineWidthInPixels = 5.0
+        beaconRadius.fillColor = UIColor.redColor().colorWithAlphaComponent(0.2)
+        phoneMarker.position = annotation.position
+        beaconRadius.addSublayer(phoneMarker)
+        */
         
         var beaconMarker: RMMarker = RMMarker(UIImage: UIImage(named: "second"))
         beaconMarker.canShowCallout = true
-
+        
+        
+        
         NSLog("modding map")
 
         if(annotation.title == "Phone"){

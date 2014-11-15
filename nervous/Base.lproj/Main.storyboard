@@ -135,11 +135,11 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Vky-E3-dNG">
-                            <rect key="frame" x="0.0" y="158" width="600" height="103"/>
+                            <rect key="frame" x="0.0" y="162" width="600" height="217"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjC-9Y-Iu6">
-                                    <rect key="frame" x="33" y="37" width="535" height="36"/>
+                                    <rect key="frame" x="33" y="37" width="535" height="40"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                     <state key="normal" title="Add new rule">
@@ -149,12 +149,27 @@
                                         <segue destination="Q8l-Eb-nj9" kind="showDetail" id="d5n-c8-sLK"/>
                                     </connections>
                                 </button>
+                                <button contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DO1-NH-bhR">
+                                    <rect key="frame" x="32" y="89" width="535" height="40"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                    <state key="normal" title="Reset App Data">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="clearDatabase" destination="eqb-KG-beL" eventType="touchUpInside" id="BLS-zR-KdA"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="mjC-9Y-Iu6" secondAttribute="bottom" constant="30" id="2wk-Wh-58g"/>
+                                <constraint firstAttribute="bottom" secondItem="mjC-9Y-Iu6" secondAttribute="bottom" constant="140" id="2wk-Wh-58g"/>
+                                <constraint firstAttribute="bottom" secondItem="DO1-NH-bhR" secondAttribute="bottom" constant="88" id="5Ej-Nz-82a"/>
+                                <constraint firstItem="DO1-NH-bhR" firstAttribute="leading" secondItem="Vky-E3-dNG" secondAttribute="leading" constant="32" id="W9n-Y0-HfZ"/>
                                 <constraint firstItem="mjC-9Y-Iu6" firstAttribute="top" secondItem="Vky-E3-dNG" secondAttribute="top" constant="37" id="Yad-RI-Z3k"/>
+                                <constraint firstAttribute="trailing" secondItem="DO1-NH-bhR" secondAttribute="trailing" constant="33" id="cPS-ON-bOR"/>
                                 <constraint firstItem="mjC-9Y-Iu6" firstAttribute="leading" secondItem="Vky-E3-dNG" secondAttribute="leading" constant="33" id="di8-1e-BuT"/>
+                                <constraint firstItem="DO1-NH-bhR" firstAttribute="top" secondItem="mjC-9Y-Iu6" secondAttribute="bottom" constant="12" id="mdS-Pe-AY2"/>
                                 <constraint firstItem="mjC-9Y-Iu6" firstAttribute="centerX" secondItem="Vky-E3-dNG" secondAttribute="centerX" id="vBs-Gh-21j"/>
                             </constraints>
                         </view>

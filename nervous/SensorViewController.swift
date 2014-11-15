@@ -7,11 +7,24 @@
 //
 
 import UIKit
+import CoreData
 
 class SensorViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     var items: [[String]] = [["Phone", "Map"], ["Room", "Map"], ["Motion", "Tone"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"]]
 
+    
+    @IBAction func clearDatabase(){
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        
+        var storeCoordinator:NSPersistentStoreCoordinator = appDelegate.persistentStoreCoordinator!
+        var store:NSPersistentStore = storeCoordinator.persistentStores.last as NSPersistentStore
+        var storeURL:NSURL = store.URL!
+        storeCoordinator.removePersistentStore(store, error: nil)
+        NSFileManager.defaultManager().removeItemAtPath(storeURL.path!, error: nil)
+        
+    }
+    
     
     @IBAction func closeSensorView(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)

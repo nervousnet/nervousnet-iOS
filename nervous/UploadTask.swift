@@ -59,7 +59,7 @@ class UploadTask :NSObject, NSStreamDelegate {
                     NSLog("dies")
                     out.close()
                     inp.close()
-                }else if (i > 10000) {
+                }else if (i > 30000) {
                     NSLog("dies: timeout")
                     out.close()
                     inp.close()
