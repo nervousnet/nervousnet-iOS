@@ -40,10 +40,11 @@ class FilterButtonView: UIView {
         let screenHeight = UIScreen.mainScreen().bounds.height
         
         self.frame.origin.x = screenWidth - buttonSize - margin
-        self.frame.origin.y = screenHeight - buttonSize - 9.5*margin
+        self.frame.origin.y = screenHeight - screenHeight/5 - margin
+
         self.frame.size.width = buttonSize
         self.frame.size.height = buttonSize
-
+    
     }
     
     

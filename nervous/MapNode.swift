@@ -20,7 +20,7 @@ class MapNode: NSManagedObject {
     @NSManaged var timestamp: NSNumber?
     @NSManaged var lat: NSNumber?
     @NSManaged var lon: NSNumber?
+    @NSManaged var level: NSNumber?
 
-    
     
 }

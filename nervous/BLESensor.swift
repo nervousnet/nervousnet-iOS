@@ -40,14 +40,14 @@ class BLESensor {
  
             BeaconSingleton.shareInstance.count = beacons.count
             
-            NSLog("%i", BeaconSingleton.shareInstance.count)
+            NSLog("%i", beacons.count)
             
             
             let date = NSDate()
             let beaconSensor = SensorUpload.builder()
             
-            beaconSensor.huuid = UInt64(nvm.getHUUID()) //phone huuid
-            beaconSensor.luuid = UInt64(nvm.getLUUID()) //phone luuid
+            beaconSensor.huuid = nvm.getHUUID() //phone huuid
+            beaconSensor.luuid = nvm.getLUUID() //phone luuid
 
             beaconSensor.uploadTime = UInt64(currentTime.timeIntervalSince1970*1000)
             beaconSensor.sensorId = 0x000000000000000B

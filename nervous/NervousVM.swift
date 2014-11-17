@@ -16,31 +16,27 @@ class NervousVM {
         
         if(self.generateUUID()){
             NSLog("created new uuid")
-        }else{
-            NSLog("uuid exists")
-            NSLog(getHUUID().description)
-            NSLog(getLUUID().description)
-            
-            
-            
         }
-        
     }
     
     
-    func getHUUID() -> NSInteger {
-        return defaults.integerForKey("huuid")
+    func getHUUID() -> UInt64 {
+        return UInt64(defaults.integerForKey("huuid"))
     }
     
     
-    func getLUUID() -> NSInteger {
-        return defaults.integerForKey("luuid")
+    func getLUUID() -> UInt64 {
+        return UInt64(defaults.integerForKey("luuid"))
     }
     
+    
+    func getBeaconMinor() -> CLBeaconMinorValue {
+        return CLBeaconMinorValue(defaults.integerForKey("beaconminor"))
+    }
     
     func generateUUID() -> Bool {
         
-        if(defaults.integerForKey("huuid") != 0){
+        if(defaults.integerForKey("huuid") != 0 && defaults.integerForKey("beaconminor") != 0){
             
             return false
             
@@ -61,9 +57,11 @@ class NervousVM {
             var HUUID = NSData(bytes: &HUUIDBytes, length: 8)
             */
             
+            var beaconMinor :NSInteger = (NSInteger(arc4random()) % (255 - 1025)) + 255
             
             defaults.setInteger(HUUIDBytes, forKey: "huuid")
             defaults.setInteger(LUUIDBytes, forKey: "luuid")
+            defaults.setInteger(beaconMinor, forKey: "beaconminor")
             defaults.synchronize()
             
             return true

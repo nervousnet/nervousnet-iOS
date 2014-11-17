@@ -18,6 +18,7 @@ class MapEdge: NSManagedObject {
     @NSManaged var target_uuid: NSString?
     @NSManaged var weight: NSNumber?
     @NSManaged var timestamp: NSNumber?
-    
+    @NSManaged var level: NSNumber?
+
     
 }

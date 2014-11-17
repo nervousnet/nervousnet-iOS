@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		22316DDD19BFB422006FD165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DDC19BFB422006FD165 /* AppDelegate.swift */; };
 		22316DE419BFB422006FD165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22316DE219BFB422006FD165 /* Main.storyboard */; };
-		22316DE619BFB422006FD165 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22316DE519BFB422006FD165 /* Images.xcassets */; };
 		22316DF219BFB422006FD165 /* nervousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DF119BFB422006FD165 /* nervousTests.swift */; };
 		22392F371A044AEA008035FA /* blank.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 22392F331A044AEA008035FA /* blank.mbtiles */; };
 		22392F381A044AEA008035FA /* cch0.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 22392F341A044AEA008035FA /* cch0.mbtiles */; };
@@ -44,6 +43,7 @@
 		22D10CA919D598A1000D6942 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D10CA819D598A1000D6942 /* CFNetwork.framework */; };
 		22D2D66D19C0979E00B11C54 /* Sensorupload.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */; };
 		22D2D66F19C097F900B11C54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D2D66E19C097F900B11C54 /* Foundation.framework */; };
+		22F16C851A1A0E8E00EB97F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F16C841A1A0E8E00EB97F5 /* Images.xcassets */; };
 		22F1A5FB1A10A5E30097B2E4 /* nervous.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22F1A5F91A10A5E30097B2E4 /* nervous.xcdatamodeld */; };
 		22F1A6001A10A8260097B2E4 /* MapEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1A5FF1A10A8260097B2E4 /* MapEdge.swift */; };
 		22F1A6021A10A82E0097B2E4 /* MapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1A6011A10A82E0097B2E4 /* MapNode.swift */; };
@@ -68,7 +68,6 @@
 		22316DDB19BFB422006FD165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22316DDC19BFB422006FD165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22316DE319BFB422006FD165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		22316DE519BFB422006FD165 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22316DEB19BFB422006FD165 /* nervousTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nervousTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22316DF019BFB422006FD165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22316DF119BFB422006FD165 /* nervousTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nervousTests.swift; sourceTree = "<group>"; };
@@ -108,6 +107,7 @@
 		22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensorupload.pb.swift; sourceTree = "<group>"; };
 		22D2D66E19C097F900B11C54 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22E0A19719F15A0A001D4548 /* -Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "-Bridging-Header.h"; sourceTree = "<group>"; };
+		22F16C841A1A0E8E00EB97F5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22F1A5FA1A10A5E30097B2E4 /* nervous.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nervous.xcdatamodel; sourceTree = "<group>"; };
 		22F1A5FF1A10A8260097B2E4 /* MapEdge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapEdge.swift; sourceTree = "<group>"; };
 		22F1A6011A10A82E0097B2E4 /* MapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNode.swift; sourceTree = "<group>"; };
@@ -148,6 +148,7 @@
 		22316DCE19BFB422006FD165 = {
 			isa = PBXGroup;
 			children = (
+				22F16C841A1A0E8E00EB97F5 /* Images.xcassets */,
 				22C5D6F919FF87E200CD8D26 /* runtime-pb-swift */,
 				22316DD919BFB422006FD165 /* nervous */,
 				22316DEE19BFB422006FD165 /* nervousTests */,
@@ -170,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				22E0A19719F15A0A001D4548 /* -Bridging-Header.h */,
-				22316DE519BFB422006FD165 /* Images.xcassets */,
 				22316DDA19BFB422006FD165 /* Supporting Files */,
 				22B03E5819CE0D6700E50D04 /* images */,
 				22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */,
@@ -393,8 +393,8 @@
 			files = (
 				22392F381A044AEA008035FA /* cch0.mbtiles in Resources */,
 				22316DE419BFB422006FD165 /* Main.storyboard in Resources */,
-				22316DE619BFB422006FD165 /* Images.xcassets in Resources */,
 				22392F391A044AEA008035FA /* cch2.mbtiles in Resources */,
+				22F16C851A1A0E8E00EB97F5 /* Images.xcassets in Resources */,
 				22392F371A044AEA008035FA /* blank.mbtiles in Resources */,
 				22392F3A1A044AEA008035FA /* cch1.mbtiles in Resources */,
 			);

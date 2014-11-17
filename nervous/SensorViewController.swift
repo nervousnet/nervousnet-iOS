@@ -11,20 +11,12 @@ import CoreData
 
 class SensorViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
-    var items: [[String]] = [["Phone", "Map"], ["Room", "Map"], ["Motion", "Tone"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"], ["Room", "Map"]]
+    var items: [[String]] = [["sensorview_setting_0", "Put my phone", "on map"], ["sensorview_setting_1", "Allow others", "to see me"]] //do not change order yet ::TODO
+    
+    
+    
+    let defaults :NSUserDefaults = NSUserDefaults.standardUserDefaults()
 
-    
-    @IBAction func clearDatabase(){
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        
-        var storeCoordinator:NSPersistentStoreCoordinator = appDelegate.persistentStoreCoordinator!
-        var store:NSPersistentStore = storeCoordinator.persistentStores.last as NSPersistentStore
-        var storeURL:NSURL = store.URL!
-        storeCoordinator.removePersistentStore(store, error: nil)
-        NSFileManager.defaultManager().removeItemAtPath(storeURL.path!, error: nil)
-        
-    }
-    
     
     @IBAction func closeSensorView(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -54,35 +46,37 @@ class SensorViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
-        cell.textLabel.text = "If \(items[indexPath.row][0]) then \(items[indexPath.row][1])"
+        cell.textLabel.text = "\(items[indexPath.row][1]) \(items[indexPath.row][2])"
         
         cell.backgroundColor = UIColor.clearColor()
         
-        
         //activation switch
         var sensorSwitch :UISwitch = UISwitch()
-        sensorSwitch.on = false
+        sensorSwitch.tag = indexPath.row
         sensorSwitch.frame = CGRectMake(cell.bounds.width-60, 14, 44, 44)
+        sensorSwitch.addTarget(self, action: Selector("stateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        if(defaults.integerForKey(items[indexPath.row][0]) == 0){
+            sensorSwitch.on = false
+        }else{
+            sensorSwitch.on = true
+        }
         
         cell.addSubview(sensorSwitch)
         
         return cell
     }
     
-    // UITableViewDelegate methods
-    
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        
-        let alert = UIAlertController(title: "Item selected", message: "You selected item \(indexPath.row)", preferredStyle: UIAlertControllerStyle.Alert)
-        
-        alert.addAction(UIAlertAction(title: "OK",
-            style: UIAlertActionStyle.Default,
-            handler: {
-                (alert: UIAlertAction!) in println("An alert of type \(alert.style.hashValue) was tapped!")
-        }))
-        
-        self.presentViewController(alert, animated: true, completion: nil)
-        
+
+    func stateChanged(switchState: UISwitch) {
+        if switchState.on {
+            defaults.setInteger(1, forKey: items[switchState.tag][0])
+            NSLog("%@ switched on", items[switchState.tag][0])
+            
+        } else {
+            defaults.setInteger(0, forKey: items[switchState.tag][0])
+            NSLog("%@ switched off", items[switchState.tag][0])
+
+        }
     }
 
 }
