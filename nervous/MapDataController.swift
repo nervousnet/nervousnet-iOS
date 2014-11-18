@@ -238,44 +238,112 @@ class MapDataController {
         
     }
     
-    /*
-    func downloadSensorData() -> NSArray {
+    
+    
+    func downloadPOIData() -> Void {
+        NSLog("attempting poi json download")
+        let defaults :NSUserDefaults = NSUserDefaults.standardUserDefaults()
+
+        
+        var sessionManager = AFHTTPRequestOperationManager()
+        sessionManager.requestSerializer.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData
+        
+        var mapPOIJSONURL = nervousDataURL + "poi.json"
+        var mapPOI:[NSArray] = [[]]
+        
+        sessionManager.GET(mapPOIJSONURL, parameters: nil, success: {
+            (task: NSOperation!, responseObject: AnyObject!) in
+            
+            
+            if (responseObject.isKindOfClass(NSArray)) {
+                NSLog("downloaded poi json. saving.")
+                
+                
+                for row in responseObject as NSArray {
+                    if(row.isKindOfClass(NSDictionary)){
+                       
+                        var levelPOI :NSDictionary = row as NSDictionary
+                        
+                        
+                        // mapPOI.append(row as NSArray)
+                        defaults.setObject(levelPOI as NSDictionary, forKey: "mapPOI_level"+levelPOI.allKeys[0].description)
+                                                
+                        defaults.synchronize()
+
+                        //NSLog((row as NSArray).description)
+                    }
+                }
+                
+                
+                //defaults.setObject(mapPOI, forKey: "mapPOI")
+                
+                
+            }
+            
+            
+            }, failure: {
+                (task: NSOperation!, responseObject: AnyObject!) in
+                NSLog("error downloading poi metadata: " + responseObject.description)
+                
+                
+        })
+        
+        
+    }
+    
+    
+    
+    func downloadSensorData() -> Void {
         NSLog("attempting sensor json download")
+        let defaults :NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
         
         var sessionManager = AFHTTPRequestOperationManager()
         sessionManager.requestSerializer.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData
         
-        var mapSensorJSONURL = nervousDataURL + "sensors.json"
-        var mapSensors:[NSArray] = []
-
-        sessionManager.GET(mapSensorJSONURL, parameters: nil, success: {
+        var mapSensorsJSONURL = nervousDataURL + "sensors.json"
+        var mapSensors:[NSArray] = [[]]
+        
+        sessionManager.GET(mapSensorsJSONURL, parameters: nil, success: {
             (task: NSOperation!, responseObject: AnyObject!) in
             
             
             if (responseObject.isKindOfClass(NSArray)) {
-                NSLog("downloaded map json. saving to core data.")
+                NSLog("downloaded sensor json. saving.")
                 
                 
                 for row in responseObject as NSArray {
                     if(row.isKindOfClass(NSDictionary)){
-                        mapSensors.append(row as NSArray)
+                        
+                        var levelSensor :NSDictionary = row as NSDictionary
+                        
+                        
+                        // mapPOI.append(row as NSArray)
+                        defaults.setObject(levelSensor as NSDictionary, forKey: "mapSensor_level"+levelSensor.allKeys[0].description)
+                        
+                        defaults.synchronize()
+                        
+                        //NSLog((row as NSArray).description)
                     }
                 }
+                
+                
+                //defaults.setObject(mapPOI, forKey: "mapPOI")
+                
+                
             }
             
             
-        }, failure: {
+            }, failure: {
                 (task: NSOperation!, responseObject: AnyObject!) in
-                NSLog("error downloading sensor metadata: " + responseObject.description)
+                NSLog("error downloading poi metadata: " + responseObject.description)
                 
                 
         })
         
-        return mapSensors
-
+        
     }
-    */
+
     
         
     

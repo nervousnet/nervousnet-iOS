@@ -13,10 +13,7 @@ class NervousVM {
     let defaults :NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
     init(){
-        
-        if(self.generateUUID()){
-            NSLog("created new uuid")
-        }
+        var genUUID = self.generateUUID()
     }
     
     

@@ -70,38 +70,23 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
         
         if(buttonTag != 1){
             mapView.tileSource = RMMBTilesSource(tileSetResource: mapLayer)
-            mapView.removeAllAnnotations()
+            self.mapReset(self)
         }
     }
     
     @IBAction func mapReset(sender: AnyObject) {
         
         
-        
-        
         //redownload the map (if stale) and center on me
         var nvm = NervousVM()
-
-        NSLog(NSString(format:"%2X", nvm.getHUUID().toUIntMax()))
-        NSLog(NSString(format:"%2X", nvm.getLUUID().toUIntMax()))
-        
         var mapData = MapDataController()
         
         
         //clear database
         mapData.deleteMapNodes(levelSelected)
         mapData.deleteMapEdges(levelSelected)
-
+        
         mapData.downloadMapData(levelSelected)
-        
-        /*
-        var circle :RMCircleAnnotation = RMCircleAnnotation(mapView: mapView, centerCoordinate: mapView.centerCoordinate, radiusInMeters: 10)
-        circle.lineColor = UIColor.redColor()
-        circle.fillColor = UIColor.orangeColor().colorWithAlphaComponent(0.3)
-        circle.clusteringEnabled = true
-        
-        mapView.addAnnotation(circle)
-        */
         
         
         var mapNodes = mapData.getMapNodes(levelSelected)
@@ -133,8 +118,12 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
         mapView.addAnnotations(markers)
         
         
-       self.mapEdgeLayer()
+        self.mapPOILayer()
+        self.mapSensorLayer()
+
+        self.mapEdgeLayer()
     }
+    
     
     
     func mapEdgeLayer() -> Void {
@@ -196,81 +185,109 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
                 
                 self.mapView.addAnnotations(anls)
 
-                
+
 
             }
             
         }
     }
     
-    /*
+    
     func mapSensorLayer() -> Void {
         var mapData = MapDataController()
-        var mapSensors = mapData.downloadSensorData()
+        mapData.downloadSensorData()
         
-        for marker in mapView.annotations {
+        /*for marker in mapView.annotations {
             
             if(marker.title == "Beacon"){
                 
                 if(m.userInfo == 4){
                     //sensor beacon!
                     
+                    default.
                     //change label!
                     m.title = "Sensor:flowerpower:1:2:4:5"
                 }
             
             }
-        }
-    
+        }*/
         
-        //redraw map
-        
-        self.mapView.removeAllAnnotations()
-        self.mapView.addAnnotations(mapView.annotations)
-        
-    }*/
-    
-    
-    func mapAddStaticAnnotations() -> Void {
-        
-        var staticAnnotations:[RMAnnotation] = []
-        
-        var staticNodes = [[
-                ["Raddison Blu", 53.56163, 9.98742],
-                ["Kunst", 53.56135, 9.98561],
-                ["Saal 4", 53.56236, 9.98572],
-                ["Saal 3",  53.56257, 9.98592],
-                ["Eingangshalle", 53.56170, 9.98625],
-                ["Saal 6", 53.56178, 9.8554]
-            ],
-            [
-                ["Raddison Blu", 53.56163, 9.98742],
-                ["Kunst", 53.56135, 9.98561],
-                ["Saal 4", 53.56236, 9.98572],
-                ["Saal 3",  53.56257, 9.98592],
-                ["Eingangshalle", 53.56170, 9.98625],
-                ["Saal 6", 53.56178, 9.8554]
-            ],
-            [
-                ["Raddison Blu", 53.56163, 9.98742],
-                ["Kunst", 53.56135, 9.98561],
-                ["Saal 4", 53.56236, 9.98572],
-                ["Saal 3",  53.56257, 9.98592],
-                ["Eingangshalle", 53.56170, 9.98625],
-                ["Saal 6", 53.56178, 9.8554]
-            ]
-        ]
-        
-        for staticNode in staticNodes[levelSelected]{
+        NSLog("drawing maps sensor layer")
+        if(defaults.dictionaryForKey("mapSensor_level"+levelSelected.description) != nil){
+            NSLog("found data for sensor layer")
+            var sensorNodes = enumerate(defaults.dictionaryForKey("mapSensor_level"+levelSelected.description)!)
             
-            
-            var marker = RMAnnotation(mapView: self.mapView, coordinate: CLLocationCoordinate2DMake(staticNode[1] as CLLocationDegrees, staticNode[2] as CLLocationDegrees), andTitle: staticNode[0] as String)
+            for (i,sensorNode) in sensorNodes {
+                
+                for sN in sensorNode.1 as NSArray {
+                    
+                    var latS : Double = (sN.objectForKey("data")! as NSArray).lastObject!.valueForKey("lat") as Double
+                    var lonS : Double = (sN.objectForKey("data")! as NSArray).lastObject!.valueForKey("lon") as Double
 
-            staticAnnotations.append(marker)
+                    
+            
+                    //THIS IS A HACK! ::TODO
+                    var fertilizer :Float = (sN.objectForKey("data")! as NSArray).lastObject!.valueForKey("fertilizer") as Float
+                    var health :Float = (sN.objectForKey("data")! as NSArray).lastObject!.valueForKey("health") as Float
+
+                    var soil:Float  = (sN.objectForKey("data")! as NSArray).lastObject!.valueForKey("soil_moisture")  as Float
+                    var temperature:Float  = (sN.objectForKey("data")! as NSArray).lastObject!.valueForKey("air_temperature") as Float
+                    var light :Float = (sN.objectForKey("data")! as NSArray).lastObject!.valueForKey("light") as Float
+
+                    var title = "Soil \(soil.description)%, \(temperature.description)°C, \(fertilizer.description)mmol/m2s."
+                    
+                    
+                    var sNA : RMAnnotation = RMAnnotation(mapView: self.mapView, coordinate: CLLocationCoordinate2DMake(latS, lonS), andTitle: title)
+                    
+                    if(health>0){
+                        sNA.userInfo = "plant:healthy"
+                    }else{
+                        sNA.userInfo = "plant:unhealthy"
+                    }
+                    self.mapView.addAnnotation(sNA)
+
+
+                    
+                }
+                
+            }
+            
         }
         
-        self.mapView.addAnnotations(staticAnnotations)
+        
+    }
     
+    
+    func mapPOILayer() -> Void {
+
+        
+        var mapData = MapDataController()
+        mapData.downloadPOIData()
+        NSLog("drawing maps static/poi layer")
+        if(defaults.dictionaryForKey("mapPOI_level"+levelSelected.description) != nil){
+            NSLog("found data for static layer")
+            var staticNodes = enumerate(defaults.dictionaryForKey("mapPOI_level"+levelSelected.description)!)
+            
+            for (i,staticNode) in staticNodes {
+
+            
+            
+                
+                for sN in staticNode.1 as NSArray {
+                    
+                    var sNA : RMAnnotation = RMAnnotation(mapView: self.mapView, coordinate: CLLocationCoordinate2DMake(sN.valueForKey("lat") as Double, sN.valueForKey("lon") as Double), andTitle: sN.valueForKey("title") as NSString)
+                    
+                    self.mapView.addAnnotation(sNA)
+                    
+                }
+            
+            
+            
+            }
+            
+            
+        }
+        
     }
 
     
@@ -284,12 +301,29 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
         beaconRadius.lineColor = UIColor.redColor()
         beaconRadius.lineWidthInPixels = 5.0
         beaconRadius.fillColor = UIColor.redColor().colorWithAlphaComponent(0.2)
-        phoneMarker.position = annotation.position
+        phoneMarker.position = annotationn.position
         beaconRadius.addSublayer(phoneMarker)
         */
         
         var beaconMarker: RMMarker = RMMarker(UIImage: UIImage(named: "marker-0"))
         beaconMarker.canShowCallout = true
+        
+        
+        var originalMarker:UIImage = UIImage(named: "marker-1")!
+        var originalPH:UIImage = UIImage(named: "leaf0")!
+        var originalPUH:UIImage = UIImage(named: "leaf1")!
+
+        
+        var locationMarker: RMMarker = RMMarker(UIImage: UIImage(CGImage: originalMarker.CGImage, scale: (originalMarker.scale*3), orientation: originalMarker.imageOrientation))
+        locationMarker.canShowCallout = true
+        
+        var plantHealthyMarker: RMMarker = RMMarker(UIImage: UIImage(CGImage: originalPH.CGImage, scale: (originalPH.scale*2), orientation: originalPH.imageOrientation))
+        plantHealthyMarker.canShowCallout = true
+        
+        var plantUnHealthyMarker: RMMarker = RMMarker(UIImage: UIImage(CGImage: originalPUH.CGImage, scale: (originalPUH.scale*2), orientation: originalPUH.imageOrientation))
+        plantUnHealthyMarker.canShowCallout = true
+        
+
         
         
         
@@ -300,8 +334,16 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
         }else if(annotation.title == "edge"){
              NSLog("edgy")
              return annotation.layer
-        }else{
+        }else if(annotation.title == "Beacon"){
              return beaconMarker
+        }else if(annotation.userInfo == nil){
+            return locationMarker
+        }else if(annotation.userInfo.description == "plant:healthy"){
+            return plantHealthyMarker
+        }else if(annotation.userInfo.description == "plant:unhealthy"){
+            return plantUnHealthyMarker
+        }else{
+            return locationMarker
         }
         
         
@@ -335,9 +377,6 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.mapAddStaticAnnotations()
-
-        
         //setup beacon region
         let beaconUUIDString = "3C77C2A5-5D39-420F-97FD-E7735CC7F317"
         let beaconIdentifier = "ch.ethz.nervous"
@@ -353,6 +392,8 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
             self.ownBeaconData = self.ownBeaconRegion.peripheralDataWithMeasuredPower(nil)
             self.ownBeaconPManager = CBPeripheralManager(delegate: self, queue: nil)
         }
+        
+        
     }
     
     
@@ -396,16 +437,14 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
         self.mapUIView.addSubview(mapView)
         
         
-        
-        
         let filterButton = FilterButtonView(frame: CGRectZero)
         filterButton.delegate = self
         
         self.mapUIView.addSubview(filterButton)
         
         
-        
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
