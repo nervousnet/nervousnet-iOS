@@ -33,7 +33,7 @@ class NervousVM {
     
     func generateUUID() -> Bool {
         
-        if(defaults.integerForKey("huuid") != 0 && defaults.integerForKey("beaconminor") != 0){
+        if(defaults.objectForKey("huuid") != nil && defaults.integerForKey("huuid") != 0 && defaults.integerForKey("beaconminor") != 0){
             
             return false
             
