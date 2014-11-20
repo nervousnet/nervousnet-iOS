@@ -123,9 +123,10 @@ class FilterButtonView: UIView {
 
                 }
                 
-                button.backgroundColor = UIColor.whiteColor()
+                button.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.6)
             } else {
-                button.backgroundColor = UIColor(red:1, green:0.376, blue:0.149, alpha:1)
+               // button.backgroundColor = UIColor(red:1, green:0.376, blue:0.149, alpha:1)
+                button.backgroundColor = UIColor.whiteColor()
             }
             
             button.setImage(UIImage(named: btnImageName+"0"), forState: UIControlState.Normal)
