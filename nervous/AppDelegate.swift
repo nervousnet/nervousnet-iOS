@@ -14,6 +14,8 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
     
+    let defaults :NSUserDefaults = NSUserDefaults.standardUserDefaults()
+
     
     var window: UIWindow?
     var locationManager: CLLocationManager? //Declaring the locationManager with a question mark is necessary because it is empty when the AppDelegate object is created. This means making it optional. It is created in the didFinishLaunchingWithOptions method. Because it is optional, it is important to use an exclamation mark after its name in following instances, as shown in the code above.
@@ -164,8 +166,9 @@ extension AppDelegate: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!,
         inRegion region: CLBeaconRegion!) {
             
-            BLESensor(beacons: beacons, region: region)
-
+            if(defaults.integerForKey("sensorview_setting_0") == 1){
+                BLESensor(beacons: beacons, region: region)
+            }
             
     }
 }
