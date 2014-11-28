@@ -69,7 +69,7 @@
 		22316DDB19BFB422006FD165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22316DDC19BFB422006FD165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22316DE319BFB422006FD165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		22316DEB19BFB422006FD165 /* nervousTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nervousTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22316DEB19BFB422006FD165 /* nervousnetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nervousnetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22316DF019BFB422006FD165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22316DF119BFB422006FD165 /* nervousTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nervousTests.swift; sourceTree = "<group>"; };
 		22392F331A044AEA008035FA /* blank.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; name = blank.mbtiles; path = maps/blank.mbtiles; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				22316DD719BFB422006FD165 /* nervous.app */,
-				22316DEB19BFB422006FD165 /* nervousTests.xctest */,
+				22316DEB19BFB422006FD165 /* nervousnetTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -314,9 +314,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		22316DD619BFB422006FD165 /* nervous */ = {
+		22316DD619BFB422006FD165 /* nervousnet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22316DF519BFB422006FD165 /* Build configuration list for PBXNativeTarget "nervous" */;
+			buildConfigurationList = 22316DF519BFB422006FD165 /* Build configuration list for PBXNativeTarget "nervousnet" */;
 			buildPhases = (
 				02BA741033E14D45AEAB5DA9 /* Check Pods Manifest.lock */,
 				22316DD319BFB422006FD165 /* Sources */,
@@ -328,14 +328,14 @@
 			);
 			dependencies = (
 			);
-			name = nervous;
+			name = nervousnet;
 			productName = nervous;
 			productReference = 22316DD719BFB422006FD165 /* nervous.app */;
 			productType = "com.apple.product-type.application";
 		};
-		22316DEA19BFB422006FD165 /* nervousTests */ = {
+		22316DEA19BFB422006FD165 /* nervousnetTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22316DF819BFB422006FD165 /* Build configuration list for PBXNativeTarget "nervousTests" */;
+			buildConfigurationList = 22316DF819BFB422006FD165 /* Build configuration list for PBXNativeTarget "nervousnetTests" */;
 			buildPhases = (
 				22316DE719BFB422006FD165 /* Sources */,
 				22316DE819BFB422006FD165 /* Frameworks */,
@@ -346,9 +346,9 @@
 			dependencies = (
 				22316DED19BFB422006FD165 /* PBXTargetDependency */,
 			);
-			name = nervousTests;
+			name = nervousnetTests;
 			productName = nervousTests;
-			productReference = 22316DEB19BFB422006FD165 /* nervousTests.xctest */;
+			productReference = 22316DEB19BFB422006FD165 /* nervousnetTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -370,7 +370,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 22316DD219BFB422006FD165 /* Build configuration list for PBXProject "nervous" */;
+			buildConfigurationList = 22316DD219BFB422006FD165 /* Build configuration list for PBXProject "nervousnet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -383,8 +383,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				22316DD619BFB422006FD165 /* nervous */,
-				22316DEA19BFB422006FD165 /* nervousTests */,
+				22316DD619BFB422006FD165 /* nervousnet */,
+				22316DEA19BFB422006FD165 /* nervousnetTests */,
 			);
 		};
 /* End PBXProject section */
@@ -496,7 +496,7 @@
 /* Begin PBXTargetDependency section */
 		22316DED19BFB422006FD165 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 22316DD619BFB422006FD165 /* nervous */;
+			target = 22316DD619BFB422006FD165 /* nervousnet */;
 			targetProxy = 22316DEC19BFB422006FD165 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -612,7 +612,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = nervousnet;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "nervous/nervous-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "nervous/-Bridging-Header.h";
@@ -643,7 +643,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = nervousnet;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "nervous/nervous-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "nervous/-Bridging-Header.h";
@@ -665,7 +665,7 @@
 				);
 				INFOPLIST_FILE = nervousTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = nervousnetTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nervous.app/nervous";
 			};
 			name = Debug;
@@ -680,7 +680,7 @@
 				);
 				INFOPLIST_FILE = nervousTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = nervousnetTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nervous.app/nervous";
 			};
 			name = Release;
@@ -688,7 +688,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		22316DD219BFB422006FD165 /* Build configuration list for PBXProject "nervous" */ = {
+		22316DD219BFB422006FD165 /* Build configuration list for PBXProject "nervousnet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22316DF319BFB422006FD165 /* Debug */,
@@ -697,7 +697,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22316DF519BFB422006FD165 /* Build configuration list for PBXNativeTarget "nervous" */ = {
+		22316DF519BFB422006FD165 /* Build configuration list for PBXNativeTarget "nervousnet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22316DF619BFB422006FD165 /* Debug */,
@@ -706,7 +706,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22316DF819BFB422006FD165 /* Build configuration list for PBXNativeTarget "nervousTests" */ = {
+		22316DF819BFB422006FD165 /* Build configuration list for PBXNativeTarget "nervousnetTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22316DF919BFB422006FD165 /* Debug */,

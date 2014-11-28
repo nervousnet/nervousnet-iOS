@@ -50,16 +50,19 @@ class UploadTask :NSObject, NSStreamDelegate {
             var sensorData :SensorUpload = self.pbSensorupload!
             var out :NSOutputStream = self.outputStream!
             var inp :NSInputStream = self.inputStream!
-            var i = 0
-            
+            let date = NSDate()
+        
+            let start = date.timeIntervalSince1970
+            var timeD :Double
+        
             //TODO: make this less hacky, add proper timers
             while (out.streamStatus == NSStreamStatus.Opening){
-                i++
+                timeD = date.timeIntervalSince1970 - start
                 if(out.streamStatus == NSStreamStatus.Error){
                     NSLog("dies")
                     out.close()
                     inp.close()
-                }else if (i > 40000) {
+                }else if (timeD > 2) {
                     NSLog("upload timeout")
                     out.close()
                     inp.close()

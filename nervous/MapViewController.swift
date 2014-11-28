@@ -334,7 +334,7 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
         youMarker.canShowCallout = true
         
 
-        var locationMarker: RMMarker = RMMarker(UIImage: UIImage(CGImage: originalMarker.CGImage, scale: (originalMarker.scale*3), orientation: originalMarker.imageOrientation))
+        var locationMarker: RMMarker = RMMarker(UIImage: UIImage(CGImage: originalMarker.CGImage, scale: (originalMarker.scale*1.5), orientation: originalMarker.imageOrientation))
         locationMarker.canShowCallout = true
 
         var plantHealthyMarker: RMMarker = RMMarker(UIImage: UIImage(CGImage: originalPH.CGImage, scale: (originalPH.scale*4), orientation: originalPH.imageOrientation))
@@ -418,6 +418,7 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
             self.ownBeaconData = self.ownBeaconRegion.peripheralDataWithMeasuredPower(nil)
             self.ownBeaconPManager = CBPeripheralManager(delegate: self, queue: nil)
         }
+        
         
         
     }

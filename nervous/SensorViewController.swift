@@ -72,6 +72,7 @@ class SensorViewController: UIViewController, UITableViewDataSource, UITableView
             defaults.setInteger(1, forKey: items[switchState.tag][0])
             NSLog("%@ switched on", items[switchState.tag][0])
             
+            
         } else {
             defaults.setInteger(0, forKey: items[switchState.tag][0])
             NSLog("%@ switched off", items[switchState.tag][0])

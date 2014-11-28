@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationUsageDescription</key>
-	<string>We need this to detect your proximity to other users. No GPS used.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We need this to detect your proximity to other users. No GPS used.</string>
-	<key>NSLocationWhenInUsageDescription</key>
-	<string>We need this to detect your proximity to other users. No GPS used.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -21,13 +15,19 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Allow to navigate indoors and help build the 31c3 social graph. No GPS location used!</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Allow to navigate indoors and help build the 31c3 social graph. No GPS location used!</string>
+	<key>NSLocationWhenInUsageDescription</key>
+	<string>Allow to navigate indoors and help build the 31c3 social graph. No GPS location used!</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

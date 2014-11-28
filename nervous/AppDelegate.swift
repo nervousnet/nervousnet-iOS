@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         //setup beacon region
         let beaconUUIDString = "3C77C2A5-5D39-420F-97FD-E7735CC7F317"
-        let beaconIdentifier = "ch.ethz.nervous"
+        let beaconIdentifier = "ch.ethz.nervousnet"
         let beaconUUID:NSUUID? = NSUUID(UUIDString: beaconUUIDString)
         
         NSLog("Cooking bacon...")
@@ -38,33 +38,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         //do scan when display comes on
         beaconRegion.notifyEntryStateOnDisplay = true
         
-        //location manager
-        locationManager = CLLocationManager()
         
 
+            //location manager
+            locationManager = CLLocationManager()
 
-        if(locationManager!.respondsToSelector("requestAlwaysAuthorization")) {
-            locationManager!.requestAlwaysAuthorization()
-        }
-        
-        
-        locationManager!.delegate = self
-        locationManager!.pausesLocationUpdatesAutomatically = false
-        
-        locationManager!.startMonitoringForRegion(beaconRegion)
-        locationManager!.startRangingBeaconsInRegion(beaconRegion)
 
-        locationManager!.startUpdatingLocation()
-        
-        //permission request
-        if(application.respondsToSelector("registerUserNotificationSettings:")) {
-            application.registerUserNotificationSettings(
-                UIUserNotificationSettings(
-                    forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Sound,
-                    categories: nil
+            if(locationManager!.respondsToSelector("requestAlwaysAuthorization")) {
+                locationManager!.requestAlwaysAuthorization()
+            }
+            
+            
+            locationManager!.delegate = self
+            locationManager!.pausesLocationUpdatesAutomatically = false
+            
+            locationManager!.startMonitoringForRegion(beaconRegion)
+            locationManager!.startRangingBeaconsInRegion(beaconRegion)
+
+            locationManager!.startUpdatingLocation()
+            
+            //permission request
+            if(application.respondsToSelector("registerUserNotificationSettings:")) {
+                application.registerUserNotificationSettings(
+                    UIUserNotificationSettings(
+                        forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Sound,
+                        categories: nil
+                    )
                 )
-            )
-        }
+            }
+        
         
         
         return true
@@ -167,7 +169,11 @@ extension AppDelegate: CLLocationManagerDelegate {
         inRegion region: CLBeaconRegion!) {
             
             if(defaults.integerForKey("sensorview_setting_0") == 1){
+                
+                
                 BLESensor(beacons: beacons, region: region)
+                
+                
             }
             
     }
