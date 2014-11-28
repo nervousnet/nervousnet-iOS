@@ -48,7 +48,7 @@ class BLESensor {
             
             beaconSensor.huuid = nvm.getHUUID() //phone huuid
             beaconSensor.luuid = nvm.getLUUID() //phone luuid
-
+            
             beaconSensor.uploadTime = UInt64(currentTime.timeIntervalSince1970*1000)
             beaconSensor.sensorId = 0x000000000000000B
             

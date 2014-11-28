@@ -39,6 +39,8 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
         
     }
     
+    
+    
     func filterButtonPressed(buttonTag: Int) {
         
         NSLog(buttonTag.description)
@@ -100,6 +102,12 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
             if(mapNode.allValues.count == 8){
                 NSLog("adding edges to map marker %@", mapNode.valueForKey("uuid") as NSString)
                 marker.userInfo = mapData.getNodeEdges(mapNode.valueForKey("uuid") as NSString, level: levelSelected) //place connected edges here
+                
+                if(mapNode.valueForKey("uuid") as NSString == defaults.valueForKey("uuidString") as NSString){
+                    marker.title = "You"
+
+                    mapView.setZoom(19, atCoordinate: marker.coordinate, animated: true)
+                }
                 NSLog("got nodes edges")
                 
                 
@@ -133,7 +141,7 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
             
             var m : RMAnnotation = marker as RMAnnotation
             
-            if(m.title == "Phone"){
+            if(m.title?.rangeOfString("Phone") != nil || m.title? == "You"){
                 NSLog("connecting %f,%f with %i beacon(s)", m.coordinate.latitude, m.coordinate.longitude, m.userInfo.count)
                 
                 var anls : [RMAnnotation] = []
@@ -233,9 +241,16 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
                     var soil:Float  = (sN.objectForKey("data")! as NSArray).lastObject!.valueForKey("soil_moisture")  as Float
                     var temperature:Float  = (sN.objectForKey("data")! as NSArray).lastObject!.valueForKey("air_temperature") as Float
                     var light :Float = (sN.objectForKey("data")! as NSArray).lastObject!.valueForKey("light") as Float
-
-                    var title = "Soil \(soil.description)%, \(temperature.description)°C, \(fertilizer.description)mmol/m2s."
+                    var label :String = (sN.objectForKey("data")! as NSArray).lastObject!.valueForKey("label") as String
+                    var title :String
                     
+                    if(soil > 0 && temperature > 0){
+                        title = "\(label)\(soil.description)%, \(temperature.description)°C"
+                    }else if(temperature > 0){
+                        title = "\(label)\(soil.description)%, \(temperature.description)°C"
+                    }else{
+                        title = "\(label)"
+                    }
                     
                     var sNA : RMAnnotation = RMAnnotation(mapView: self.mapView, coordinate: CLLocationCoordinate2DMake(latS, lonS), andTitle: title)
                     
@@ -276,6 +291,7 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
                 for sN in staticNode.1 as NSArray {
                     
                     var sNA : RMAnnotation = RMAnnotation(mapView: self.mapView, coordinate: CLLocationCoordinate2DMake(sN.valueForKey("lat") as Double, sN.valueForKey("lon") as Double), andTitle: sN.valueForKey("title") as NSString)
+ 
                     
                     self.mapView.addAnnotation(sNA)
                     
@@ -310,17 +326,21 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
         
         
         var originalMarker:UIImage = UIImage(named: "marker-1")!
-        var originalPH:UIImage = UIImage(named: "leaf0")!
-        var originalPUH:UIImage = UIImage(named: "leaf1")!
+        var originalPH:UIImage = UIImage(named: "sensor-0")!
+        var originalPUH:UIImage = UIImage(named: "sensor-1")!
 
         
+        var youMarker: RMMarker = RMMarker(UIImage: UIImage(named: "you-marker"))
+        youMarker.canShowCallout = true
+        
+
         var locationMarker: RMMarker = RMMarker(UIImage: UIImage(CGImage: originalMarker.CGImage, scale: (originalMarker.scale*3), orientation: originalMarker.imageOrientation))
         locationMarker.canShowCallout = true
-        
-        var plantHealthyMarker: RMMarker = RMMarker(UIImage: UIImage(CGImage: originalPH.CGImage, scale: (originalPH.scale*2), orientation: originalPH.imageOrientation))
+
+        var plantHealthyMarker: RMMarker = RMMarker(UIImage: UIImage(CGImage: originalPH.CGImage, scale: (originalPH.scale*4), orientation: originalPH.imageOrientation))
         plantHealthyMarker.canShowCallout = true
         
-        var plantUnHealthyMarker: RMMarker = RMMarker(UIImage: UIImage(CGImage: originalPUH.CGImage, scale: (originalPUH.scale*2), orientation: originalPUH.imageOrientation))
+        var plantUnHealthyMarker: RMMarker = RMMarker(UIImage: UIImage(CGImage: originalPUH.CGImage, scale: (originalPUH.scale*4), orientation: originalPUH.imageOrientation))
         plantUnHealthyMarker.canShowCallout = true
         
 
@@ -329,12 +349,14 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
         
         NSLog("modding map")
 
-        if(annotation.title == "Phone"){
+        if(annotation.title?.rangeOfString("Phone") != nil){
              return phoneMarker
-        }else if(annotation.title == "edge"){
+        }else if(annotation.title? == "You"){
+            return youMarker
+        }else if(annotation.title? == "edge"){
              NSLog("edgy")
              return annotation.layer
-        }else if(annotation.title == "Beacon"){
+        }else if((annotation.title?.rangeOfString("Beacon")) != nil){
              return beaconMarker
         }else if(annotation.userInfo == nil){
             return locationMarker
@@ -382,12 +404,16 @@ class MapViewController: UIViewController, RMMapViewDelegate, FilterButtonDelega
         let beaconIdentifier = "ch.ethz.nervous"
         let beaconUUID:NSUUID? = NSUUID(UUIDString: beaconUUIDString)
         
-        let nvm = NervousVM()
-        let beaconMinor:CLBeaconMinorValue = nvm.getBeaconMinor()
-        let beaconMajor:CLBeaconMajorValue = 33091
+
         
         //put phones beacon on map / broadcast a beacon
         if(defaults.integerForKey("sensorview_setting_1") == 1){
+            let nvm = NervousVM()
+
+            let beaconMinor:CLBeaconMinorValue = nvm.getBeaconMinor()
+            let beaconMajor:CLBeaconMajorValue = 33091
+            //let beaconMajor:CLBeaconMajorValue = 33092 for static
+            
             self.ownBeaconRegion = CLBeaconRegion(proximityUUID: beaconUUID, major: beaconMajor, minor:beaconMinor, identifier: beaconIdentifier)
             self.ownBeaconData = self.ownBeaconRegion.peripheralDataWithMeasuredPower(nil)
             self.ownBeaconPManager = CBPeripheralManager(delegate: self, queue: nil)

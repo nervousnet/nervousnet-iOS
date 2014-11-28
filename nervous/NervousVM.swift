@@ -7,59 +7,105 @@
 //
 
 import Foundation
+import UIKit
 
 class NervousVM {
     
     let defaults :NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
     init(){
-        var genUUID = self.generateUUID()
+        
+        
+            var genUUID = self.generateUUID()
+        
+        
     }
     
+    func pad(string : String, toSize: Int) -> String {
+        var padded = string
+        for i in 0..<toSize - countElements(string) {
+            padded = "0" + padded
+        }
+        return padded
+    }
+    
+
     
     func getHUUID() -> UInt64 {
-        return UInt64(defaults.integerForKey("huuid"))
+        let generated = defaults.boolForKey("generatedUUID")
+        
+        if(generated){
+            let huuid : UInt64 = UInt64(defaults.integerForKey("huuid"))
+            
+            return huuid
+        }else{
+            return 0
+        }
     }
     
     
     func getLUUID() -> UInt64 {
-        return UInt64(defaults.integerForKey("luuid"))
+        let generated = defaults.boolForKey("generatedUUID")
+        
+        if(generated){
+            let luuid : UInt64 = UInt64(defaults.integerForKey("luuid"))
+            
+            return luuid
+        }else{
+            return 0
+        }
     }
     
     
     func getBeaconMinor() -> CLBeaconMinorValue {
-        return CLBeaconMinorValue(defaults.integerForKey("beaconminor"))
+        let generated = defaults.boolForKey("generatedUUID")
+        
+        if(generated){
+            let minor :CLBeaconMinorValue = CLBeaconMinorValue(defaults.integerForKey("beaconminor"))
+
+            return minor
+        }else{
+            return 0
+        }
     }
+    
     
     func generateUUID() -> Bool {
         
-        if(defaults.objectForKey("huuid") != nil && defaults.integerForKey("huuid") != 0 && defaults.integerForKey("beaconminor") != 0){
+        let generated = defaults.boolForKey("generatedUUID")
+        
+        if(generated == true){
+            
+            
+            
+            //String representation of uuid
+            NSLog("starting generation of uuid string")
+            let huuidRaw = getHUUID()
+            let luuidRaw = getLUUID()
+            
+            
+            let uuidString = pad(String(huuidRaw, radix: 16), toSize:16) + pad(String(luuidRaw, radix: 16), toSize:16)
+            NSLog("UUID: %@", uuidString.uppercaseString)
+            
+            defaults.setValue(uuidString.uppercaseString, forKey: "uuidString")
             
             return false
             
         }else{
             
-            var UUIDBytes: UInt8  = 0
-            var LUUIDBytes: NSInteger = 0
-            var HUUIDBytes: NSInteger = 0
+            NSLog("generating a new uuid")
             
-            var newUUID:NSUUID = NSUUID()
-            newUUID.getUUIDBytes(&UUIDBytes)
+            let LUUID:Int = Int(arc4random_uniform(1234567890)+123456)
+            let HUUID:Int = Int(arc4random_uniform(1234567890)+234567)
+
+            let beaconMinor :Int = Int(arc4random_uniform(7000)+200)
             
-            let newUUIDData = NSData(bytes: &UUIDBytes, length: 16)
-            newUUIDData.getBytes(&LUUIDBytes, range: NSMakeRange(0, 7))
-            newUUIDData.getBytes(&HUUIDBytes, range: NSMakeRange(7, 7))
+            defaults.setBool(true, forKey: "generatedUUID")
             
-            /*var LUUID = NSData(bytes: &LUUIDBytes, length: 8).getBytes
-            var HUUID = NSData(bytes: &HUUIDBytes, length: 8)
-            */
-            
-            var beaconMinor :NSInteger = (NSInteger(arc4random()) % (255 - 1025)) + 255
-            
-            defaults.setInteger(HUUIDBytes, forKey: "huuid")
-            defaults.setInteger(LUUIDBytes, forKey: "luuid")
+            defaults.setInteger(HUUID, forKey: "huuid")
+            defaults.setInteger(LUUID, forKey: "luuid")
             defaults.setInteger(beaconMinor, forKey: "beaconminor")
-            defaults.synchronize()
+            
             
             return true
         }
@@ -68,5 +114,5 @@ class NervousVM {
     
     }
     
-    
+
 }

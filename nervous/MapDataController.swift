@@ -218,7 +218,7 @@ class MapDataController {
             //get lat/lon of target node
             let nodeRequest = NSFetchRequest(entityName: "MapNode")
             
-            nodeRequest.fetchLimit = 100
+            nodeRequest.fetchLimit = 5
             nodeRequest.returnsObjectsAsFaults = false
             nodeRequest.includesPropertyValues = true
             nodeRequest.resultType = NSFetchRequestResultType.DictionaryResultType
@@ -268,7 +268,6 @@ class MapDataController {
                         // mapPOI.append(row as NSArray)
                         defaults.setObject(levelPOI as NSDictionary, forKey: "mapPOI_level"+levelPOI.allKeys[0].description)
                                                 
-                        defaults.synchronize()
 
                         //NSLog((row as NSArray).description)
                     }
@@ -321,7 +320,6 @@ class MapDataController {
                         // mapPOI.append(row as NSArray)
                         defaults.setObject(levelSensor as NSDictionary, forKey: "mapSensor_level"+levelSensor.allKeys[0].description)
                         
-                        defaults.synchronize()
                         
                         //NSLog((row as NSArray).description)
                     }

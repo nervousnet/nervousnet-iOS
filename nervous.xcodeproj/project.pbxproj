@@ -15,6 +15,7 @@
 		22392F391A044AEA008035FA /* cch2.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 22392F351A044AEA008035FA /* cch2.mbtiles */; };
 		22392F3A1A044AEA008035FA /* cch1.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 22392F361A044AEA008035FA /* cch1.mbtiles */; };
 		22392F3E1A0CF421008035FA /* MapDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22392F3D1A0CF421008035FA /* MapDataController.swift */; };
+		225830191A2807AF00075C8D /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225830181A2807AF00075C8D /* CreditsViewController.swift */; };
 		22653FEF19D6D243004E1AA2 /* SensorDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FEE19D6D243004E1AA2 /* SensorDesc.swift */; };
 		22653FF119D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FF019D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift */; };
 		22653FF419D6E044004E1AA2 /* UploadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FF319D6E044004E1AA2 /* UploadTask.swift */; };
@@ -48,7 +49,7 @@
 		22F1A6001A10A8260097B2E4 /* MapEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1A5FF1A10A8260097B2E4 /* MapEdge.swift */; };
 		22F1A6021A10A82E0097B2E4 /* MapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1A6011A10A82E0097B2E4 /* MapNode.swift */; };
 		22FF8A8719F14AFA00AC6783 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */; };
-		22FF8A8D19F14B3A00AC6783 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8C19F14B3A00AC6783 /* UIKit.framework */; };
+		22FF8A8D19F14B3A00AC6783 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8C19F14B3A00AC6783 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		311E82701A001D8500C176FE /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E826F1A001D8500C176FE /* FilterButtonView.swift */; };
 		F8C5EA35C0D248558EACC2AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E28EDAC66246A39191CAA9 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,7 @@
 		22392F351A044AEA008035FA /* cch2.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; name = cch2.mbtiles; path = maps/cch2.mbtiles; sourceTree = "<group>"; };
 		22392F361A044AEA008035FA /* cch1.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; name = cch1.mbtiles; path = maps/cch1.mbtiles; sourceTree = "<group>"; };
 		22392F3D1A0CF421008035FA /* MapDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDataController.swift; sourceTree = "<group>"; };
+		225830181A2807AF00075C8D /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		22653FEE19D6D243004E1AA2 /* SensorDesc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDesc.swift; sourceTree = "<group>"; };
 		22653FF019D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescBLEBeacon.swift; sourceTree = "<group>"; };
 		22653FF319D6E044004E1AA2 /* UploadTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadTask.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				22653FF319D6E044004E1AA2 /* UploadTask.swift */,
 				22F1A5FC1A10A7E70097B2E4 /* mapdb */,
 				22E0A19A19F15DF2001D4548 /* maps */,
+				225830181A2807AF00075C8D /* CreditsViewController.swift */,
 			);
 			path = nervous;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				22F1A6001A10A8260097B2E4 /* MapEdge.swift in Sources */,
 				22C5D70C19FF87E200CD8D26 /* ExtendableMessage.swift in Sources */,
 				22C5D70A19FF87E200CD8D26 /* CodedOutputStream.swift in Sources */,
+				225830191A2807AF00075C8D /* CreditsViewController.swift in Sources */,
 				22C5D70F19FF87E200CD8D26 /* ExtensionRegistry.swift in Sources */,
 				22C5D71319FF87E200CD8D26 /* UnknownFieldSet.swift in Sources */,
 				22653FF419D6E044004E1AA2 /* UploadTask.swift in Sources */,
