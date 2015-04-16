@@ -52,6 +52,11 @@
 		22FF8A8D19F14B3A00AC6783 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8C19F14B3A00AC6783 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		311E82701A001D8500C176FE /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E826F1A001D8500C176FE /* FilterButtonView.swift */; };
 		F8C5EA35C0D248558EACC2AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E28EDAC66246A39191CAA9 /* libPods.a */; };
+		FC1346AD1AD5D04000D9998C /* SQLiteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1346AB1AD5D04000D9998C /* SQLiteDB.swift */; };
+		FC1346AE1AD5D04000D9998C /* String-Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1346AC1AD5D04000D9998C /* String-Extras.swift */; };
+		FC1346B21AD5D09500D9998C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1346B11AD5D09500D9998C /* libsqlite3.0.dylib */; };
+		FC1346B71AD5E99C00D9998C /* SQLiteSensorsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1346B61AD5E99C00D9998C /* SQLiteSensorsDB.swift */; };
+		FC1346B91AD5EC0400D9998C /* SensorsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1346B81AD5EC0400D9998C /* SensorsDB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +124,12 @@
 		945DC94D19FB201D0BBE095C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AC5F25183B95B2D3730BA466 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C3E28EDAC66246A39191CAA9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC1346AB1AD5D04000D9998C /* SQLiteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteDB.swift; sourceTree = "<group>"; };
+		FC1346AC1AD5D04000D9998C /* String-Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Extras.swift"; sourceTree = "<group>"; };
+		FC1346AF1AD5D08B00D9998C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		FC1346B11AD5D09500D9998C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		FC1346B61AD5E99C00D9998C /* SQLiteSensorsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteSensorsDB.swift; sourceTree = "<group>"; };
+		FC1346B81AD5EC0400D9998C /* SensorsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorsDB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC1346B21AD5D09500D9998C /* libsqlite3.0.dylib in Frameworks */,
 				22FF8A8719F14AFA00AC6783 /* CoreGraphics.framework in Frameworks */,
 				22653FFB19D70899004E1AA2 /* QuartzCore.framework in Frameworks */,
 				22D10CA919D598A1000D6942 /* CFNetwork.framework in Frameworks */,
@@ -172,6 +184,7 @@
 		22316DD919BFB422006FD165 /* nervous */ = {
 			isa = PBXGroup;
 			children = (
+				FC1346B51AD5E90A00D9998C /* db */,
 				22E0A19719F15A0A001D4548 /* -Bridging-Header.h */,
 				22316DDA19BFB422006FD165 /* Supporting Files */,
 				22B03E5819CE0D6700E50D04 /* images */,
@@ -288,6 +301,8 @@
 		22FF8A8519F14ACB00AC6783 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC1346B11AD5D09500D9998C /* libsqlite3.0.dylib */,
+				FC1346AF1AD5D08B00D9998C /* libsqlite3.dylib */,
 				22C5D6F719FF868E00CD8D26 /* libPods-ProtocolBuffers.a */,
 				2274F01F19FF85DD004FFAA6 /* libPods-ProtocolBuffers.a */,
 				22FF8A8C19F14B3A00AC6783 /* UIKit.framework */,
@@ -309,6 +324,17 @@
 				AC5F25183B95B2D3730BA466 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FC1346B51AD5E90A00D9998C /* db */ = {
+			isa = PBXGroup;
+			children = (
+				FC1346AB1AD5D04000D9998C /* SQLiteDB.swift */,
+				FC1346AC1AD5D04000D9998C /* String-Extras.swift */,
+				FC1346B61AD5E99C00D9998C /* SQLiteSensorsDB.swift */,
+				FC1346B81AD5EC0400D9998C /* SensorsDB.swift */,
+			);
+			name = db;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,10 +480,12 @@
 				22C5D71519FF87E200CD8D26 /* WireFormat.swift in Sources */,
 				22F1A5FB1A10A5E30097B2E4 /* nervous.xcdatamodeld in Sources */,
 				22C5D71219FF87E200CD8D26 /* RingBuffer.swift in Sources */,
+				FC1346AD1AD5D04000D9998C /* SQLiteDB.swift in Sources */,
 				22C5D71419FF87E200CD8D26 /* UnknownFieldSetBuilder.swift in Sources */,
 				22653FEF19D6D243004E1AA2 /* SensorDesc.swift in Sources */,
 				22C5D70819FF87E200CD8D26 /* AbstractMessage.swift in Sources */,
 				311E82701A001D8500C176FE /* FilterButtonView.swift in Sources */,
+				FC1346AE1AD5D04000D9998C /* String-Extras.swift in Sources */,
 				22653FF919D6FBDB004E1AA2 /* NervousVM.swift in Sources */,
 				22C5D71119FF87E200CD8D26 /* GeneratedMessage.swift in Sources */,
 				22C5D71919FFADBA00CD8D26 /* SensorDetailController.swift in Sources */,
@@ -471,9 +499,11 @@
 				22C5D70A19FF87E200CD8D26 /* CodedOutputStream.swift in Sources */,
 				225830191A2807AF00075C8D /* CreditsViewController.swift in Sources */,
 				22C5D70F19FF87E200CD8D26 /* ExtensionRegistry.swift in Sources */,
+				FC1346B71AD5E99C00D9998C /* SQLiteSensorsDB.swift in Sources */,
 				22C5D71319FF87E200CD8D26 /* UnknownFieldSet.swift in Sources */,
 				22653FF419D6E044004E1AA2 /* UploadTask.swift in Sources */,
 				22D2D66D19C0979E00B11C54 /* Sensorupload.pb.swift in Sources */,
+				FC1346B91AD5EC0400D9998C /* SensorsDB.swift in Sources */,
 				22653FF619D6E669004E1AA2 /* BLESensor.swift in Sources */,
 				22C5D71019FF87E200CD8D26 /* Field.swift in Sources */,
 				22392F3E1A0CF421008035FA /* MapDataController.swift in Sources */,
@@ -612,7 +642,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
-				PRODUCT_NAME = nervousnet;
+				PRODUCT_NAME = nervous;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "nervous/nervous-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "nervous/-Bridging-Header.h";
@@ -643,7 +673,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
-				PRODUCT_NAME = nervousnet;
+				PRODUCT_NAME = nervous;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "nervous/nervous-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "nervous/-Bridging-Header.h";
