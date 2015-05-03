@@ -12,7 +12,10 @@
 #import <UIKit/UIKit.h>
 #import <Mapbox-iOS-SDK/Mapbox.h>
 #import <AFNetworking/AFNetworking.h>
+<<<<<<< HEAD
+=======
 #import "sqlite3.h"
 #import <time.h>
+>>>>>>> 2950d165efbebbcf1ac5f1a1650a5414a01be0f4
 
 #endif
