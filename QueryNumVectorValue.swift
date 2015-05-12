@@ -1,3 +1,4 @@
+
 //
 //  QueryNumVectorValue.swift
 //  nervousnet

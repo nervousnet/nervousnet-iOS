@@ -46,7 +46,7 @@ class SensorViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
-        cell.textLabel!.text = "\(items[indexPath.row][1]) \(items[indexPath.row][2])"
+        cell.textLabel.text = "\(items[indexPath.row][1]) \(items[indexPath.row][2])"
         
         cell.backgroundColor = UIColor.clearColor()
         
