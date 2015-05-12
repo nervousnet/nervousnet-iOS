@@ -51,7 +51,6 @@
 		22FF8A8719F14AFA00AC6783 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */; };
 		22FF8A8D19F14B3A00AC6783 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8C19F14B3A00AC6783 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		24E4FFC11B0222E9002AED24 /* SingleValueSensorDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFC01B0222E9002AED24 /* SingleValueSensorDesc.swift */; };
-		24E4FFC31B022307002AED24 /* SensorsDescBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFC21B022307002AED24 /* SensorsDescBattery.swift */; };
 		24E4FFC51B022522002AED24 /* SensorDescAccelerometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFC41B022522002AED24 /* SensorDescAccelerometer.swift */; };
 		24E4FFCD1B02260F002AED24 /* SensorQueriesAccelerometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFCC1B02260F002AED24 /* SensorQueriesAccelerometer.swift */; };
 		24E4FFCF1B022623002AED24 /* SensorQueriesBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFCE1B022623002AED24 /* SensorQueriesBattery.swift */; };
@@ -67,6 +66,7 @@
 		FC1346B21AD5D09500D9998C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1346B11AD5D09500D9998C /* libsqlite3.0.dylib */; };
 		FC1346B71AD5E99C00D9998C /* SQLiteSensorsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1346B61AD5E99C00D9998C /* SQLiteSensorsDB.swift */; };
 		FC1346B91AD5EC0400D9998C /* SensorsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1346B81AD5EC0400D9998C /* SensorsDB.swift */; };
+		FC9285AC1B026DCE00160A69 /* SensorDescBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9285AB1B026DCE00160A69 /* SensorDescBattery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +150,7 @@
 		FC1346B11AD5D09500D9998C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		FC1346B61AD5E99C00D9998C /* SQLiteSensorsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteSensorsDB.swift; sourceTree = "<group>"; };
 		FC1346B81AD5EC0400D9998C /* SensorsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorsDB.swift; sourceTree = "<group>"; };
+		FC9285AB1B026DCE00160A69 /* SensorDescBattery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescBattery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +257,7 @@
 		22653FF219D6D3DB004E1AA2 /* sensors */ = {
 			isa = PBXGroup;
 			children = (
+				FC9285AB1B026DCE00160A69 /* SensorDescBattery.swift */,
 				22653FEE19D6D243004E1AA2 /* SensorDesc.swift */,
 				22653FF019D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift */,
 				22653FF519D6E669004E1AA2 /* BLESensor.swift */,
@@ -545,7 +547,6 @@
 				22B912E019D76F96006094C6 /* SensorViewController.swift in Sources */,
 				22F1A6021A10A82E0097B2E4 /* MapNode.swift in Sources */,
 				24E4FFC51B022522002AED24 /* SensorDescAccelerometer.swift in Sources */,
-				24E4FFC31B022307002AED24 /* SensorsDescBattery.swift in Sources */,
 				24E4FFD51B022652002AED24 /* Query.swift in Sources */,
 				24E4FFC11B0222E9002AED24 /* SingleValueSensorDesc.swift in Sources */,
 				24E4FFD11B022633002AED24 /* QueryNum.swift in Sources */,
@@ -564,6 +565,7 @@
 				22C5D71019FF87E200CD8D26 /* Field.swift in Sources */,
 				22392F3E1A0CF421008035FA /* MapDataController.swift in Sources */,
 				22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */,
+				FC9285AC1B026DCE00160A69 /* SensorDescBattery.swift in Sources */,
 				22C5D70D19FF87E200CD8D26 /* ExtendableMessageBuilder.swift in Sources */,
 				22C5D70919FF87E200CD8D26 /* CodedInputStream.swift in Sources */,
 			);

@@ -8,36 +8,13 @@
 
 import Foundation
 
-
 protocol SensorDesc {
     
-   // var timestamp :UInt64 {get}
+    var sensorIdentifier: Int64 { get }
     
-  //  func getSensorIdentifier -> Int64
-    //func toProtoSensor() -> SensorUploadSensorData
+    var timestamp: UInt64 { get set }
     
-    var timestamp :UInt64
+    init(sensorData: SensorUploadSensorData)
     
-    init(timestamp :UInt64)
-    {
-    self.timestamp = timestamp;
-    }
-    
-    init(SensorData : sensorData)
-    {
-    self.timestamp = sensorData.getRecordTime();
-    }
-    
-    func getDataColumns() -> String
-    
-    
-    func getSensorId() -> UInt64;
-    
-    func getTimestamp()-> UInt64 {
-    return timestamp;
-    }
-    
-    
-    func toProtoSensor() -> SensorDesc{};
-    
+    func toProtoSensor() -> SensorUploadSensorData
 }

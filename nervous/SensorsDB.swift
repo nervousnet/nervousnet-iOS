@@ -9,6 +9,6 @@
 import Foundation
 
 protocol SensorsDB {    
-    func retrieve(sensorId: UInt64, fromTimestamp: UInt64, toTimestamp: UInt64) -> [Message]
-    func store(sensorId: UInt64, timestamp: UInt64, sensorData: Message)
+    func retrieve(sensorId: UInt64, fromTimestamp: UInt64, toTimestamp: UInt64) -> [SensorUploadSensorData]
+    func store(sensorId: UInt64, timestamp: UInt64, sensorData: SensorUploadSensorData)
 }

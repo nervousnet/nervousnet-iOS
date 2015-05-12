@@ -5,10 +5,10 @@
 //  Created by Ramapriya Sridharan on 12/05/2015.
 //  Copyright (c) 2015 ethz. All rights reserved.
 //
-
+/*
 import UIKit
 
-class SensorDescAccelerometer: SensorDesc {/*
+class SensorDescAccelerometer: SensorDesc {
     
     public static final long SENSOR_ID = 0x0000000000000000L
     
@@ -66,6 +66,6 @@ class SensorDescAccelerometer: SensorDesc {/*
     arrayList.add(accZ);
     return arrayList; // 3 values returned
     }
-*/
    
 }
+*/

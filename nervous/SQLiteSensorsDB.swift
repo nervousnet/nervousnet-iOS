@@ -39,7 +39,7 @@ class SQLiteSensorsDB: SensorsDB {
         return _SensorsDBSharedInstance
     }
     
-    func retrieve(sensorId: UInt64, fromTimestamp: UInt64, toTimestamp: UInt64) -> [Message] {
+    func retrieve(sensorId: UInt64, fromTimestamp: UInt64, toTimestamp: UInt64) -> [SensorUploadSensorData] {
         
         let result = SQLiteDB.sharedInstance().query(_retrieveSensorsQuery,
             parameters:[
@@ -51,7 +51,7 @@ class SQLiteSensorsDB: SensorsDB {
         
         NSLog("Query returned \(result.count) rows")
     
-        var messages : [Message] = []
+        var messages : [SensorUploadSensorData] = []
         
         for row in result {
 
@@ -64,7 +64,7 @@ class SQLiteSensorsDB: SensorsDB {
             
             data.getBytes(&bytes, length:count * sizeof(Byte))
             
-            let message : Message! = SensorUploadSensorData.parseFromData(bytes)
+            let message : SensorUploadSensorData! = SensorUploadSensorData.parseFromData(bytes)
             
             messages += [message]
         }
@@ -72,7 +72,7 @@ class SQLiteSensorsDB: SensorsDB {
         return messages
     }
     
-    func store(sensorId: UInt64, timestamp: UInt64, sensorData: Message) {
+    func store(sensorId: UInt64, timestamp: UInt64, sensorData: SensorUploadSensorData) {
         
         let data = sensorData.data()
         
