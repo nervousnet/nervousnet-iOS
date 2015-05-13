@@ -24,6 +24,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        /*
+            Example usage of the Storage Engine
+            -----------------------------------------------------------------------------------
+        */
+        
+        /*
+            Important! all constructor arguments and method call arguments need to be named argument
+        */
+        var sensorDesc = SensorDescBattery (
+            timestamp: 123,
+            batteryPercent: 0.3,
+            isCharging: true,
+            isUsbCharge: true,
+            isAcCharge: false
+        )
+        
+        /*
+            Gettint the db instance
+        */
+        var db = SQLiteSensorsDB.sharedInstance
+        
+        /*
+            Important! all method call arguments need to be named argument, but the first one can't! lol
+        */
+        db.store(0x0000000000000001, timestamp: sensorDesc.timestamp, sensorData: sensorDesc.toProtoSensor())
+        
+        var sensorDataArray: [SensorUploadSensorData] =
+            db.retrieve(0x0000000000000001, fromTimestamp: 0, toTimestamp: 200)
+        
+        for sensorData in sensorDataArray {
+            var retSensDesc = SensorDescBattery(sensorData: sensorData)
+
+            /*
+                You need to cast the object to the protocol in order to access inherited methods xD
+                This language is so evil
+            */
+            NSLog("\((retSensDesc as SensorDesc).timestamp)")
+            NSLog("\(retSensDesc.batteryPercent) \(retSensDesc.isCharging)")
+        }
+        
+        /*
+        --------------------------------------------------------------------------------------
+        */
+        
         //setup beacon region
         let beaconUUIDString = "3C77C2A5-5D39-420F-97FD-E7735CC7F317"
         let beaconIdentifier = "ch.ethz.nervousnet"
