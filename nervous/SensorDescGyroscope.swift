@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import CoreMotion
 
 class SensorDescGyroscope : SensorDesc {
     
@@ -20,6 +21,13 @@ class SensorDescGyroscope : SensorDesc {
     var Y : Float
     var Z : Float
     
+    required init(sensorData: SensorUploadSensorData) {
+        
+        self.timestamp = sensorData.recordTime
+        self.X = sensorData.valueFloat[0]
+        self.Y = sensorData.valueFloat[1]
+        self.Z = sensorData.valueFloat[2]
+    }
     
     init(timestamp :UInt64, X :Float, Y :Float, Z :Float){
         
@@ -29,12 +37,11 @@ class SensorDescGyroscope : SensorDesc {
         self.Z = Z
     }
     
-    required init(sensorData: SensorUploadSensorData) {
-        
-        self.timestamp = sensorData.recordTime
-        self.X = sensorData.valueFloat[0]
-        self.Y = sensorData.valueFloat[1]
-        self.Z = sensorData.valueFloat[2]
+    init(data: CMGyroData!, error: NSError!,timestamp: UInt64) {
+        self.timestamp = timestamp;
+        self.X = Float(data.rotationRate.x);
+        self.Y = Float(data.rotationRate.y);
+        self.Z = Float(data.rotationRate.z);
     }
     
 
