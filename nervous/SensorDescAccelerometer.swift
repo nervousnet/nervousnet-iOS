@@ -1,71 +1,77 @@
 //
-//  SensorDescAccelerometer.swift
+//  SensorDescGyroscope.swift
 //  nervousnet
 //
-//  Created by Ramapriya Sridharan on 12/05/2015.
+//  Created by Sddhartha on 13/05/15.
 //  Copyright (c) 2015 ethz. All rights reserved.
 //
-/*
-import UIKit
 
-class SensorDescAccelerometer: SensorDesc {
+import Foundation
+import CoreLocation
+import CoreMotion
+
+class SensorDescAccelerometer : SensorDescVectorValue {
     
-    public static final long SENSOR_ID = 0x0000000000000000L
+    let SENSOR_ID :Int64 = 0x000000000000000B
     
-    private final float accX
-    private final float accY
-    private final float accZ
+    var sensorIdentifier: Int64 = 0x000000000000000B
     
-    public SensorDescAccelerometerNew(final long timestamp, final float accX, final float accY, final float accZ) {
-    super(timestamp);
-    this.accX = accX;
-    this.accY = accY;
-    this.accZ = accZ;
+    var timestamp :UInt64
+    var X : Float
+    var Y : Float
+    var Z : Float
+    
+    required init(sensorData: SensorUploadSensorData) {
+        
+        self.timestamp = sensorData.recordTime
+        self.X = sensorData.valueFloat[0]
+        self.Y = sensorData.valueFloat[1]
+        self.Z = sensorData.valueFloat[2]
     }
     
-    public SensorDescAccelerometerNew(SensorData sensorData) {
-    super(sensorData);
-    this.accX = sensorData.getValueFloat(0);
-    this.accY = sensorData.getValueFloat(1);
-    this.accZ = sensorData.getValueFloat(2);
+    init(timestamp :UInt64, X :Float, Y :Float, Z :Float){
+        
+        self.timestamp = timestamp
+        self.X = X
+        self.Y = Y
+        self.Z = Z
     }
     
-    public float getAccX() {
-    return accX;
+    init(data: CMAccelerometerData!, error: NSError!,timestamp: UInt64) {
+        self.timestamp = timestamp;
+        self.X = Float(data.acceleration.x);
+        self.Y = Float(data.acceleration.y);
+        self.Z = Float(data.acceleration.z);
     }
     
-    public float getAccY() {
-    return accY;
+    func getAccX() -> Float{
+        return self.X;
     }
     
-    public float getAccZ() {
-    return accZ;
+    func getAccY() -> Float{
+        return self.Y;
     }
     
-    @Override
-    public SensorData toProtoSensor() {
-    SensorData.Builder sdb = SensorData.newBuilder();
-    sdb.setRecordTime(getTimestamp());
-    sdb.addValueFloat(getAccX());
-    sdb.addValueFloat(getAccY());
-    sdb.addValueFloat(getAccZ());
-    return sdb.build();
+    func getAccZ() -> Float{
+        return self.Z;
     }
     
-    @Override
-    public long getSensorId() {
-    return SENSOR_ID;
+    func toProtoSensor() -> SensorUploadSensorData {
+        let builder = SensorUploadSensorData.builder()
+        builder.recordTime = timestamp
+        builder.valueFloat = [self.X,self.Y,self.Z]
+        
+        return builder.build()
+        
     }
     
-    @Override
-    public ArrayList<Float> getValue() {
-    // TODO Auto-generated method stub
-    ArrayList<Float> arrayList = new ArrayList<Float>();
-    arrayList.add(accX);
-    arrayList.add(accY);
-    arrayList.add(accZ);
-    return arrayList; // 3 values returned
+    func getSensorId() -> Int64 {
+        return SENSOR_ID;
     }
-   
+    
+    
+    func getValue() -> [Float] {
+        return [self.X,self.Y,self.Z];
+    }
+    
 }
-*/

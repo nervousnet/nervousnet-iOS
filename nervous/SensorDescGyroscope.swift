@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 import CoreMotion
 
-class SensorDescGyroscope : SensorDesc {
+class SensorDescGyroscope : SensorDescVectorValue {
     
     let SENSOR_ID :Int64 = 0x000000000000000B
     
@@ -44,12 +44,22 @@ class SensorDescGyroscope : SensorDesc {
         self.Z = Float(data.rotationRate.z);
     }
     
-
+    func getGyrX() -> Float{
+        return self.X;
+    }
+    
+    func getGyrY() -> Float{
+        return self.Y;
+    }
+    
+    func getGyrZ() -> Float{
+        return self.Z;
+    }
     
     func toProtoSensor() -> SensorUploadSensorData {
         let builder = SensorUploadSensorData.builder()
         builder.recordTime = timestamp
-        builder.valueFloat = [X,Y,Z]
+        builder.valueFloat = [self.X,self.Y,self.Z]
         
         return builder.build()
 
@@ -61,7 +71,7 @@ class SensorDescGyroscope : SensorDesc {
     
     
     func getValue() -> [Float] {
-        return [X,Y,Z];
+        return [self.X,self.Y,self.Z];
     }
     
 }

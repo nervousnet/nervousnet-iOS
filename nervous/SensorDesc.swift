@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SensorDesc {
+protocol SensorDesc{
     
     var sensorIdentifier: Int64 { get }
     

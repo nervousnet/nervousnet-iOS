@@ -61,6 +61,7 @@
 		24E4FFD91B022672002AED24 /* QueryNumVectorValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFD81B022672002AED24 /* QueryNumVectorValue.swift */; };
 		311E82701A001D8500C176FE /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E826F1A001D8500C176FE /* FilterButtonView.swift */; };
 		E173CD681B0387E200E56ED2 /* SensorDescGyroscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = E173CD671B0387E200E56ED2 /* SensorDescGyroscope.swift */; };
+		E1B95CF81B04E1D0004A5E20 /* SensorDescVectorValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B95CF71B04E1D0004A5E20 /* SensorDescVectorValue.swift */; };
 		F8C5EA35C0D248558EACC2AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E28EDAC66246A39191CAA9 /* libPods.a */; };
 		FC1346AD1AD5D04000D9998C /* SQLiteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1346AB1AD5D04000D9998C /* SQLiteDB.swift */; };
 		FC1346AE1AD5D04000D9998C /* String-Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1346AC1AD5D04000D9998C /* String-Extras.swift */; };
@@ -146,6 +147,7 @@
 		AC5F25183B95B2D3730BA466 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C3E28EDAC66246A39191CAA9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E173CD671B0387E200E56ED2 /* SensorDescGyroscope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescGyroscope.swift; sourceTree = "<group>"; };
+		E1B95CF71B04E1D0004A5E20 /* SensorDescVectorValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescVectorValue.swift; sourceTree = "<group>"; };
 		FC1346AB1AD5D04000D9998C /* SQLiteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteDB.swift; sourceTree = "<group>"; };
 		FC1346AC1AD5D04000D9998C /* String-Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Extras.swift"; sourceTree = "<group>"; };
 		FC1346AF1AD5D08B00D9998C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -263,6 +265,7 @@
 				22653FEE19D6D243004E1AA2 /* SensorDesc.swift */,
 				22653FF019D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift */,
 				E173CD671B0387E200E56ED2 /* SensorDescGyroscope.swift */,
+				E1B95CF71B04E1D0004A5E20 /* SensorDescVectorValue.swift */,
 				22653FF519D6E669004E1AA2 /* BLESensor.swift */,
 				24E4FFC01B0222E9002AED24 /* SingleValueSensorDesc.swift */,
 				24E4FFC21B022307002AED24 /* SensorsDescBattery.swift */,
@@ -572,6 +575,7 @@
 				FC9285AC1B026DCE00160A69 /* SensorDescBattery.swift in Sources */,
 				22C5D70D19FF87E200CD8D26 /* ExtendableMessageBuilder.swift in Sources */,
 				22C5D70919FF87E200CD8D26 /* CodedInputStream.swift in Sources */,
+				E1B95CF81B04E1D0004A5E20 /* SensorDescVectorValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
