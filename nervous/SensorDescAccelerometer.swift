@@ -1,5 +1,5 @@
 //
-//  SensorDescGyroscope.swift
+//  SensorDescAccelerometer.swift
 //  nervousnet
 //
 //  Created by Sddhartha on 13/05/15.
