@@ -3,6 +3,7 @@
 //  nervousnet
 //
 //  Created by Ramapriya Sridharan on 12/05/2015.
+//  Modified by Siddhartha on 15/05/2015
 //  Copyright (c) 2015 ethz. All rights reserved.
 //
 
@@ -41,6 +42,21 @@ class SensorDescBattery: SensorDescSingleValue {
         self.isAcCharge = sensorData.valueBool[2]
     }
     
+    init (battery: UIDevice, timestamp: UInt64) {
+        self.timestamp = timestamp
+        self.batteryPercent = battery.batteryLevel
+        if UIDeviceBatteryState.Charging.rawValue == 1{
+            self.isCharging = true
+            self.isUsbCharge = false
+            self.isAcCharge = true
+        }
+        else {
+            self.isCharging = false
+            self.isUsbCharge = false
+            self.isAcCharge = false
+        }
+    }
+    
     /*
         Override keyword needed
     */
@@ -60,6 +76,6 @@ class SensorDescBattery: SensorDescSingleValue {
     }
     
     func getValue() -> Float {
-        return batteryPercent;
+        return self.batteryPercent;
     }
 }
