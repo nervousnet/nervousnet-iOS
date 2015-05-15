@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SensorDescBattery: SensorDesc {
+class SensorDescBattery: SensorDescSingleValue {
     
     let SENSOR_ID :Int64 = 0x0000000000000001
     
