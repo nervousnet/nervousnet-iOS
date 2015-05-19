@@ -75,6 +75,10 @@ class SensorDescBattery: SensorDescSingleValue {
         return builder.build()
     }
     
+    func getSensorId() -> UInt64 {
+        return SENSOR_ID;
+    }
+    
     func getValue() -> Float {
         return self.batteryPercent;
     }
