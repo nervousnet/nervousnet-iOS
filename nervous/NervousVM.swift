@@ -117,7 +117,7 @@ class NervousVM {
     }
     // The function to 'fetch' the data from the sensors(hardware) in the phone
     // and 'push' it to the database.See AppDelegate.swift for the call.
-    func fetchAndStore() {
+    func fetchPushAndSend() {
         // The core motion manager. Should be same manager for all sensors for 
         // consistency.
         let manager = CMMotionManager()
@@ -217,6 +217,16 @@ class NervousVM {
         db.store(0x0000000000000006, timestamp: sensorDescProx.timestamp, sensorData: sensorDescProx.toProtoSensor())
         
         
+    }
+    
+    func retrieve(SENSOR_ID : UInt64,fromTimeStamp : UInt64,toTimeStamp : UInt64) -> [SensorUploadSensorData] {
+        
+        var db = SQLiteSensorsDB.sharedInstance
+        
+        var sensorDataArray: [SensorUploadSensorData] =
+        db.retrieve(SENSOR_ID, fromTimestamp: fromTimeStamp, toTimestamp: toTimeStamp)
+        
+        return sensorDataArray;
     }
     
 

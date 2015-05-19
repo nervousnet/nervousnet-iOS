@@ -12,7 +12,7 @@ import CoreMotion
 
 class SensorDescMagnetic : SensorDescVectorValue {
     
-    let SENSOR_ID :Int64 = 0x000000000000000B
+    let SENSOR_ID :UInt64 = 0x000000000000000B
     
     var sensorIdentifier: Int64 = 0x000000000000000B
     

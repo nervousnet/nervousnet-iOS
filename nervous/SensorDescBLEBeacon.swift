@@ -11,7 +11,7 @@ import CoreLocation
 
 class SensorDescBLEBeacon: SensorDesc {
     
-    let SENSOR_ID :Int64 = 0x000000000000000B
+    let SENSOR_ID :UInt64 = 0x000000000000000B
     
     var sensorIdentifier: Int64 = 0x000000000000000B
     var timestamp: UInt64
