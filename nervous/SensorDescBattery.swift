@@ -45,7 +45,7 @@ class SensorDescBattery: SensorDescSingleValue {
     init (battery: UIDevice, timestamp: UInt64) {
         self.timestamp = timestamp
         self.batteryPercent = battery.batteryLevel
-        if UIDeviceBatteryState.Charging.rawValue == 1{
+        if UIDeviceBatteryState.Charging.rawValue == 3{
             self.isCharging = true
             self.isUsbCharge = false
             self.isAcCharge = true

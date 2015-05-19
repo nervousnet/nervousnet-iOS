@@ -17,49 +17,49 @@ class SensorDescMagnetic : SensorDescVectorValue {
     var sensorIdentifier: Int64 = 0x000000000000000B
     
     var timestamp :UInt64
-    var X : Float
-    var Y : Float
-    var Z : Float
+    var magX : Float
+    var magY : Float
+    var magZ : Float
     
     required init(sensorData: SensorUploadSensorData) {
         
         self.timestamp = sensorData.recordTime
-        self.X = sensorData.valueFloat[0]
-        self.Y = sensorData.valueFloat[1]
-        self.Z = sensorData.valueFloat[2]
+        self.magX = sensorData.valueFloat[0]
+        self.magY = sensorData.valueFloat[1]
+        self.magZ = sensorData.valueFloat[2]
     }
     
-    init(timestamp :UInt64, X :Float, Y :Float, Z :Float){
+    init(timestamp :UInt64, magX :Float, magY :Float, magZ :Float){
         
         self.timestamp = timestamp
-        self.X = X
-        self.Y = Y
-        self.Z = Z
+        self.magX = magX
+        self.magY = magY
+        self.magZ = magZ
     }
     
     init(data: CMMagnetometerData!, error: NSError!,timestamp: UInt64) {
         self.timestamp = timestamp;
-        self.X = Float(data.magneticField.x);
-        self.Y = Float(data.magneticField.y);
-        self.Z = Float(data.magneticField.z);
+        self.magX = Float(data.magneticField.x);
+        self.magY = Float(data.magneticField.y);
+        self.magZ = Float(data.magneticField.z);
     }
     
     func getMagX() -> Float{
-        return self.X;
+        return self.magX;
     }
     
     func getMagY() -> Float{
-        return self.Y;
+        return self.magY;
     }
     
     func getMagZ() -> Float{
-        return self.Z;
+        return self.magZ;
     }
     
     func toProtoSensor() -> SensorUploadSensorData {
         let builder = SensorUploadSensorData.builder()
         builder.recordTime = timestamp
-        builder.valueFloat = [self.X,self.Y,self.Z]
+        builder.valueFloat = [self.magX,self.magY,self.magZ]
         
         return builder.build()
         
@@ -71,7 +71,7 @@ class SensorDescMagnetic : SensorDescVectorValue {
     
     
     func getValue() -> [Float] {
-        return [self.X,self.Y,self.Z];
+        return [self.magX,self.magY,self.magZ];
     }
     
 }

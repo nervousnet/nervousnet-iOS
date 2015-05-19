@@ -17,49 +17,49 @@ class SensorDescGyroscope : SensorDescVectorValue {
     var sensorIdentifier: Int64 = 0x000000000000000B
     
     var timestamp :UInt64
-    var X : Float
-    var Y : Float
-    var Z : Float
+    var gyrX : Float
+    var gyrY : Float
+    var gyrZ : Float
     
     required init(sensorData: SensorUploadSensorData) {
         
         self.timestamp = sensorData.recordTime
-        self.X = sensorData.valueFloat[0]
-        self.Y = sensorData.valueFloat[1]
-        self.Z = sensorData.valueFloat[2]
+        self.gyrX = sensorData.valueFloat[0]
+        self.gyrY = sensorData.valueFloat[1]
+        self.gyrZ = sensorData.valueFloat[2]
     }
     
-    init(timestamp :UInt64, X :Float, Y :Float, Z :Float){
+    init(timestamp :UInt64, gyrX :Float, gyrY :Float, gyrZ :Float){
         
         self.timestamp = timestamp
-        self.X = X
-        self.Y = Y
-        self.Z = Z
+        self.gyrX = gyrX
+        self.gyrY = gyrY
+        self.gyrZ = gyrZ
     }
     
     init(data: CMGyroData!, error: NSError!,timestamp: UInt64) {
         self.timestamp = timestamp;
-        self.X = Float(data.rotationRate.x);
-        self.Y = Float(data.rotationRate.y);
-        self.Z = Float(data.rotationRate.z);
+        self.gyrX = Float(data.rotationRate.x);
+        self.gyrY = Float(data.rotationRate.y);
+        self.gyrZ = Float(data.rotationRate.z);
     }
     
     func getGyrX() -> Float{
-        return self.X;
+        return self.gyrX;
     }
     
     func getGyrY() -> Float{
-        return self.Y;
+        return self.gyrY;
     }
     
     func getGyrZ() -> Float{
-        return self.Z;
+        return self.gyrZ;
     }
     
     func toProtoSensor() -> SensorUploadSensorData {
         let builder = SensorUploadSensorData.builder()
         builder.recordTime = timestamp
-        builder.valueFloat = [self.X,self.Y,self.Z]
+        builder.valueFloat = [self.gyrX,self.gyrY,self.gyrZ]
         
         return builder.build()
 
@@ -71,7 +71,7 @@ class SensorDescGyroscope : SensorDescVectorValue {
     
     
     func getValue() -> [Float] {
-        return [self.X,self.Y,self.Z];
+        return [self.gyrX,self.gyrY,self.gyrZ];
     }
     
 }

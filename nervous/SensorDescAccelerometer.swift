@@ -17,49 +17,49 @@ class SensorDescAccelerometer : SensorDescVectorValue {
     var sensorIdentifier: Int64 = 0x000000000000000B
     
     var timestamp :UInt64
-    var X : Float
-    var Y : Float
-    var Z : Float
+    var accX : Float
+    var accY : Float
+    var accZ : Float
     
     required init(sensorData: SensorUploadSensorData) {
         
         self.timestamp = sensorData.recordTime
-        self.X = sensorData.valueFloat[0]
-        self.Y = sensorData.valueFloat[1]
-        self.Z = sensorData.valueFloat[2]
+        self.accX = sensorData.valueFloat[0]
+        self.accY = sensorData.valueFloat[1]
+        self.accZ = sensorData.valueFloat[2]
     }
     
-    init(timestamp :UInt64, X :Float, Y :Float, Z :Float){
+    init(timestamp :UInt64, accX :Float, accY :Float, accZ :Float){
         
         self.timestamp = timestamp
-        self.X = X
-        self.Y = Y
-        self.Z = Z
+        self.accX = accX
+        self.accY = accY
+        self.accZ = accZ
     }
     
     init(data: CMAccelerometerData!, error: NSError!,timestamp: UInt64) {
         self.timestamp = timestamp;
-        self.X = Float(data.acceleration.x);
-        self.Y = Float(data.acceleration.y);
-        self.Z = Float(data.acceleration.z);
+        self.accX = Float(data.acceleration.x);
+        self.accY = Float(data.acceleration.y);
+        self.accZ = Float(data.acceleration.z);
     }
     
     func getAccX() -> Float{
-        return self.X;
+        return self.accX;
     }
     
     func getAccY() -> Float{
-        return self.Y;
+        return self.accY;
     }
     
     func getAccZ() -> Float{
-        return self.Z;
+        return self.accZ;
     }
     
     func toProtoSensor() -> SensorUploadSensorData {
         let builder = SensorUploadSensorData.builder()
         builder.recordTime = timestamp
-        builder.valueFloat = [self.X,self.Y,self.Z]
+        builder.valueFloat = [self.accX,self.accY,self.accZ]
         
         return builder.build()
         
@@ -71,7 +71,7 @@ class SensorDescAccelerometer : SensorDescVectorValue {
     
     
     func getValue() -> [Float] {
-        return [self.X,self.Y,self.Z];
+        return [self.accX,self.accY,self.accZ];
     }
     
 }
