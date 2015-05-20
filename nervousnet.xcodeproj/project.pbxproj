@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07C12C3A1B0CD09400885C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C12C391B0CD09400885C50 /* ViewController.swift */; };
 		22316DDD19BFB422006FD165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DDC19BFB422006FD165 /* AppDelegate.swift */; };
 		22316DE419BFB422006FD165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22316DE219BFB422006FD165 /* Main.storyboard */; };
 		22316DF219BFB422006FD165 /* nervousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DF119BFB422006FD165 /* nervousTests.swift */; };
@@ -84,6 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07C12C391B0CD09400885C50 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		22316DD719BFB422006FD165 /* nervous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nervous.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22316DDB19BFB422006FD165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22316DDC19BFB422006FD165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				22316DE219BFB422006FD165 /* Main.storyboard */,
 				22B912DF19D76F96006094C6 /* SensorViewController.swift */,
 				22B03E5419CE032B00E50D04 /* MapViewController.swift */,
+				07C12C391B0CD09400885C50 /* ViewController.swift */,
 				22392F3D1A0CF421008035FA /* MapDataController.swift */,
 				311E826F1A001D8500C176FE /* FilterButtonView.swift */,
 				22C5D71819FFADBA00CD8D26 /* SensorDetailController.swift */,
@@ -538,6 +541,7 @@
 				22C5D70E19FF87E200CD8D26 /* ExtensionField.swift in Sources */,
 				22C5D71519FF87E200CD8D26 /* WireFormat.swift in Sources */,
 				E1F923CA1B0612B40020CEEA /* SensorDescSingleValue.swift in Sources */,
+				07C12C3A1B0CD09400885C50 /* ViewController.swift in Sources */,
 				22F1A5FB1A10A5E30097B2E4 /* nervous.xcdatamodeld in Sources */,
 				E173CD681B0387E200E56ED2 /* SensorDescGyroscope.swift in Sources */,
 				22C5D71219FF87E200CD8D26 /* RingBuffer.swift in Sources */,
