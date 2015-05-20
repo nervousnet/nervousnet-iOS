@@ -219,6 +219,8 @@ class NervousVM {
         
     }
     
+    // to retrieve the data from the database once the value has been fetched and stored
+    // using the fetchPushAndSend() function.
     func retrieve(SENSOR_ID : UInt64,fromTimeStamp : UInt64,toTimeStamp : UInt64) -> [SensorUploadSensorData] {
         
         var db = SQLiteSensorsDB.sharedInstance
