@@ -64,9 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             NSLog("\((retSensDesc as SensorDesc).timestamp)")
             NSLog("\(retSensDesc.batteryPercent) \(retSensDesc.isCharging)")
         }*/
-        
-        let manager = CMMotionManager()
-        SensorCollection.sensorActivate(manager)
+        //let manager = CMMotionManager()
+        //SensorCollection.sensorActivate(manager)
+        //SensorCollection.sensorActivate(CMMotionManager())
         /*
         --------------------------------------------------------------------------------------
         */

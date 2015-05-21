@@ -49,6 +49,7 @@ class SensorCollection {
         }
         
         // Gyroscope
+        //println(manager.gyroAvailable)
         if manager.gyroAvailable {
             manager.gyroUpdateInterval = 30
             manager.startGyroUpdatesToQueue(NSOperationQueue.mainQueue()) {
@@ -66,6 +67,7 @@ class SensorCollection {
         }
         
         // Magnetic
+        //sprintln(manager.magnetometerAvailable)
         if manager.magnetometerAvailable {
             manager.magnetometerUpdateInterval = 30
             manager.startMagnetometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
