@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import CoreLocation
 import CoreData
+import CoreMotion
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -32,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         /*
             Important! all constructor arguments and method call arguments need to be named argument
         */
-        var sensorDesc = SensorDescBattery (
+        /*var sensorDesc = SensorDescBattery (
             timestamp: 123,
             batteryPercent: 0.3,
             isCharging: true,
@@ -62,8 +63,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             */
             NSLog("\((retSensDesc as SensorDesc).timestamp)")
             NSLog("\(retSensDesc.batteryPercent) \(retSensDesc.isCharging)")
-        }
+        }*/
         
+        let manager = CMMotionManager()
+        SensorCollection.sensorActivate(manager)
         /*
         --------------------------------------------------------------------------------------
         */

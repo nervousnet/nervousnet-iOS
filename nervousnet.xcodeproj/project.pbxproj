@@ -60,6 +60,7 @@
 		24E4FFD91B022672002AED24 /* QueryNumVectorValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFD81B022672002AED24 /* QueryNumVectorValue.swift */; };
 		311E82701A001D8500C176FE /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E826F1A001D8500C176FE /* FilterButtonView.swift */; };
 		E173CD681B0387E200E56ED2 /* SensorDescGyroscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = E173CD671B0387E200E56ED2 /* SensorDescGyroscope.swift */; };
+		E1B3C9221B0E19830089C771 /* SensorCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3C9211B0E19830089C771 /* SensorCollection.swift */; };
 		E1B95CF81B04E1D0004A5E20 /* SensorDescVectorValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B95CF71B04E1D0004A5E20 /* SensorDescVectorValue.swift */; };
 		E1F923CA1B0612B40020CEEA /* SensorDescSingleValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F923C91B0612B40020CEEA /* SensorDescSingleValue.swift */; };
 		E1F923CC1B0615F90020CEEA /* SensorDescMagnetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F923CB1B0615F90020CEEA /* SensorDescMagnetic.swift */; };
@@ -147,6 +148,7 @@
 		AC5F25183B95B2D3730BA466 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C3E28EDAC66246A39191CAA9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E173CD671B0387E200E56ED2 /* SensorDescGyroscope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescGyroscope.swift; sourceTree = "<group>"; };
+		E1B3C9211B0E19830089C771 /* SensorCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorCollection.swift; sourceTree = "<group>"; };
 		E1B95CF71B04E1D0004A5E20 /* SensorDescVectorValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescVectorValue.swift; sourceTree = "<group>"; };
 		E1F923C91B0612B40020CEEA /* SensorDescSingleValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescSingleValue.swift; sourceTree = "<group>"; };
 		E1F923CB1B0615F90020CEEA /* SensorDescMagnetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescMagnetic.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				22653FF819D6FBDB004E1AA2 /* NervousVM.swift */,
+				E1B3C9211B0E19830089C771 /* SensorCollection.swift */,
 			);
 			name = vm;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				22392F3E1A0CF421008035FA /* MapDataController.swift in Sources */,
 				22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */,
 				FC9285AC1B026DCE00160A69 /* SensorDescBattery.swift in Sources */,
+				E1B3C9221B0E19830089C771 /* SensorCollection.swift in Sources */,
 				22C5D70D19FF87E200CD8D26 /* ExtendableMessageBuilder.swift in Sources */,
 				22C5D70919FF87E200CD8D26 /* CodedInputStream.swift in Sources */,
 				E1B95CF81B04E1D0004A5E20 /* SensorDescVectorValue.swift in Sources */,
