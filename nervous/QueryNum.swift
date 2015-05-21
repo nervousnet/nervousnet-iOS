@@ -9,74 +9,54 @@
 import UIKit
 
 
-class QueryNum <G : SensorDesc> : Query<G>{
+protocol QueryNum : Query{
     
-    init(timestamp_from : Int64, timestamp_to : Int64,file : String ){
-        var from = timestamp_from
-        var to = timestamp_to
-        var f = file
-        
+    typealias G : SensorDesc
     
-        super.init(from : Int64, to : Int64,f: String)
-    }
+    init(from : UInt64, to : UInt64)
     
-    func createDummyObject() -> G{
-        //absrtact
-    }
     
-    override func getSensorDescriptorList() -> Array<G>{
-        //abstract
-    }
+    func createDummyObject() -> G
     
-    func getTimeRange(desc_list : Array<G>, start : Array<Float>,end : Array<Float>) -> Array<G>{
-        //abstract
-    }
+    func getSensorDescriptorList() -> Array<G>
     
-    func getMaxValue() -> G{
-        
-    }
+    func getTimeRange(desc_list : Array<G>, start : Array<Float>,end : Array<Float>) -> Array<G>
     
-    func sd()-> Array<Float>{
-        
-    }
+    func getMaxValue() -> G
     
-    func variance() -> Array<Float>{
-        
-    }
+    func sd()-> Array<Float>
     
-    func getMinValue() -> G{}
+    func variance() -> Array<Float>
     
-    func getSum() -> Array<Float>{}
+    func getMinValue() -> G
     
-    func getLargest(k : Int) -> Array<G>{}
+    func getSum() -> Array<Float>
     
-    func getSmallest(k : Int) -> Array<G>{
-        
-    }
+    func getLargest(k : Int) -> Array<G>
     
-    func getMedian() -> Array<Float>{}
+    func getSmallest(k : Int) -> Array<G>
     
-    func getRms() -> Array<Float>{}
+    func getMedian() -> Array<Float>
     
-    func getMeanSquare() -> Array<Float>{}
+    func getRms() -> Array<Float>
     
-    func getSumSquare() -> Array<Float>{}
+    func getMeanSquare() -> Array<Float>
     
-    func getRankLargest(n : Int) -> G{}
+    func getSumSquare() -> Array<Float>
     
-    func getRankSmallest(n:Int) -> G{}
+    func getRankLargest(n : Int) -> G
     
-    func getRmsError(comp : Array<Float>) -> Array<Float>{
-        
-    }
+    func getRankSmallest(n:Int) -> G
     
-    func getCorrelation(comp : Array<G>,comp1 : Array<G>) -> Array<Float> {}
+    func getRmsError(comp : Array<Float>) -> Array<Float>
     
-    func getEntropy() -> Array<Float>{}
+    func getCorrelation(comp : Array<G>,comp1 : Array<G>) -> Array<Float>
     
-    func getAverage() -> Array<Float>{}
+    func getEntropy() -> Array<Float>
     
-    func getKmeans(n : Int,initialize : Array<Float>) -> Array<Float>{}
+    func getAverage() -> Array<Float>
+    
+    func getKmeans(n : Int,initialize : Array<Float>) -> Array<Float>
     
 }
 

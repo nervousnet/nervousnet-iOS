@@ -15,44 +15,53 @@ import UIKit
 
 import Foundation
 
-class Query <G : SensorDesc>{
+protocol Query {
     
-    var  List = Array<SensorUploadSensorData>() // to store the sensor list data
+    typealias G : SensorDesc
     
-    func getSensorId() -> Int64{
+    init(from : UInt64,to:UInt64)
+    
+    //var  List = Array<SensorUploadSensorData>() // to store the sensor list data
+    var List : Array<SensorUploadSensorData> { set get}
+    
+    func getSensorId() -> UInt64/*{
         //abstract
         var foo : Int64 = 10
         return foo
-    }
+    }*/
     
     
-    func containsReadings() -> Bool{
+    func containsReadings() -> Bool
+    
+    /*{
         if(List.count == 0)  //check for null equivalent
         {return false}
         else
         {return true}
-    }
+    }*/
 
-    
-    init(timestamp_from : UInt64, timestamp_to : UInt64,file : String){
+    // constructor
+        /*{
         
-        //create instance of VM
+        NervousVM vm =
         //VM.retreive
         if(containsReadings()){
             println("retreived list of size() = /(+getCount())")
         }
         
-    }
+    }*/
     
-    func getCount() -> Int{
+    func getCount() -> Int
+    /*{
         return List.count
-    }
+    }*/
     
-    func getSensorDescriptorList() -> Array<G>{
+    func getSensorDescriptorList() -> Array<G>
+    /*{
         //abstract
         var foo = Array<G>()
         return foo
-    }
+    }*/
     
     
     

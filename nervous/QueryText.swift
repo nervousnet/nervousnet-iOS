@@ -8,6 +8,6 @@
 
 import UIKit
 
-class QueryText<G : SensorDesc> : Query<G> {
+protocol QueryText : Query{
    
 }

@@ -8,33 +8,15 @@
 
 import Foundation
 
-class SensorDesc{
     
     
-    
-    var timestamp: UInt64
-    
-    func getSensorId() -> Int64{
+    protocol SensorDesc{
         
-        var foo :Int64 = 0
-        return foo
-    
+        var sensorIdentifier: Int64 { get }
+        
+        var timestamp: UInt64 { get set }
+        
+        init(sensorData: SensorUploadSensorData)
+        
+        func toProtoSensor() -> SensorUploadSensorData
     }
-    
-    init(sensorData: SensorUploadSensorData)
-    {
-        //self.timestamp = sensorData.getRecordTime() //define function in VM
-        self.timestamp = 0;
-    }
-    
-    init(timestamp : UInt64)
-    {
-        self.timestamp = timestamp
-    }
-    
-    func toProtoSensor() -> SensorUploadSensorData
-    {
-        var sens :SensorUploadSensorData = 0
-        return sens
-    }
-}
