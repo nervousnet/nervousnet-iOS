@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import CoreLocation
 import CoreData
+import CoreMotion
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -64,6 +65,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             NSLog("\(retSensDesc.batteryPercent) \(retSensDesc.isCharging)")
         }*/
         
+
+        //let manager = CMMotionManager()
+        //SensorCollection.sensorActivate(manager)
+        //SensorCollection.sensorActivate(CMMotionManager())
+
         /*
         --------------------------------------------------------------------------------------
         */
