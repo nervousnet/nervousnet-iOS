@@ -8,6 +8,6 @@
 
 import UIKit
 
-class QueryText: NSObject {
+class QueryText<G : SensorDesc> : Query<G> {
    
 }
