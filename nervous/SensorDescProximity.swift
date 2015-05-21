@@ -10,9 +10,9 @@ import UIKit
 
 class SensorDescProximity: SensorDescSingleValue {
     
-    let SENSOR_ID :Int64 = 0x0000000000000001
+    let SENSOR_ID :UInt64 = 0x0000000000000006
     
-    var sensorIdentifier: Int64 = 0x0000000000000001
+    var sensorIdentifier: Int64 = 0x0000000000000006
     
     var timestamp: UInt64
     var proximity: Float
@@ -57,6 +57,10 @@ class SensorDescProximity: SensorDescSingleValue {
         builder.valueBool = [self.isClose]
         
         return builder.build()
+    }
+    
+    func getSensorId() -> UInt64 {
+        return SENSOR_ID;
     }
     
     func getValue() -> Float {

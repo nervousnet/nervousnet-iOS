@@ -11,7 +11,7 @@ import UIKit
 
 class SensorDescBattery: SensorDescSingleValue {
     
-    let SENSOR_ID :Int64 = 0x0000000000000001
+    let SENSOR_ID :UInt64 = 0x0000000000000001
     
     var sensorIdentifier: Int64 = 0x0000000000000001
     
@@ -45,7 +45,7 @@ class SensorDescBattery: SensorDescSingleValue {
     init (battery: UIDevice, timestamp: UInt64) {
         self.timestamp = timestamp
         self.batteryPercent = battery.batteryLevel
-        if UIDeviceBatteryState.Charging.rawValue == 1{
+        if UIDeviceBatteryState.Charging.rawValue == 3{
             self.isCharging = true
             self.isUsbCharge = false
             self.isAcCharge = true
@@ -73,6 +73,10 @@ class SensorDescBattery: SensorDescSingleValue {
         builder.valueBool = [self.isCharging, self.isUsbCharge, self.isAcCharge]
         
         return builder.build()
+    }
+    
+    func getSensorId() -> UInt64 {
+        return SENSOR_ID;
     }
     
     func getValue() -> Float {
