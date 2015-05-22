@@ -64,9 +64,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             NSLog("\((retSensDesc as SensorDesc).timestamp)")
             NSLog("\(retSensDesc.batteryPercent) \(retSensDesc.isCharging)")
         }*/
+        
+
         //let manager = CMMotionManager()
         //SensorCollection.sensorActivate(manager)
         //SensorCollection.sensorActivate(CMMotionManager())
+<<<<<<< HEAD
         dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_BACKGROUND.value), 0)) { // 1
             
             dispatch_async(dispatch_get_main_queue()) { // 2
@@ -74,6 +77,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 println("hello")
             }
         }
+=======
+
+>>>>>>> 76f3f29a1e53680315def03115620040dfd2c29d
         /*
         --------------------------------------------------------------------------------------
         */

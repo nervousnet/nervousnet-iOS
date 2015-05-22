@@ -51,14 +51,11 @@
 		22F1A6021A10A82E0097B2E4 /* MapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1A6011A10A82E0097B2E4 /* MapNode.swift */; };
 		22FF8A8719F14AFA00AC6783 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */; };
 		22FF8A8D19F14B3A00AC6783 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8C19F14B3A00AC6783 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		24756F2D1B0CD17900D31AA2 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24756F2C1B0CD17900D31AA2 /* Query.swift */; };
+		24756F2F1B0CD4A000D31AA2 /* QueryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24756F2E1B0CD4A000D31AA2 /* QueryText.swift */; };
+		24756F311B0CD4E500D31AA2 /* QueryNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24756F301B0CD4E500D31AA2 /* QueryNum.swift */; };
+		24756F331B0E20E900D31AA2 /* QueryNumSingleValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24756F321B0E20E900D31AA2 /* QueryNumSingleValue.swift */; };
 		24E4FFC51B022522002AED24 /* SensorDescAccelerometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFC41B022522002AED24 /* SensorDescAccelerometer.swift */; };
-		24E4FFCD1B02260F002AED24 /* SensorQueriesAccelerometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFCC1B02260F002AED24 /* SensorQueriesAccelerometer.swift */; };
-		24E4FFCF1B022623002AED24 /* SensorQueriesBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFCE1B022623002AED24 /* SensorQueriesBattery.swift */; };
-		24E4FFD11B022633002AED24 /* QueryNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFD01B022633002AED24 /* QueryNum.swift */; };
-		24E4FFD31B022640002AED24 /* QueryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFD21B022640002AED24 /* QueryText.swift */; };
-		24E4FFD51B022652002AED24 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFD41B022652002AED24 /* Query.swift */; };
-		24E4FFD71B022662002AED24 /* QueryNumSingleValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFD61B022662002AED24 /* QueryNumSingleValue.swift */; };
-		24E4FFD91B022672002AED24 /* QueryNumVectorValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFD81B022672002AED24 /* QueryNumVectorValue.swift */; };
 		311E82701A001D8500C176FE /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E826F1A001D8500C176FE /* FilterButtonView.swift */; };
 		E173CD681B0387E200E56ED2 /* SensorDescGyroscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = E173CD671B0387E200E56ED2 /* SensorDescGyroscope.swift */; };
 		E1B3C9221B0E19830089C771 /* SensorCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3C9211B0E19830089C771 /* SensorCollection.swift */; };
@@ -137,14 +134,11 @@
 		22F1A6011A10A82E0097B2E4 /* MapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNode.swift; sourceTree = "<group>"; };
 		22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		22FF8A8C19F14B3A00AC6783 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		24756F2C1B0CD17900D31AA2 /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		24756F2E1B0CD4A000D31AA2 /* QueryText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryText.swift; sourceTree = "<group>"; };
+		24756F301B0CD4E500D31AA2 /* QueryNum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryNum.swift; sourceTree = "<group>"; };
+		24756F321B0E20E900D31AA2 /* QueryNumSingleValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryNumSingleValue.swift; sourceTree = "<group>"; };
 		24E4FFC41B022522002AED24 /* SensorDescAccelerometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescAccelerometer.swift; sourceTree = "<group>"; };
-		24E4FFCC1B02260F002AED24 /* SensorQueriesAccelerometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorQueriesAccelerometer.swift; sourceTree = "<group>"; };
-		24E4FFCE1B022623002AED24 /* SensorQueriesBattery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorQueriesBattery.swift; sourceTree = "<group>"; };
-		24E4FFD01B022633002AED24 /* QueryNum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryNum.swift; sourceTree = "<group>"; };
-		24E4FFD21B022640002AED24 /* QueryText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryText.swift; sourceTree = "<group>"; };
-		24E4FFD41B022652002AED24 /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
-		24E4FFD61B022662002AED24 /* QueryNumSingleValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryNumSingleValue.swift; sourceTree = "<group>"; };
-		24E4FFD81B022672002AED24 /* QueryNumVectorValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryNumVectorValue.swift; sourceTree = "<group>"; };
 		311E826F1A001D8500C176FE /* FilterButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
 		945DC94D19FB201D0BBE095C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AC5F25183B95B2D3730BA466 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -194,8 +188,6 @@
 		22316DCE19BFB422006FD165 = {
 			isa = PBXGroup;
 			children = (
-				24E4FFC71B0225A3002AED24 /* SensorQueries */,
-				24E4FFC61B022596002AED24 /* Queries */,
 				22F16C841A1A0E8E00EB97F5 /* Images.xcassets */,
 				22C5D6F919FF87E200CD8D26 /* runtime-pb-swift */,
 				22316DD919BFB422006FD165 /* nervous */,
@@ -218,6 +210,8 @@
 		22316DD919BFB422006FD165 /* nervous */ = {
 			isa = PBXGroup;
 			children = (
+				24756F2B1B0CD15600D31AA2 /* SensorQueries */,
+				24756F2A1B0CD14D00D31AA2 /* Queries */,
 				FC1346B51AD5E90A00D9998C /* db */,
 				22E0A19719F15A0A001D4548 /* -Bridging-Header.h */,
 				22316DDA19BFB422006FD165 /* Supporting Files */,
@@ -360,23 +354,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		24E4FFC61B022596002AED24 /* Queries */ = {
+		24756F2A1B0CD14D00D31AA2 /* Queries */ = {
 			isa = PBXGroup;
 			children = (
-				24E4FFD01B022633002AED24 /* QueryNum.swift */,
-				24E4FFD21B022640002AED24 /* QueryText.swift */,
-				24E4FFD41B022652002AED24 /* Query.swift */,
-				24E4FFD61B022662002AED24 /* QueryNumSingleValue.swift */,
-				24E4FFD81B022672002AED24 /* QueryNumVectorValue.swift */,
+				24756F2C1B0CD17900D31AA2 /* Query.swift */,
+				24756F2E1B0CD4A000D31AA2 /* QueryText.swift */,
+				24756F301B0CD4E500D31AA2 /* QueryNum.swift */,
+				24756F321B0E20E900D31AA2 /* QueryNumSingleValue.swift */,
 			);
 			name = Queries;
 			sourceTree = "<group>";
 		};
-		24E4FFC71B0225A3002AED24 /* SensorQueries */ = {
+		24756F2B1B0CD15600D31AA2 /* SensorQueries */ = {
 			isa = PBXGroup;
 			children = (
-				24E4FFCC1B02260F002AED24 /* SensorQueriesAccelerometer.swift */,
-				24E4FFCE1B022623002AED24 /* SensorQueriesBattery.swift */,
 			);
 			name = SensorQueries;
 			sourceTree = "<group>";
@@ -540,7 +531,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24E4FFD71B022662002AED24 /* QueryNumSingleValue.swift in Sources */,
 				22C5D70E19FF87E200CD8D26 /* ExtensionField.swift in Sources */,
 				22C5D71519FF87E200CD8D26 /* WireFormat.swift in Sources */,
 				E1F923CA1B0612B40020CEEA /* SensorDescSingleValue.swift in Sources */,
@@ -551,9 +541,7 @@
 				FC1346AD1AD5D04000D9998C /* SQLiteDB.swift in Sources */,
 				22C5D71419FF87E200CD8D26 /* UnknownFieldSetBuilder.swift in Sources */,
 				22653FEF19D6D243004E1AA2 /* SensorDesc.swift in Sources */,
-				24E4FFCF1B022623002AED24 /* SensorQueriesBattery.swift in Sources */,
 				22C5D70819FF87E200CD8D26 /* AbstractMessage.swift in Sources */,
-				24E4FFD91B022672002AED24 /* QueryNumVectorValue.swift in Sources */,
 				311E82701A001D8500C176FE /* FilterButtonView.swift in Sources */,
 				FC1346AE1AD5D04000D9998C /* String-Extras.swift in Sources */,
 				22653FF919D6FBDB004E1AA2 /* NervousVM.swift in Sources */,
@@ -564,22 +552,22 @@
 				22316DDD19BFB422006FD165 /* AppDelegate.swift in Sources */,
 				22653FF119D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift in Sources */,
 				E1F923CC1B0615F90020CEEA /* SensorDescMagnetic.swift in Sources */,
-				24E4FFCD1B02260F002AED24 /* SensorQueriesAccelerometer.swift in Sources */,
 				22B912E019D76F96006094C6 /* SensorViewController.swift in Sources */,
 				22F1A6021A10A82E0097B2E4 /* MapNode.swift in Sources */,
+				24756F331B0E20E900D31AA2 /* QueryNumSingleValue.swift in Sources */,
+				24756F2D1B0CD17900D31AA2 /* Query.swift in Sources */,
 				24E4FFC51B022522002AED24 /* SensorDescAccelerometer.swift in Sources */,
-				24E4FFD51B022652002AED24 /* Query.swift in Sources */,
-				24E4FFD11B022633002AED24 /* QueryNum.swift in Sources */,
 				22F1A6001A10A8260097B2E4 /* MapEdge.swift in Sources */,
 				22C5D70C19FF87E200CD8D26 /* ExtendableMessage.swift in Sources */,
 				22C5D70A19FF87E200CD8D26 /* CodedOutputStream.swift in Sources */,
 				225830191A2807AF00075C8D /* CreditsViewController.swift in Sources */,
 				22C5D70F19FF87E200CD8D26 /* ExtensionRegistry.swift in Sources */,
-				24E4FFD31B022640002AED24 /* QueryText.swift in Sources */,
 				FC1346B71AD5E99C00D9998C /* SQLiteSensorsDB.swift in Sources */,
 				22C5D71319FF87E200CD8D26 /* UnknownFieldSet.swift in Sources */,
+				24756F311B0CD4E500D31AA2 /* QueryNum.swift in Sources */,
 				22653FF419D6E044004E1AA2 /* UploadTask.swift in Sources */,
 				22D2D66D19C0979E00B11C54 /* Sensorupload.pb.swift in Sources */,
+				24756F2F1B0CD4A000D31AA2 /* QueryText.swift in Sources */,
 				FC1346B91AD5EC0400D9998C /* SensorsDB.swift in Sources */,
 				22653FF619D6E669004E1AA2 /* BLESensor.swift in Sources */,
 				22C5D71019FF87E200CD8D26 /* Field.swift in Sources */,

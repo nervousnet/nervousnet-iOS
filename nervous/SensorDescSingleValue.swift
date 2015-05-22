@@ -11,4 +11,6 @@ import Foundation
 protocol SensorDescSingleValue : SensorDesc {
     
     func getValue() -> Float
+    
+    
 }

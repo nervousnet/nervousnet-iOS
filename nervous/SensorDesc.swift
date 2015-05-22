@@ -8,13 +8,15 @@
 
 import Foundation
 
-protocol SensorDesc{
     
-    var sensorIdentifier: Int64 { get }
     
-    var timestamp: UInt64 { get set }
-    
-    init(sensorData: SensorUploadSensorData)
-    
-    func toProtoSensor() -> SensorUploadSensorData
-}
+    protocol SensorDesc{
+        
+        var sensorIdentifier: Int64 { get }
+        
+        var timestamp: UInt64 { get set }
+        
+        init(sensorData: SensorUploadSensorData)
+        
+        func toProtoSensor() -> SensorUploadSensorData
+    }
