@@ -49,7 +49,7 @@ class SensorCollection {
         }
         
         // Gyroscope
-        //println(manager.gyroAvailable)
+        println(manager.gyroAvailable)
         if manager.gyroAvailable {
             manager.gyroUpdateInterval = 30
             manager.startGyroUpdatesToQueue(NSOperationQueue.mainQueue()) {
