@@ -8,6 +8,9 @@
 
 import UIKit
 import Foundation
+import Darwin
+import Cocoa
+
 //query,querynum and querynumsinglevalue together
 
  class QueryNumSingleValue<G : SensorDescSingleValue> {
@@ -78,6 +81,88 @@ import Foundation
         
     }
     
+    func getMaxValue()-> G{
+        var maxSensDesc = createDummyObject()
+        var maxVal = FLT_MIN
+        
+        for sensorData in List{
+            var sensDesc = createSensorDescSingleValue(sensorData)
+            if(sensDesc.getValue() > maxVal){
+                maxVal = sensDesc.getValue()
+                maxSensDesc = sensDesc
+            }
+        }
+        
+       return maxSensDesc
+    }
+    
+    func getMinValue()-> G{
+        var minSensDesc = createDummyObject()
+        var minVal = FLT_MAX
+        
+        for sensorData in List{
+            var sensDesc = createSensorDescSingleValue(sensorData)
+            if(sensDesc.getValue() < minVal){
+                minVal = sensDesc.getValue()
+                minSensDesc = sensDesc
+            }
+        }
+        
+        return minSensDesc
+    }
+    
+    func getAverage()-> Array<Float>{
+        var temp = Array<Float>()
+        var totalSum = 0
+        for sensorData : List{
+            var sensDesc = createSensorDescSingleValue(sensorData)
+            totalSum += sensDesc.getValue()
+            
+        }
+        var average = totalSum/List.count
+        temp.append(average)
+        return temp
+    }
+    
+    func sd()-> Array<Float>{
+        var sd =Array<Float>()
+        var temp = variance()
+        var t = temp[0]
+        t = sqrt(t)
+        sd.append(t)
+        return sd
+    }
+    
+    
+    func variance()-> Array<Float>{
+        var sd =Array<Float>()
+        var av = getAverage()
+        var average = av[0]
+        var temp = 0
+        for sensorData in List{
+            var sensDesc = createSensorDescSingleValue(sensorData)
+            temp += (average - sensDesc.getValue())*(average - sensDesc.getValue())
+        }
+        temp = temp/List.count
+        sd.append(temp)
+        return sd
+    }
+    
+    func getRms()->Array<Float>{
+        var temp = Array<Float>()
+        var totalSum = 0
+        for sensorData : List{
+            var sensDesc = createSensorDescSingleValue(sensorData)
+            totalSum += sensDesc.getValue()*sensDesc.getValue()
+            
+        }
+        var average = totalSum/List.count
+        average = sqrt(average)
+        temp.append(average)
+        return temp
+        
+    }
+
     
     
     
