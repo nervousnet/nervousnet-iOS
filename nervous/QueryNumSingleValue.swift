@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 import Darwin
-import Cocoa
 
 //query,querynum and querynumsinglevalue together
 
@@ -113,19 +112,19 @@ import Cocoa
     
     func getAverage()-> Array<Float>{
         var temp = Array<Float>()
-        var totalSum = 0
-        for sensorData : List{
+        var totalSum : Float = 0
+        for sensorData in List{
             var sensDesc = createSensorDescSingleValue(sensorData)
             totalSum += sensDesc.getValue()
             
         }
-        var average = totalSum/List.count
+        var average = totalSum/Float(List.count)
         temp.append(average)
         return temp
     }
     
     func sd()-> Array<Float>{
-        var sd =Array<Float>()
+        var sd = Array<Float>()
         var temp = variance()
         var t = temp[0]
         t = sqrt(t)
@@ -135,28 +134,28 @@ import Cocoa
     
     
     func variance()-> Array<Float>{
-        var sd =Array<Float>()
+        var sd = Array<Float>()
         var av = getAverage()
         var average = av[0]
-        var temp = 0
+        var temp : Float = 0
         for sensorData in List{
             var sensDesc = createSensorDescSingleValue(sensorData)
             temp += (average - sensDesc.getValue())*(average - sensDesc.getValue())
         }
-        temp = temp/List.count
+        temp = temp/Float(List.count)
         sd.append(temp)
         return sd
     }
     
     func getRms()->Array<Float>{
         var temp = Array<Float>()
-        var totalSum = 0
-        for sensorData : List{
+        var totalSum :Float = 0
+        for sensorData in List{
             var sensDesc = createSensorDescSingleValue(sensorData)
             totalSum += sensDesc.getValue()*sensDesc.getValue()
             
         }
-        var average = totalSum/List.count
+        var average = totalSum/Float(List.count)
         average = sqrt(average)
         temp.append(average)
         return temp
@@ -165,21 +164,21 @@ import Cocoa
     
     func getMeanSquare()->Array<Float>{
         var temp = Array<Float>()
-        var totalSum = 0
-        for sensorData : List{
+        var totalSum : Float = 0
+        for sensorData in List{
             var sensDesc = createSensorDescSingleValue(sensorData)
             totalSum += sensDesc.getValue()*sensDesc.getValue()
             
         }
-        var average = totalSum/List.count
+        var average = totalSum/Float(List.count)
         temp.append(average)
         return temp
     }
     
     func getSum()->Array<Float>{
         var temp = Array<Float>()
-        var totalSum = 0
-        for sensorData : List{
+        var totalSum : Float = 0
+        for sensorData in List{
             var sensDesc = createSensorDescSingleValue(sensorData)
             totalSum += sensDesc.getValue()
             
@@ -192,8 +191,8 @@ import Cocoa
     
     func getSumSquare()->Array<Float>{
         var temp = Array<Float>()
-        var totalSum = 0
-        for sensorData : List{
+        var totalSum : Float = 0
+        for sensorData in List{
             var sensDesc = createSensorDescSingleValue(sensorData)
             totalSum += sensDesc.getValue()*sensDesc.getValue()
             
@@ -204,11 +203,52 @@ import Cocoa
         
     }
     
+    func getRmsError(comp : Array<Float>)-> Array<Float>{
+        var answer = Array<Float>()
+        var temp : Float = 0
+        var data = comp[0] //only 1 value
+        for sensorData in List{
+            var sensDesc = createSensorDescSingleValue(sensorData)
+            temp += powf(sensDesc.getValue()-data, 2)
+        }
+        temp = sqrt(temp/Float(List.count))
+        answer.append(temp)
+        return answer
+    }
+    
+    func getMedian()-> Array<Float>{
+        var temp = Array<Float>()
+        var desc_list = Array<G>()
+        for sensorData in List{
+            desc_list.append(createSensorDescSingleValue(sensorData))
+            
+        }
+        var middle : Float
+        if(List.count%2 == 0){
+            middle = desc_list[List.count/2].getValue()
+        }
+        else
+        {middle = desc_list[List.count/2].getValue() + desc_list[List.count/2+1].getValue()}
+        
+        
+        temp.append(middle)
+        return temp
+    }
+    
+    func compare(obj1 : G,obj2:G)->Bool{
+        //if return 0 first larger than second
+        //else 1
+        if(obj1.getValue() >= obj2.getValue()){
+            return false
+        }
+        if(obj1.getValue() > obj2.getValue()){
+            return true
+        }
+        return false
+    }
+    
     
 
-    
-    
-    
-
-    
 }
+
+
