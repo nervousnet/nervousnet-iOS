@@ -162,6 +162,49 @@ import Cocoa
         return temp
         
     }
+    
+    func getMeanSquare()->Array<Float>{
+        var temp = Array<Float>()
+        var totalSum = 0
+        for sensorData : List{
+            var sensDesc = createSensorDescSingleValue(sensorData)
+            totalSum += sensDesc.getValue()*sensDesc.getValue()
+            
+        }
+        var average = totalSum/List.count
+        temp.append(average)
+        return temp
+    }
+    
+    func getSum()->Array<Float>{
+        var temp = Array<Float>()
+        var totalSum = 0
+        for sensorData : List{
+            var sensDesc = createSensorDescSingleValue(sensorData)
+            totalSum += sensDesc.getValue()
+            
+        }
+        
+        temp.append(totalSum)
+        return temp
+        
+    }
+    
+    func getSumSquare()->Array<Float>{
+        var temp = Array<Float>()
+        var totalSum = 0
+        for sensorData : List{
+            var sensDesc = createSensorDescSingleValue(sensorData)
+            totalSum += sensDesc.getValue()*sensDesc.getValue()
+            
+        }
+        
+        temp.append(totalSum)
+        return temp
+        
+    }
+    
+    
 
     
     
