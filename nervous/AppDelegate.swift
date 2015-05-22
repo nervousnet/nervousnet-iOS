@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
         //let manager = CMMotionManager()
         //SensorCollection.sensorActivate(manager)
-        SensorCollection.sensorActivate(CMMotionManager())
+        //SensorCollection.sensorActivate(CMMotionManager())
         //dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_BACKGROUND.value), 0)) { // 1
         //
         //    dispatch_async(dispatch_get_main_queue()) { // 2
@@ -79,6 +79,76 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         /*
         --------------------------------------------------------------------------------------
         */
+        // The core motion manager. Should be same manager for all sensors for consistency.
+        let manager = CMMotionManager()
+        
+        // The DataBase Instance
+        var db = SQLiteSensorsDB.sharedInstance
+        
+        
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++
+        // Fetching and Pushing the data of individual sensors
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++
+        
+        // Accelerometer
+        if manager.accelerometerAvailable {
+            manager.accelerometerUpdateInterval = 30  // fetching interval in seconds.
+            manager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
+                [weak self](data: CMAccelerometerData!, error: NSError!) in
+                var currentTimeA :NSDate = NSDate()
+                var sensorDescAcc = SensorDescAccelerometer (
+                    timestamp: UInt64(currentTimeA.timeIntervalSince1970*1000), // time to timestamp
+                    accX : Float(data.acceleration.x),
+                    accY : Float(data.acceleration.y),
+                    accZ : Float(data.acceleration.z)
+                )
+                // push the data to the database
+                db.store(0x0000000000000000, timestamp: sensorDescAcc.timestamp, sensorData: sensorDescAcc.toProtoSensor())
+                println("Accelerometer")
+            }
+        }
+        
+        // Gyroscope
+        println(manager.gyroAvailable)
+        if manager.gyroAvailable {
+            manager.gyroUpdateInterval = 30
+            manager.startGyroUpdatesToQueue(NSOperationQueue.mainQueue()) {
+                [weak self](data: CMGyroData!, error: NSError!) in
+                var currentTimeG :NSDate = NSDate()
+                var sensorDescGyr = SensorDescGyroscope (
+                    timestamp: UInt64(currentTimeG.timeIntervalSince1970*1000), // time to timestamp
+                    gyrX : Float(data.rotationRate.x),
+                    gyrY : Float(data.rotationRate.y),
+                    gyrZ : Float(data.rotationRate.z)
+                )
+                db.store(0x0000000000000002, timestamp: sensorDescGyr.timestamp, sensorData: sensorDescGyr.toProtoSensor())
+                println("Gyroscope")
+            }
+        }
+        
+        // Magnetic
+        if manager.magnetometerAvailable {
+            manager.magnetometerUpdateInterval = 30
+            manager.startMagnetometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
+                [weak self](data: CMMagnetometerData!, error: NSError!) in
+                var currentTimeM :NSDate = NSDate()
+                var sensorDescMag = SensorDescMagnetic (
+                    timestamp: UInt64(currentTimeM.timeIntervalSince1970*1000), // time to timestamp
+                    magX : Float(data.magneticField.x),
+                    magY : Float(data.magneticField.y),
+                    magZ : Float(data.magneticField.z)
+                )
+                db.store(0x0000000000000005, timestamp: sensorDescMag.timestamp, sensorData: sensorDescMag.toProtoSensor())
+            }
+        }
+        
+        // Battery
+        var timerB = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("batteryCollection"), userInfo: nil, repeats: true)
+        
+        // Proximity
+        var timerP = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("proximityCollection"), userInfo: nil, repeats: true)
+        
+        
         
         //setup beacon region
         let beaconUUIDString = "3C77C2A5-5D39-420F-97FD-E7735CC7F317"
@@ -88,7 +158,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         NSLog("Cooking bacon...")
         
         
-        let beaconRegion:CLBeaconRegion = CLBeaconRegion(proximityUUID: beaconUUID,
+        let beaconRegion : CLBeaconRegion = CLBeaconRegion(proximityUUID: beaconUUID,
             identifier: beaconIdentifier)
         
         //do scan when display comes on
@@ -126,6 +196,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         
         return true
+    }
+    
+    // Battery
+    func batteryCollection() {
+        var db = SQLiteSensorsDB.sharedInstance
+        UIDevice.currentDevice().batteryMonitoringEnabled = true // start the battery data collection
+        var currentTimeB :NSDate = NSDate()
+        var isCharging: Bool
+        var isUsbCharge: Bool
+        var isAcCharge: Bool
+        
+        if UIDeviceBatteryState.Charging.rawValue == 3{ // doubt check this if '3' is correct
+            isCharging = true
+            isUsbCharge = false
+            isAcCharge = true
+        }
+        else {
+            isCharging = false
+            isUsbCharge = false
+            isAcCharge = false
+        }
+        var sensorDescBat = SensorDescBattery (
+            timestamp: UInt64(currentTimeB.timeIntervalSince1970*1000), // time to timestamp
+            batteryPercent : Float(UIDevice.currentDevice().batteryLevel),
+            isCharging : isCharging,
+            isUsbCharge : isUsbCharge,
+            isAcCharge : isAcCharge
+        )
+        db.store(0x0000000000000001, timestamp: sensorDescBat.timestamp, sensorData: sensorDescBat.toProtoSensor())
+    }
+    
+    // Proximity
+    func proximityCollection() {
+        var db = SQLiteSensorsDB.sharedInstance
+        UIDevice.currentDevice().proximityMonitoringEnabled = true // start the battery data collection
+        var currentTimeP :NSDate = NSDate()
+        var sensorDescProx = SensorDescProximity (
+            timestamp: UInt64(currentTimeP.timeIntervalSince1970*1000), // time to timestamp
+            proximity : 0,
+            isClose : UIDevice.currentDevice().proximityState
+        )
+        db.store(0x0000000000000006, timestamp: sensorDescProx.timestamp, sensorData: sensorDescProx.toProtoSensor())
     }
 
     func applicationWillResignActive(application: UIApplication) {
