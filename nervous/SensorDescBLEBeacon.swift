@@ -83,4 +83,8 @@ class SensorDescBLEBeacon: SensorDesc {
         
         return sdb.build()
     }
+    
+    func getSensorId() -> UInt64 {
+        return SENSOR_ID
+    }
 }

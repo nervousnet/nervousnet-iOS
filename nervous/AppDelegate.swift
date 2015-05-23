@@ -225,6 +225,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             isAcCharge : isAcCharge
         )
         db.store(0x0000000000000001, timestamp: sensorDescBat.timestamp, sensorData: sensorDescBat.toProtoSensor())
+        UIDevice.currentDevice().batteryMonitoringEnabled = false
     }
     
     // Proximity
@@ -238,6 +239,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             isClose : UIDevice.currentDevice().proximityState
         )
         db.store(0x0000000000000006, timestamp: sensorDescProx.timestamp, sensorData: sensorDescProx.toProtoSensor())
+        UIDevice.currentDevice().proximityMonitoringEnabled = false
     }
 
     func applicationWillResignActive(application: UIApplication) {
