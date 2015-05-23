@@ -29,7 +29,7 @@
 	<key>NSLocationWhenInUsageDescription</key>
 	<string>Allow to navigate indoors and help build the 31c3 social graph. No GPS location used!</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<string>Latest</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
