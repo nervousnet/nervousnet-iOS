@@ -223,6 +223,18 @@ import Darwin
             desc_list.append(createSensorDescSingleValue(sensorData))
             
         }
+        //SORT
+        for var i=0;i<desc_list.count;++i{
+            for var j=i+1;j<desc_list.count;++j{
+                var ans = compare(desc_list[i]  ,obj2: desc_list[j])
+                if(ans == false){
+                    var temp = desc_list[i]
+                    desc_list[i] = desc_list[j]
+                    desc_list[j] = temp
+                }
+    
+            }
+        }
         var middle : Float
         if(List.count%2 == 0){
             middle = desc_list[List.count/2].getValue()
@@ -235,7 +247,7 @@ import Darwin
         return temp
     }
     
-    func compare(obj1 : G,obj2:G)->Bool{
+    func compare(obj1 : G, obj2 : G)->Bool{
         //if return 0 first larger than second
         //else 1
         if(obj1.getValue() >= obj2.getValue()){
@@ -246,9 +258,176 @@ import Darwin
         }
         return false
     }
+    //largest 10 output
+    func getLargest(k : Int)->Array<G>{
+        var descList = Array<G>()
+        var desc_list = Array<G>()
+        for sensorData in List{
+            desc_list.append(createSensorDescSingleValue(sensorData))
+            
+        }
+        //SORT
+        for var i=0;i<desc_list.count;++i{
+            for var j=i+1;j<desc_list.count;++j{
+                var ans = compare(desc_list[i]  ,obj2: desc_list[j])
+                if(ans == false){
+                    var temp = desc_list[i]
+                    desc_list[i] = desc_list[j]
+                    desc_list[j] = temp
+                }
+                
+            }
+        }
+        for var i=0;i<k;++i{
+            descList.append(desc_list[desc_list.count-1-i])
+            }
+        return descList
+        
+    }
+    //smallest 10
+    func getSmallest(k : Int)->Array<G>{
+        var descList = Array<G>()
+        var desc_list = Array<G>()
+        for sensorData in List{
+            desc_list.append(createSensorDescSingleValue(sensorData))
+            
+        }
+        //SORT
+        for var i=0;i<desc_list.count;++i{
+            for var j=i+1;j<desc_list.count;++j{
+                var ans = compare(desc_list[i]  ,obj2: desc_list[j])
+                if(ans == false){
+                    var temp = desc_list[i]
+                    desc_list[i] = desc_list[j]
+                    desc_list[j] = temp
+                }
+                
+            }
+        }
+        for var i=0;i<k;++i{
+            descList.append(desc_list[i])
+        }
+        return descList
+        
+    }
     
+    func getRankSmallest(k : Int)->Array<G>{
+        var descList = Array<G>()
+        var desc_list = Array<G>()
+        for sensorData in List{
+            desc_list.append(createSensorDescSingleValue(sensorData))
+            
+        }
+        //SORT
+        for var i=0;i<desc_list.count;++i{
+            for var j=i+1;j<desc_list.count;++j{
+                var ans = compare(desc_list[i]  ,obj2: desc_list[j])
+                if(ans == false){
+                    var temp = desc_list[i]
+                    desc_list[i] = desc_list[j]
+                    desc_list[j] = temp
+                }
+                
+            }
+        }
+        descList.append(desc_list[k])
+        return descList
+        
+    }
     
-
+    func getRankLargest(k : Int)->Array<G>{
+        var descList = Array<G>()
+        var desc_list = Array<G>()
+        for sensorData in List{
+            desc_list.append(createSensorDescSingleValue(sensorData))
+            
+        }
+        //SORT
+        for var i=0;i<desc_list.count;++i{
+            for var j=i+1;j<desc_list.count;++j{
+                var ans = compare(desc_list[i]  ,obj2: desc_list[j])
+                if(ans == false){
+                    var temp = desc_list[i]
+                    desc_list[i] = desc_list[j]
+                    desc_list[j] = temp
+                }
+                
+            }
+        }
+        descList.append(desc_list[desc_list.count-1-k])
+        return descList
+        
+    }
+    
+    func getCorrelation(comp : Array<G>,comp1:Array<G>)->Array<Float>{
+        var c3 = Array<Float>()
+        var totalSum : Float = 0
+        for var i = 0;i<comp.count;++i{
+            totalSum += comp[i].getValue()
+        }
+        var totalSum1 : Float = 0
+        for var i = 0;i<comp1.count;++i{
+            totalSum1 += comp1[i].getValue()
+        }
+        var average = totalSum/Float(comp.count)
+        var average1 = totalSum1/Float(comp1.count)
+        
+         var c = Array<Float>()
+         var c1 = Array<Float>()
+        
+        for var i = 0;i<comp.count;++i{
+            var temp = comp[i].getValue()
+            temp -= average
+            c.append(temp)
+        }
+        for var i = 0;i<comp1.count;++i{
+            var temp = comp1[i].getValue()
+            temp -= average
+            c1.append(temp)
+        }
+        
+        var top : Float = 0
+        for var i = 0;i<comp.count;++i{
+            top += c[i]*c1[i]
+        }
+        
+        var a2 : Float = 0
+        var b2 : Float = 0
+        
+        for var i = 0;i<comp.count;++i{
+            a2 += powf(c[i], 2)
+            b2 += powf(c1[i], 2)
+        }
+        
+        var bottom = sqrt(a2*b2)
+        var coef = top/bottom
+        
+        c3.append(coef)
+        return c3
+        
+        }
+    
+    func getEntropy()->Array<Float>{
+        var n = Array<Float>()
+        var ent : Float = 0
+        var totalSum : Float = 0
+        for sensorData in List{
+            var sensDesc = createSensorDescSingleValue(sensorData)
+            totalSum += sensDesc.getValue()
+        }
+        var prob = Array<Float>()
+         for sensorData in List{
+            var sensDesc = createSensorDescSingleValue(sensorData)
+            var temp = sensDesc.getValue() / totalSum
+            prob.append(temp)
+        }
+        for var i = 0;i<prob.count;++i{
+            ent += prob[i] * log(1/prob[i])
+        }
+        n.append(ent)
+        return n
+    
+    }
 }
 
 
