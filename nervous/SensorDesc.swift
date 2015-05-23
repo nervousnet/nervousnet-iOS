@@ -19,4 +19,6 @@ import Foundation
         init(sensorData: SensorUploadSensorData)
         
         func toProtoSensor() -> SensorUploadSensorData
+        
+        func getSensorId() -> UInt64
     }
