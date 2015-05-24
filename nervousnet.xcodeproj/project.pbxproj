@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		076A35631B11F32B0054002A /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076A35621B11F32B0054002A /* PrivacyViewController.swift */; };
+		076A35651B11FA1F0054002A /* LoggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076A35641B11FA1F0054002A /* LoggingViewController.swift */; };
 		07C12C3A1B0CD09400885C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C12C391B0CD09400885C50 /* ViewController.swift */; };
 		07D307251B10C465009CD2F3 /* SensorStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D307241B10C465009CD2F3 /* SensorStatisticsViewController.swift */; };
 		07D30DC71B10EB56009CD2F3 /* index.htm in Resources */ = {isa = PBXBuildFile; fileRef = 07D30DC61B10EB56009CD2F3 /* index.htm */; };
@@ -121,6 +123,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		076A35621B11F32B0054002A /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		076A35641B11FA1F0054002A /* LoggingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingViewController.swift; sourceTree = "<group>"; };
 		07C12C391B0CD09400885C50 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07D307241B10C465009CD2F3 /* SensorStatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorStatisticsViewController.swift; sourceTree = "<group>"; };
 		07D30DC61B10EB56009CD2F3 /* index.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.htm; sourceTree = "<group>"; };
@@ -364,6 +368,8 @@
 				07D30DC81B10EC16009CD2F3 /* js */,
 				07D30DC61B10EB56009CD2F3 /* index.htm */,
 				22316DE219BFB422006FD165 /* Latest.storyboard */,
+				076A35641B11FA1F0054002A /* LoggingViewController.swift */,
+				076A35621B11F32B0054002A /* PrivacyViewController.swift */,
 				07D307241B10C465009CD2F3 /* SensorStatisticsViewController.swift */,
 				22B912DF19D76F96006094C6 /* SensorViewController.swift */,
 				22B03E5419CE032B00E50D04 /* MapViewController.swift */,
@@ -731,6 +737,7 @@
 				22653FF919D6FBDB004E1AA2 /* NervousVM.swift in Sources */,
 				22C5D71119FF87E200CD8D26 /* GeneratedMessage.swift in Sources */,
 				22C5D71919FFADBA00CD8D26 /* SensorDetailController.swift in Sources */,
+				076A35631B11F32B0054002A /* PrivacyViewController.swift in Sources */,
 				E1F923CE1B0635470020CEEA /* SensorDescProximity.swift in Sources */,
 				22C5D70B19FF87E200CD8D26 /* ConcreteExtensionField.swift in Sources */,
 				22316DDD19BFB422006FD165 /* AppDelegate.swift in Sources */,
@@ -749,6 +756,7 @@
 				FC1346B71AD5E99C00D9998C /* SQLiteSensorsDB.swift in Sources */,
 				22C5D71319FF87E200CD8D26 /* UnknownFieldSet.swift in Sources */,
 				24756F311B0CD4E500D31AA2 /* QueryNum.swift in Sources */,
+				076A35651B11FA1F0054002A /* LoggingViewController.swift in Sources */,
 				22653FF419D6E044004E1AA2 /* UploadTask.swift in Sources */,
 				22D2D66D19C0979E00B11C54 /* Sensorupload.pb.swift in Sources */,
 				24756F2F1B0CD4A000D31AA2 /* QueryText.swift in Sources */,
