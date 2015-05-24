@@ -628,12 +628,21 @@
                                     </textField>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="bQo-cf-mXz">
                                         <rect key="frame" x="204" y="9" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="accChange:forEvent:" destination="zVR-bj-KAA" eventType="valueChanged" id="MWu-Jg-mW2"/>
+                                        </connections>
                                     </stepper>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wRc-7Y-sHa">
                                         <rect key="frame" x="204" y="48" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="batChange:" destination="zVR-bj-KAA" eventType="valueChanged" id="qrp-IY-6B7"/>
+                                        </connections>
                                     </stepper>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="50R-bt-5Ky">
                                         <rect key="frame" x="204" y="87" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="bleChange:" destination="zVR-bj-KAA" eventType="valueChanged" id="JHY-ky-EfA"/>
+                                        </connections>
                                     </stepper>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Nid-fc-KxR">
                                         <rect key="frame" x="204" y="126" width="94" height="29"/>
@@ -797,6 +806,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="accField" destination="z2e-Jq-nr9" id="iiV-XF-tZI"/>
+                        <outlet property="batField" destination="D09-xK-9W6" id="Abs-Mt-o3Q"/>
+                        <outlet property="bleField" destination="z1n-eA-xLs" id="36L-xz-Pcu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sR0-dF-YCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
