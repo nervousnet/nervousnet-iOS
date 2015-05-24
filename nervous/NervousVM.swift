@@ -11,16 +11,19 @@ import Foundation
 import UIKit
 import CoreMotion
 
+// Instantiate the VM for global use as a singleton
+private let _VM = NervousVM()
+
 class NervousVM {
     
     let defaults :NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
     init(){
-        
-        
             var genUUID = self.generateUUID()
-        
-        
+    }
+    
+    class var sharedInstance: NervousVM {
+        return _VM
     }
     
     func pad(string : String, toSize: Int) -> String {

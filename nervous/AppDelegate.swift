@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var locationManager: CLLocationManager? //Declaring the locationManager with a question mark is necessary because it is empty when the AppDelegate object is created. This means making it optional. It is created in the didFinishLaunchingWithOptions method. Because it is optional, it is important to use an exclamation mark after its name in following instances, as shown in the code above.
  
     
-    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -252,14 +251,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     // Push to the server
     func pushToServer() {
         // Generate the VM object and get the UUIDs
-        let VM : NervousVM = NervousVM()
+        var VM = NervousVM.sharedInstance
         let huuid : UInt64 = VM.getHUUID()
         let luuid : UInt64 = VM.getLUUID()
         
         var db = SQLiteSensorsDB.sharedInstance
         var currentTime :NSDate = NSDate()
         var timestamp :UInt64 = UInt64(currentTime.timeIntervalSince1970*1000)
-        //println(timestamp)
+        println(VM.getHUUID())
         
         // Accelerometer
         let accSensor = SensorUpload.builder()
