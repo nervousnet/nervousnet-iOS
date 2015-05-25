@@ -9,9 +9,6 @@ class SensorStatisticsViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\n")
-        println(urlpath)
-        print("\n")
         //WebView.removeFromSuperview()
         
         let requestURL = NSURL(string: urlpath!)
