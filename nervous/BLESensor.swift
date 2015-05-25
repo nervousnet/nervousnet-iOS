@@ -33,7 +33,7 @@ class BLESensor {
     init(beacons :[AnyObject], region :CLRegion){
         
         
-        let nvm :NervousVM = NervousVM()
+        var nvm  = NervousVM.sharedInstance
         var currentTime :NSDate = NSDate()
         
         if(beacons.count > 0) {

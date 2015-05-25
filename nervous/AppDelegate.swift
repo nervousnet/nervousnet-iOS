@@ -84,6 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let manager = CMMotionManager()
         
         // The DataBase Instance
+        // It is a Singleton and should never be instantiated twice
         var db = SQLiteSensorsDB.sharedInstance
         
         
@@ -105,7 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 )
                 // push the data to the database
                 db.store(0x0000000000000000, timestamp: sensorDescAcc.timestamp, sensorData: sensorDescAcc.toProtoSensor())
-                println("Accelerometer")
+                //println("Accelerometer")
             }
         }
         
@@ -123,7 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     gyrZ : Float(data.rotationRate.z)
                 )
                 db.store(0x0000000000000002, timestamp: sensorDescGyr.timestamp, sensorData: sensorDescGyr.toProtoSensor())
-                println("Gyroscope")
+                //println("Gyroscope")
             }
         }
         
@@ -151,7 +152,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         // Push the data to te server
         // The function reads the last minute from the database using the current time
-        var timerD = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("pushToServer"), userInfo: nil, repeats: true)
+        var timerD = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: Selector("pushToServer"), userInfo: nil, repeats: true)
         
         
         

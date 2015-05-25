@@ -23,6 +23,7 @@ class SensorCollection {
         // let manager = CMMotionManager()
         
         // The DataBase Instance
+        // It is a Singleton and should never be instantiated twice
         var db = SQLiteSensorsDB.sharedInstance
         
         
