@@ -344,98 +344,170 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nST-7C-Eik">
                                         <rect key="frame" x="186" y="37" width="51" height="31"/>
                                         <color key="onTintColor" red="0.92156862745098034" green="0.28235294117647058" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="accLog:" destination="Lgq-6h-USL" eventType="valueChanged" id="U9y-6y-5Uk"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WLY-7r-Opp">
                                         <rect key="frame" x="243" y="37" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="accShare:" destination="Lgq-6h-USL" eventType="valueChanged" id="Eop-AV-qLn"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uzK-qc-7ZE">
                                         <rect key="frame" x="186" y="76" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="batLog:" destination="Lgq-6h-USL" eventType="valueChanged" id="xRp-al-Nbp"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O2f-MC-bQg">
                                         <rect key="frame" x="243" y="76" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="batShare:" destination="Lgq-6h-USL" eventType="valueChanged" id="dhw-qC-YXw"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8au-PP-wCy">
                                         <rect key="frame" x="186" y="115" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="bleLog:" destination="Lgq-6h-USL" eventType="valueChanged" id="E5w-NQ-3ta"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ihl-xZ-xru">
                                         <rect key="frame" x="243" y="115" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="bleShare:" destination="Lgq-6h-USL" eventType="valueChanged" id="JTF-In-8mY"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i6H-C8-dNI">
                                         <rect key="frame" x="186" y="154" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="conLog:" destination="Lgq-6h-USL" eventType="valueChanged" id="aEB-hs-fhn"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i0B-Em-oYc">
                                         <rect key="frame" x="243" y="154" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="conShare:" destination="Lgq-6h-USL" eventType="valueChanged" id="mfy-Ud-Rmc"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mde-fw-d6S">
                                         <rect key="frame" x="186" y="193" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="gyrLog:" destination="Lgq-6h-USL" eventType="valueChanged" id="hwH-Kk-jbC"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rHO-86-Z8S">
                                         <rect key="frame" x="243" y="193" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="gyrShare:" destination="Lgq-6h-USL" eventType="valueChanged" id="act-f5-dhf"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b10-Bf-3LI">
                                         <rect key="frame" x="186" y="232" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="humLog:" destination="Lgq-6h-USL" eventType="valueChanged" id="1ku-MN-n5d"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tVP-XF-KXz">
                                         <rect key="frame" x="243" y="232" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="humShare:" destination="Lgq-6h-USL" eventType="valueChanged" id="fLr-9O-tHo"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Omj-Dd-FH0">
                                         <rect key="frame" x="186" y="271" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="ligLog:" destination="Lgq-6h-USL" eventType="valueChanged" id="3pk-kZ-j39"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="isF-YA-30M">
                                         <rect key="frame" x="243" y="271" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="ligShare:" destination="Lgq-6h-USL" eventType="valueChanged" id="zfP-vL-sN4"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mL6-uf-ZzU">
                                         <rect key="frame" x="186" y="310" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="magLog:" destination="Lgq-6h-USL" eventType="valueChanged" id="XHR-9d-W1L"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v32-7i-gvH">
                                         <rect key="frame" x="243" y="310" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="magShare:" destination="Lgq-6h-USL" eventType="valueChanged" id="BND-a9-wiH"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U96-3d-2KP">
                                         <rect key="frame" x="186" y="349" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="noiLog:" destination="Lgq-6h-USL" eventType="valueChanged" id="WR7-Ca-QLI"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f0J-JX-SjF">
                                         <rect key="frame" x="243" y="349" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="noiShare:" destination="Lgq-6h-USL" eventType="valueChanged" id="2r5-iF-tkw"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mhu-jc-E43">
                                         <rect key="frame" x="186" y="388" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="preLog:" destination="Lgq-6h-USL" eventType="valueChanged" id="I4Y-Q5-bJi"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QoQ-Ox-rX3">
                                         <rect key="frame" x="243" y="388" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="preShare:" destination="Lgq-6h-USL" eventType="valueChanged" id="JdO-xB-9lm"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Hi-CA-xjU">
                                         <rect key="frame" x="186" y="427" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="proLog:" destination="Lgq-6h-USL" eventType="valueChanged" id="JkI-R8-CE7"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4K2-iD-J3K">
                                         <rect key="frame" x="243" y="427" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="proShare:" destination="Lgq-6h-USL" eventType="valueChanged" id="YW0-w7-wsE"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOr-he-W1K">
                                         <rect key="frame" x="186" y="466" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="temLog:" destination="Lgq-6h-USL" eventType="valueChanged" id="yby-de-sHe"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vc3-8i-6Ky">
                                         <rect key="frame" x="243" y="466" width="51" height="31"/>
                                         <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="temShare:" destination="Lgq-6h-USL" eventType="valueChanged" id="Ekb-Q0-H52"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIZ-VH-rFs">
                                         <rect key="frame" x="195" y="8" width="30" height="21"/>
@@ -578,6 +650,7 @@
                                 <exclude reference="RRy-4a-SMm"/>
                                 <exclude reference="Vr6-hV-bxW"/>
                                 <exclude reference="iG9-JC-oZU"/>
+                                <exclude reference="sfz-wj-CBK"/>
                             </mask>
                         </variation>
                     </view>
@@ -1198,7 +1271,7 @@
         <image name="Server" width="1131" height="1139"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vF3-TM-Y5C"/>
+        <segue reference="0Ne-qK-81H"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.92156862745098034" green="0.27843137254901962" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
 </document>
