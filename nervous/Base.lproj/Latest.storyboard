@@ -578,6 +578,7 @@
                                 <exclude reference="RRy-4a-SMm"/>
                                 <exclude reference="Vr6-hV-bxW"/>
                                 <exclude reference="iG9-JC-oZU"/>
+                                <exclude reference="sfz-wj-CBK"/>
                             </mask>
                         </variation>
                     </view>
@@ -1198,7 +1199,7 @@
         <image name="Server" width="1131" height="1139"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vF3-TM-Y5C"/>
+        <segue reference="0Ne-qK-81H"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.92156862745098034" green="0.27843137254901962" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
 </document>
