@@ -11,7 +11,7 @@ class SensorStatisticsViewController : UIViewController {
         super.viewDidLoad()
         //WebView.removeFromSuperview()
         
-        let requestURL = NSURL(string: urlpath!)
+        let requestURL = NSURL(string: "http://google.com")
         let request = NSURLRequest(URL : requestURL!)
         webView.loadRequest(request)
     }
