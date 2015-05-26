@@ -79,10 +79,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         /*
         --------------------------------------------------------------------------------------
         */
+        
         // The core motion manager. Should be same manager for all sensors for consistency.
         let manager = CMMotionManager()
         
         // The DataBase Instance
+        // It is a Singleton and should never be instantiated twice
         var db = SQLiteSensorsDB.sharedInstance
         
         
@@ -104,7 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 )
                 // push the data to the database
                 db.store(0x0000000000000000, timestamp: sensorDescAcc.timestamp, sensorData: sensorDescAcc.toProtoSensor())
-                println("Accelerometer")
+                //println("Accelerometer")
             }
         }
         
@@ -122,7 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     gyrZ : Float(data.rotationRate.z)
                 )
                 db.store(0x0000000000000002, timestamp: sensorDescGyr.timestamp, sensorData: sensorDescGyr.toProtoSensor())
-                println("Gyroscope")
+                //println("Gyroscope")
             }
         }
         
@@ -143,10 +145,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
         
         // Battery
-        var timerB = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("batteryCollection"), userInfo: nil, repeats: true)
+        var timerB = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: Selector("batteryCollection"), userInfo: nil, repeats: true)
         
         // Proximity
-        var timerP = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("proximityCollection"), userInfo: nil, repeats: true)
+        var timerP = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: Selector("proximityCollection"), userInfo: nil, repeats: true)
+        
+        // Push the data to te server
+        // The function reads the last minute from the database using the current time
+        var timerD = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: Selector("pushToServer"), userInfo: nil, repeats: true)
         
         
         
@@ -230,6 +236,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     // Proximity
     func proximityCollection() {
+        //println("Battery");
         var db = SQLiteSensorsDB.sharedInstance
         UIDevice.currentDevice().proximityMonitoringEnabled = true // start the battery data collection
         var currentTimeP :NSDate = NSDate()
@@ -240,6 +247,89 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         )
         db.store(0x0000000000000006, timestamp: sensorDescProx.timestamp, sensorData: sensorDescProx.toProtoSensor())
         UIDevice.currentDevice().proximityMonitoringEnabled = false
+    }
+    
+    // Push to the server
+    func pushToServer() {
+        // Generate the VM object and get the UUIDs
+        var VM = NervousVM.sharedInstance
+        let huuid : UInt64 = VM.getHUUID()
+        let luuid : UInt64 = VM.getLUUID()
+        
+        var db = SQLiteSensorsDB.sharedInstance
+        var currentTime :NSDate = NSDate()
+        var timestamp :UInt64 = UInt64(currentTime.timeIntervalSince1970*1000)
+        println(VM.getHUUID())
+        
+        // Accelerometer
+        let accSensor = SensorUpload.builder()
+        accSensor.huuid = huuid //phone huuid
+        accSensor.luuid = luuid //phone luuid
+        accSensor.uploadTime = timestamp
+        accSensor.sensorId = 0x0000000000000000
+        var sensorDataArrayA: [SensorUploadSensorData] = db.retrieve(0x0000000000000000, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
+        accSensor.sensorValues = sensorDataArrayA
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            let upA = UploadTask(pbSensorupload: accSensor.build())
+            upA.writeToRouter()
+        }
+        
+        // Gyroscope
+        let gyrSensor = SensorUpload.builder()
+        gyrSensor.huuid = huuid
+        gyrSensor.luuid = luuid
+        gyrSensor.uploadTime = timestamp
+        gyrSensor.sensorId = 0x0000000000000002
+        var sensorDataArrayG: [SensorUploadSensorData] = db.retrieve(0x0000000000000002, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
+        gyrSensor.sensorValues = sensorDataArrayG
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            let upG = UploadTask(pbSensorupload: gyrSensor.build())
+            upG.writeToRouter()
+        }
+        
+        // Magnetic
+        let magSensor = SensorUpload.builder()
+        magSensor.huuid = huuid
+        magSensor.luuid = luuid
+        magSensor.uploadTime = timestamp
+        magSensor.sensorId = 0x0000000000000005
+        var sensorDataArrayM: [SensorUploadSensorData] = db.retrieve(0x0000000000000005, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
+        magSensor.sensorValues = sensorDataArrayM
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            let upM = UploadTask(pbSensorupload: magSensor.build())
+            upM.writeToRouter()
+        }
+        
+        // Battery
+        let batSensor = SensorUpload.builder()
+        batSensor.huuid = huuid
+        batSensor.luuid = luuid
+        batSensor.uploadTime = timestamp
+        batSensor.sensorId = 0x0000000000000001
+        var sensorDataArrayB: [SensorUploadSensorData] = db.retrieve(0x0000000000000001, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
+        batSensor.sensorValues = sensorDataArrayB
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            let upB = UploadTask(pbSensorupload: batSensor.build())
+            upB.writeToRouter()
+        }
+
+        // Proximity
+        let proSensor = SensorUpload.builder()
+        proSensor.huuid = huuid
+        proSensor.luuid = luuid
+        proSensor.uploadTime = timestamp
+        proSensor.sensorId = 0x0000000000000006
+        var sensorDataArrayP: [SensorUploadSensorData] = db.retrieve(0x0000000000000006, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
+        proSensor.sensorValues = sensorDataArrayP
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            let upP = UploadTask(pbSensorupload: proSensor.build())
+            upP.writeToRouter()
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {
