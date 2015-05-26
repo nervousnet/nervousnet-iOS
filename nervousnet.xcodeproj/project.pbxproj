@@ -109,6 +109,7 @@
 		FC1346B21AD5D09500D9998C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1346B11AD5D09500D9998C /* libsqlite3.0.dylib */; };
 		FC1346B71AD5E99C00D9998C /* SQLiteSensorsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1346B61AD5E99C00D9998C /* SQLiteSensorsDB.swift */; };
 		FC1346B91AD5EC0400D9998C /* SensorsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1346B81AD5EC0400D9998C /* SensorsDB.swift */; };
+		FC31537D1B14CDE10052AED8 /* data.db in Resources */ = {isa = PBXBuildFile; fileRef = FC31537C1B14CDE10052AED8 /* data.db */; };
 		FC9285AC1B026DCE00160A69 /* SensorDescBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9285AB1B026DCE00160A69 /* SensorDescBattery.swift */; };
 /* End PBXBuildFile section */
 
@@ -235,6 +236,7 @@
 		FC1346B11AD5D09500D9998C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		FC1346B61AD5E99C00D9998C /* SQLiteSensorsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteSensorsDB.swift; sourceTree = "<group>"; };
 		FC1346B81AD5EC0400D9998C /* SensorsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorsDB.swift; sourceTree = "<group>"; };
+		FC31537C1B14CDE10052AED8 /* data.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.db; sourceTree = "<group>"; };
 		FC9285AB1B026DCE00160A69 /* SensorDescBattery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescBattery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -335,6 +337,7 @@
 		22316DCE19BFB422006FD165 = {
 			isa = PBXGroup;
 			children = (
+				FC31537C1B14CDE10052AED8 /* data.db */,
 				22F16C841A1A0E8E00EB97F5 /* Images.xcassets */,
 				22C5D6F919FF87E200CD8D26 /* runtime-pb-swift */,
 				22316DD919BFB422006FD165 /* nervous */,
@@ -628,6 +631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D30DF91B10EC16009CD2F3 /* broken-axis.src.js in Resources */,
+				FC31537D1B14CDE10052AED8 /* data.db in Resources */,
 				07D30DF71B10EC16009CD2F3 /* highcharts.src.js in Resources */,
 				07D30DC71B10EB56009CD2F3 /* index.htm in Resources */,
 				07D30DF61B10EC16009CD2F3 /* highcharts.js in Resources */,
