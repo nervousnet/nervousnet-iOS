@@ -17,14 +17,14 @@ import Darwin
     
     var List : Array<SensorUploadSensorData>
     
-    func getSensorId() -> UInt64{
+    func getSensorID() -> UInt64{
         fatalError("Must Override")
     }
     init(from timestamp_from :UInt64,to timestamp_to : UInt64){
         let vm = NervousVM()
         
         self.List = vm.retrieve(0, fromTimeStamp: 0, toTimeStamp: 0)
-        self.List = vm.retrieve(getSensorId(), fromTimeStamp: timestamp_from, toTimeStamp: timestamp_to)
+        self.List = vm.retrieve(getSensorID(), fromTimeStamp: timestamp_from, toTimeStamp: timestamp_to)
         if(containsReading()){
             println("retreived list of size /(getCount())")
         }
@@ -253,7 +253,7 @@ import Darwin
         if(obj1.getValue() >= obj2.getValue()){
             return false
         }
-        if(obj1.getValue() > obj2.getValue()){
+        if(obj1.getValue() < obj2.getValue()){
             return true
         }
         return false
