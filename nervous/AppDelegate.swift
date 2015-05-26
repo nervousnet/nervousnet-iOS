@@ -83,6 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         // The core motion manager. Should be same manager for all sensors for consistency.
         let manager = CMMotionManager()
+        var VM = NervousVM.sharedInstance
         
         // The DataBase Instance
         // It is a Singleton and should never be instantiated twice
@@ -95,7 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         // Accelerometer
         if manager.accelerometerAvailable {
-            manager.accelerometerUpdateInterval = 30  // fetching interval in seconds.
+            manager.accelerometerUpdateInterval = VM.getFrequency(0)  // fetching interval in seconds.
             manager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
                 [weak self](data: CMAccelerometerData!, error: NSError!) in
                 var currentTimeA :NSDate = NSDate()
@@ -114,7 +115,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // Gyroscope
         //println(manager.gyroAvailable)
         if manager.gyroAvailable {
-            manager.gyroUpdateInterval = 30
+            manager.gyroUpdateInterval = VM.getFrequency(2)
             manager.startGyroUpdatesToQueue(NSOperationQueue.mainQueue()) {
                 [weak self](data: CMGyroData!, error: NSError!) in
                 var currentTimeG :NSDate = NSDate()
@@ -131,7 +132,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         // Magnetic
         if manager.magnetometerAvailable {
-            manager.magnetometerUpdateInterval = 30
+            manager.magnetometerUpdateInterval = VM.getFrequency(5)
             manager.startMagnetometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
                 [weak self](data: CMMagnetometerData!, error: NSError!) in
                 var currentTimeM :NSDate = NSDate()
@@ -146,10 +147,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
         
         // Battery
-        var timerB = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("batteryCollection"), userInfo: nil, repeats: true)
+        var timerB = NSTimer.scheduledTimerWithTimeInterval(VM.getFrequency(1), target: self, selector: Selector("batteryCollection"), userInfo: nil, repeats: true)
         
         // Proximity
-        var timerP = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("proximityCollection"), userInfo: nil, repeats: true)
+        var timerP = NSTimer.scheduledTimerWithTimeInterval(VM.getFrequency(6), target: self, selector: Selector("proximityCollection"), userInfo: nil, repeats: true)
         
         // Push the data to te server
         // The function reads the last minute from the database using the current time
@@ -226,10 +227,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
         var sensorDescBat = SensorDescBattery (
             timestamp: UInt64(currentTimeB.timeIntervalSince1970*1000), // time to timestamp
-            batteryPercent : 0.2,//Float(UIDevice.currentDevice().batteryLevel),
-            isCharging : false,//isCharging,
-            isUsbCharge : false,//isUsbCharge,
-            isAcCharge : false//isAcCharge
+            batteryPercent : Float(UIDevice.currentDevice().batteryLevel),
+            isCharging : isCharging,
+            isUsbCharge : isUsbCharge,
+            isAcCharge : isAcCharge
         )
         db.store(0x0000000000000001, timestamp: sensorDescBat.timestamp, sensorData: sensorDescBat.toProtoSensor())
         UIDevice.currentDevice().batteryMonitoringEnabled = false
@@ -244,7 +245,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         var sensorDescProx = SensorDescProximity (
             timestamp: UInt64(currentTimeP.timeIntervalSince1970*1000), // time to timestamp
             proximity : 0, // must be checked
-            isClose : false//UIDevice.currentDevice().proximityState
+            isClose : UIDevice.currentDevice().proximityState
         )
         db.store(0x0000000000000006, timestamp: sensorDescProx.timestamp, sensorData: sensorDescProx.toProtoSensor())
         UIDevice.currentDevice().proximityMonitoringEnabled = false
@@ -263,7 +264,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         //println(VM.getHUUID())
         
         // Accelerometer
-        /*let accSensor = SensorUpload.builder()
+        let accSensor = SensorUpload.builder()
         accSensor.huuid = huuid //phone huuid
         accSensor.luuid = luuid //phone luuid
         accSensor.uploadTime = timestamp
@@ -302,7 +303,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             
             let upM = UploadTask(pbSensorupload: magSensor.build())
             upM.writeToRouter()
-        }*/
+        }
         
         // Battery
         let batSensor = SensorUpload.builder()
@@ -312,16 +313,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         batSensor.sensorId = 0x0000000000000001
         var sensorDataArrayB: [SensorUploadSensorData] = db.retrieve(0x0000000000000001, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
         batSensor.sensorValues = sensorDataArrayB
-        /*dispatch_async(dispatch_get_main_queue()) {
+        dispatch_async(dispatch_get_main_queue()) {
             
             let upB = UploadTask(pbSensorupload: batSensor.build())
             upB.writeToRouter()
-        }*/
-        for sensorData in sensorDataArrayB {
+        }
+        /*for sensorData in sensorDataArrayB {
             var retSensDesc = SensorDescBattery(sensorData: sensorData)
             NSLog("\((retSensDesc as SensorDesc).timestamp)")
             NSLog("\(retSensDesc.batteryPercent) \(retSensDesc.isCharging)")
-        }
+        }*/
 
         // Proximity
         let proSensor = SensorUpload.builder()
@@ -331,16 +332,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         proSensor.sensorId = 0x0000000000000006
         var sensorDataArrayP: [SensorUploadSensorData] = db.retrieve(0x0000000000000006, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
         proSensor.sensorValues = sensorDataArrayP
-        /*dispatch_async(dispatch_get_main_queue()) {
+        dispatch_async(dispatch_get_main_queue()) {
             
             let upP = UploadTask(pbSensorupload: proSensor.build())
             upP.writeToRouter()
-        }*/
-        for sensorData in sensorDataArrayP {
+        }
+        /*for sensorData in sensorDataArrayP {
             var retSensDesc = SensorDescProximity(sensorData: sensorData)
             NSLog("\((retSensDesc as SensorDesc).timestamp)")
             NSLog("\(retSensDesc.proximity)")
-        }
+        }*/
     }
 
     func applicationWillResignActive(application: UIApplication) {

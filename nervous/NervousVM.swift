@@ -17,6 +17,11 @@ private let _VM = NervousVM()
 class NervousVM {
     
     let defaults :NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    var accFreq : Double = 30
+    var gyrFreq : Double = 30
+    var magFreq : Double = 30
+    var batFreq : Double = 30
+    var proFreq : Double = 30
     
     init(){
             var genUUID = self.generateUUID()
@@ -129,6 +134,42 @@ class NervousVM {
         db.retrieve(SENSOR_ID, fromTimestamp: fromTimeStamp, toTimestamp: toTimeStamp)
         
         return sensorDataArray;
+    }
+    
+    // set frequecies for collecting sensor information
+    func setFrequency(sensorID : Int, freq : Double) {
+        switch sensorID {
+        case 0:
+            self.accFreq = freq
+        case 1:
+            self.batFreq = freq
+        case 2:
+            self.gyrFreq = freq
+        case 5:
+            self.magFreq = freq
+        case 6:
+            self.proFreq = freq
+        default:
+            println("")
+        }
+    }
+    
+    // get frequencies after the frequencies are set using the UI
+    func getFrequency(sensorID : Int) -> Double {
+        switch sensorID {
+        case 0:
+            return self.accFreq
+        case 1:
+            return self.batFreq
+        case 2:
+            return self.gyrFreq
+        case 5:
+            return self.magFreq
+        case 6:
+            return self.proFreq
+        default:
+            return 30
+        }
     }
     
 
