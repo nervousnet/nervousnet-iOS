@@ -7,6 +7,44 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="izx-fv-iW2">
+            <objects>
+                <viewController id="t5W-aK-9mi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EPF-ag-Oup"/>
+                        <viewControllerLayoutGuide type="bottom" id="zsT-un-EBn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vxb-VO-Rfb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UK7-86-ZhU">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Nervous Apps" id="At3-nv-Rem" userLabel="Nervous Apps">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="8Si-d9-XoC">
+                                            <color key="tintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="vF3-TM-Y5C"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="UK7-86-ZhU" secondAttribute="centerX" id="4OG-Xf-7Ri"/>
+                            <constraint firstAttribute="width" secondItem="UK7-86-ZhU" secondAttribute="width" id="UXn-7i-yJ2"/>
+                            <constraint firstItem="UK7-86-ZhU" firstAttribute="top" secondItem="EPF-ag-Oup" secondAttribute="bottom" id="ruQ-i0-SaZ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NYZ-Ka-gsI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60" y="150"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="BYZ-38-t0r" customClass="ViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,6 +56,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="Background_Graph_Mockup" translatesAutoresizingMaskIntoConstraints="NO" id="SI6-mG-zaB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbh-Ku-Ar4">
                                 <rect key="frame" x="250" y="250" width="100" height="100"/>
                                 <constraints>
@@ -28,6 +72,9 @@
                                 <state key="normal" title="Button" image="NervousNetIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="t5W-aK-9mi" kind="show" id="lRD-ab-UXt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6m-rA-IIf">
                                 <rect key="frame" x="16" y="20" width="80" height="80"/>
@@ -105,6 +152,7 @@
                             <constraint firstItem="lSQ-bh-qUw" firstAttribute="trailing" secondItem="iW6-L1-axo" secondAttribute="trailing" id="7s0-fU-H7U"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lSQ-bh-qUw" secondAttribute="bottom" constant="8" symbolic="YES" id="8DI-g7-bOv"/>
                             <constraint firstItem="g6m-rA-IIf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-488" id="AeC-oC-FWX"/>
+                            <constraint firstAttribute="centerX" secondItem="SI6-mG-zaB" secondAttribute="centerX" id="BHz-6b-6kI"/>
                             <constraint firstItem="sWy-K3-ehK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BKd-ii-h8p"/>
                             <constraint firstItem="Wgl-Pe-ceL" firstAttribute="top" secondItem="Dbh-Ku-Ar4" secondAttribute="bottom" constant="8" id="CSD-4B-vSf"/>
                             <constraint firstItem="iW6-L1-axo" firstAttribute="width" secondItem="iW6-L1-axo" secondAttribute="height" multiplier="1:1" id="Gob-ke-pDP"/>
@@ -126,12 +174,14 @@
                             <constraint firstItem="iW6-L1-axo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="249" id="ZQM-M5-NuC"/>
                             <constraint firstItem="g6m-rA-IIf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="375" id="a3C-kM-FXy"/>
                             <constraint firstItem="lSQ-bh-qUw" firstAttribute="centerX" secondItem="g6m-rA-IIf" secondAttribute="centerX" constant="495.5" id="bnQ-PY-dRF"/>
+                            <constraint firstItem="SI6-mG-zaB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cBO-U9-pzU"/>
                             <constraint firstItem="lSQ-bh-qUw" firstAttribute="width" secondItem="lSQ-bh-qUw" secondAttribute="height" multiplier="1:1" id="chv-ov-qWd"/>
                             <constraint firstAttribute="bottom" secondItem="iW6-L1-axo" secondAttribute="bottom" constant="20" symbolic="YES" id="cvT-fN-qCY"/>
                             <constraint firstItem="g6m-rA-IIf" firstAttribute="bottom" secondItem="Wgl-Pe-ceL" secondAttribute="bottom" constant="73" id="e3A-9B-YoE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iW6-L1-axo" secondAttribute="bottom" constant="20" id="hA3-ZO-HeF"/>
                             <constraint firstItem="lSQ-bh-qUw" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jtS-NB-M3p"/>
                             <constraint firstItem="lSQ-bh-qUw" firstAttribute="centerX" secondItem="g6m-rA-IIf" secondAttribute="centerX" constant="-46" id="kL7-2v-LXa"/>
+                            <constraint firstItem="SI6-mG-zaB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="lyU-rL-sJc"/>
                             <constraint firstAttribute="centerX" secondItem="Dbh-Ku-Ar4" secondAttribute="centerX" id="mIw-p2-XEz"/>
                             <constraint firstItem="lSQ-bh-qUw" firstAttribute="trailing" secondItem="iW6-L1-axo" secondAttribute="trailing" constant="129" id="nLW-sQ-VM9"/>
                             <constraint firstItem="iW6-L1-axo" firstAttribute="centerX" secondItem="Dbh-Ku-Ar4" secondAttribute="centerX" id="oKo-2J-MuV"/>
@@ -142,6 +192,7 @@
                             <constraint firstItem="lSQ-bh-qUw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="x2D-nl-2B7"/>
                             <constraint firstItem="sWy-K3-ehK" firstAttribute="width" secondItem="sWy-K3-ehK" secondAttribute="height" multiplier="1:1" id="xyr-85-X7G"/>
                             <constraint firstItem="sWy-K3-ehK" firstAttribute="width" secondItem="sWy-K3-ehK" secondAttribute="height" multiplier="1:1" id="zbB-CQ-o5H"/>
+                            <constraint firstAttribute="centerY" secondItem="SI6-mG-zaB" secondAttribute="centerY" id="zsD-6C-97T"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -178,10 +229,14 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="Background" destination="SI6-mG-zaB" id="AbJ-wr-cYE"/>
+                        <outlet property="button" destination="Dbh-Ku-Ar4" id="kpL-LX-Ixk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="785"/>
+            <point key="canvasLocation" x="60" y="785"/>
         </scene>
         <!--Privacy View Controller-->
         <scene sceneID="gjR-28-eZN">
@@ -532,7 +587,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5JJ-X5-EJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="809" y="761"/>
+            <point key="canvasLocation" x="661" y="150"/>
         </scene>
         <!--Logging View Controller-->
         <scene sceneID="0ed-ur-EpC">
@@ -924,7 +979,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sR0-dF-YCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="712" y="1474"/>
+            <point key="canvasLocation" x="-540" y="150"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zS9-zD-OmO">
@@ -1068,7 +1123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8M-in-Na9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="1559"/>
+            <point key="canvasLocation" x="661" y="1421"/>
         </scene>
         <!--Sensor Statistics View Controller-->
         <scene sceneID="0lF-bd-6KG">
@@ -1131,10 +1186,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Z7-ZO-NLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1496" y="785"/>
+            <point key="canvasLocation" x="-540" y="1421"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Background_Graph_Mockup" width="1456" height="1430"/>
         <image name="LockC" width="1131" height="1139"/>
         <image name="NervousNetIcon" width="1024" height="1024"/>
         <image name="ScheduleC" width="1131" height="1139"/>
@@ -1142,7 +1198,7 @@
         <image name="Server" width="1131" height="1139"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZyD-4F-jFj"/>
+        <segue reference="vF3-TM-Y5C"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.92156862745098034" green="0.27843137254901962" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
 </document>
