@@ -13,16 +13,18 @@ class UploadTask :NSObject, NSStreamDelegate {
     var pbSensorupload :SensorUpload? = nil
    
     //router settings
-    let serverAddress = "www.inn.ac"
-    let serverPort = 25600
-    
+    //let serverAddress = "www.inn.ac"
+    //let serverPort = 25600
     var inputStream: NSInputStream?
     var outputStream: NSOutputStream?
 
     
-    
     init(pbSensorupload :SensorUpload){
         super.init()
+        
+        var VM = NervousVM.sharedInstance
+        var serverAddress = VM.getServerAddress()
+        var serverPort = VM.getServerPort()
         
         self.pbSensorupload = pbSensorupload
         

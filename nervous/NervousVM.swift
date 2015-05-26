@@ -17,11 +17,17 @@ private let _VM = NervousVM()
 class NervousVM {
     
     let defaults :NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    
+    // Frequencies of the sensors
     var accFreq : Double = 30
     var gyrFreq : Double = 30
     var magFreq : Double = 30
     var batFreq : Double = 30
     var proFreq : Double = 30
+    
+    // Server address and port number
+    var address = "www.inn.ac"
+    var port = 25600
     
     init(){
             var genUUID = self.generateUUID()
@@ -170,6 +176,22 @@ class NervousVM {
         default:
             return 30
         }
+    }
+    
+    // set the server address and port number
+    func setServer(address : String, port : Int) {
+        self.address = address
+        self.port = port
+    }
+    
+    // get the server address
+    func getServerAddress() -> String {
+        return self.address
+    }
+    
+    // get the port number
+    func getServerPort() -> Int {
+        return self.port
     }
     
 
