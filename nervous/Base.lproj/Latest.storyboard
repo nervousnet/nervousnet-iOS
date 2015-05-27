@@ -1059,10 +1059,10 @@
             </objects>
             <point key="canvasLocation" x="-540" y="150"/>
         </scene>
-        <!--View Controller-->
+        <!--Server View Controller-->
         <scene sceneID="zS9-zD-OmO">
             <objects>
-                <viewController id="rOC-Ev-zqA" sceneMemberID="viewController">
+                <viewController id="rOC-Ev-zqA" customClass="ServerViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wfc-UV-0Lc"/>
                         <viewControllerLayoutGuide type="bottom" id="DM2-LW-rE2"/>
@@ -1093,6 +1093,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="serverChange:" destination="rOC-Ev-zqA" eventType="editingDidEnd" id="LPZ-Vn-fXH"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2222" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="chd-E0-IIQ">
                                 <rect key="frame" x="0.0" y="318" width="600" height="30"/>
@@ -1100,7 +1103,10 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="portChange:" destination="rOC-Ev-zqA" eventType="editingDidEnd" id="uhy-sr-ApL"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Port:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ld-5J-J6X">
                                 <rect key="frame" x="282" y="289" width="37" height="21"/>
@@ -1111,8 +1117,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Server IP:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLT-OU-hls">
-                                <rect key="frame" x="263" y="143" width="75" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Server address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLT-OU-hls">
+                                <rect key="frame" x="240" y="143" width="121" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="KSS-wh-LPg"/>
                                     <constraint firstAttribute="height" constant="21" id="Krj-4h-U19"/>
@@ -1198,6 +1204,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="portField" destination="chd-E0-IIQ" id="xwx-hF-lYd"/>
+                        <outlet property="serverField" destination="6dv-Cy-naR" id="cge-Of-Jwb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8M-in-Na9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1276,7 +1286,7 @@
         <image name="Server" width="1131" height="1139"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZyD-4F-jFj"/>
+        <segue reference="9bt-XU-Gfc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.92156862745098034" green="0.27843137254901962" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
 </document>
