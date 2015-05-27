@@ -14,9 +14,12 @@ import CoreMotion
 // Instantiate the VM for global use as a singleton
 private let _VM = NervousVM()
 
-class NervousVM {
+class NervousVM : NSObject{
     
     let defaults :NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    
+    // Motion manager
+    let manager = CMMotionManager()
     
     // Frequencies of the sensors
     var accFreq : Double = 30
@@ -29,7 +32,13 @@ class NervousVM {
     var address = "www.inn.ac"
     var port = 25600
     
-    init(){
+    // Timers for different sensors
+    var timerA = NSTimer()
+    var timerB = NSTimer()
+    var timerP = NSTimer()
+    
+    override init(){
+            super.init()
             var genUUID = self.generateUUID()
     }
     
@@ -144,17 +153,68 @@ class NervousVM {
     
     // set frequecies for collecting sensor information
     func setFrequency(sensorID : Int, freq : Double) {
+        var db = SQLiteSensorsDB.sharedInstance
         switch sensorID {
         case 0:
             self.accFreq = freq
+            manager.stopAccelerometerUpdates()
+            if manager.accelerometerAvailable {
+                manager.accelerometerUpdateInterval = freq
+                manager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
+                    [weak self](data: CMAccelerometerData!, error: NSError!) in
+                    var currentTimeA :NSDate = NSDate()
+                    var sensorDescAcc = SensorDescAccelerometer (
+                        timestamp: UInt64(currentTimeA.timeIntervalSince1970*1000), // time to timestamp
+                        accX : Float(data.acceleration.x),
+                        accY : Float(data.acceleration.y),
+                        accZ : Float(data.acceleration.z)
+                    )
+                    // push the data to the database
+                    db.store(0x0000000000000000, timestamp: sensorDescAcc.timestamp, sensorData: sensorDescAcc.toProtoSensor())
+                }
+            }
         case 1:
             self.batFreq = freq
+            self.timerB.invalidate()
+            self.timerB = NSTimer.scheduledTimerWithTimeInterval(freq, target: self, selector: Selector("batteryCollection"), userInfo: nil, repeats: true)
         case 2:
             self.gyrFreq = freq
+            manager.stopGyroUpdates()
+            if manager.gyroAvailable {
+                manager.gyroUpdateInterval = freq
+                manager.startGyroUpdatesToQueue(NSOperationQueue.mainQueue()) {
+                    [weak self](data: CMGyroData!, error: NSError!) in
+                    var currentTimeG :NSDate = NSDate()
+                    var sensorDescGyr = SensorDescGyroscope (
+                        timestamp: UInt64(currentTimeG.timeIntervalSince1970*1000), // time to timestamp
+                        gyrX : Float(data.rotationRate.x),
+                        gyrY : Float(data.rotationRate.y),
+                        gyrZ : Float(data.rotationRate.z)
+                    )
+                    db.store(0x0000000000000002, timestamp: sensorDescGyr.timestamp, sensorData: sensorDescGyr.toProtoSensor())
+                }
+            }
         case 5:
             self.magFreq = freq
+            manager.stopMagnetometerUpdates()
+            if manager.magnetometerAvailable {
+                manager.magnetometerUpdateInterval = freq
+                manager.startMagnetometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
+                    [weak self](data: CMMagnetometerData!, error: NSError!) in
+                    var currentTimeM :NSDate = NSDate()
+                    var sensorDescMag = SensorDescMagnetic (
+                        timestamp: UInt64(currentTimeM.timeIntervalSince1970*1000), // time to timestamp
+                        magX : Float(data.magneticField.x),
+                        magY : Float(data.magneticField.y),
+                        magZ : Float(data.magneticField.z)
+                    )
+                    db.store(0x0000000000000005, timestamp: sensorDescMag.timestamp, sensorData: sensorDescMag.toProtoSensor())
+                }
+            }
         case 6:
             self.proFreq = freq
+            self.timerP.invalidate()
+            self.timerP = NSTimer.scheduledTimerWithTimeInterval(freq, target: self, selector: Selector("proximityCollection"), userInfo: nil, repeats: true)
         default:
             println("")
         }
@@ -194,5 +254,48 @@ class NervousVM {
         return self.port
     }
     
+    // Battery
+    func batteryCollection() {
+        var db = SQLiteSensorsDB.sharedInstance
+        UIDevice.currentDevice().batteryMonitoringEnabled = true // start the battery data collection
+        var currentTimeB :NSDate = NSDate()
+        var isCharging: Bool
+        var isUsbCharge: Bool
+        var isAcCharge: Bool
+        
+        if UIDeviceBatteryState.Charging.rawValue == 1{ // doubt check this if '1' is correct
+            isCharging = true
+            isUsbCharge = false
+            isAcCharge = true
+        }
+        else {
+            isCharging = false
+            isUsbCharge = false
+            isAcCharge = false
+        }
+        var sensorDescBat = SensorDescBattery (
+            timestamp: UInt64(currentTimeB.timeIntervalSince1970*1000), // time to timestamp
+            batteryPercent : Float(UIDevice.currentDevice().batteryLevel),
+            isCharging : isCharging,
+            isUsbCharge : isUsbCharge,
+            isAcCharge : isAcCharge
+        )
+        db.store(0x0000000000000001, timestamp: sensorDescBat.timestamp, sensorData: sensorDescBat.toProtoSensor())
+        UIDevice.currentDevice().batteryMonitoringEnabled = false
+    }
+    
+    // Proximity
+    func proximityCollection() {
+        var db = SQLiteSensorsDB.sharedInstance
+        UIDevice.currentDevice().proximityMonitoringEnabled = true // start the battery data collection
+        var currentTimeP :NSDate = NSDate()
+        var sensorDescProx = SensorDescProximity (
+            timestamp: UInt64(currentTimeP.timeIntervalSince1970*1000), // time to timestamp
+            proximity : 0, // must be checked
+            isClose : UIDevice.currentDevice().proximityState
+        )
+        db.store(0x0000000000000006, timestamp: sensorDescProx.timestamp, sensorData: sensorDescProx.toProtoSensor())
+        UIDevice.currentDevice().proximityMonitoringEnabled = false
+    }
 
 }

@@ -30,9 +30,9 @@ private let _insertSensorStatement = "INSERT INTO Sensors VALUES (?,?,?)"
 class SQLiteSensorsDB: SensorsDB {
     
     init() {
-        NSLog("Creating table Sensors")
+        //NSLog("Creating table Sensors")
         SQLiteDB.sharedInstance().execute(_createTableStatement)
-        NSLog("Table Sensors successfully created (or already existent)")
+        //NSLog("Table Sensors successfully created (or already existent)")
     }
     
     class var sharedInstance: SQLiteSensorsDB {
@@ -49,7 +49,7 @@ class SQLiteSensorsDB: SensorsDB {
             ]
         )
         
-        NSLog("Query returned \(result.count) rows")
+        //NSLog("Query returned \(result.count) rows")
     
         var messages : [SensorUploadSensorData] = []
         
@@ -76,7 +76,7 @@ class SQLiteSensorsDB: SensorsDB {
         
         let data = sensorData.data()
         
-        NSLog("Storing sensor \(sensorId) at timestamp \(timestamp) in DB")
+        //NSLog("Storing sensor \(sensorId) at timestamp \(timestamp) in DB")
         
         let result = SQLiteDB.sharedInstance().execute(_insertSensorStatement,
             parameters:[
@@ -85,6 +85,6 @@ class SQLiteSensorsDB: SensorsDB {
                 NSData(bytes: data, length: data.count)
             ])
         
-        NSLog("Insert query executed with result code \(result)")
+        //NSLog("Insert query executed with result code \(result)")
     }
 }

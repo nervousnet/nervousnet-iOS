@@ -27,29 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // Override point for customization after application launch.
         
         /*
-            Example usage of the Storage Engine
-            -----------------------------------------------------------------------------------
-        */
-        
-        /*
-            Important! all constructor arguments and method call arguments need to be named argument
-        */
-        /*var sensorDesc = SensorDescBattery (
-            timestamp: 123,
-            batteryPercent: 0.3,
-            isCharging: true,
-            isUsbCharge: true,
-            isAcCharge: false
-        )
-        
-        /*
-            Gettint the db instance
-        */
-        var db = SQLiteSensorsDB.sharedInstance
-        
-        /*
-            Important! all method call arguments need to be named argument, but the first one can't! lol
-        */
         db.store(0x0000000000000001, timestamp: sensorDesc.timestamp, sensorData: sensorDesc.toProtoSensor())
         
         var sensorDataArray: [SensorUploadSensorData] =
@@ -66,17 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             NSLog("\(retSensDesc.batteryPercent) \(retSensDesc.isCharging)")
         }*/
         
-
-        //let manager = CMMotionManager()
-        //SensorCollection.sensorActivate(manager)
-        //SensorCollection.sensorActivate(CMMotionManager())
-        //dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_BACKGROUND.value), 0)) { // 1
-        //
-        //    dispatch_async(dispatch_get_main_queue()) { // 2
-        //        SensorCollection.sensorActivate(CMMotionManager())
-        //        println("hello")
-        //    }
-        //}
         /*
         --------------------------------------------------------------------------------------
         */
@@ -89,72 +55,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // It is a Singleton and should never be instantiated twice
         var db = SQLiteSensorsDB.sharedInstance
         
-        
         // +++++++++++++++++++++++++++++++++++++++++++++++++++
         // Fetching and Pushing the data of individual sensors
         // +++++++++++++++++++++++++++++++++++++++++++++++++++
-        
-        // Accelerometer
-        if manager.accelerometerAvailable {
-            manager.accelerometerUpdateInterval = VM.getFrequency(0)  // fetching interval in seconds.
-            manager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
-                [weak self](data: CMAccelerometerData!, error: NSError!) in
-                var currentTimeA :NSDate = NSDate()
-                var sensorDescAcc = SensorDescAccelerometer (
-                    timestamp: UInt64(currentTimeA.timeIntervalSince1970*1000), // time to timestamp
-                    accX : Float(data.acceleration.x),
-                    accY : Float(data.acceleration.y),
-                    accZ : Float(data.acceleration.z)
-                )
-                // push the data to the database
-                db.store(0x0000000000000000, timestamp: sensorDescAcc.timestamp, sensorData: sensorDescAcc.toProtoSensor())
-                //println("Accelerometer")
-            }
-        }
-        
-        // Gyroscope
-        //println(manager.gyroAvailable)
-        if manager.gyroAvailable {
-            manager.gyroUpdateInterval = VM.getFrequency(2)
-            manager.startGyroUpdatesToQueue(NSOperationQueue.mainQueue()) {
-                [weak self](data: CMGyroData!, error: NSError!) in
-                var currentTimeG :NSDate = NSDate()
-                var sensorDescGyr = SensorDescGyroscope (
-                    timestamp: UInt64(currentTimeG.timeIntervalSince1970*1000), // time to timestamp
-                    gyrX : Float(data.rotationRate.x),
-                    gyrY : Float(data.rotationRate.y),
-                    gyrZ : Float(data.rotationRate.z)
-                )
-                db.store(0x0000000000000002, timestamp: sensorDescGyr.timestamp, sensorData: sensorDescGyr.toProtoSensor())
-                //println("Gyroscope")
-            }
-        }
-        
-        // Magnetic
-        if manager.magnetometerAvailable {
-            manager.magnetometerUpdateInterval = VM.getFrequency(5)
-            manager.startMagnetometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
-                [weak self](data: CMMagnetometerData!, error: NSError!) in
-                var currentTimeM :NSDate = NSDate()
-                var sensorDescMag = SensorDescMagnetic (
-                    timestamp: UInt64(currentTimeM.timeIntervalSince1970*1000), // time to timestamp
-                    magX : Float(data.magneticField.x),
-                    magY : Float(data.magneticField.y),
-                    magZ : Float(data.magneticField.z)
-                )
-                db.store(0x0000000000000005, timestamp: sensorDescMag.timestamp, sensorData: sensorDescMag.toProtoSensor())
-            }
-        }
-        
-        // Battery
-        var timerB = NSTimer.scheduledTimerWithTimeInterval(VM.getFrequency(1), target: self, selector: Selector("batteryCollection"), userInfo: nil, repeats: true)
-        
-        // Proximity
-        var timerP = NSTimer.scheduledTimerWithTimeInterval(VM.getFrequency(6), target: self, selector: Selector("proximityCollection"), userInfo: nil, repeats: true)
+        VM.setFrequency(0, freq: 30) // default is 30 seconds.
+        VM.setFrequency(1, freq: 30) // The values will change
+        VM.setFrequency(2, freq: 30) // according to the UI
+        VM.setFrequency(5, freq: 30) // inputs.
+        VM.setFrequency(6, freq: 30)
         
         // Push the data to te server
         // The function reads the last minute from the database using the current time
-        var timerD = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("pushToServer"), userInfo: nil, repeats: true)
+        var timerD = NSTimer.scheduledTimerWithTimeInterval(60.5, target: self, selector: Selector("pushToServer"), userInfo: nil, repeats: true)
         
         
         
@@ -199,61 +111,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                         categories: nil
                     )
                 )
-            }
-        
-        
-        
+        }
         return true
-    }
-    
-    // Battery
-    func batteryCollection() {
-        var db = SQLiteSensorsDB.sharedInstance
-        UIDevice.currentDevice().batteryMonitoringEnabled = true // start the battery data collection
-        var currentTimeB :NSDate = NSDate()
-        var isCharging: Bool
-        var isUsbCharge: Bool
-        var isAcCharge: Bool
-        
-        if UIDeviceBatteryState.Charging.rawValue == 1{ // doubt check this if '1' is correct
-            isCharging = true
-            isUsbCharge = false
-            isAcCharge = true
-        }
-        else {
-            isCharging = false
-            isUsbCharge = false
-            isAcCharge = false
-        }
-        var sensorDescBat = SensorDescBattery (
-            timestamp: UInt64(currentTimeB.timeIntervalSince1970*1000), // time to timestamp
-            batteryPercent : Float(UIDevice.currentDevice().batteryLevel),
-            isCharging : isCharging,
-            isUsbCharge : isUsbCharge,
-            isAcCharge : isAcCharge
-        )
-        db.store(0x0000000000000001, timestamp: sensorDescBat.timestamp, sensorData: sensorDescBat.toProtoSensor())
-        UIDevice.currentDevice().batteryMonitoringEnabled = false
-    }
-    
-    // Proximity
-    func proximityCollection() {
-        //println("Battery");
-        var db = SQLiteSensorsDB.sharedInstance
-        UIDevice.currentDevice().proximityMonitoringEnabled = true // start the battery data collection
-        var currentTimeP :NSDate = NSDate()
-        var sensorDescProx = SensorDescProximity (
-            timestamp: UInt64(currentTimeP.timeIntervalSince1970*1000), // time to timestamp
-            proximity : 0, // must be checked
-            isClose : UIDevice.currentDevice().proximityState
-        )
-        db.store(0x0000000000000006, timestamp: sensorDescProx.timestamp, sensorData: sensorDescProx.toProtoSensor())
-        UIDevice.currentDevice().proximityMonitoringEnabled = false
     }
     
     // Push to the server
     func pushToServer() {
         // Generate the VM object and get the UUIDs
+        // println("+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
         var VM = NervousVM.sharedInstance
         let huuid : UInt64 = VM.getHUUID()
         let luuid : UInt64 = VM.getLUUID()
@@ -342,6 +207,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             NSLog("\((retSensDesc as SensorDesc).timestamp)")
             NSLog("\(retSensDesc.proximity)")
         }*/
+        // println("+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
     }
 
     func applicationWillResignActive(application: UIApplication) {

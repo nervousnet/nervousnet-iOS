@@ -18,7 +18,7 @@ class SensorDescProximity: SensorDescSingleValue {
     var proximity: Float
     var isClose: Bool
     
-    init(timestamp: UInt64, proximity: Float, isClose: Bool) {
+    init(timestamp: UInt64, proximity: Float, isClose : Bool) {
         
         self.timestamp = timestamp
         self.proximity = proximity
