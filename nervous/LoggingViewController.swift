@@ -17,44 +17,89 @@ class LoggingViewController : UIViewController {
     @IBOutlet weak var proField: UITextField!
     @IBOutlet weak var temField: UITextField!
     
-    var values = [0,1,2,3,4]
-    var units = [" s", " m", " h", " d", " d"]
-    var valuesInSeconds = [] // This is for the values in Seconds that will actually be applied to the settings
+    @IBOutlet var accStepper: UIStepper!
+    @IBOutlet var batStepper: UIStepper!
+    @IBOutlet var gyrStepper: UIStepper!
+    @IBOutlet var magStepper: UIStepper!
+    @IBOutlet var proStepper: UIStepper!
     
+    var values = [30,1,5,30,2]
+    var units = [" s", " m", " m", " m", " h"]
+    var valuesInSeconds : [Double] = [30,60,300,1800,6400] // This is for the values in Seconds that will actually be applied to the settings
     
+    var VM = NervousVM.sharedInstance
+    
+    var acc : Double = 0
+    var bat : Double = 0
+    var gyr : Double = 0
+    var mag : Double = 0
+    var pro : Double = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getInitialValues()
-//        accField.text = String(values[0])
-//        batField.text = String(values[0])
-//        bleField.text = String(values[0])
-//        conField.text = String(values[0])
-//        gyrField.text = String(values[0])
-//        humField.text = String(values[0])
-//        ligField.text = String(values[0])
-//        magField.text = String(values[0])
-//        noiField.text = String(values[0])
-//        preField.text = String(values[0])
-//        proField.text = String(values[0])
-//        temField.text = String(values[0])
+        
+        
+        
+        println("\n")
+        println(accStepper.value)
+        println(accStepper.value)
+        println(accStepper.value)
+        println(accStepper.value)
+        println(accStepper.value)
+        println("\n")
+        
     }
     
     func applyLoggingInterval () {
         //TODO: apply the selected interval to the actual collection
+        VM.setFrequency(0, freq: acc)
+        VM.setFrequency(1, freq: bat)
+        VM.setFrequency(2, freq: gyr)
+        VM.setFrequency(5, freq: mag)
+        VM.setFrequency(6, freq: pro)
     }
     
     func getInitialValues(){
         //TODO: Set the fields and steppers to the current settings
+        acc = VM.getFrequency(0)
+        bat = VM.getFrequency(1)
+        gyr = VM.getFrequency(2)
+        mag = VM.getFrequency(5)
+        pro = VM.getFrequency(6)
+        
+        accField.text = values[find(valuesInSeconds, acc)!].description + units[find(valuesInSeconds, acc)!]
+        batField.text = values[find(valuesInSeconds, bat)!].description + units[find(valuesInSeconds, bat)!]
+        gyrField.text = values[find(valuesInSeconds, gyr)!].description + units[find(valuesInSeconds, gyr)!]
+        magField.text = values[find(valuesInSeconds, mag)!].description + units[find(valuesInSeconds, mag)!]
+        proField.text = values[find(valuesInSeconds, pro)!].description + units[find(valuesInSeconds, pro)!]
+        
+        accStepper.maximumValue = Double(valuesInSeconds.count-1)
+        batStepper.maximumValue = Double(valuesInSeconds.count-1)
+        gyrStepper.maximumValue = Double(valuesInSeconds.count-1)
+        magStepper.maximumValue = Double(valuesInSeconds.count-1)
+        proStepper.maximumValue = Double(valuesInSeconds.count-1)
+        
+        accStepper.value = Double(find(valuesInSeconds, acc)!)
+        batStepper.value = Double(find(valuesInSeconds, bat)!)
+        gyrStepper.value = Double(find(valuesInSeconds, gyr)!)
+        magStepper.value = Double(find(valuesInSeconds, mag)!)
+        proStepper.value = Double(find(valuesInSeconds, pro)!)
     }
     
     @IBAction func accChange(sender: UIStepper, forEvent event: UIEvent) {
         accField.text = String(values[abs((Int(sender.value))%(values.count))]) + units[abs((Int(sender.value))%(values.count))]
+        acc = valuesInSeconds[abs((Int(sender.value))%(values.count))]
         applyLoggingInterval()
+        println("\n")
+        println(VM.getFrequency(0))
+        println("\n")
     }
     
     @IBAction func batChange(sender: UIStepper) {
         batField.text = String(values[abs((Int(sender.value))%(values.count))]) + units[abs((Int(sender.value))%(values.count))]
+        bat = valuesInSeconds[abs((Int(sender.value))%(values.count))]
         applyLoggingInterval()
     }
 
@@ -70,6 +115,7 @@ class LoggingViewController : UIViewController {
 
     @IBAction func gyrChange(sender: UIStepper) {
         gyrField.text = String(values[abs((Int(sender.value))%(values.count))]) + units[abs((Int(sender.value))%(values.count))]
+        gyr = valuesInSeconds[abs((Int(sender.value))%(values.count))]
         applyLoggingInterval()
     }
 
@@ -85,7 +131,11 @@ class LoggingViewController : UIViewController {
 
     @IBAction func magChange(sender: UIStepper) {
         magField.text = String(values[abs((Int(sender.value))%(values.count))]) + units[abs((Int(sender.value))%(values.count))]
+        mag = valuesInSeconds[abs((Int(sender.value))%(values.count))]
         applyLoggingInterval()
+        println("\n")
+        println(VM.getFrequency(5))
+        println("\n")
     }
     
     @IBAction func noiChange(sender: UIStepper) {
@@ -100,6 +150,7 @@ class LoggingViewController : UIViewController {
 
     @IBAction func proChange(sender: UIStepper) {
         proField.text = String(values[abs((Int(sender.value))%(values.count))]) + units[abs((Int(sender.value))%(values.count))]
+        pro = valuesInSeconds[abs((Int(sender.value))%(values.count))]
         applyLoggingInterval()
     }
     
@@ -108,40 +159,7 @@ class LoggingViewController : UIViewController {
         applyLoggingInterval()
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
+    
+    
+    
