@@ -12,8 +12,8 @@ import UIKit
 
 class NervousAppsViewController: UITableViewController {
     
-    var Apps = [" ","Earthquake", "De-Jammer", "Band"]
-    var Descriptions = [    " ",
+    var Apps = ["Earthquake", "De-Jammer", "Band"]
+    var Descriptions = [
                             "Detect Earthquakes and locate the Epicenter",
                             "Resolve even the worst of traffic-jams",
                             "Record a Song with your Nervous friends"]
@@ -35,26 +35,35 @@ class NervousAppsViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return Apps.count
-        
+        if (section == 0)
+        {return 1}
+        else {return Apps.count
+        }
     }
 
     private struct Storyboard{
         static let CellReuseIdentifier = "App"
+        static let NavigationIdentifier = "Navigation"
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as UITableViewCell
-
+        
+        if (indexPath.section == 0) {
+            let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.NavigationIdentifier, forIndexPath: indexPath) as UITableViewCell
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as NervousAppTableViewCell
         // Configure the cell...
-        cell.textLabel?.text = Apps [indexPath.row]
-        cell.detailTextLabel?.text = Descriptions [indexPath.row]
-        return cell
+            cell.Description.text = Descriptions [indexPath.row]
+            cell.Name.text = Apps [indexPath.row]
+            return cell
+        }
     }
     
 
