@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07295DB61B17297700360070 /* NervousAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07295DB51B17297700360070 /* NervousAppsViewController.swift */; };
+		073EDC731B17202B004E8365 /* NervousAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */; };
 		076A35631B11F32B0054002A /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076A35621B11F32B0054002A /* PrivacyViewController.swift */; };
 		076A35651B11FA1F0054002A /* LoggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076A35641B11FA1F0054002A /* LoggingViewController.swift */; };
 		07824EC81B1602AC0024085E /* ServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07824EC71B1602AC0024085E /* ServerViewController.swift */; };
-		07824ECA1B160C860024085E /* NervousAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07824EC91B160C860024085E /* NervousAppsViewController.swift */; };
 		07C12C3A1B0CD09400885C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C12C391B0CD09400885C50 /* ViewController.swift */; };
 		07D307251B10C465009CD2F3 /* SensorStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D307241B10C465009CD2F3 /* SensorStatisticsViewController.swift */; };
 		07D30DC71B10EB56009CD2F3 /* index.htm in Resources */ = {isa = PBXBuildFile; fileRef = 07D30DC61B10EB56009CD2F3 /* index.htm */; };
@@ -132,10 +133,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07295DB51B17297700360070 /* NervousAppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousAppsViewController.swift; sourceTree = "<group>"; };
+		073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousAppTableViewCell.swift; sourceTree = "<group>"; };
 		076A35621B11F32B0054002A /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		076A35641B11FA1F0054002A /* LoggingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingViewController.swift; sourceTree = "<group>"; };
 		07824EC71B1602AC0024085E /* ServerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerViewController.swift; sourceTree = "<group>"; };
-		07824EC91B160C860024085E /* NervousAppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousAppsViewController.swift; sourceTree = "<group>"; };
 		07C12C391B0CD09400885C50 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07D307241B10C465009CD2F3 /* SensorStatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorStatisticsViewController.swift; sourceTree = "<group>"; };
 		07D30DC61B10EB56009CD2F3 /* index.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.htm; sourceTree = "<group>"; };
@@ -390,9 +392,10 @@
 				076A35641B11FA1F0054002A /* LoggingViewController.swift */,
 				076A35621B11F32B0054002A /* PrivacyViewController.swift */,
 				07824EC71B1602AC0024085E /* ServerViewController.swift */,
+				07295DB51B17297700360070 /* NervousAppsViewController.swift */,
 				07D307241B10C465009CD2F3 /* SensorStatisticsViewController.swift */,
+				073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */,
 				22B912DF19D76F96006094C6 /* SensorViewController.swift */,
-				07824EC91B160C860024085E /* NervousAppsViewController.swift */,
 				22B03E5419CE032B00E50D04 /* MapViewController.swift */,
 				07C12C391B0CD09400885C50 /* ViewController.swift */,
 				22392F3D1A0CF421008035FA /* MapDataController.swift */,
@@ -795,9 +798,9 @@
 				24756F2F1B0CD4A000D31AA2 /* QueryText.swift in Sources */,
 				FC1346B91AD5EC0400D9998C /* SensorsDB.swift in Sources */,
 				22653FF619D6E669004E1AA2 /* BLESensor.swift in Sources */,
-				07824ECA1B160C860024085E /* NervousAppsViewController.swift in Sources */,
 				22C5D71019FF87E200CD8D26 /* Field.swift in Sources */,
 				22392F3E1A0CF421008035FA /* MapDataController.swift in Sources */,
+				073EDC731B17202B004E8365 /* NervousAppTableViewCell.swift in Sources */,
 				22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */,
 				FC9285AC1B026DCE00160A69 /* SensorDescBattery.swift in Sources */,
 				07824EC81B1602AC0024085E /* ServerViewController.swift in Sources */,
@@ -806,6 +809,7 @@
 				22C5D70D19FF87E200CD8D26 /* ExtendableMessageBuilder.swift in Sources */,
 				22C5D70919FF87E200CD8D26 /* CodedInputStream.swift in Sources */,
 				E1B95CF81B04E1D0004A5E20 /* SensorDescVectorValue.swift in Sources */,
+				07295DB61B17297700360070 /* NervousAppsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

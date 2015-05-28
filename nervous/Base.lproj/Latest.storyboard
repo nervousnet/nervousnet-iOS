@@ -34,9 +34,6 @@
                                 <state key="normal" title="Button" image="NervousNetIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Zsl-Qg-Q6y" kind="show" id="MIZ-R8-HNd"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6m-rA-IIf">
                                 <rect key="frame" x="16" y="20" width="80" height="80"/>
@@ -201,49 +198,46 @@
             <point key="canvasLocation" x="60" y="785"/>
         </scene>
         <!--Nervous Apps View Controller-->
-        <scene sceneID="CFe-sc-FhL">
+        <scene sceneID="IzB-23-FvZ">
             <objects>
-                <viewController id="Zsl-Qg-Q6y" customClass="NervousAppsViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ADL-UN-je1"/>
-                        <viewControllerLayoutGuide type="bottom" id="h6D-Hx-Kat"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vt6-Tj-5FG">
+                <tableViewController id="ukm-yg-9dW" customClass="NervousAppsViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rkj-mi-VLW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JmG-Pd-VfX">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Nervous Apps" id="26D-ON-MkC">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="uz2-EX-mC5">
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="S21-Qn-WJk"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="JmG-Pd-VfX" secondAttribute="width" id="037-fB-RFy"/>
-                            <constraint firstAttribute="centerX" secondItem="JmG-Pd-VfX" secondAttribute="centerX" id="4do-JP-67T"/>
-                            <constraint firstItem="JmG-Pd-VfX" firstAttribute="leading" secondItem="vt6-Tj-5FG" secondAttribute="leadingMargin" constant="-16" id="JWg-kN-HhQ"/>
-                            <constraint firstItem="JmG-Pd-VfX" firstAttribute="top" secondItem="ADL-UN-je1" secondAttribute="bottom" id="a3C-Tj-fLn"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="4do-JP-67T"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fYB-Sq-AAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <inset key="scrollIndicatorInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="App" textLabel="7L3-IM-7pe" detailTextLabel="hVM-sQ-7nr" rowHeight="88" style="IBUITableViewCellStyleSubtitle" id="iV1-tY-oss" customClass="NervousAppTableViewCell" customModule="nervous">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iV1-tY-oss" id="U7U-H3-4As">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7L3-IM-7pe">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hVM-sQ-7nr">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="ukm-yg-9dW" id="xgs-lm-Q1a"/>
+                            <outlet property="delegate" destination="ukm-yg-9dW" id="TVi-tU-DBE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="csW-rw-EHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="72" y="140"/>
+            <point key="canvasLocation" x="168" y="-670"/>
         </scene>
         <!--Privacy View Controller-->
         <scene sceneID="gjR-28-eZN">
@@ -1498,7 +1492,7 @@
         <image name="Server" width="1131" height="1139"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9bt-XU-Gfc"/>
+        <segue reference="ZyD-4F-jFj"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.92156862745098034" green="0.27843137254901962" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
 </document>
