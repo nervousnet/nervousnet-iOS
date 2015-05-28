@@ -3,6 +3,7 @@
 //  nervous
 //
 //  Created by Sam Sulaimanov on 27/09/14.
+//  Modified by Siddhartha
 //  Copyright (c) 2014 ethz. All rights reserved.
 //
 
@@ -32,19 +33,22 @@ class UploadTask :NSObject, NSStreamDelegate {
         
         NSStream.getStreamsToHostWithName(serverAddress, port: serverPort, inputStream: &self.inputStream, outputStream: &self.outputStream)
         
-        
-        var inp:NSInputStream = self.inputStream!
-        var out:NSOutputStream = self.outputStream!
-        
-        inp.delegate = self
-        out.delegate = self
-        
-        inp.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-        out.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-        
-        inp.open()
-        out.open()
-        
+        if inputStream != nil && outputStream != nil {
+            var inp:NSInputStream = self.inputStream!
+            var out:NSOutputStream = self.outputStream!
+            
+            // set delegate
+            inp.delegate = self
+            out.delegate = self
+            
+            // schedule
+            inp.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+            out.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+            
+            // open
+            inp.open()
+            out.open()
+        }
     }
     
     
@@ -60,6 +64,7 @@ class UploadTask :NSObject, NSStreamDelegate {
             //TODO: make this less hacky, add proper timers
             while (out.streamStatus == NSStreamStatus.Opening){
                 timeD = date.timeIntervalSince1970 - start
+                
                 if(out.streamStatus == NSStreamStatus.Error){
                     NSLog("dies")
                     out.close()
@@ -68,6 +73,9 @@ class UploadTask :NSObject, NSStreamDelegate {
                     NSLog("upload timeout")
                     out.close()
                     inp.close()
+                }
+                else {
+                    NSLog("Connected")
                 }
                 
             }
@@ -79,7 +87,7 @@ class UploadTask :NSObject, NSStreamDelegate {
     }
     
     
-    func stream(theStream: NSStream!, handleEvent streamEvent: NSStreamEvent){
+    /*func stream(theStream: NSStream!, handleEvent streamEvent: NSStreamEvent){
         NSLog("receive")
         
         
@@ -104,7 +112,7 @@ class UploadTask :NSObject, NSStreamDelegate {
             default:
                 NSLog("default")
         }
-    }
+    }*/
 
     
 }
