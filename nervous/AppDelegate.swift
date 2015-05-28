@@ -138,7 +138,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         accSensor.sensorValues = sensorDataArrayA
         dispatch_async(dispatch_get_main_queue()) {
             
-            let upA = UploadTask(pbSensorupload: accSensor.build())
+            var upA = UploadTask(pbSensorupload: accSensor.build())
             upA.writeToRouter()
         }
         
@@ -152,7 +152,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         gyrSensor.sensorValues = sensorDataArrayG
         dispatch_async(dispatch_get_main_queue()) {
             
-            let upG = UploadTask(pbSensorupload: gyrSensor.build())
+            var upG = UploadTask(pbSensorupload: gyrSensor.build())
             upG.writeToRouter()
         }
         
@@ -166,7 +166,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         magSensor.sensorValues = sensorDataArrayM
         dispatch_async(dispatch_get_main_queue()) {
             
-            let upM = UploadTask(pbSensorupload: magSensor.build())
+            var upM = UploadTask(pbSensorupload: magSensor.build())
             upM.writeToRouter()
         }
         
@@ -180,7 +180,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         batSensor.sensorValues = sensorDataArrayB
         dispatch_async(dispatch_get_main_queue()) {
             
-            let upB = UploadTask(pbSensorupload: batSensor.build())
+            var upB = UploadTask(pbSensorupload: batSensor.build())
             upB.writeToRouter()
         }
         /*for sensorData in sensorDataArrayB {
@@ -199,7 +199,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         proSensor.sensorValues = sensorDataArrayP
         dispatch_async(dispatch_get_main_queue()) {
             
-            let upP = UploadTask(pbSensorupload: proSensor.build())
+            var upP = UploadTask(pbSensorupload: proSensor.build())
             upP.writeToRouter()
         }
         /*for sensorData in sensorDataArrayP {

@@ -30,6 +30,8 @@ class UploadTask :NSObject, NSStreamDelegate {
         self.pbSensorupload = pbSensorupload
         
         println("connecting...")
+        //NSLog("\(serverAddress)")
+        //NSLog("\(serverPort)")
         
         NSStream.getStreamsToHostWithName(serverAddress, port: serverPort, inputStream: &self.inputStream, outputStream: &self.outputStream)
         
@@ -48,6 +50,8 @@ class UploadTask :NSObject, NSStreamDelegate {
             // open
             inp.open()
             out.open()
+            
+            //NSLog("Successfully opened!")
         }
     }
     
@@ -74,9 +78,9 @@ class UploadTask :NSObject, NSStreamDelegate {
                     out.close()
                     inp.close()
                 }
-                else {
-                    NSLog("Connected")
-                }
+                //else {
+                    //NSLog("Connected")
+                //}
                 
             }
             
