@@ -3,15 +3,14 @@ import CoreMotion
 
 class SensorStatisticsViewController : UIViewController {
     
-    @IBOutlet weak var webView: UIWebView!
     
-    var urlpath = NSBundle.mainBundle().pathForResource("index", ofType: "htm")
+    @IBOutlet var webView: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //WebView.removeFromSuperview()
+        webView.removeFromSuperview()
         
-        let requestURL = NSURL(string: "http://google.com")
+        let requestURL = NSURL(string: "http://www.facebook.com")
         let request = NSURLRequest(URL : requestURL!)
         webView.loadRequest(request)
     }
