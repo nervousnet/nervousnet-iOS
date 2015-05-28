@@ -42,13 +42,6 @@ class LoggingViewController : UIViewController {
         
         
         
-        println("\n")
-        println(accStepper.value)
-        println(accStepper.value)
-        println(accStepper.value)
-        println(accStepper.value)
-        println(accStepper.value)
-        println("\n")
         
     }
     
