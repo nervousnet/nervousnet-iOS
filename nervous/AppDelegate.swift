@@ -58,15 +58,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // +++++++++++++++++++++++++++++++++++++++++++++++++++
         // Fetching and Pushing the data of individual sensors
         // +++++++++++++++++++++++++++++++++++++++++++++++++++
-        VM.setFrequency(0, freq: 30) // default is 30 seconds.
-        VM.setFrequency(1, freq: 30) // The values will change
+        VM.setFrequency(0, freq: 1) // default is 30 seconds.
+        VM.setFrequency(1, freq: 30)// The values will change
         VM.setFrequency(2, freq: 30) // according to the UI
         VM.setFrequency(5, freq: 30) // inputs.
         VM.setFrequency(6, freq: 30)
         
         // Push the data to te server
+        VM.pushToServerTimer()
         // The function reads the last minute from the database using the current time
-        var timerD = NSTimer.scheduledTimerWithTimeInterval(60.5, target: self, selector: Selector("pushToServer"), userInfo: nil, repeats: true)
+        //var timerD = NSTimer.scheduledTimerWithTimeInterval(60.5, target: self, selector: Selector("pushToServer"), userInfo: nil, repeats: true)
         
         
         
@@ -115,101 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         return true
     }
     
-    // Push to the server
-    func pushToServer() {
-        // Generate the VM object and get the UUIDs
-        // println("+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-        var VM = NervousVM.sharedInstance
-        let huuid : UInt64 = VM.getHUUID()
-        let luuid : UInt64 = VM.getLUUID()
-        
-        var db = SQLiteSensorsDB.sharedInstance
-        var currentTime :NSDate = NSDate()
-        var timestamp :UInt64 = UInt64(currentTime.timeIntervalSince1970*1000)
-        //println(VM.getHUUID())
-        
-        // Accelerometer
-        let accSensor = SensorUpload.builder()
-        accSensor.huuid = huuid //phone huuid
-        accSensor.luuid = luuid //phone luuid
-        accSensor.uploadTime = timestamp
-        accSensor.sensorId = 0x0000000000000000
-        var sensorDataArrayA: [SensorUploadSensorData] = db.retrieve(0x0000000000000000, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
-        accSensor.sensorValues = sensorDataArrayA
-        dispatch_async(dispatch_get_main_queue()) {
-            
-            var upA = UploadTask(pbSensorupload: accSensor.build())
-            upA.writeToRouter()
-        }
-        
-        // Gyroscope
-        let gyrSensor = SensorUpload.builder()
-        gyrSensor.huuid = huuid
-        gyrSensor.luuid = luuid
-        gyrSensor.uploadTime = timestamp
-        gyrSensor.sensorId = 0x0000000000000002
-        var sensorDataArrayG: [SensorUploadSensorData] = db.retrieve(0x0000000000000002, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
-        gyrSensor.sensorValues = sensorDataArrayG
-        dispatch_async(dispatch_get_main_queue()) {
-            
-            var upG = UploadTask(pbSensorupload: gyrSensor.build())
-            upG.writeToRouter()
-        }
-        
-        // Magnetic
-        let magSensor = SensorUpload.builder()
-        magSensor.huuid = huuid
-        magSensor.luuid = luuid
-        magSensor.uploadTime = timestamp
-        magSensor.sensorId = 0x0000000000000005
-        var sensorDataArrayM: [SensorUploadSensorData] = db.retrieve(0x0000000000000005, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
-        magSensor.sensorValues = sensorDataArrayM
-        dispatch_async(dispatch_get_main_queue()) {
-            
-            var upM = UploadTask(pbSensorupload: magSensor.build())
-            upM.writeToRouter()
-        }
-        
-        // Battery
-        let batSensor = SensorUpload.builder()
-        batSensor.huuid = huuid
-        batSensor.luuid = luuid
-        batSensor.uploadTime = timestamp
-        batSensor.sensorId = 0x0000000000000001
-        var sensorDataArrayB: [SensorUploadSensorData] = db.retrieve(0x0000000000000001, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
-        batSensor.sensorValues = sensorDataArrayB
-        dispatch_async(dispatch_get_main_queue()) {
-            
-            var upB = UploadTask(pbSensorupload: batSensor.build())
-            upB.writeToRouter()
-        }
-        /*for sensorData in sensorDataArrayB {
-            var retSensDesc = SensorDescBattery(sensorData: sensorData)
-            NSLog("\((retSensDesc as SensorDesc).timestamp)")
-            NSLog("\(retSensDesc.batteryPercent) \(retSensDesc.isCharging)")
-        }*/
-
-        // Proximity
-        let proSensor = SensorUpload.builder()
-        proSensor.huuid = huuid
-        proSensor.luuid = luuid
-        proSensor.uploadTime = timestamp
-        proSensor.sensorId = 0x0000000000000006
-        var sensorDataArrayP: [SensorUploadSensorData] = db.retrieve(0x0000000000000006, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
-        proSensor.sensorValues = sensorDataArrayP
-        dispatch_async(dispatch_get_main_queue()) {
-            
-            var upP = UploadTask(pbSensorupload: proSensor.build())
-            upP.writeToRouter()
-        }
-        /*for sensorData in sensorDataArrayP {
-            var retSensDesc = SensorDescProximity(sensorData: sensorData)
-            NSLog("\((retSensDesc as SensorDesc).timestamp)")
-            NSLog("\(retSensDesc.proximity)")
-        }*/
-        // println("+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-    }
-
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

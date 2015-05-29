@@ -29,13 +29,30 @@ class NervousVM : NSObject{
     var proFreq : Double = 30
     
     // Server address and port number
-    var address = "www.inn.ac"
+    var address = "inn.ac"
     var port = 25600
     
     // Timers for different sensors
     var timerA = NSTimer()
     var timerB = NSTimer()
     var timerP = NSTimer()
+    
+    // Timer for pushing to the server
+    var timerD = NSTimer()
+    
+    // Boolean for logging buttons
+    var logA : Bool = true
+    var logG : Bool = true
+    var logM : Bool = true
+    var logB : Bool = true
+    var logP : Bool = true
+    
+    // Boolean for sharing buttons
+    var shareA : Bool = true
+    var shareG : Bool = true
+    var shareM : Bool = true
+    var shareB : Bool = true
+    var shareP : Bool = true
     
     override init(){
             super.init()
@@ -152,6 +169,8 @@ class NervousVM : NSObject{
     }
     
     // set frequecies for collecting sensor information
+    // and create threds to execute the collection with
+    // the chosen frequencies.
     func setFrequency(sensorID : Int, freq : Double) {
         var db = SQLiteSensorsDB.sharedInstance
         switch sensorID {
@@ -169,6 +188,7 @@ class NervousVM : NSObject{
                         accY : Float(data.acceleration.y),
                         accZ : Float(data.acceleration.z)
                     )
+                    println(data.acceleration.x)
                     // push the data to the database
                     db.store(0x0000000000000000, timestamp: sensorDescAcc.timestamp, sensorData: sensorDescAcc.toProtoSensor())
                 }
@@ -191,6 +211,7 @@ class NervousVM : NSObject{
                         gyrY : Float(data.rotationRate.y),
                         gyrZ : Float(data.rotationRate.z)
                     )
+                    //println(data.rotationRate.x)
                     db.store(0x0000000000000002, timestamp: sensorDescGyr.timestamp, sensorData: sensorDescGyr.toProtoSensor())
                 }
             }
@@ -208,6 +229,7 @@ class NervousVM : NSObject{
                         magY : Float(data.magneticField.y),
                         magZ : Float(data.magneticField.z)
                     )
+                    //println(data.magneticField.x)
                     db.store(0x0000000000000005, timestamp: sensorDescMag.timestamp, sensorData: sensorDescMag.toProtoSensor())
                 }
             }
@@ -296,6 +318,126 @@ class NervousVM : NSObject{
         )
         db.store(0x0000000000000006, timestamp: sensorDescProx.timestamp, sensorData: sensorDescProx.toProtoSensor())
         UIDevice.currentDevice().proximityMonitoringEnabled = false
+    }
+    
+    // Push the data collected to the server
+    func pushToServer() {
+        // println("+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+        // UUID
+        var huuid : UInt64 = getHUUID()
+        var luuid : UInt64 = getLUUID()
+        
+        var db = SQLiteSensorsDB.sharedInstance
+        var currentTime :NSDate = NSDate()
+        var timestamp :UInt64 = UInt64(currentTime.timeIntervalSince1970*1000)
+        //println(VM.getHUUID())
+        
+        // Accelerometer
+        let accSensor = SensorUpload.builder()
+        accSensor.huuid = huuid //phone huuid
+        accSensor.luuid = luuid //phone luuid
+        accSensor.uploadTime = timestamp
+        accSensor.sensorId = 0x0000000000000000
+        var sensorDataArrayA: [SensorUploadSensorData] = db.retrieve(0x0000000000000000, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
+        accSensor.sensorValues = sensorDataArrayA
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            var upA = UploadTask(pbSensorupload: accSensor.build())
+            upA.writeToRouter()
+        }
+        
+        // Gyroscope
+        let gyrSensor = SensorUpload.builder()
+        gyrSensor.huuid = huuid
+        gyrSensor.luuid = luuid
+        gyrSensor.uploadTime = timestamp
+        gyrSensor.sensorId = 0x0000000000000002
+        var sensorDataArrayG: [SensorUploadSensorData] = db.retrieve(0x0000000000000002, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
+        gyrSensor.sensorValues = sensorDataArrayG
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            var upG = UploadTask(pbSensorupload: gyrSensor.build())
+            upG.writeToRouter()
+        }
+        
+        // Magnetic
+        let magSensor = SensorUpload.builder()
+        magSensor.huuid = huuid
+        magSensor.luuid = luuid
+        magSensor.uploadTime = timestamp
+        magSensor.sensorId = 0x0000000000000005
+        var sensorDataArrayM: [SensorUploadSensorData] = db.retrieve(0x0000000000000005, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
+        magSensor.sensorValues = sensorDataArrayM
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            var upM = UploadTask(pbSensorupload: magSensor.build())
+            upM.writeToRouter()
+        }
+        
+        // Battery
+        let batSensor = SensorUpload.builder()
+        batSensor.huuid = huuid
+        batSensor.luuid = luuid
+        batSensor.uploadTime = timestamp
+        batSensor.sensorId = 0x0000000000000001
+        var sensorDataArrayB: [SensorUploadSensorData] = db.retrieve(0x0000000000000001, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
+        batSensor.sensorValues = sensorDataArrayB
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            var upB = UploadTask(pbSensorupload: batSensor.build())
+            upB.writeToRouter()
+        }
+        /*for sensorData in sensorDataArrayB {
+        var retSensDesc = SensorDescBattery(sensorData: sensorData)
+        NSLog("\((retSensDesc as SensorDesc).timestamp)")
+        NSLog("\(retSensDesc.batteryPercent) \(retSensDesc.isCharging)")
+        }*/
+        
+        // Proximity
+        let proSensor = SensorUpload.builder()
+        proSensor.huuid = huuid
+        proSensor.luuid = luuid
+        proSensor.uploadTime = timestamp
+        proSensor.sensorId = 0x0000000000000006
+        var sensorDataArrayP: [SensorUploadSensorData] = db.retrieve(0x0000000000000006, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
+        proSensor.sensorValues = sensorDataArrayP
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            var upP = UploadTask(pbSensorupload: proSensor.build())
+            upP.writeToRouter()
+        }
+        /*for sensorData in sensorDataArrayP {
+        var retSensDesc = SensorDescProximity(sensorData: sensorData)
+        NSLog("\((retSensDesc as SensorDesc).timestamp)")
+        NSLog("\(retSensDesc.proximity)")
+        }*/
+        // println("+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+    }
+    
+    // Timer to push to the server
+    func pushToServerTimer() {
+        var timerD = NSTimer.scheduledTimerWithTimeInterval(60.5, target: self, selector: Selector("pushToServer"), userInfo: nil, repeats: true)
+    }
+    
+    // if the main switch(center of the start screen) is on or off
+    func killSwitch(state : Bool) {
+        if(state) {
+            self.timerD.invalidate()
+            self.timerA.invalidate()
+            self.timerB.invalidate()
+            self.timerP.invalidate()
+            self.manager.stopAccelerometerUpdates()
+            self.manager.stopGyroUpdates()
+            self.manager.stopMagnetometerUpdates()
+        }
+        else {
+            self.setFrequency(0, freq: self.accFreq)
+            self.setFrequency(1, freq: self.batFreq)
+            self.setFrequency(2, freq: self.gyrFreq)
+            self.setFrequency(5, freq: self.magFreq)
+            self.setFrequency(6, freq: self.proFreq)
+            self.pushToServer()
+        }
     }
 
 }
