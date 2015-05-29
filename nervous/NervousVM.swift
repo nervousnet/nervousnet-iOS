@@ -173,9 +173,9 @@ class NervousVM : NSObject{
     // the chosen frequencies.
     func setFrequency(sensorID : Int, freq : Double) {
         var db = SQLiteSensorsDB.sharedInstance
+        var VM = NervousVM.sharedInstance
         switch sensorID {
         case 0:
-            var temp = self.logA
             self.accFreq = freq
             manager.stopAccelerometerUpdates()
             if manager.accelerometerAvailable {
@@ -190,8 +190,9 @@ class NervousVM : NSObject{
                         accZ : Float(data.acceleration.z)
                     )
                     // push the data to the database
-                    if(temp) {
-                        println(data.acceleration.x)
+                    //println(temp)
+                    if(VM.getLogSwitch(0)) {
+                        //println(data.acceleration.x)
                         db.store(0x0000000000000000, timestamp: sensorDescAcc.timestamp, sensorData: sensorDescAcc.toProtoSensor())
                     }
                 }
@@ -199,7 +200,7 @@ class NervousVM : NSObject{
         case 1:
             self.batFreq = freq
             self.timerB.invalidate()
-            self.timerB = NSTimer.scheduledTimerWithTimeInterval(freq, target: self, selector: Selector("batteryCollection"), userInfo: nil, repeats: true)
+            self.timerB = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("batteryCollection"), userInfo: nil, repeats: true)
         case 2:
             var temp = self.logG
             self.gyrFreq = freq
@@ -216,7 +217,7 @@ class NervousVM : NSObject{
                         gyrZ : Float(data.rotationRate.z)
                     )
                     //println(data.rotationRate.x)
-                    if(temp) {
+                    if(VM.getLogSwitch(2)) {
                         db.store(0x0000000000000002, timestamp: sensorDescGyr.timestamp, sensorData: sensorDescGyr.toProtoSensor())
                     }
                 }
@@ -237,7 +238,7 @@ class NervousVM : NSObject{
                         magZ : Float(data.magneticField.z)
                     )
                     //println(data.magneticField.x)
-                    if(temp) {
+                    if(VM.getLogSwitch(5)) {
                         db.store(0x0000000000000005, timestamp: sensorDescMag.timestamp, sensorData: sensorDescMag.toProtoSensor())
                     }
                 }
@@ -312,6 +313,7 @@ class NervousVM : NSObject{
             isAcCharge : isAcCharge
         )
         if(self.logB) {
+            println(UIDevice.currentDevice().batteryLevel)
             db.store(0x0000000000000001, timestamp: sensorDescBat.timestamp, sensorData: sensorDescBat.toProtoSensor())
         }
         UIDevice.currentDevice().batteryMonitoringEnabled = false
