@@ -80,6 +80,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wgl-Pe-ceL">
                                 <rect key="frame" x="276" y="44" width="51" height="31"/>
                                 <color key="onTintColor" red="0.91764705879999997" green="0.2784313725" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="KillSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="h0G-aR-dze"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWy-K3-ehK">
                                 <rect key="frame" x="16" y="515" width="65" height="65"/>
@@ -193,6 +196,7 @@
                     </view>
                     <connections>
                         <outlet property="Background" destination="SI6-mG-zaB" id="AbJ-wr-cYE"/>
+                        <outlet property="Killswitch" destination="Wgl-Pe-ceL" id="cbe-rG-9yc"/>
                         <outlet property="button" destination="Dbh-Ku-Ar4" id="kpL-LX-Ixk"/>
                     </connections>
                 </viewController>
@@ -219,7 +223,7 @@
                                         <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9F-hZ-slK">
                                             <rect key="frame" x="0.0" y="20" width="600" height="52"/>
                                             <items>
-                                                <navigationItem title="Nervous Apps" id="b9t-3L-fRt">
+                                                <navigationItem title="Nervousnet Virtual Sensors" id="b9t-3L-fRt">
                                                     <barButtonItem key="leftBarButtonItem" title="Back" id="ps4-KV-yAB">
                                                         <connections>
                                                             <segue destination="BYZ-38-t0r" kind="show" id="9sz-G1-NBM"/>
