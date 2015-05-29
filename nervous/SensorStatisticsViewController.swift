@@ -8,9 +8,10 @@ class SensorStatisticsViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        webView.removeFromSuperview()
-        
-        let requestURL = NSURL(string: "http://www.facebook.com")
+        //webView.removeFromSuperview()
+        let url = NSBundle.mainBundle().URLForResource("Installation", withExtension: "html")
+
+        let requestURL = NSURL(string: "http://www.google.com")
         let request = NSURLRequest(URL : requestURL!)
         webView.loadRequest(request)
     }
