@@ -285,6 +285,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		074910E81B18777300B787E1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				076A35641B11FA1F0054002A /* LoggingViewController.swift */,
+				076A35621B11F32B0054002A /* PrivacyViewController.swift */,
+				07824EC71B1602AC0024085E /* ServerViewController.swift */,
+				07295DB51B17297700360070 /* NervousAppsViewController.swift */,
+				07D307241B10C465009CD2F3 /* SensorStatisticsViewController.swift */,
+				073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */,
+				07C12C391B0CD09400885C50 /* ViewController.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		07D30DC81B10EC16009CD2F3 /* js */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,15 +403,9 @@
 				07D30DC81B10EC16009CD2F3 /* js */,
 				07D30DC61B10EB56009CD2F3 /* index.htm */,
 				22316DE219BFB422006FD165 /* Latest.storyboard */,
-				076A35641B11FA1F0054002A /* LoggingViewController.swift */,
-				076A35621B11F32B0054002A /* PrivacyViewController.swift */,
-				07824EC71B1602AC0024085E /* ServerViewController.swift */,
-				07295DB51B17297700360070 /* NervousAppsViewController.swift */,
-				07D307241B10C465009CD2F3 /* SensorStatisticsViewController.swift */,
-				073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */,
+				074910E81B18777300B787E1 /* UI */,
 				22B912DF19D76F96006094C6 /* SensorViewController.swift */,
 				22B03E5419CE032B00E50D04 /* MapViewController.swift */,
-				07C12C391B0CD09400885C50 /* ViewController.swift */,
 				22392F3D1A0CF421008035FA /* MapDataController.swift */,
 				311E826F1A001D8500C176FE /* FilterButtonView.swift */,
 				22C5D71819FFADBA00CD8D26 /* SensorDetailController.swift */,
