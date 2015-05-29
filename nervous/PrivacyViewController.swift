@@ -30,12 +30,12 @@ class PrivacyViewController : UIViewController {
         MagLog.setOn(VM.getLogSwitch(5), animated: false)
         ProLog.setOn(VM.getLogSwitch(6), animated: false)
         
-//        AccShare.setOn(VM.getShareSwitch(0), animated: false)
-//        BatShare.setOn(VM.getShareSwitch(1), animated: false)
-//        GyrShare.setOn(VM.getShareSwitch(2), animated: false)
-//        MagShare.setOn(VM.getShareSwitch(5), animated: false)
-//        ProShare.setOn(VM.getShareSwitch(6), animated: false)
-        
+        AccShare.setOn(VM.getShareSwitch(0), animated: false)
+        BatShare.setOn(VM.getShareSwitch(1), animated: false)
+        GyrShare.setOn(VM.getShareSwitch(2), animated: false)
+        MagShare.setOn(VM.getShareSwitch(5), animated: false)
+        ProShare.setOn(VM.getShareSwitch(6), animated: false)
+
         
 
        // scrollView.contentSize = CGSize(width: 100, height : 3000)

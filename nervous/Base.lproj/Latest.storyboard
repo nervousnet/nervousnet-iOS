@@ -764,6 +764,7 @@
                     </view>
                     <connections>
                         <outlet property="AccLog" destination="nST-7C-Eik" id="S6K-Kl-lVu"/>
+                        <outlet property="AccShare" destination="WLY-7r-Opp" id="FVp-dK-KD8"/>
                         <outlet property="BatLog" destination="uzK-qc-7ZE" id="ihC-Yn-Cx7"/>
                         <outlet property="BatShare" destination="O2f-MC-bQg" id="3nZ-Y8-ATC"/>
                         <outlet property="GyrLog" destination="Mde-fw-d6S" id="qqU-yV-NOF"/>
