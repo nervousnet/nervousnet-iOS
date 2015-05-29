@@ -365,7 +365,6 @@ class NervousVM : NSObject{
         }
         
         // Gyroscope
-        println(self.shareG)
         if(self.shareG) {
             let gyrSensor = SensorUpload.builder()
             gyrSensor.huuid = huuid
