@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		070842AD1B18853E00466D18 /* Installation.html in Resources */ = {isa = PBXBuildFile; fileRef = 070842AC1B18853E00466D18 /* Installation.html */; };
+		070842B31B18C0A400466D18 /* PrivacyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070842B21B18C0A400466D18 /* PrivacyTableViewCell.swift */; };
+		070842B51B18C15700466D18 /* PrivacyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070842B41B18C15700466D18 /* PrivacyTableView.swift */; };
+		070842B71B18C18100466D18 /* PrivacyViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070842B61B18C18100466D18 /* PrivacyViewController2.swift */; };
 		07295DB61B17297700360070 /* NervousAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07295DB51B17297700360070 /* NervousAppsViewController.swift */; };
 		073EDC731B17202B004E8365 /* NervousAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */; };
 		074912EA1B187C3D00B787E1 /* font-awesome.css in Resources */ = {isa = PBXBuildFile; fileRef = 074910EC1B187C3D00B787E1 /* font-awesome.css */; };
@@ -428,6 +431,9 @@
 
 /* Begin PBXFileReference section */
 		070842AC1B18853E00466D18 /* Installation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Installation.html; sourceTree = "<group>"; };
+		070842B21B18C0A400466D18 /* PrivacyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyTableViewCell.swift; sourceTree = "<group>"; };
+		070842B41B18C15700466D18 /* PrivacyTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyTableView.swift; sourceTree = "<group>"; };
+		070842B61B18C18100466D18 /* PrivacyViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController2.swift; sourceTree = "<group>"; };
 		07295DB51B17297700360070 /* NervousAppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousAppsViewController.swift; sourceTree = "<group>"; };
 		073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousAppTableViewCell.swift; sourceTree = "<group>"; };
 		074910EC1B187C3D00B787E1 /* font-awesome.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "font-awesome.css"; sourceTree = "<group>"; };
@@ -923,6 +929,9 @@
 				074910E91B187C3D00B787E1 /* Highcharts */,
 				073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */,
 				07C12C391B0CD09400885C50 /* ViewController.swift */,
+				070842B21B18C0A400466D18 /* PrivacyTableViewCell.swift */,
+				070842B61B18C18100466D18 /* PrivacyViewController2.swift */,
+				070842B41B18C15700466D18 /* PrivacyTableView.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -3354,6 +3363,7 @@
 				07D307251B10C465009CD2F3 /* SensorStatisticsViewController.swift in Sources */,
 				07C12C3A1B0CD09400885C50 /* ViewController.swift in Sources */,
 				074913541B187C3D00B787E1 /* SVGConverter.java in Sources */,
+				070842B31B18C0A400466D18 /* PrivacyTableViewCell.swift in Sources */,
 				074913971B187C3D00B787E1 /* ExportController.java in Sources */,
 				22F1A5FB1A10A5E30097B2E4 /* nervous.xcdatamodeld in Sources */,
 				E173CD681B0387E200E56ED2 /* SensorDescGyroscope.swift in Sources */,
@@ -3417,7 +3427,9 @@
 				22392F3E1A0CF421008035FA /* MapDataController.swift in Sources */,
 				073EDC731B17202B004E8365 /* NervousAppTableViewCell.swift in Sources */,
 				22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */,
+				070842B51B18C15700466D18 /* PrivacyTableView.swift in Sources */,
 				FC9285AC1B026DCE00160A69 /* SensorDescBattery.swift in Sources */,
+				070842B71B18C18100466D18 /* PrivacyViewController2.swift in Sources */,
 				0749139A1B187C3D00B787E1 /* RequestInterceptor.java in Sources */,
 				07824EC81B1602AC0024085E /* ServerViewController.swift in Sources */,
 				E1B3C9221B0E19830089C771 /* SensorCollection.swift in Sources */,
