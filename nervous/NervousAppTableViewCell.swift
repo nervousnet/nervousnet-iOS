@@ -6,8 +6,15 @@ class NervousAppTableViewCell : UITableViewCell {
    
     @IBOutlet var Name: UILabel!
     
+    @IBOutlet var Button: UIButton!
+    
     @IBOutlet var Description: UILabel!
     
+    var Link : String = " "
+    
+    @IBAction func ButtonPressed(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(NSURL(string: Link)!)
+    }
     
 
 }

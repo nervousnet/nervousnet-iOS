@@ -267,26 +267,54 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPG-6Y-jm1">
+                                            <rect key="frame" x="8" y="8" width="584" height="135"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="144" id="Pnw-ms-6M1"/>
+                                                <constraint firstAttribute="width" constant="592" id="RyX-Bu-iTp"/>
+                                            </constraints>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Pnw-ms-6M1"/>
+                                                    <exclude reference="RyX-Bu-iTp"/>
+                                                </mask>
+                                            </variation>
+                                            <connections>
+                                                <action selector="ButtonPressed:" destination="iV1-tY-oss" eventType="touchUpInside" id="jdz-1k-sMN"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="kGz-i7-eAh" firstAttribute="top" secondItem="U7U-H3-4As" secondAttribute="topMargin" id="3gS-BS-gJU"/>
                                         <constraint firstAttribute="centerX" secondItem="kGz-i7-eAh" secondAttribute="centerX" id="DvM-nQ-AmD"/>
+                                        <constraint firstItem="oPG-6Y-jm1" firstAttribute="trailing" secondItem="U7U-H3-4As" secondAttribute="trailingMargin" id="FJe-DO-wt2"/>
                                         <constraint firstItem="69f-Dd-GWR" firstAttribute="trailing" secondItem="U7U-H3-4As" secondAttribute="trailingMargin" id="KUi-Wc-u9x"/>
                                         <constraint firstItem="69f-Dd-GWR" firstAttribute="leading" secondItem="kGz-i7-eAh" secondAttribute="trailing" constant="8" id="MLZ-FQ-S2t"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="mYN-GC-N7q" secondAttribute="bottom" constant="-1" id="Urr-id-gqT"/>
                                         <constraint firstItem="mYN-GC-N7q" firstAttribute="trailing" secondItem="U7U-H3-4As" secondAttribute="trailingMargin" id="YCt-EF-84E"/>
                                         <constraint firstItem="69f-Dd-GWR" firstAttribute="leading" secondItem="mYN-GC-N7q" secondAttribute="leading" id="cBO-DJ-piH"/>
+                                        <constraint firstItem="oPG-6Y-jm1" firstAttribute="leading" secondItem="U7U-H3-4As" secondAttribute="leadingMargin" id="eKR-LR-eej"/>
                                         <constraint firstItem="mYN-GC-N7q" firstAttribute="top" secondItem="69f-Dd-GWR" secondAttribute="bottom" constant="9.5" id="f2n-je-2vz"/>
+                                        <constraint firstItem="oPG-6Y-jm1" firstAttribute="top" secondItem="U7U-H3-4As" secondAttribute="topMargin" id="kGX-dx-QQn"/>
+                                        <constraint firstAttribute="centerY" secondItem="oPG-6Y-jm1" secondAttribute="centerY" constant="3.5" id="lyw-FS-3Wr"/>
                                         <constraint firstItem="69f-Dd-GWR" firstAttribute="top" secondItem="U7U-H3-4As" secondAttribute="topMargin" id="qJf-9f-hSg"/>
+                                        <constraint firstAttribute="centerX" secondItem="oPG-6Y-jm1" secondAttribute="centerX" constant="4" id="w83-lp-JRk"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="oPG-6Y-jm1" secondAttribute="bottom" id="ycw-31-sgF"/>
                                         <constraint firstItem="kGz-i7-eAh" firstAttribute="leading" secondItem="U7U-H3-4As" secondAttribute="leadingMargin" id="zOW-zz-PpO"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="lyw-FS-3Wr"/>
+                                            <exclude reference="w83-lp-JRk"/>
                                             <exclude reference="DvM-nQ-AmD"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="Button" destination="oPG-6Y-jm1" id="dn2-DR-NZk"/>
                                     <outlet property="Description" destination="mYN-GC-N7q" id="xwj-wo-g4i"/>
                                     <outlet property="Image" destination="U7U-H3-4As" id="0RG-z9-brN"/>
                                     <outlet property="Name" destination="69f-Dd-GWR" id="PbQ-ef-4fH"/>
