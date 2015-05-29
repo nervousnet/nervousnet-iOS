@@ -23,7 +23,7 @@ class PrivacyTableView: UITableView {
     let CellIdentifier = "PrivacyCell"
     
     override func cellForRowAtIndexPath(indexPath: NSIndexPath) -> UITableViewCell? {
-        let cell = super.dequeueReusableCellWithIdentifier(CellIdentifier, forIndexPath: indexPath) as PrivacyTableViewCell
+        let cell = dequeueReusableCellWithIdentifier(CellIdentifier, forIndexPath: indexPath) as PrivacyTableViewCell
         cell.Label.text = Sensors[indexPath.row]
         cell.SensorID = SensorIDs[indexPath.row]
         return cell
