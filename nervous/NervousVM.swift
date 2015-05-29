@@ -177,7 +177,7 @@ class NervousVM : NSObject{
         switch sensorID {
         case 0:
             self.accFreq = freq
-            manager.stopAccelerometerUpdates()
+            self.manager.stopAccelerometerUpdates()
             if manager.accelerometerAvailable {
                 manager.accelerometerUpdateInterval = freq
                 manager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
@@ -203,7 +203,7 @@ class NervousVM : NSObject{
             self.timerB = NSTimer.scheduledTimerWithTimeInterval(freq, target: self, selector: Selector("batteryCollection"), userInfo: nil, repeats: true)
         case 2:
             self.gyrFreq = freq
-            manager.stopGyroUpdates()
+            self.manager.stopGyroUpdates()
             if manager.gyroAvailable {
                 manager.gyroUpdateInterval = freq
                 manager.startGyroUpdatesToQueue(NSOperationQueue.mainQueue()) {
@@ -215,7 +215,11 @@ class NervousVM : NSObject{
                         gyrY : Float(data.rotationRate.y),
                         gyrZ : Float(data.rotationRate.z)
                     )
-                    //println(data.rotationRate.x)
+                    /*println("==================")
+                    println(data.rotationRate.x)
+                    println(data.rotationRate.y)
+                    println(data.rotationRate.z)
+                    println("==================")*/
                     if(VM.getLogSwitch(2)) {
                         db.store(0x0000000000000002, timestamp: sensorDescGyr.timestamp, sensorData: sensorDescGyr.toProtoSensor())
                     }
@@ -223,7 +227,7 @@ class NervousVM : NSObject{
             }
         case 5:
             self.magFreq = freq
-            manager.stopMagnetometerUpdates()
+            self.manager.stopMagnetometerUpdates()
             if manager.magnetometerAvailable {
                 manager.magnetometerUpdateInterval = freq
                 manager.startMagnetometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
@@ -311,7 +315,7 @@ class NervousVM : NSObject{
             isAcCharge : isAcCharge
         )
         if(self.logB) {
-            println(UIDevice.currentDevice().batteryLevel)
+            //println(UIDevice.currentDevice().batteryLevel)
             db.store(0x0000000000000001, timestamp: sensorDescBat.timestamp, sensorData: sensorDescBat.toProtoSensor())
         }
         UIDevice.currentDevice().batteryMonitoringEnabled = false
@@ -361,6 +365,7 @@ class NervousVM : NSObject{
         }
         
         // Gyroscope
+        println(self.shareG)
         if(self.shareG) {
             let gyrSensor = SensorUpload.builder()
             gyrSensor.huuid = huuid

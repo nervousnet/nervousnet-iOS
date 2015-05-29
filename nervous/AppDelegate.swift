@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // +++++++++++++++++++++++++++++++++++++++++++++++++++
         // Fetching and Pushing the data of individual sensors
         // +++++++++++++++++++++++++++++++++++++++++++++++++++
-        VM.setFrequency(0, freq: 1) // default is 30 seconds.
+        VM.setFrequency(0, freq: 30) // default is 30 seconds.
         VM.setFrequency(1, freq: 30)// The values will change
         VM.setFrequency(2, freq: 30) // according to the UI
         VM.setFrequency(5, freq: 30) // inputs.
