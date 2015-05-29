@@ -12,15 +12,21 @@ import UIKit
 
 class NervousAppsViewController: UITableViewController {
     
-    var Apps = ["Earthquake", "De-Jammer", "Band"]
-    var Descriptions = [
+    var Apps = ["Nervousnet CCC","Earthquake", "De-Jammer", "Band"]
+    var Descriptions = [    "Where it all started...",
                             "Detect Earthquakes and locate the Epicenter",
                             "Resolve even the worst of traffic-jams",
                             "Record a Song with your Nervous friends"]
+    var Links = [   "https://itunes.apple.com/us/app/nervousnet-for-31c3/id942966980?mt=8",
+                    "",
+                    "",
+                    "",]
+    
+    var trial : NSArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        searchItunesFor("nervous")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -35,10 +41,47 @@ class NervousAppsViewController: UITableViewController {
         }
     }
 
-    
 
     // MARK: - Table view data source
-
+    
+    func searchItunesFor(searchTerm: String) {
+        // The iTunes API wants multiple terms separated by + symbols, so replace spaces with + signs
+        let itunesSearchTerm = searchTerm.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+        
+        // Now escape anything else that isn't URL-friendly
+        if let escapedSearchTerm = itunesSearchTerm.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding) {
+            //let urlPath = "http://itunes.apple.com/search?term=\(escapedSearchTerm)&media=software"
+            let urlPath = "http://itunes.apple.com/search?mediaType=ios&term=nervousnet"
+            let url = NSURL(string: urlPath)
+            let session = NSURLSession.sharedSession()
+            let task = session.dataTaskWithURL(url!, completionHandler: {data, response, error -> Void in
+                println("Task completed")
+                if(error != nil) {
+                    // If there is an error in the web request, print it to the console
+                    println(error.localizedDescription)
+                }
+                var err: NSError?
+                if let jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as? NSDictionary {
+                    if(err != nil) {
+                        // If there is an error parsing JSON, print it to the console
+                        println("JSON Error \(err!.localizedDescription)")
+                    }
+                    if let results: NSArray = jsonResult["results"] as? NSArray {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.trial = results
+                            print(results)
+//                            self.appsTableView!.reloadData()
+                        })
+                    }
+                }
+            })
+            
+            // The task is just an object with all these properties set
+            // In order to actually make the web request, we need to "resume"
+            task.resume()
+        }
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
@@ -69,6 +112,7 @@ class NervousAppsViewController: UITableViewController {
         // Configure the cell...
             cell.Description.text = Descriptions [indexPath.row]
             cell.Name.text = Apps [indexPath.row]
+            cell.Link = Links [indexPath.row]
             return cell
         }
     }
