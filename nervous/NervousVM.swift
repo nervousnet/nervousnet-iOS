@@ -439,5 +439,11 @@ class NervousVM : NSObject{
             self.pushToServer()
         }
     }
+    
+    /*func logSwitch(SensorID : Int, logging : Bool) {
+        switch SensorID {
+        case 0:
+        }
+    }*/
 
 }
