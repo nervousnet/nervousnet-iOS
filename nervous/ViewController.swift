@@ -7,6 +7,8 @@ class ViewController : UIViewController {
     @IBOutlet var button: UIButton!
     @IBOutlet var Killswitch: UISwitch!
     
+    var VM = NervousVM.sharedInstance
+    
     override func viewDidLoad() {
         
         
@@ -16,6 +18,7 @@ class ViewController : UIViewController {
     }
     @IBAction func KillSwitch(sender: UISwitch) {
         println("\n")
-        print(sender.on)
+        print(!sender.on)
+        VM.killSwitch(!(sender.on))
     }
 }
