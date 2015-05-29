@@ -200,9 +200,8 @@ class NervousVM : NSObject{
         case 1:
             self.batFreq = freq
             self.timerB.invalidate()
-            self.timerB = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("batteryCollection"), userInfo: nil, repeats: true)
+            self.timerB = NSTimer.scheduledTimerWithTimeInterval(freq, target: self, selector: Selector("batteryCollection"), userInfo: nil, repeats: true)
         case 2:
-            var temp = self.logG
             self.gyrFreq = freq
             manager.stopGyroUpdates()
             if manager.gyroAvailable {
@@ -223,7 +222,6 @@ class NervousVM : NSObject{
                 }
             }
         case 5:
-            var temp = self.logM
             self.magFreq = freq
             manager.stopMagnetometerUpdates()
             if manager.magnetometerAvailable {
