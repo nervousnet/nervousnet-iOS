@@ -23,9 +23,9 @@ class LoggingViewController : UIViewController {
     @IBOutlet var magStepper: UIStepper!
     @IBOutlet var proStepper: UIStepper!
     
-    var values = [30,1,5,30,2]
-    var units = [" s", " m", " m", " m", " h"]
-    var valuesInSeconds : [Double] = [30,60,300,1800,6400] // This is for the values in Seconds that will actually be applied to the settings
+    var values = [1,30,1,5,30,2]
+    var units = [" s"," s", " m", " m", " m", " h"]
+    var valuesInSeconds : [Double] = [1,30,60,300,1800,6400] // This is for the values in Seconds that will actually be applied to the settings
     
     var VM = NervousVM.sharedInstance
     

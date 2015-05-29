@@ -175,6 +175,7 @@ class NervousVM : NSObject{
         var db = SQLiteSensorsDB.sharedInstance
         switch sensorID {
         case 0:
+            var temp = self.logA
             self.accFreq = freq
             manager.stopAccelerometerUpdates()
             if manager.accelerometerAvailable {
@@ -190,7 +191,9 @@ class NervousVM : NSObject{
                     )
                     println(data.acceleration.x)
                     // push the data to the database
-                    db.store(0x0000000000000000, timestamp: sensorDescAcc.timestamp, sensorData: sensorDescAcc.toProtoSensor())
+                    if(temp) {
+                        db.store(0x0000000000000000, timestamp: sensorDescAcc.timestamp, sensorData: sensorDescAcc.toProtoSensor())
+                    }
                 }
             }
         case 1:
@@ -198,6 +201,7 @@ class NervousVM : NSObject{
             self.timerB.invalidate()
             self.timerB = NSTimer.scheduledTimerWithTimeInterval(freq, target: self, selector: Selector("batteryCollection"), userInfo: nil, repeats: true)
         case 2:
+            var temp = self.logG
             self.gyrFreq = freq
             manager.stopGyroUpdates()
             if manager.gyroAvailable {
@@ -212,10 +216,13 @@ class NervousVM : NSObject{
                         gyrZ : Float(data.rotationRate.z)
                     )
                     //println(data.rotationRate.x)
-                    db.store(0x0000000000000002, timestamp: sensorDescGyr.timestamp, sensorData: sensorDescGyr.toProtoSensor())
+                    if(temp) {
+                        db.store(0x0000000000000002, timestamp: sensorDescGyr.timestamp, sensorData: sensorDescGyr.toProtoSensor())
+                    }
                 }
             }
         case 5:
+            var temp = self.logM
             self.magFreq = freq
             manager.stopMagnetometerUpdates()
             if manager.magnetometerAvailable {
@@ -230,7 +237,9 @@ class NervousVM : NSObject{
                         magZ : Float(data.magneticField.z)
                     )
                     //println(data.magneticField.x)
-                    db.store(0x0000000000000005, timestamp: sensorDescMag.timestamp, sensorData: sensorDescMag.toProtoSensor())
+                    if(temp) {
+                        db.store(0x0000000000000005, timestamp: sensorDescMag.timestamp, sensorData: sensorDescMag.toProtoSensor())
+                    }
                 }
             }
         case 6:
@@ -302,7 +311,9 @@ class NervousVM : NSObject{
             isUsbCharge : isUsbCharge,
             isAcCharge : isAcCharge
         )
-        db.store(0x0000000000000001, timestamp: sensorDescBat.timestamp, sensorData: sensorDescBat.toProtoSensor())
+        if(self.logB) {
+            db.store(0x0000000000000001, timestamp: sensorDescBat.timestamp, sensorData: sensorDescBat.toProtoSensor())
+        }
         UIDevice.currentDevice().batteryMonitoringEnabled = false
     }
     
@@ -316,7 +327,9 @@ class NervousVM : NSObject{
             proximity : 0, // must be checked
             isClose : UIDevice.currentDevice().proximityState
         )
-        db.store(0x0000000000000006, timestamp: sensorDescProx.timestamp, sensorData: sensorDescProx.toProtoSensor())
+        if(self.logP) {
+            db.store(0x0000000000000006, timestamp: sensorDescProx.timestamp, sensorData: sensorDescProx.toProtoSensor())
+        }
         UIDevice.currentDevice().proximityMonitoringEnabled = false
     }
     
@@ -333,84 +346,89 @@ class NervousVM : NSObject{
         //println(VM.getHUUID())
         
         // Accelerometer
-        let accSensor = SensorUpload.builder()
-        accSensor.huuid = huuid //phone huuid
-        accSensor.luuid = luuid //phone luuid
-        accSensor.uploadTime = timestamp
-        accSensor.sensorId = 0x0000000000000000
-        var sensorDataArrayA: [SensorUploadSensorData] = db.retrieve(0x0000000000000000, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
-        accSensor.sensorValues = sensorDataArrayA
-        dispatch_async(dispatch_get_main_queue()) {
-            
-            var upA = UploadTask(pbSensorupload: accSensor.build())
-            upA.writeToRouter()
+        if(self.shareA) {
+            let accSensor = SensorUpload.builder()
+            accSensor.huuid = huuid //phone huuid
+            accSensor.luuid = luuid //phone luuid
+            accSensor.uploadTime = timestamp
+            accSensor.sensorId = 0x0000000000000000
+            var sensorDataArrayA: [SensorUploadSensorData] = db.retrieve(0x0000000000000000, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
+            accSensor.sensorValues = sensorDataArrayA
+            dispatch_async(dispatch_get_main_queue()) {
+                var upA = UploadTask(pbSensorupload: accSensor.build())
+                upA.writeToRouter()
+            }
         }
         
         // Gyroscope
-        let gyrSensor = SensorUpload.builder()
-        gyrSensor.huuid = huuid
-        gyrSensor.luuid = luuid
-        gyrSensor.uploadTime = timestamp
-        gyrSensor.sensorId = 0x0000000000000002
-        var sensorDataArrayG: [SensorUploadSensorData] = db.retrieve(0x0000000000000002, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
-        gyrSensor.sensorValues = sensorDataArrayG
-        dispatch_async(dispatch_get_main_queue()) {
-            
-            var upG = UploadTask(pbSensorupload: gyrSensor.build())
-            upG.writeToRouter()
+        if(self.shareG) {
+            let gyrSensor = SensorUpload.builder()
+            gyrSensor.huuid = huuid
+            gyrSensor.luuid = luuid
+            gyrSensor.uploadTime = timestamp
+            gyrSensor.sensorId = 0x0000000000000002
+            var sensorDataArrayG: [SensorUploadSensorData] = db.retrieve(0x0000000000000002, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
+            gyrSensor.sensorValues = sensorDataArrayG
+            dispatch_async(dispatch_get_main_queue()) {
+                var upG = UploadTask(pbSensorupload: gyrSensor.build())
+                upG.writeToRouter()
+            }
         }
-        
+    
         // Magnetic
-        let magSensor = SensorUpload.builder()
-        magSensor.huuid = huuid
-        magSensor.luuid = luuid
-        magSensor.uploadTime = timestamp
-        magSensor.sensorId = 0x0000000000000005
-        var sensorDataArrayM: [SensorUploadSensorData] = db.retrieve(0x0000000000000005, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
-        magSensor.sensorValues = sensorDataArrayM
-        dispatch_async(dispatch_get_main_queue()) {
-            
-            var upM = UploadTask(pbSensorupload: magSensor.build())
-            upM.writeToRouter()
+        if(self.shareM) {
+            let magSensor = SensorUpload.builder()
+            magSensor.huuid = huuid
+            magSensor.luuid = luuid
+            magSensor.uploadTime = timestamp
+            magSensor.sensorId = 0x0000000000000005
+            var sensorDataArrayM: [SensorUploadSensorData] = db.retrieve(0x0000000000000005, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
+            magSensor.sensorValues = sensorDataArrayM
+            dispatch_async(dispatch_get_main_queue()) {
+                var upM = UploadTask(pbSensorupload: magSensor.build())
+                upM.writeToRouter()
+            }
         }
         
         // Battery
-        let batSensor = SensorUpload.builder()
-        batSensor.huuid = huuid
-        batSensor.luuid = luuid
-        batSensor.uploadTime = timestamp
-        batSensor.sensorId = 0x0000000000000001
-        var sensorDataArrayB: [SensorUploadSensorData] = db.retrieve(0x0000000000000001, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
-        batSensor.sensorValues = sensorDataArrayB
-        dispatch_async(dispatch_get_main_queue()) {
-            
-            var upB = UploadTask(pbSensorupload: batSensor.build())
-            upB.writeToRouter()
+        if(self.shareB) {
+            let batSensor = SensorUpload.builder()
+            batSensor.huuid = huuid
+            batSensor.luuid = luuid
+            batSensor.uploadTime = timestamp
+            batSensor.sensorId = 0x0000000000000001
+            var sensorDataArrayB: [SensorUploadSensorData] = db.retrieve(0x0000000000000001, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
+            batSensor.sensorValues = sensorDataArrayB
+            dispatch_async(dispatch_get_main_queue()) {
+                var upB = UploadTask(pbSensorupload: batSensor.build())
+                upB.writeToRouter()
+            }
+            /*for sensorData in sensorDataArrayB {
+            var retSensDesc = SensorDescBattery(sensorData: sensorData)
+            NSLog("\((retSensDesc as SensorDesc).timestamp)")
+            NSLog("\(retSensDesc.batteryPercent) \(retSensDesc.isCharging)")
+            }*/
         }
-        /*for sensorData in sensorDataArrayB {
-        var retSensDesc = SensorDescBattery(sensorData: sensorData)
-        NSLog("\((retSensDesc as SensorDesc).timestamp)")
-        NSLog("\(retSensDesc.batteryPercent) \(retSensDesc.isCharging)")
-        }*/
         
         // Proximity
-        let proSensor = SensorUpload.builder()
-        proSensor.huuid = huuid
-        proSensor.luuid = luuid
-        proSensor.uploadTime = timestamp
-        proSensor.sensorId = 0x0000000000000006
-        var sensorDataArrayP: [SensorUploadSensorData] = db.retrieve(0x0000000000000006, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
-        proSensor.sensorValues = sensorDataArrayP
-        dispatch_async(dispatch_get_main_queue()) {
-            
-            var upP = UploadTask(pbSensorupload: proSensor.build())
-            upP.writeToRouter()
+        if(self.shareP) {
+            let proSensor = SensorUpload.builder()
+            proSensor.huuid = huuid
+            proSensor.luuid = luuid
+            proSensor.uploadTime = timestamp
+            proSensor.sensorId = 0x0000000000000006
+            var sensorDataArrayP: [SensorUploadSensorData] = db.retrieve(0x0000000000000006, fromTimestamp: (timestamp - 60000), toTimestamp: timestamp)
+            proSensor.sensorValues = sensorDataArrayP
+            dispatch_async(dispatch_get_main_queue()) {
+                var upP = UploadTask(pbSensorupload: proSensor.build())
+                upP.writeToRouter()
+            }
+            /*for sensorData in sensorDataArrayP {
+            var retSensDesc = SensorDescProximity(sensorData: sensorData)
+            NSLog("\((retSensDesc as SensorDesc).timestamp)")
+            NSLog("\(retSensDesc.proximity)")
+            }*/
         }
-        /*for sensorData in sensorDataArrayP {
-        var retSensDesc = SensorDescProximity(sensorData: sensorData)
-        NSLog("\((retSensDesc as SensorDesc).timestamp)")
-        NSLog("\(retSensDesc.proximity)")
-        }*/
         // println("+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
     }
     
@@ -440,10 +458,76 @@ class NervousVM : NSObject{
         }
     }
     
-    /*func logSwitch(SensorID : Int, logging : Bool) {
+    // takes logging booleans for different sensors from the UI
+    func setLogSwitch(SensorID : Int, logging : Bool) {
         switch SensorID {
         case 0:
+            self.logA = logging
+        case 1:
+            self.logB = logging
+        case 2:
+            self.logG = logging
+        case 5:
+            self.logM = logging
+        case 6:
+            self.logP = logging
+        default:
+            println("")
         }
-    }*/
+    }
 
+    // takes sharing booleans for different sensors from the UI
+    func setShareSwitch(SensorID : Int, sharing : Bool) {
+        switch SensorID {
+        case 0:
+            self.shareA = sharing
+        case 1:
+            self.shareB = sharing
+        case 2:
+            self.shareG = sharing
+        case 5:
+            self.shareM = sharing
+        case 6:
+            self.shareP = sharing
+        default:
+            println("")
+        }
+    }
+    
+    // get the current state of the logging switch
+    func getLogSwitch(SensorID : Int) -> Bool {
+        switch SensorID {
+        case 0:
+            return self.logA
+        case 1:
+            return self.logB
+        case 2:
+            return self.logG
+        case 5:
+            return self.logM
+        case 6:
+            return self.logP
+        default:
+            return true
+        }
+    }
+
+    
+    // get the current state of the sharing switch
+    func getShareSwitch(SensorID : Int) -> Bool {
+        switch SensorID {
+        case 0:
+            return self.shareA
+        case 1:
+            return self.shareB
+        case 2:
+            return self.shareG
+        case 5:
+            return self.shareM
+        case 6:
+            return self.shareP
+        default:
+            return true
+        }
+    }
 }
