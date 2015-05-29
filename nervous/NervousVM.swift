@@ -189,9 +189,9 @@ class NervousVM : NSObject{
                         accY : Float(data.acceleration.y),
                         accZ : Float(data.acceleration.z)
                     )
-                    println(data.acceleration.x)
                     // push the data to the database
                     if(temp) {
+                        println(data.acceleration.x)
                         db.store(0x0000000000000000, timestamp: sensorDescAcc.timestamp, sensorData: sensorDescAcc.toProtoSensor())
                     }
                 }
