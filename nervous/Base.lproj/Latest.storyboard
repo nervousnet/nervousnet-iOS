@@ -311,9 +311,9 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="DvM-nQ-AmD"/>
                                             <exclude reference="lyw-FS-3Wr"/>
                                             <exclude reference="w83-lp-JRk"/>
-                                            <exclude reference="DvM-nQ-AmD"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -763,6 +763,15 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="AccLog" destination="nST-7C-Eik" id="S6K-Kl-lVu"/>
+                        <outlet property="BatLog" destination="uzK-qc-7ZE" id="ihC-Yn-Cx7"/>
+                        <outlet property="BatShare" destination="O2f-MC-bQg" id="3nZ-Y8-ATC"/>
+                        <outlet property="GyrLog" destination="Mde-fw-d6S" id="qqU-yV-NOF"/>
+                        <outlet property="GyrShare" destination="rHO-86-Z8S" id="f0G-lS-YlK"/>
+                        <outlet property="MagLog" destination="mL6-uf-ZzU" id="V7P-9g-D5O"/>
+                        <outlet property="MagShare" destination="v32-7i-gvH" id="BNf-i1-SjT"/>
+                        <outlet property="ProLog" destination="8Hi-CA-xjU" id="g8m-vs-g1d"/>
+                        <outlet property="ProShare" destination="4K2-iD-J3K" id="4wA-CL-keq"/>
                         <outlet property="scrollView" destination="30a-tL-Qg5" id="4My-29-FFP"/>
                     </connections>
                 </viewController>
@@ -1412,7 +1421,7 @@
         <image name="Server" width="1131" height="1139"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9sz-G1-NBM"/>
+        <segue reference="0Ne-qK-81H"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.92156862745098034" green="0.27843137254901962" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
 </document>
