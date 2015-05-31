@@ -147,14 +147,14 @@ class SensorStatisticsViewController : UIViewController {
         
             counter = counter + 1
             counter = counter%60
-            print (sensorId)
+            //print (sensorId)
             
             
         case "Battery":
             webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter*counter).description+"];")
             counter = counter + 1
             counter = counter%60
-            print (sensorId)
+            //print (sensorId)
             
             
         case "Gyroscope":
@@ -166,7 +166,7 @@ class SensorStatisticsViewController : UIViewController {
             
             counter = counter + 1
             counter = counter%60
-            print (sensorId)
+            //print (sensorId)
             
             
         case "Magnetic":
@@ -178,14 +178,14 @@ class SensorStatisticsViewController : UIViewController {
             
             counter = counter + 1
             counter = counter%60
-            print (sensorId)
+            //print (sensorId)
             
             
         case "Proximity":
             webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter*counter).description+"];")
             counter = counter + 1
             counter = counter%60
-            print (sensorId)
+            //print (sensorId)
             
         default:
             println("")
