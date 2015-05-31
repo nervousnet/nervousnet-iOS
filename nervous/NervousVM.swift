@@ -40,6 +40,9 @@ class NervousVM : NSObject{
     // Timer for pushing to the server
     var timerD = NSTimer()
     
+    // Kill Switch Status
+    var killSwitchState : Bool = false
+    
     // Boolean for logging buttons
     var logA : Bool = true
     var logG : Bool = true
@@ -444,6 +447,7 @@ class NervousVM : NSObject{
     // if the main switch(center of the start screen) is on or off
     func killSwitch(state : Bool) {
         if(state) {
+            self.killSwitchState = true
             self.timerD.invalidate()
             self.timerA.invalidate()
             self.timerB.invalidate()
@@ -453,6 +457,7 @@ class NervousVM : NSObject{
             self.manager.stopMagnetometerUpdates()
         }
         else {
+            self.killSwitchState = false
             self.setFrequency(0, freq: self.accFreq)
             self.setFrequency(1, freq: self.batFreq)
             self.setFrequency(2, freq: self.gyrFreq)
@@ -460,6 +465,11 @@ class NervousVM : NSObject{
             self.setFrequency(6, freq: self.proFreq)
             self.pushToServer()
         }
+    }
+    
+    // Return the kill switch status
+    func getKillSwitchStatus() -> Bool {
+        return self.killSwitchState
     }
     
     // takes logging booleans for different sensors from the UI

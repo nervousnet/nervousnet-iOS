@@ -13,6 +13,7 @@ class ViewController : UIViewController {
         
         
         super.viewDidLoad()
+        Killswitch.setOn(!VM.getKillSwitchStatus(), animated: true)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
