@@ -225,7 +225,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qGY-8X-k0W" customClass="PrivacyTableView" customModule="nervous" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qGY-8X-k0W">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -294,7 +294,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="Table" destination="qGY-8X-k0W" id="Xlc-Xm-jo4"/>
+                        <outlet property="tableView" destination="qGY-8X-k0W" id="EYK-e1-ukY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xaK-vk-t5z" userLabel="First Responder" sceneMemberID="firstResponder"/>

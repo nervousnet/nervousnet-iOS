@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		070842B31B18C0A400466D18 /* PrivacyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070842B21B18C0A400466D18 /* PrivacyTableViewCell.swift */; };
-		070842B51B18C15700466D18 /* PrivacyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070842B41B18C15700466D18 /* PrivacyTableView.swift */; };
 		070842B71B18C18100466D18 /* PrivacyViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070842B61B18C18100466D18 /* PrivacyViewController2.swift */; };
 		07295DB61B17297700360070 /* NervousAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07295DB51B17297700360070 /* NervousAppsViewController.swift */; };
 		073EDC731B17202B004E8365 /* NervousAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */; };
@@ -116,7 +115,6 @@
 
 /* Begin PBXFileReference section */
 		070842B21B18C0A400466D18 /* PrivacyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyTableViewCell.swift; sourceTree = "<group>"; };
-		070842B41B18C15700466D18 /* PrivacyTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyTableView.swift; sourceTree = "<group>"; };
 		070842B61B18C18100466D18 /* PrivacyViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController2.swift; sourceTree = "<group>"; };
 		07295DB51B17297700360070 /* NervousAppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousAppsViewController.swift; sourceTree = "<group>"; };
 		073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousAppTableViewCell.swift; sourceTree = "<group>"; };
@@ -261,7 +259,6 @@
 				07C12C391B0CD09400885C50 /* ViewController.swift */,
 				070842B21B18C0A400466D18 /* PrivacyTableViewCell.swift */,
 				070842B61B18C18100466D18 /* PrivacyViewController2.swift */,
-				070842B41B18C15700466D18 /* PrivacyTableView.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -704,7 +701,6 @@
 				22392F3E1A0CF421008035FA /* MapDataController.swift in Sources */,
 				073EDC731B17202B004E8365 /* NervousAppTableViewCell.swift in Sources */,
 				22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */,
-				070842B51B18C15700466D18 /* PrivacyTableView.swift in Sources */,
 				FC9285AC1B026DCE00160A69 /* SensorDescBattery.swift in Sources */,
 				070842B71B18C18100466D18 /* PrivacyViewController2.swift in Sources */,
 				07824EC81B1602AC0024085E /* ServerViewController.swift in Sources */,

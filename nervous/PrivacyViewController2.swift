@@ -8,13 +8,23 @@
 
 import UIKit
 
-class PrivacyViewController2: UIViewController {
+class PrivacyViewController2: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet var Table: PrivacyTableView!
+    
+    @IBOutlet var tableView: UITableView!
+    var table_data = Array<TableData>()
+   
+    struct TableData
+    {
+        var section:String = ""
+        var data = Array<String>()
+        init(){}
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.dataSource = self
+        tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -23,7 +33,24 @@ class PrivacyViewController2: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCellWithIdentifier("PrivacyCell", forIndexPath: indexPath) as PrivacyTableViewCell
+        cell.Label.text = "Hello"
+        cell.SensorID = 0
+        return cell
+        
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return 1
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        return 1
+    }
     /*
     // MARK: - Navigation
 
