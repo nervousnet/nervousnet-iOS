@@ -3,7 +3,7 @@ import CoreMotion
 
 class SensorStatisticsViewController : UIViewController {
     
-    var counter : Int = 0
+    var counter : Int = 1
     @IBOutlet var webView: UIWebView!
     
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class SensorStatisticsViewController : UIViewController {
         
         
         
-        webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,52),83];")
+        webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,0),0];")
         var garhTimer = NSTimer.scheduledTimerWithTimeInterval(2, target:self , selector: Selector("calledEverySecond"), userInfo: nil, repeats: true)
         
         
@@ -50,7 +50,7 @@ class SensorStatisticsViewController : UIViewController {
     
     func calledEverySecond(){
         
-        webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,"+counter.description+"),83];")
+        webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter*counter).description+"];")
         counter = counter + 1
         counter = counter%60
     }
