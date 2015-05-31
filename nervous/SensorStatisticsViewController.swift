@@ -14,37 +14,118 @@ class SensorStatisticsViewController : UIViewController {
         //webView.removeFromSuperview()
         
         
-        let javascript_global_variables = "var curve_name = " + "'Proximity';" +
-            "var unit_of_meas = " + "'cm';" +
-            "var x_axis_title = " + "'Date';" +
-            "var y_axis_title = " + "'Proximity (cm)';" +
-            "var plot_title = " + "'Proximity data';" +
-            "var plot_subtitle = " + "'';"
+        switch sensorId {
+            
+            
+        case "Accelerometer":
+            let javascript_global_variables =
+                "var unit_of_meas = " + "'m/s^2';" +
+                "var first_curve_name = " + "'X axis';" +
+                "var second_curve_name = " + "'Y axis';" +
+                "var third_curve_name = " + "'Z axis';" +
+                "var x_axis_title = " + "'Date';" +
+                "var y_axis_title = " + "'Acceleration (m/s^2)';" +
+                "var plot_title = " + "'Acceleration data';" +
+                "var plot_subtitle = " + "'along axes x,y,z';"
+            webView.stringByEvaluatingJavaScriptFromString("javascript:" + javascript_global_variables)
+            
+            var nsu = NSBundle.mainBundle().URLForResource("webview_charts_3_lines_live_data_over_time", withExtension: "html")
+            var req = NSURLRequest(URL: nsu!)
+            webView.loadRequest(req)
+            
+            webView.stringByEvaluatingJavaScriptFromString("javascript:"
+                + "point0 = [Date.UTC(2015,11,23,11,32," + counter.description+"),"+(counter).description+"];"
+                + "point1 = [Date.UTC(2015,11,23,11,32," + counter.description+"),"+(counter*counter).description+"];"
+                + "point2 = [Date.UTC(2015,11,23,11,32," + counter.description+"),"+(counter*counter*counter).description + "];")
+            garhTimer = NSTimer.scheduledTimerWithTimeInterval(2, target:self , selector: Selector("calledEverySecond"), userInfo: nil, repeats: true)
+
+            
+        case "Battery":
+            let javascript_global_variables = "var curve_name = " + "'Battery %';" +
+                "var unit_of_meas = " + "'%';" +
+                "var x_axis_title = " + "'Date';" +
+                "var y_axis_title = " + "'Battery percentage %';" +
+                "var plot_title = " + "'Battery data';" +
+                "var plot_subtitle = " + "'%';"
+            webView.stringByEvaluatingJavaScriptFromString("javascript:" + javascript_global_variables)
+            
+            var nsu = NSBundle.mainBundle().URLForResource("webview_charts_1_line_live_data_over_time", withExtension: "html")
+            var req = NSURLRequest(URL: nsu!)
+            webView.loadRequest(req)
+            
+            webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,0),0];")
+            garhTimer = NSTimer.scheduledTimerWithTimeInterval(2, target:self , selector: Selector("calledEverySecond"), userInfo: nil, repeats: true)
+            
+            
+        case "Gyroscope":
+            let javascript_global_variables = "var unit_of_meas = " + "'°';" +
+                "var first_curve_name = " + "'° around X axis';" +
+                "var second_curve_name = " + "'° around Y axis';" +
+                "var third_curve_name = " + "'° around Z axis';" +
+                "var x_axis_title = " + "'Date';" +
+                "var y_axis_title = " + "'Angle (°)';" +
+                "var plot_title = " + "'Gyroscope data';" +
+                "var plot_subtitle = " + "'angles around axes x,y,z';"
+            webView.stringByEvaluatingJavaScriptFromString("javascript:" + javascript_global_variables)
+            
+            var nsu = NSBundle.mainBundle().URLForResource("webview_charts_3_lines_live_data_over_time", withExtension: "html")
+            var req = NSURLRequest(URL: nsu!)
+            webView.loadRequest(req)
+            
+            webView.stringByEvaluatingJavaScriptFromString("javascript:"
+                + "point0 = [Date.UTC(2015,11,23,11,32," + counter.description+"),"+(counter).description+"];"
+                + "point1 = [Date.UTC(2015,11,23,11,32," + counter.description+"),"+(counter*counter).description+"];"
+                + "point2 = [Date.UTC(2015,11,23,11,32," + counter.description+"),"+(counter*counter*counter).description + "];")
+            garhTimer = NSTimer.scheduledTimerWithTimeInterval(2, target:self , selector: Selector("calledEverySecond"), userInfo: nil, repeats: true)
+            
+            
+        case "Magnetic":
+            let javascript_global_variables = "var unit_of_meas = " + "'T';" +
+                "var first_curve_name = " + "'T along X axis';" +
+            "var second_curve_name = " + "'T along Y axis';" +
+                "var third_curve_name = " + "'T along Z axis';" +
+                "var x_axis_title = " + "'Date';" +
+                "var y_axis_title = " + "'Field strength (T)';" +
+                "var plot_title = " + "'Geomagnetic field data';" +
+                "var plot_subtitle = " + "'strength along axes x,y,z';"
+            webView.stringByEvaluatingJavaScriptFromString("javascript:" + javascript_global_variables)
+            
+            var nsu = NSBundle.mainBundle().URLForResource("webview_charts_3_lines_live_data_over_time", withExtension: "html")
+            var req = NSURLRequest(URL: nsu!)
+            webView.loadRequest(req)
+            
+            webView.stringByEvaluatingJavaScriptFromString("javascript:"
+                + "point0 = [Date.UTC(2015,11,23,11,32," + counter.description+"),"+(counter).description+"];"
+                + "point1 = [Date.UTC(2015,11,23,11,32," + counter.description+"),"+(counter*counter).description+"];"
+                + "point2 = [Date.UTC(2015,11,23,11,32," + counter.description+"),"+(counter*counter*counter).description + "];")
+            garhTimer = NSTimer.scheduledTimerWithTimeInterval(2, target:self , selector: Selector("calledEverySecond"), userInfo: nil, repeats: true)
+            
+            
+        case "Proximity":
+            let javascript_global_variables = "var curve_name = " + "'Proximity %';" +
+                "var unit_of_meas = " + "'%';" +
+                "var x_axis_title = " + "'Date';" +
+                "var y_axis_title = " + "'Battery percentage %';" +
+                "var plot_title = " + "'Battery data';" +
+                "var plot_subtitle = " + "'%';"
+            webView.stringByEvaluatingJavaScriptFromString("javascript:" + javascript_global_variables)
+            
+            var nsu = NSBundle.mainBundle().URLForResource("webview_charts_1_line_live_data_over_time", withExtension: "html")
+            var req = NSURLRequest(URL: nsu!)
+            webView.loadRequest(req)
+            
+            webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,0),0];")
+            garhTimer = NSTimer.scheduledTimerWithTimeInterval(2, target:self , selector: Selector("calledEverySecond"), userInfo: nil, repeats: true)
+            
+        default:
+            println("")
+            
+            
+            
+        }
         
-        let url = NSBundle.mainBundle().URLForResource("hello", withExtension: "htm")
-        
-        webView.stringByEvaluatingJavaScriptFromString("javascript:" + javascript_global_variables)
-        
-        var nsu = NSBundle.mainBundle().URLForResource("webview_charts_1_line_live_data_over_time", withExtension: "html")
-        var req = NSURLRequest(URL: nsu!)
-        webView.loadRequest(req)
         
         
-        
-        
-        webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,0),0];")
-        garhTimer = NSTimer.scheduledTimerWithTimeInterval(2, target:self , selector: Selector("calledEverySecond"), userInfo: nil, repeats: true)
-        
-        
-        
-//            (string: "javascript:" + "point = " + "[Date.UTC("
-//            + 2015.description + "," + 11.description + "," + 23.description + "," + 11.description
-//            + "," + 32.description + "," + 52.description + "),"
-//            + 83.description + "];")
-        
-//        let requestURL = NSURL(string: "http://www.google.com")
-//        let request = NSURLRequest(URL : url!)
-//        webView.loadRequest(request)
     }
     
 //    override func viewDidDisappear(animated: Bool) {
@@ -58,40 +139,61 @@ class SensorStatisticsViewController : UIViewController {
     func calledEverySecond(){
         switch sensorId {
         case "Accelerometer":
-                webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter*counter).description+"];")
-                counter = counter + 1
-                counter = counter%60
-                print (sensorId)
+            webView.stringByEvaluatingJavaScriptFromString("javascript:"
+                + "point0 = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter).description+"];"
+                + "point1 = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter*counter).description+"];"
+                + "point2 = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter*counter*counter).description+"];"
+            )
+        
+            counter = counter + 1
+            counter = counter%60
+            print (sensorId)
+            
+            
         case "Battery":
             webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter*counter).description+"];")
             counter = counter + 1
             counter = counter%60
             print (sensorId)
+            
+            
         case "Gyroscope":
-            webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter*counter).description+"];")
+            webView.stringByEvaluatingJavaScriptFromString("javascript:"
+                + "point0 = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter).description+"];"
+                + "point1 = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter*counter).description+"];"
+                + "point2 = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter*counter*counter).description+"];"
+            )
+            
             counter = counter + 1
             counter = counter%60
             print (sensorId)
+            
+            
         case "Magnetic":
-            webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter*counter).description+"];")
+            webView.stringByEvaluatingJavaScriptFromString("javascript:"
+                + "point0 = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter).description+"];"
+                + "point1 = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter*counter).description+"];"
+                + "point2 = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter*counter*counter).description+"];"
+            )
+            
             counter = counter + 1
             counter = counter%60
             print (sensorId)
+            
+            
         case "Proximity":
             webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter*counter).description+"];")
             counter = counter + 1
             counter = counter%60
             print (sensorId)
+            
         default:
             println("")
 
 
 
         }
-        webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,"+counter.description+"),"+(counter*counter).description+"];")
-        counter = counter + 1
-        counter = counter%60
-        print (sensorId)
+        
 
     }
 
