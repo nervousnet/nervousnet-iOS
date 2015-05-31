@@ -13,6 +13,8 @@
 		073EDC731B17202B004E8365 /* NervousAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */; };
 		076A35631B11F32B0054002A /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076A35621B11F32B0054002A /* PrivacyViewController.swift */; };
 		076A35651B11FA1F0054002A /* LoggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076A35641B11FA1F0054002A /* LoggingViewController.swift */; };
+		076ABAC81B1B4BEE00B2B033 /* GraphSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076ABAC71B1B4BEE00B2B033 /* GraphSetupViewController.swift */; };
+		076ABACA1B1B4D6900B2B033 /* SensorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076ABAC91B1B4D6900B2B033 /* SensorTableViewCell.swift */; };
 		07824EC81B1602AC0024085E /* ServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07824EC71B1602AC0024085E /* ServerViewController.swift */; };
 		07C12C3A1B0CD09400885C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C12C391B0CD09400885C50 /* ViewController.swift */; };
 		07D307251B10C465009CD2F3 /* SensorStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D307241B10C465009CD2F3 /* SensorStatisticsViewController.swift */; };
@@ -120,6 +122,8 @@
 		073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousAppTableViewCell.swift; sourceTree = "<group>"; };
 		076A35621B11F32B0054002A /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		076A35641B11FA1F0054002A /* LoggingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingViewController.swift; sourceTree = "<group>"; };
+		076ABAC71B1B4BEE00B2B033 /* GraphSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphSetupViewController.swift; sourceTree = "<group>"; };
+		076ABAC91B1B4D6900B2B033 /* SensorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorTableViewCell.swift; sourceTree = "<group>"; };
 		07824EC71B1602AC0024085E /* ServerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerViewController.swift; sourceTree = "<group>"; };
 		07C12C391B0CD09400885C50 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07D307241B10C465009CD2F3 /* SensorStatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorStatisticsViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 				07C12C391B0CD09400885C50 /* ViewController.swift */,
 				070842B21B18C0A400466D18 /* PrivacyTableViewCell.swift */,
 				070842B61B18C18100466D18 /* PrivacyViewController2.swift */,
+				076ABAC71B1B4BEE00B2B033 /* GraphSetupViewController.swift */,
+				076ABAC91B1B4D6900B2B033 /* SensorTableViewCell.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -708,7 +714,9 @@
 				249F5AAB1B14BCF800C9E198 /* SensorQueriesAccelerometer.swift in Sources */,
 				22C5D70D19FF87E200CD8D26 /* ExtendableMessageBuilder.swift in Sources */,
 				22C5D70919FF87E200CD8D26 /* CodedInputStream.swift in Sources */,
+				076ABAC81B1B4BEE00B2B033 /* GraphSetupViewController.swift in Sources */,
 				E1B95CF81B04E1D0004A5E20 /* SensorDescVectorValue.swift in Sources */,
+				076ABACA1B1B4D6900B2B033 /* SensorTableViewCell.swift in Sources */,
 				07295DB61B17297700360070 /* NervousAppsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
