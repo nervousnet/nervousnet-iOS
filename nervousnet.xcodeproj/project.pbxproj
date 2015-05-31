@@ -17,6 +17,22 @@
 		07824EC81B1602AC0024085E /* ServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07824EC71B1602AC0024085E /* ServerViewController.swift */; };
 		07C12C3A1B0CD09400885C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C12C391B0CD09400885C50 /* ViewController.swift */; };
 		07D307251B10C465009CD2F3 /* SensorStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D307241B10C465009CD2F3 /* SensorStatisticsViewController.swift */; };
+		07FE2A891B1B182C00CFFF87 /* api in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2A821B1B182C00CFFF87 /* api */; };
+		07FE2A8A1B1B182C00CFFF87 /* examples in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2A831B1B182C00CFFF87 /* examples */; };
+		07FE2A8B1B1B182C00CFFF87 /* exporting-server in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2A841B1B182C00CFFF87 /* exporting-server */; };
+		07FE2A8C1B1B182C00CFFF87 /* gfx in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2A851B1B182C00CFFF87 /* gfx */; };
+		07FE2A8D1B1B182C00CFFF87 /* graphics in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2A861B1B182C00CFFF87 /* graphics */; };
+		07FE2A8E1B1B182C00CFFF87 /* hello.htm in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2A871B1B182C00CFFF87 /* hello.htm */; };
+		07FE2A8F1B1B182C00CFFF87 /* js in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2A881B1B182C00CFFF87 /* js */; };
+		07FE2AAB1B1B1A0900CFFF87 /* Chart.js in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA21B1B1A0900CFFF87 /* Chart.js */; };
+		07FE2AAC1B1B1A0900CFFF87 /* exporting.js in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA31B1B1A0900CFFF87 /* exporting.js */; };
+		07FE2AAD1B1B1A0900CFFF87 /* highcharts.js in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA41B1B1A0900CFFF87 /* highcharts.js */; };
+		07FE2AAE1B1B1A0900CFFF87 /* jQuery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA51B1B1A0900CFFF87 /* jQuery.min.js */; };
+		07FE2AAF1B1B1A0900CFFF87 /* webview_charts_1_basic_columns_over_time.html in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA61B1B1A0900CFFF87 /* webview_charts_1_basic_columns_over_time.html */; };
+		07FE2AB01B1B1A0900CFFF87 /* webview_charts_1_line_live_data_over_time.html in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA71B1B1A0900CFFF87 /* webview_charts_1_line_live_data_over_time.html */; };
+		07FE2AB11B1B1A0900CFFF87 /* webview_charts_1_line_plot_over_time.html in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA81B1B1A0900CFFF87 /* webview_charts_1_line_plot_over_time.html */; };
+		07FE2AB21B1B1A0900CFFF87 /* webview_charts_3_lines_live_data_over_time.html in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA91B1B1A0900CFFF87 /* webview_charts_3_lines_live_data_over_time.html */; };
+		07FE2AB31B1B1A0900CFFF87 /* webview_charts_3_lines_plot_over_time.html in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AAA1B1B1A0900CFFF87 /* webview_charts_3_lines_plot_over_time.html */; };
 		22316DDD19BFB422006FD165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DDC19BFB422006FD165 /* AppDelegate.swift */; };
 		22316DE419BFB422006FD165 /* Latest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22316DE219BFB422006FD165 /* Latest.storyboard */; };
 		22316DF219BFB422006FD165 /* nervousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DF119BFB422006FD165 /* nervousTests.swift */; };
@@ -109,6 +125,22 @@
 		07824EC71B1602AC0024085E /* ServerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerViewController.swift; sourceTree = "<group>"; };
 		07C12C391B0CD09400885C50 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07D307241B10C465009CD2F3 /* SensorStatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorStatisticsViewController.swift; sourceTree = "<group>"; };
+		07FE2A821B1B182C00CFFF87 /* api */ = {isa = PBXFileReference; lastKnownFileType = folder; path = api; sourceTree = "<group>"; };
+		07FE2A831B1B182C00CFFF87 /* examples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = examples; sourceTree = "<group>"; };
+		07FE2A841B1B182C00CFFF87 /* exporting-server */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "exporting-server"; sourceTree = "<group>"; };
+		07FE2A851B1B182C00CFFF87 /* gfx */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gfx; sourceTree = "<group>"; };
+		07FE2A861B1B182C00CFFF87 /* graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; path = graphics; sourceTree = "<group>"; };
+		07FE2A871B1B182C00CFFF87 /* hello.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = hello.htm; sourceTree = "<group>"; };
+		07FE2A881B1B182C00CFFF87 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
+		07FE2AA21B1B1A0900CFFF87 /* Chart.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Chart.js; sourceTree = "<group>"; };
+		07FE2AA31B1B1A0900CFFF87 /* exporting.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = exporting.js; sourceTree = "<group>"; };
+		07FE2AA41B1B1A0900CFFF87 /* highcharts.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highcharts.js; sourceTree = "<group>"; };
+		07FE2AA51B1B1A0900CFFF87 /* jQuery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jQuery.min.js; sourceTree = "<group>"; };
+		07FE2AA61B1B1A0900CFFF87 /* webview_charts_1_basic_columns_over_time.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = webview_charts_1_basic_columns_over_time.html; sourceTree = "<group>"; };
+		07FE2AA71B1B1A0900CFFF87 /* webview_charts_1_line_live_data_over_time.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = webview_charts_1_line_live_data_over_time.html; sourceTree = "<group>"; };
+		07FE2AA81B1B1A0900CFFF87 /* webview_charts_1_line_plot_over_time.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = webview_charts_1_line_plot_over_time.html; sourceTree = "<group>"; };
+		07FE2AA91B1B1A0900CFFF87 /* webview_charts_3_lines_live_data_over_time.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = webview_charts_3_lines_live_data_over_time.html; sourceTree = "<group>"; };
+		07FE2AAA1B1B1A0900CFFF87 /* webview_charts_3_lines_plot_over_time.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = webview_charts_3_lines_plot_over_time.html; sourceTree = "<group>"; };
 		22316DD719BFB422006FD165 /* nervous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nervous.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22316DDB19BFB422006FD165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22316DDC19BFB422006FD165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +269,22 @@
 		22316DCE19BFB422006FD165 = {
 			isa = PBXGroup;
 			children = (
+				07FE2AA21B1B1A0900CFFF87 /* Chart.js */,
+				07FE2AA31B1B1A0900CFFF87 /* exporting.js */,
+				07FE2AA41B1B1A0900CFFF87 /* highcharts.js */,
+				07FE2AA51B1B1A0900CFFF87 /* jQuery.min.js */,
+				07FE2AA61B1B1A0900CFFF87 /* webview_charts_1_basic_columns_over_time.html */,
+				07FE2AA71B1B1A0900CFFF87 /* webview_charts_1_line_live_data_over_time.html */,
+				07FE2AA81B1B1A0900CFFF87 /* webview_charts_1_line_plot_over_time.html */,
+				07FE2AA91B1B1A0900CFFF87 /* webview_charts_3_lines_live_data_over_time.html */,
+				07FE2AAA1B1B1A0900CFFF87 /* webview_charts_3_lines_plot_over_time.html */,
+				07FE2A821B1B182C00CFFF87 /* api */,
+				07FE2A831B1B182C00CFFF87 /* examples */,
+				07FE2A841B1B182C00CFFF87 /* exporting-server */,
+				07FE2A851B1B182C00CFFF87 /* gfx */,
+				07FE2A861B1B182C00CFFF87 /* graphics */,
+				07FE2A871B1B182C00CFFF87 /* hello.htm */,
+				07FE2A881B1B182C00CFFF87 /* js */,
 				FC31537C1B14CDE10052AED8 /* data.db */,
 				22F16C841A1A0E8E00EB97F5 /* Images.xcassets */,
 				22C5D6F919FF87E200CD8D26 /* runtime-pb-swift */,
@@ -531,11 +579,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07FE2AB21B1B1A0900CFFF87 /* webview_charts_3_lines_live_data_over_time.html in Resources */,
 				FC31537D1B14CDE10052AED8 /* data.db in Resources */,
 				22392F381A044AEA008035FA /* cch0.mbtiles in Resources */,
+				07FE2AB01B1B1A0900CFFF87 /* webview_charts_1_line_live_data_over_time.html in Resources */,
+				07FE2A8B1B1B182C00CFFF87 /* exporting-server in Resources */,
+				07FE2AB11B1B1A0900CFFF87 /* webview_charts_1_line_plot_over_time.html in Resources */,
+				07FE2A8F1B1B182C00CFFF87 /* js in Resources */,
 				22316DE419BFB422006FD165 /* Latest.storyboard in Resources */,
+				07FE2A8E1B1B182C00CFFF87 /* hello.htm in Resources */,
 				22392F391A044AEA008035FA /* cch2.mbtiles in Resources */,
+				07FE2AAD1B1B1A0900CFFF87 /* highcharts.js in Resources */,
+				07FE2AAC1B1B1A0900CFFF87 /* exporting.js in Resources */,
+				07FE2AB31B1B1A0900CFFF87 /* webview_charts_3_lines_plot_over_time.html in Resources */,
+				07FE2A8D1B1B182C00CFFF87 /* graphics in Resources */,
+				07FE2A8C1B1B182C00CFFF87 /* gfx in Resources */,
+				07FE2AAF1B1B1A0900CFFF87 /* webview_charts_1_basic_columns_over_time.html in Resources */,
 				22F16C851A1A0E8E00EB97F5 /* Images.xcassets in Resources */,
+				07FE2AAE1B1B1A0900CFFF87 /* jQuery.min.js in Resources */,
+				07FE2A891B1B182C00CFFF87 /* api in Resources */,
+				07FE2A8A1B1B182C00CFFF87 /* examples in Resources */,
+				07FE2AAB1B1B1A0900CFFF87 /* Chart.js in Resources */,
 				22392F371A044AEA008035FA /* blank.mbtiles in Resources */,
 				22392F3A1A044AEA008035FA /* cch1.mbtiles in Resources */,
 			);

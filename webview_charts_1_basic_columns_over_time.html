@@ -1,0 +1,66 @@
+<html>
+<head>
+    <script src="./jQuery.min.js"></script>
+    <script>
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: plot_title
+        },
+        subtitle: {
+            text: plot_subtitle
+        },
+        xAxis: {
+            type: 'datetime',
+            dateTimeLabelFormats: { // don't display the dummy year
+                day: '%e.%m',
+                week: '%e.%m',
+                month: '%m \'%y',
+            },
+            title: {
+                text: x_axis_title
+            }
+        },
+        yAxis: {
+            title: {
+                text: y_axis_title
+            }
+        },
+        tooltip: {
+            pointFormat: '{point.y:.2f} ' + unit_of_meas
+        },
+
+        plotOptions: {
+            spline: {
+                marker: {
+                    enabled: true
+                }
+            }
+        },
+
+        exporting: { enabled: false },
+
+        series: [{
+        	name: curve_name,
+            data: data_array,
+            showInLegend: false
+        }]
+    });
+});
+
+	</script>
+</head>
+<body>
+<script src="./highcharts.js"></script>
+<script src="./exporting.js"></script>
+
+<div>
+    <div id="container" style="width: 100%; height: 100%; margin: 0 auto"></div>
+</div>
+
+</body>
+</html>

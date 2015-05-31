@@ -1,0 +1,75 @@
+<html>
+<head>
+    <script src="./jQuery.min.js"></script>
+    <script>
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: plot_title
+        },
+        subtitle: {
+            text: plot_subtitle
+        },
+        xAxis: {
+            type: 'datetime',
+            dateTimeLabelFormats: { // don't display the dummy year
+                day: '%e.%m',
+                week: '%e.%m',
+                month: '%m \'%y',
+            },
+            title: {
+                text: x_axis_title
+            }
+        },
+        yAxis: {
+            title: {
+                text: y_axis_title
+            }
+        },
+        tooltip: {
+            headerFormat: '<b>{series.name}</b><br>',
+            pointFormat: '{point.x:%e %b %H:%M:%S}: {point.y:.2f} ' + unit_of_meas
+        },
+
+        plotOptions: {
+            spline: {
+                marker: {
+                    enabled: true
+                }
+            }
+        },
+
+        exporting: { enabled: false },
+
+        series: [{
+            name: first_curve_name,
+            // Define the data points. All series have a dummy year
+            // of 1970/71 in order to be compared on the same x axis. Note
+            // that in JavaScript, months start at 0 for January, 1 for February etc.
+            data: x_axis_data_arrays
+        }, {
+            name: second_curve_name,
+            data: y_axis_data_arrays
+        }, {
+            name: third_curve_name,
+            data: z_axis_data_arrays
+        }]
+    });
+});
+
+	</script>
+</head>
+<body>
+<script src="./highcharts.js"></script>
+<script src="./exporting.js"></script>
+
+<div>
+    <div id="container" style="width: 100%; height: 100%; margin: 0 auto"></div>
+</div>
+
+</body>
+</html>
