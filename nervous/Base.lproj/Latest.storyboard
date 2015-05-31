@@ -1500,6 +1500,11 @@
                             <constraint firstAttribute="centerX" secondItem="zMP-DT-kOO" secondAttribute="centerX" id="qJA-7R-fei"/>
                             <constraint firstItem="zMP-DT-kOO" firstAttribute="width" secondItem="BMo-kZ-RUi" secondAttribute="width" id="tV7-hj-G0n"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7mo-nk-TPI"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="webView" destination="VFh-oM-mcg" id="gNp-I8-f99"/>
