@@ -3,7 +3,7 @@ import CoreMotion
 
 class SensorStatisticsViewController : UIViewController {
     
-    
+    var counter : Int = 0
     @IBOutlet var webView: UIWebView!
     
     override func viewDidLoad() {
@@ -30,6 +30,9 @@ class SensorStatisticsViewController : UIViewController {
         
         
         webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,52),83];")
+        var garhTimer = NSTimer.scheduledTimerWithTimeInterval(2, target:self , selector: Selector("calledEverySecond"), userInfo: nil, repeats: true)
+        
+        
         
 //            (string: "javascript:" + "point = " + "[Date.UTC("
 //            + 2015.description + "," + 11.description + "," + 23.description + "," + 11.description
@@ -40,5 +43,17 @@ class SensorStatisticsViewController : UIViewController {
 //        let request = NSURLRequest(URL : url!)
 //        webView.loadRequest(request)
     }
+    
+//    override func viewDidDisappear(animated: Bool) {
+//        garhTimer.invalidate
+//    }
+    
+    func calledEverySecond(){
+        
+        webView.stringByEvaluatingJavaScriptFromString("javascript:" + "point = [Date.UTC(2015,11,23,11,32,"+counter.description+"),83];")
+        counter = counter + 1
+        counter = counter%60
+    }
+
 
 }
