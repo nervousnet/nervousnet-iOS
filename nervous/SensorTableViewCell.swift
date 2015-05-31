@@ -25,5 +25,6 @@ class SensorTableViewCell: UITableViewCell {
     }
 
     @IBAction func buttonPressed(sender: UIButton) {
+        
     }
 }

@@ -1314,7 +1314,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="buttonPressed:" destination="HN0-22-2BA" eventType="touchUpInside" id="fH1-JY-9Tu"/>
-                                                        <segue destination="t0S-ju-tSe" kind="show" id="sWV-jH-ojv"/>
+                                                        <action selector="selection:" destination="NUd-WJ-IVt" eventType="touchUpInside" id="GOQ-zW-Mr4"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1538,10 +1538,10 @@
             </objects>
             <point key="canvasLocation" x="661" y="1421"/>
         </scene>
-        <!--Sensor Statistics View Controller-->
+        <!--graphen-->
         <scene sceneID="0vd-iL-4WG">
             <objects>
-                <viewController id="t0S-ju-tSe" customClass="SensorStatisticsViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="graphen" title="graphen" id="t0S-ju-tSe" customClass="SensorStatisticsViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DbW-8Q-2es"/>
                         <viewControllerLayoutGuide type="bottom" id="wuE-xK-bFL"/>
@@ -1600,7 +1600,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mm9-DI-L6z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1140" y="2051"/>
+            <point key="canvasLocation" x="-1312" y="2147"/>
         </scene>
     </scenes>
     <resources>

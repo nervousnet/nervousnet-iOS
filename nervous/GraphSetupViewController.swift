@@ -15,6 +15,7 @@ class GraphSetupViewController: UIViewController, UITableViewDataSource, UITable
     var table_data = Array<TableData>()
     var Sensors = ["Accelerometer", "Battery", "Gyroscope", "Magnetic", "Proximity"]
     var SensorIDs : [Int] = [0, 1, 2, 5, 6]
+    var transitionTo: String = " "
     
     struct TableData
     {
@@ -53,6 +54,23 @@ class GraphSetupViewController: UIViewController, UITableViewDataSource, UITable
     {
         return 1
     }
+    
+    @IBAction func selection(sender: UIButton) {
+        
+        self.transitionTo = sender.currentTitle!
+        let  targetVC : SensorStatisticsViewController = UIStoryboard(name: "Latest", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("graphen") as SensorStatisticsViewController
+        targetVC.sensorId = self.transitionTo
+        self.presentViewController(targetVC, animated: true, completion: nil)
+        
+    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//            print("hallo" + self.transitionTo + "hallo")
+//            var target = segue.destinationViewController as SensorStatisticsViewController
+//            target.sensorId = self.transitionTo
+//    }
+    
+    
+    //showGraph
     /*
     // MARK: - Navigation
     
