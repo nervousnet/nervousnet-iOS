@@ -12,15 +12,9 @@ import UIKit
 
 class NervousAppsViewController: UITableViewController {
     
-    var Apps = ["Nervousnet CCC","Earthquake", "De-Jammer", "Band"]
-    var Descriptions = [    "Where it all started...",
-                            "Detect Earthquakes and locate the Epicenter",
-                            "Resolve even the worst of traffic-jams",
-                            "Record a Song with your Nervous friends"]
-    var Links = [   "https://itunes.apple.com/us/app/nervousnet-for-31c3/id942966980?mt=8",
-                    "",
-                    "",
-                    "",]
+    var Apps = ["Nervousnet CCC"]
+    var Descriptions = [    "Where it all started..."]
+    var Links = [   "https://itunes.apple.com/us/app/nervousnet-for-31c3/id942966980?mt=8"]
     
     var trial : NSArray = []
     
