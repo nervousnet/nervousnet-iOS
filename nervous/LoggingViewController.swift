@@ -54,6 +54,7 @@ class LoggingViewController : UIViewController {
         VM.setFrequency(6, freq: pro)
     }
     
+    //gets all values from the vm and sets all UI items
     func getInitialValues(){
         //TODO: Set the fields and steppers to the current settings
         acc = VM.getFrequency(0)
@@ -151,6 +152,15 @@ class LoggingViewController : UIViewController {
         temField.text = String(values[abs((Int(sender.value))%(values.count))]) + units[abs((Int(sender.value))%(values.count))]
         applyLoggingInterval()
         
+    }
+    @IBAction func resetAllToDefault(sender: UIButton) {
+        acc = valuesInSeconds[0]
+        bat = valuesInSeconds[0]
+        gyr = valuesInSeconds[0]
+        mag = valuesInSeconds[0]
+        pro = valuesInSeconds[0]
+        applyLoggingInterval()
+        getInitialValues()
     }
 }
     

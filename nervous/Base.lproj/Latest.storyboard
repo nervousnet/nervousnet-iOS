@@ -884,6 +884,15 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmD-qL-ebd">
+                                        <rect key="frame" x="99" y="203" width="129" height="30"/>
+                                        <state key="normal" title="Reset all to default">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="resetAllToDefault:" destination="zVR-bj-KAA" eventType="touchUpInside" id="f9R-qb-uoi"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="z2e-Jq-nr9" firstAttribute="centerY" secondItem="bQo-cf-mXz" secondAttribute="centerY" constant="0.5" id="01u-1G-jKw"/>
@@ -916,10 +925,12 @@
                                     <constraint firstItem="bFq-XG-PWW" firstAttribute="leading" secondItem="DXc-UM-Mmt" secondAttribute="trailing" constant="8" id="kwz-gm-XD8"/>
                                     <constraint firstItem="yQY-Hv-8d7" firstAttribute="top" secondItem="OEa-Wo-XcL" secondAttribute="bottom" constant="8" id="mXl-OF-znl"/>
                                     <constraint firstItem="wRc-7Y-sHa" firstAttribute="leading" secondItem="D09-xK-9W6" secondAttribute="trailing" constant="8" id="nVw-T2-DTl"/>
+                                    <constraint firstItem="bFq-XG-PWW" firstAttribute="centerX" secondItem="kmD-qL-ebd" secondAttribute="centerX" id="pB1-8Y-dCE"/>
                                     <constraint firstItem="CyQ-HH-lcj" firstAttribute="leading" secondItem="nDV-f5-HeZ" secondAttribute="trailing" constant="8" id="qrt-oh-60I"/>
                                     <constraint firstItem="D09-xK-9W6" firstAttribute="leading" secondItem="OEa-Wo-XcL" secondAttribute="trailing" constant="8" id="rlf-Ac-pcb"/>
                                     <constraint firstItem="z2e-Jq-nr9" firstAttribute="leading" secondItem="vVv-Jn-9s7" secondAttribute="trailing" constant="8" id="rod-bc-mLk"/>
                                     <constraint firstItem="nDV-f5-HeZ" firstAttribute="leading" secondItem="Pr5-kY-ipy" secondAttribute="leading" constant="8" id="trA-30-1WF"/>
+                                    <constraint firstItem="kmD-qL-ebd" firstAttribute="top" secondItem="bFq-XG-PWW" secondAttribute="bottom" constant="8" id="trL-g6-iHJ"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1305,7 +1316,7 @@
         <image name="Server" width="1131" height="1139"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0Ne-qK-81H"/>
+        <segue reference="ZyD-4F-jFj"/>
         <segue reference="fxe-o1-1HN"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.92156862745098034" green="0.27843137254901962" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
