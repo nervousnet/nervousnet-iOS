@@ -1371,10 +1371,10 @@
             </objects>
             <point key="canvasLocation" x="-540" y="1421"/>
         </scene>
-        <!--Server View Controller-->
+        <!--Proxy View Controller-->
         <scene sceneID="zS9-zD-OmO">
             <objects>
-                <viewController id="rOC-Ev-zqA" customClass="ServerViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rOC-Ev-zqA" customClass="ProxyViewController" customModule="nervous" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wfc-UV-0Lc"/>
                         <viewControllerLayoutGuide type="bottom" id="DM2-LW-rE2"/>

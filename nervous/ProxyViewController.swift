@@ -1,6 +1,6 @@
 import UIKit
 
-class ServerViewController : UIViewController {
+class ProxyViewController : UIViewController {
     
     @IBOutlet var serverField: UITextField!
     @IBOutlet var portField: UITextField!
