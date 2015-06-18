@@ -209,6 +209,12 @@
 		AC5F25183B95B2D3730BA466 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C3E28EDAC66246A39191CAA9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E173CD671B0387E200E56ED2 /* SensorDescGyroscope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescGyroscope.swift; sourceTree = "<group>"; };
+		E1A465BF1B1D165E00BB2AC2 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40@2x.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-40@2x.png"; sourceTree = "<group>"; };
+		E1A465C01B1D165E00BB2AC2 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-60@2x.png"; sourceTree = "<group>"; };
+		E1A465C11B1D165E00BB2AC2 /* Icon-60@3x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@3x-1.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-60@3x-1.png"; sourceTree = "<group>"; };
+		E1A465C21B1D165E00BB2AC2 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@3x.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-60@3x.png"; sourceTree = "<group>"; };
+		E1A465C31B1D165E00BB2AC2 /* Icon-Small@3x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@3x-1.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-Small@3x-1.png"; sourceTree = "<group>"; };
+		E1A465C41B1D165F00BB2AC2 /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@3x.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-Small@3x.png"; sourceTree = "<group>"; };
 		E1B3C9211B0E19830089C771 /* SensorCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorCollection.swift; sourceTree = "<group>"; };
 		E1B95CF71B04E1D0004A5E20 /* SensorDescVectorValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescVectorValue.swift; sourceTree = "<group>"; };
 		E1F923C91B0612B40020CEEA /* SensorDescSingleValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescSingleValue.swift; sourceTree = "<group>"; };
@@ -272,6 +278,12 @@
 		22316DCE19BFB422006FD165 = {
 			isa = PBXGroup;
 			children = (
+				E1A465BF1B1D165E00BB2AC2 /* Icon-40@2x.png */,
+				E1A465C01B1D165E00BB2AC2 /* Icon-60@2x.png */,
+				E1A465C11B1D165E00BB2AC2 /* Icon-60@3x-1.png */,
+				E1A465C21B1D165E00BB2AC2 /* Icon-60@3x.png */,
+				E1A465C31B1D165E00BB2AC2 /* Icon-Small@3x-1.png */,
+				E1A465C41B1D165F00BB2AC2 /* Icon-Small@3x.png */,
 				07FE2AA21B1B1A0900CFFF87 /* Chart.js */,
 				07FE2AA31B1B1A0900CFFF87 /* exporting.js */,
 				07FE2AA41B1B1A0900CFFF87 /* highcharts.js */,
@@ -832,10 +844,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 945DC94D19FB201D0BBE095C /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -863,7 +876,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AC5F25183B95B2D3730BA466 /* Pods.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
