@@ -87,23 +87,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         
 
-            //location manager
-            locationManager = CLLocationManager()
-
-
-            if(locationManager!.respondsToSelector("requestAlwaysAuthorization")) {
-                locationManager!.requestAlwaysAuthorization()
-            }
-            
-            
-            locationManager!.delegate = self
-            locationManager!.pausesLocationUpdatesAutomatically = false
-            
-            locationManager!.startMonitoringForRegion(beaconRegion)
-            locationManager!.startRangingBeaconsInRegion(beaconRegion)
-
-            locationManager!.startUpdatingLocation()
-            
+//            //location manager
+//            locationManager = CLLocationManager()
+//
+//
+//            if(locationManager!.respondsToSelector("requestAlwaysAuthorization")) {
+//                locationManager!.requestAlwaysAuthorization()
+//            }
+//            
+//            
+//            locationManager!.delegate = self
+//            locationManager!.pausesLocationUpdatesAutomatically = false
+//            
+//            locationManager!.startMonitoringForRegion(beaconRegion)
+//            locationManager!.startRangingBeaconsInRegion(beaconRegion)
+//
+//            locationManager!.startUpdatingLocation()
+        
             //permission request
             if(application.respondsToSelector("registerUserNotificationSettings:")) {
                 application.registerUserNotificationSettings(
