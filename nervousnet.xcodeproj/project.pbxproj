@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		070842B31B18C0A400466D18 /* PrivacyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070842B21B18C0A400466D18 /* PrivacyTableViewCell.swift */; };
 		070842B71B18C18100466D18 /* PrivacyViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070842B61B18C18100466D18 /* PrivacyViewController2.swift */; };
+		0726FA631B89AFB500422771 /* SensorDescInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0726FA621B89AFB500422771 /* SensorDescInformation.swift */; };
 		07295DB61B17297700360070 /* NervousAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07295DB51B17297700360070 /* NervousAppsViewController.swift */; };
 		073EDC731B17202B004E8365 /* NervousAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */; };
 		076A35631B11F32B0054002A /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076A35621B11F32B0054002A /* PrivacyViewController.swift */; };
@@ -118,6 +119,7 @@
 /* Begin PBXFileReference section */
 		070842B21B18C0A400466D18 /* PrivacyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyTableViewCell.swift; sourceTree = "<group>"; };
 		070842B61B18C18100466D18 /* PrivacyViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController2.swift; sourceTree = "<group>"; };
+		0726FA621B89AFB500422771 /* SensorDescInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescInformation.swift; sourceTree = "<group>"; };
 		07295DB51B17297700360070 /* NervousAppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousAppsViewController.swift; sourceTree = "<group>"; };
 		073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousAppTableViewCell.swift; sourceTree = "<group>"; };
 		076A35621B11F32B0054002A /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				22653FF519D6E669004E1AA2 /* BLESensor.swift */,
 				24E4FFC41B022522002AED24 /* SensorDescAccelerometer.swift */,
 				E1F923CB1B0615F90020CEEA /* SensorDescMagnetic.swift */,
+				0726FA621B89AFB500422771 /* SensorDescInformation.swift */,
 			);
 			name = sensors;
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				073EDC731B17202B004E8365 /* NervousAppTableViewCell.swift in Sources */,
 				22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */,
 				FC9285AC1B026DCE00160A69 /* SensorDescBattery.swift in Sources */,
+				0726FA631B89AFB500422771 /* SensorDescInformation.swift in Sources */,
 				070842B71B18C18100466D18 /* PrivacyViewController2.swift in Sources */,
 				07824EC81B1602AC0024085E /* ProxyViewController.swift in Sources */,
 				E1B3C9221B0E19830089C771 /* SensorCollection.swift in Sources */,
