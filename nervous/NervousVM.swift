@@ -57,6 +57,9 @@ class NervousVM : NSObject{
     var shareB : Bool = true
     var shareP : Bool = true
     
+    //Boolean for the UserAgreement
+    var acceptedTerms : Bool = false;
+    
     override init(){
             super.init()
             var genUUID = self.generateUUID()
@@ -543,5 +546,11 @@ class NervousVM : NSObject{
         default:
             return true
         }
+    }
+    func setAcceptedTerms(setto : Bool){
+        acceptedTerms = setto
+    }
+    func getAcceptedTerms() -> Bool{
+        return acceptedTerms
     }
 }
