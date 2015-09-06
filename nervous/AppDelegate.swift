@@ -86,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         beaconRegion.notifyEntryStateOnDisplay = true
         
         
-
+        
 //            //location manager
 //            locationManager = CLLocationManager()
 //
@@ -103,7 +103,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 //            locationManager!.startRangingBeaconsInRegion(beaconRegion)
 //
 //            locationManager!.startUpdatingLocation()
-        
+        println("Hooo1")
+        var f = Test()
+        println("Hooo2")
+        f.battMax()
+        f.proxValue()
+        f.accValue()
+        f.gyrValue()
+        f.magValue()
+        println("Hooo3")
             //permission request
             if(application.respondsToSelector("registerUserNotificationSettings:")) {
                 application.registerUserNotificationSettings(

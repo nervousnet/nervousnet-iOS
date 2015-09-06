@@ -17,51 +17,24 @@ import Foundation
 
 protocol Query {
     
-    typealias G : SensorDesc
+    typealias G : SensorDesc // G can be any sensor descriptor
     
-    init(from : UInt64,to:UInt64)
+    init(from : UInt64,to:UInt64) // init gives data b/w timestamps from and to
     
-    //var  List = Array<SensorUploadSensorData>() // to store the sensor list data
-    var List : Array<SensorUploadSensorData> { set get}
+    var List : Array<SensorUploadSensorData> { set get} // List contains data from VM
     
-    func getSensorId() -> UInt64/*{
-        //abstract
-        var foo : Int64 = 10
-        return foo
-    }*/
+    func getSensorId() -> UInt64 // id of sensor
     
     
-    func containsReadings() -> Bool
+    func containsReadings() -> Bool // if it has more than 1 reading
     
-    /*{
-        if(List.count == 0)  //check for null equivalent
-        {return false}
-        else
-        {return true}
-    }*/
-
-    // constructor
-        /*{
-        
-        NervousVM vm =
-        //VM.retreive
-        if(containsReadings()){
-            println("retreived list of size() = /(+getCount())")
-        }
-        
-    }*/
+   
     
-    func getCount() -> Int
-    /*{
-        return List.count
-    }*/
+    func getCount() -> Int // length of list
+  
     
-    func getSensorDescriptorList() -> Array<G>
-    /*{
-        //abstract
-        var foo = Array<G>()
-        return foo
-    }*/
+    func getSensorDescriptorList() -> Array<G> // get the List in for the sensordesc
+  
     
     
     

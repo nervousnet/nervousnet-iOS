@@ -30,9 +30,9 @@ private let _insertSensorStatement = "INSERT INTO Sensors VALUES (?,?,?)"
 class SQLiteSensorsDB: SensorsDB {
     
     init() {
-        //NSLog("Creating table Sensors")
+        NSLog("Creating table Sensors")
         SQLiteDB.sharedInstance().execute(_createTableStatement)
-        //NSLog("Table Sensors successfully created (or already existent)")
+        NSLog("Table Sensors successfully created (or already existent)")
     }
     
     class var sharedInstance: SQLiteSensorsDB {
@@ -49,7 +49,7 @@ class SQLiteSensorsDB: SensorsDB {
             ]
         )
         
-        //NSLog("Query returned \(result.count) rows")
+        NSLog("Query returned \(result.count) rows")
     
         var messages : [SensorUploadSensorData] = []
         

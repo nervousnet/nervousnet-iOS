@@ -78,6 +78,12 @@
 		22F1A6021A10A82E0097B2E4 /* MapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1A6011A10A82E0097B2E4 /* MapNode.swift */; };
 		22FF8A8719F14AFA00AC6783 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */; };
 		22FF8A8D19F14B3A00AC6783 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8C19F14B3A00AC6783 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		240C914C1B986FB000F286FF /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C914B1B986FB000F286FF /* Test.swift */; };
+		240C91501B998DC000F286FF /* BatteryQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C914F1B998DC000F286FF /* BatteryQuery.swift */; };
+		240C91541B9C5BD000F286FF /* ProximityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C91531B9C5BD000F286FF /* ProximityQuery.swift */; };
+		243C613A1B9C8C8400B5D664 /* AccelerometerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C61391B9C8C8400B5D664 /* AccelerometerQuery.swift */; };
+		243C613C1B9C994400B5D664 /* GyroscopeQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C613B1B9C994400B5D664 /* GyroscopeQuery.swift */; };
+		243C613E1B9C99FE00B5D664 /* MagneticQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C613D1B9C99FE00B5D664 /* MagneticQuery.swift */; };
 		24756F2D1B0CD17900D31AA2 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24756F2C1B0CD17900D31AA2 /* Query.swift */; };
 		24756F2F1B0CD4A000D31AA2 /* QueryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24756F2E1B0CD4A000D31AA2 /* QueryText.swift */; };
 		24756F311B0CD4E500D31AA2 /* QueryNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24756F301B0CD4E500D31AA2 /* QueryNum.swift */; };
@@ -195,6 +201,12 @@
 		22F1A6011A10A82E0097B2E4 /* MapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNode.swift; sourceTree = "<group>"; };
 		22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		22FF8A8C19F14B3A00AC6783 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		240C914B1B986FB000F286FF /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		240C914F1B998DC000F286FF /* BatteryQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryQuery.swift; sourceTree = "<group>"; };
+		240C91531B9C5BD000F286FF /* ProximityQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProximityQuery.swift; sourceTree = "<group>"; };
+		243C61391B9C8C8400B5D664 /* AccelerometerQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerQuery.swift; sourceTree = "<group>"; };
+		243C613B1B9C994400B5D664 /* GyroscopeQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GyroscopeQuery.swift; sourceTree = "<group>"; };
+		243C613D1B9C99FE00B5D664 /* MagneticQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagneticQuery.swift; sourceTree = "<group>"; };
 		24756F2C1B0CD17900D31AA2 /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		24756F2E1B0CD4A000D31AA2 /* QueryText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryText.swift; sourceTree = "<group>"; };
 		24756F301B0CD4E500D31AA2 /* QueryNum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryNum.swift; sourceTree = "<group>"; };
@@ -325,6 +337,7 @@
 		22316DD919BFB422006FD165 /* nervous */ = {
 			isa = PBXGroup;
 			children = (
+				240C914A1B986F8600F286FF /* TestQueries */,
 				24756F2B1B0CD15600D31AA2 /* SensorQueries */,
 				24756F2A1B0CD14D00D31AA2 /* Queries */,
 				FC1346B51AD5E90A00D9998C /* db */,
@@ -470,6 +483,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		240C914A1B986F8600F286FF /* TestQueries */ = {
+			isa = PBXGroup;
+			children = (
+				240C914B1B986FB000F286FF /* Test.swift */,
+			);
+			name = TestQueries;
+			sourceTree = "<group>";
+		};
 		24756F2A1B0CD14D00D31AA2 /* Queries */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +511,11 @@
 				249F5AAA1B14BCF800C9E198 /* SensorQueriesAccelerometer.swift */,
 				249F5AAC1B14BD0800C9E198 /* SensorQueriesGyroscope.swift */,
 				249F5AAE1B14BD2800C9E198 /* SensorQueriesMagnetic.swift */,
+				240C914F1B998DC000F286FF /* BatteryQuery.swift */,
+				240C91531B9C5BD000F286FF /* ProximityQuery.swift */,
+				243C61391B9C8C8400B5D664 /* AccelerometerQuery.swift */,
+				243C613B1B9C994400B5D664 /* GyroscopeQuery.swift */,
+				243C613D1B9C99FE00B5D664 /* MagneticQuery.swift */,
 			);
 			name = SensorQueries;
 			sourceTree = "<group>";
@@ -670,6 +696,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				243C613C1B9C994400B5D664 /* GyroscopeQuery.swift in Sources */,
 				22C5D70E19FF87E200CD8D26 /* ExtensionField.swift in Sources */,
 				22C5D71519FF87E200CD8D26 /* WireFormat.swift in Sources */,
 				E1F923CA1B0612B40020CEEA /* SensorDescSingleValue.swift in Sources */,
@@ -680,12 +707,14 @@
 				E173CD681B0387E200E56ED2 /* SensorDescGyroscope.swift in Sources */,
 				22C5D71219FF87E200CD8D26 /* RingBuffer.swift in Sources */,
 				FC1346AD1AD5D04000D9998C /* SQLiteDB.swift in Sources */,
+				240C91541B9C5BD000F286FF /* ProximityQuery.swift in Sources */,
 				22C5D71419FF87E200CD8D26 /* UnknownFieldSetBuilder.swift in Sources */,
 				249F5AA51B14BC9E00C9E198 /* QueryNumVectorValue.swift in Sources */,
 				22653FEF19D6D243004E1AA2 /* SensorDesc.swift in Sources */,
 				22C5D70819FF87E200CD8D26 /* AbstractMessage.swift in Sources */,
 				311E82701A001D8500C176FE /* FilterButtonView.swift in Sources */,
 				FC1346AE1AD5D04000D9998C /* String-Extras.swift in Sources */,
+				243C613E1B9C99FE00B5D664 /* MagneticQuery.swift in Sources */,
 				22653FF919D6FBDB004E1AA2 /* NervousVM.swift in Sources */,
 				22C5D71119FF87E200CD8D26 /* GeneratedMessage.swift in Sources */,
 				22C5D71919FFADBA00CD8D26 /* SensorDetailController.swift in Sources */,
@@ -702,7 +731,9 @@
 				24756F2D1B0CD17900D31AA2 /* Query.swift in Sources */,
 				249F5AA91B14BCE300C9E198 /* SensorQueriesProximity.swift in Sources */,
 				24E4FFC51B022522002AED24 /* SensorDescAccelerometer.swift in Sources */,
+				240C914C1B986FB000F286FF /* Test.swift in Sources */,
 				22F1A6001A10A8260097B2E4 /* MapEdge.swift in Sources */,
+				240C91501B998DC000F286FF /* BatteryQuery.swift in Sources */,
 				22C5D70C19FF87E200CD8D26 /* ExtendableMessage.swift in Sources */,
 				22C5D70A19FF87E200CD8D26 /* CodedOutputStream.swift in Sources */,
 				249F5AAD1B14BD0800C9E198 /* SensorQueriesGyroscope.swift in Sources */,
@@ -727,6 +758,7 @@
 				070842B71B18C18100466D18 /* PrivacyViewController2.swift in Sources */,
 				07824EC81B1602AC0024085E /* ProxyViewController.swift in Sources */,
 				E1B3C9221B0E19830089C771 /* SensorCollection.swift in Sources */,
+				243C613A1B9C8C8400B5D664 /* AccelerometerQuery.swift in Sources */,
 				249F5AAB1B14BCF800C9E198 /* SensorQueriesAccelerometer.swift in Sources */,
 				22C5D70D19FF87E200CD8D26 /* ExtendableMessageBuilder.swift in Sources */,
 				22C5D70919FF87E200CD8D26 /* CodedInputStream.swift in Sources */,

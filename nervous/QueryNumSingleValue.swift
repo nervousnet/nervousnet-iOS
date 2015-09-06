@@ -61,6 +61,23 @@ import Darwin
         fatalError("Must Override")
     }
     
+  
+    
+    func getMaxValue()-> G{
+        var maxSensDesc = createDummyObject()
+        var maxVal = FLT_MIN
+        
+        for sensorData in List{
+            var sensDesc = createSensorDescSingleValue(sensorData)
+            if(sensDesc.getValue() > maxVal){
+                maxVal = sensDesc.getValue()
+                maxSensDesc = sensDesc
+            }
+        }
+        
+       return maxSensDesc
+    }
+    
     func getTimeRange(desc_list : Array<G>, s : Array<Float>, e : Array<Float>)-> Array<G>{
         var start = s[0]
         var end = e[0]
@@ -78,21 +95,6 @@ import Darwin
         
         return answer
         
-    }
-    
-    func getMaxValue()-> G{
-        var maxSensDesc = createDummyObject()
-        var maxVal = FLT_MIN
-        
-        for sensorData in List{
-            var sensDesc = createSensorDescSingleValue(sensorData)
-            if(sensDesc.getValue() > maxVal){
-                maxVal = sensDesc.getValue()
-                maxSensDesc = sensDesc
-            }
-        }
-        
-       return maxSensDesc
     }
     
     func getMinValue()-> G{
