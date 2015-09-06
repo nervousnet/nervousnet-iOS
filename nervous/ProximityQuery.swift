@@ -8,16 +8,16 @@
 
 import UIKit
 
-class ProximityQuery: NSObject {
+class ProximityQuery: SingleFn {
     
-    var List : Array<SensorUploadSensorData>
+    //override var List : Array<SensorUploadSensorData>
     
     // have to pass object of type G along with timestamps
     init(from timestamp_from :UInt64,to timestamp_to : UInt64){
         
         let vm = NervousVM.sharedInstance
         //dummy object
-        
+        super.init()
         //dummy retreive
         //self.List = vm.retrieve(0x0000000000000006, fromTimeStamp: 0, toTimeStamp: 0)
         //actual retreive
@@ -45,13 +45,26 @@ class ProximityQuery: NSObject {
         {return true}
     }
     
-    func createSensorDescSingleValue(sensorData : SensorUploadSensorData) -> SensorDescProximity{
+    
+    /*func createSensorDescSingleValue(sensorData : SensorUploadSensorData) -> SensorDescSingleValue{
+        var m : SensorDescBattery
+        return m
+    }
+    
+    func createDummyObject()-> SensorDescSingleValue{
+        var m : SensorDescBattery
+        return m
+    }
+    
+    var List : Array<SensorUploadSensorData> = []*/
+    
+    override func createSensorDescSingleValue(sensorData : SensorUploadSensorData) -> SensorDescSingleValue{
         var m = SensorDescProximity( sensorData : sensorData )
         return m
     }
     
-    func getSensorDescriptorList() -> Array<SensorDescProximity>{
-        var descList = Array<SensorDescProximity>()
+    func getSensorDescriptorList() -> Array<SensorDescSingleValue>{
+        var descList = Array<SensorDescSingleValue>()
         for sensorData in List {
             descList.append(createSensorDescSingleValue(sensorData))
             
@@ -59,12 +72,12 @@ class ProximityQuery: NSObject {
         return descList
     }
     
-    func createDummyObject()-> SensorDescProximity{
+    override func createDummyObject()-> SensorDescSingleValue{
         var m = SensorDescProximity(timestamp: 0,proximity: 0,isClose: true)
         return m
     }
     
-    func getMaxValue()-> SensorDescProximity{
+    /*func getMaxValue()-> SensorDescProximity{
         var maxSensDesc = createDummyObject()
         var maxVal = FLT_MIN
         
@@ -77,6 +90,6 @@ class ProximityQuery: NSObject {
         }
         
         return maxSensDesc
-    }
+    }*/
    
 }

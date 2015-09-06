@@ -84,6 +84,8 @@
 		243C613A1B9C8C8400B5D664 /* AccelerometerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C61391B9C8C8400B5D664 /* AccelerometerQuery.swift */; };
 		243C613C1B9C994400B5D664 /* GyroscopeQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C613B1B9C994400B5D664 /* GyroscopeQuery.swift */; };
 		243C613E1B9C99FE00B5D664 /* MagneticQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C613D1B9C99FE00B5D664 /* MagneticQuery.swift */; };
+		243C61401B9C9DDF00B5D664 /* SingleFn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C613F1B9C9DDF00B5D664 /* SingleFn.swift */; };
+		243C61441B9CA9C300B5D664 /* VectorFn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C61431B9CA9C300B5D664 /* VectorFn.swift */; };
 		24756F2D1B0CD17900D31AA2 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24756F2C1B0CD17900D31AA2 /* Query.swift */; };
 		24756F2F1B0CD4A000D31AA2 /* QueryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24756F2E1B0CD4A000D31AA2 /* QueryText.swift */; };
 		24756F311B0CD4E500D31AA2 /* QueryNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24756F301B0CD4E500D31AA2 /* QueryNum.swift */; };
@@ -207,6 +209,8 @@
 		243C61391B9C8C8400B5D664 /* AccelerometerQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerQuery.swift; sourceTree = "<group>"; };
 		243C613B1B9C994400B5D664 /* GyroscopeQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GyroscopeQuery.swift; sourceTree = "<group>"; };
 		243C613D1B9C99FE00B5D664 /* MagneticQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagneticQuery.swift; sourceTree = "<group>"; };
+		243C613F1B9C9DDF00B5D664 /* SingleFn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleFn.swift; sourceTree = "<group>"; };
+		243C61431B9CA9C300B5D664 /* VectorFn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorFn.swift; sourceTree = "<group>"; };
 		24756F2C1B0CD17900D31AA2 /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		24756F2E1B0CD4A000D31AA2 /* QueryText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryText.swift; sourceTree = "<group>"; };
 		24756F301B0CD4E500D31AA2 /* QueryNum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryNum.swift; sourceTree = "<group>"; };
@@ -495,6 +499,8 @@
 			isa = PBXGroup;
 			children = (
 				24756F2C1B0CD17900D31AA2 /* Query.swift */,
+				243C613F1B9C9DDF00B5D664 /* SingleFn.swift */,
+				243C61431B9CA9C300B5D664 /* VectorFn.swift */,
 				24756F2E1B0CD4A000D31AA2 /* QueryText.swift */,
 				24756F301B0CD4E500D31AA2 /* QueryNum.swift */,
 				24756F321B0E20E900D31AA2 /* QueryNumSingleValue.swift */,
@@ -728,6 +734,7 @@
 				22B912E019D76F96006094C6 /* SensorViewController.swift in Sources */,
 				22F1A6021A10A82E0097B2E4 /* MapNode.swift in Sources */,
 				24756F331B0E20E900D31AA2 /* QueryNumSingleValue.swift in Sources */,
+				243C61441B9CA9C300B5D664 /* VectorFn.swift in Sources */,
 				24756F2D1B0CD17900D31AA2 /* Query.swift in Sources */,
 				249F5AA91B14BCE300C9E198 /* SensorQueriesProximity.swift in Sources */,
 				24E4FFC51B022522002AED24 /* SensorDescAccelerometer.swift in Sources */,
@@ -736,6 +743,7 @@
 				240C91501B998DC000F286FF /* BatteryQuery.swift in Sources */,
 				22C5D70C19FF87E200CD8D26 /* ExtendableMessage.swift in Sources */,
 				22C5D70A19FF87E200CD8D26 /* CodedOutputStream.swift in Sources */,
+				243C61401B9C9DDF00B5D664 /* SingleFn.swift in Sources */,
 				249F5AAD1B14BD0800C9E198 /* SensorQueriesGyroscope.swift in Sources */,
 				225830191A2807AF00075C8D /* CreditsViewController.swift in Sources */,
 				22C5D70F19FF87E200CD8D26 /* ExtensionRegistry.swift in Sources */,

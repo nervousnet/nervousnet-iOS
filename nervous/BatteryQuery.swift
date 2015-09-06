@@ -8,17 +8,17 @@
 
 import UIKit
 
-class BatteryQuery {
+class BatteryQuery : SingleFn {
     
     
-    var List : Array<SensorUploadSensorData>
+    //var List : Array<SensorUploadSensorData>
     
     // have to pass object of type G along with timestamps
     init(from timestamp_from :UInt64,to timestamp_to : UInt64){
         
         let vm = NervousVM.sharedInstance
         //dummy object
-        
+        super.init()
         //dummy retreive
         //self.List = vm.retrieve(0x0000000000000001, fromTimeStamp: 0, toTimeStamp: 0)
         //only needed if using some functions from this class
@@ -47,13 +47,13 @@ class BatteryQuery {
         {return true}
     }
     
-    func createSensorDescSingleValue(sensorData : SensorUploadSensorData) -> SensorDescBattery{
+    override func createSensorDescSingleValue(sensorData : SensorUploadSensorData) -> SensorDescSingleValue{
         var m = SensorDescBattery( sensorData : sensorData )
         return m
     }
     
-    func getSensorDescriptorList() -> Array<SensorDescBattery>{
-        var descList = Array<SensorDescBattery>()
+    func getSensorDescriptorList() -> Array<SensorDescSingleValue>{
+        var descList = Array<SensorDescSingleValue>()
         for sensorData in List {
             descList.append(createSensorDescSingleValue(sensorData))
             
@@ -61,12 +61,12 @@ class BatteryQuery {
         return descList
     }
     
-    func createDummyObject()-> SensorDescBattery{
+    override func createDummyObject()-> SensorDescSingleValue{
         var m = SensorDescBattery(timestamp: UInt64(0),batteryPercent: Float(0),isCharging: false,isUsbCharge: false,isAcCharge: false)
         return m
     }
     
-    func getMaxValue()-> SensorDescBattery{
+    /*func getMaxValue()-> SensorDescBattery{
         var maxSensDesc = createDummyObject()
         var maxVal = FLT_MIN
         
@@ -79,7 +79,7 @@ class BatteryQuery {
         }
         
         return maxSensDesc
-    }
+    }*/
   
    
 }

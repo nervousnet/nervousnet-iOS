@@ -18,16 +18,16 @@ import UIKit
 
 import UIKit
 
-class MagneticQuery: NSObject {
+class MagneticQuery: VectorFn {
     
-    var List : Array<SensorUploadSensorData>
+    //var List : Array<SensorUploadSensorData>
     
     // have to pass object of type G along with timestamps
     init(from timestamp_from :UInt64,to timestamp_to : UInt64){
         
         let vm = NervousVM.sharedInstance
         //dummy object
-        
+        super.init()
         //dummy retreive
         //self.List = vm.retrieve(0x0000000000000002, fromTimeStamp: 0, toTimeStamp: 0)
         //actual retreive
@@ -55,13 +55,13 @@ class MagneticQuery: NSObject {
         {return true}
     }
     
-    func createSensorDescVectorValue(sensorData : SensorUploadSensorData) -> SensorDescMagnetic{
+    override func createSensorDescVectorValue(sensorData : SensorUploadSensorData) -> SensorDescVectorValue{
         var m = SensorDescMagnetic( sensorData : sensorData )
         return m
     }
     
-    func getSensorDescriptorList() -> Array<SensorDescMagnetic>{
-        var descList = Array<SensorDescMagnetic>()
+    func getSensorDescriptorList() -> Array<SensorDescVectorValue>{
+        var descList = Array<SensorDescVectorValue>()
         for sensorData in List {
             descList.append(createSensorDescVectorValue(sensorData))
             
@@ -69,12 +69,12 @@ class MagneticQuery: NSObject {
         return descList
     }
     
-    func createDummyObject()-> SensorDescMagnetic{
+    override func createDummyObject()-> SensorDescVectorValue{
         var m = SensorDescMagnetic(timestamp: 0,magX: 0,magY: 0,magZ: 0)
         return m
     }
     
-    func getMaxValue()-> SensorDescMagnetic{
+    /*func getMaxValue()-> SensorDescMagnetic{
         var maxSensDesc = createDummyObject()
         var maxVal = FLT_MIN
         
@@ -92,7 +92,7 @@ class MagneticQuery: NSObject {
         }
         
         return maxSensDesc
-    }
+    }*/
     
 }
 
