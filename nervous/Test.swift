@@ -26,6 +26,31 @@ class Test: NSObject {
         
     }
     
+    func battMany(){
+        var b = BatteryQuery(from: UInt64.min, to: UInt64.max) //get all values of battery stored.
+        /*println("get count of list")
+        var c = b.getCount()
+        println("battery min")
+        var a = b.getMinValue().getValue()
+        println("battery average")
+        var f = b.getAverage()
+        println("battery sd")
+        var g = b.sd()
+        println("battery variannce")
+        var h = b.variance()
+        
+        
+        
+        NSLog("this is the number of values: %d",c)
+        NSLog("this is the minimum value: %f %",a*100)
+        //multiply by 100 for percentage
+        NSLog("this is the average value: %f %",f[0]*100)
+        NSLog("this is the sd value: %f %", g[0]*100)
+        NSLog("this is the variance value: %f %",h[0]*100)*/
+
+        
+    }
+    
     func proxValue(){
         println("in proxValue //")
         var b = ProximityQuery(from: UInt64.min, to: UInt64.max)

@@ -106,11 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         println("Hooo1")
         var f = Test()
         println("Hooo2")
-        f.battMax()
-        f.proxValue()
-        f.accValue()
-        f.gyrValue()
-        f.magValue()
+        f.battMany()
         println("Hooo3")
             //permission request
             if(application.respondsToSelector("registerUserNotificationSettings:")) {
