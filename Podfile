@@ -1,5 +1,8 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
-pod 'Mapbox-iOS-SDK'
-pod "AFNetworking", "~> 2.0"
-# NOT YET AVAILABLE FOR SWIFT pod 'ProtocolBuffers', '1.9.2'
+platform :ios, '9.0'
+use_frameworks!
+
+target 'nervousnet' do
+    pod 'Zip', '~> 0.2'
+    pod 'AFNetworking', '~> 2.0'
+    pod 'sqlite3', '~> 3.11.0'
+end

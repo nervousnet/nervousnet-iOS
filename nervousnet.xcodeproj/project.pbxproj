@@ -7,111 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		070842B31B18C0A400466D18 /* PrivacyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070842B21B18C0A400466D18 /* PrivacyTableViewCell.swift */; };
-		070842B71B18C18100466D18 /* PrivacyViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070842B61B18C18100466D18 /* PrivacyViewController2.swift */; };
-		0726FA631B89AFB500422771 /* SensorDescInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0726FA621B89AFB500422771 /* SensorDescInformation.swift */; };
-		07295DB61B17297700360070 /* NervousAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07295DB51B17297700360070 /* NervousAppsViewController.swift */; };
-		073EDC731B17202B004E8365 /* NervousAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */; };
-		076A35631B11F32B0054002A /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076A35621B11F32B0054002A /* PrivacyViewController.swift */; };
-		076A35651B11FA1F0054002A /* LoggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076A35641B11FA1F0054002A /* LoggingViewController.swift */; };
-		076ABAC81B1B4BEE00B2B033 /* GraphSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076ABAC71B1B4BEE00B2B033 /* GraphSetupViewController.swift */; };
-		076ABACA1B1B4D6900B2B033 /* SensorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076ABAC91B1B4D6900B2B033 /* SensorTableViewCell.swift */; };
-		07824EC81B1602AC0024085E /* ProxyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07824EC71B1602AC0024085E /* ProxyViewController.swift */; };
-		07C12C3A1B0CD09400885C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C12C391B0CD09400885C50 /* ViewController.swift */; };
-		07D307251B10C465009CD2F3 /* SensorStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D307241B10C465009CD2F3 /* SensorStatisticsViewController.swift */; };
-		07FE2A891B1B182C00CFFF87 /* api in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2A821B1B182C00CFFF87 /* api */; };
-		07FE2A8A1B1B182C00CFFF87 /* examples in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2A831B1B182C00CFFF87 /* examples */; };
-		07FE2A8B1B1B182C00CFFF87 /* exporting-server in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2A841B1B182C00CFFF87 /* exporting-server */; };
-		07FE2A8C1B1B182C00CFFF87 /* gfx in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2A851B1B182C00CFFF87 /* gfx */; };
-		07FE2A8D1B1B182C00CFFF87 /* graphics in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2A861B1B182C00CFFF87 /* graphics */; };
-		07FE2A8E1B1B182C00CFFF87 /* hello.htm in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2A871B1B182C00CFFF87 /* hello.htm */; };
-		07FE2A8F1B1B182C00CFFF87 /* js in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2A881B1B182C00CFFF87 /* js */; };
-		07FE2AAB1B1B1A0900CFFF87 /* Chart.js in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA21B1B1A0900CFFF87 /* Chart.js */; };
-		07FE2AAC1B1B1A0900CFFF87 /* exporting.js in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA31B1B1A0900CFFF87 /* exporting.js */; };
-		07FE2AAD1B1B1A0900CFFF87 /* highcharts.js in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA41B1B1A0900CFFF87 /* highcharts.js */; };
-		07FE2AAE1B1B1A0900CFFF87 /* jQuery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA51B1B1A0900CFFF87 /* jQuery.min.js */; };
-		07FE2AAF1B1B1A0900CFFF87 /* webview_charts_1_basic_columns_over_time.html in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA61B1B1A0900CFFF87 /* webview_charts_1_basic_columns_over_time.html */; };
-		07FE2AB01B1B1A0900CFFF87 /* webview_charts_1_line_live_data_over_time.html in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA71B1B1A0900CFFF87 /* webview_charts_1_line_live_data_over_time.html */; };
-		07FE2AB11B1B1A0900CFFF87 /* webview_charts_1_line_plot_over_time.html in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA81B1B1A0900CFFF87 /* webview_charts_1_line_plot_over_time.html */; };
-		07FE2AB21B1B1A0900CFFF87 /* webview_charts_3_lines_live_data_over_time.html in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AA91B1B1A0900CFFF87 /* webview_charts_3_lines_live_data_over_time.html */; };
-		07FE2AB31B1B1A0900CFFF87 /* webview_charts_3_lines_plot_over_time.html in Resources */ = {isa = PBXBuildFile; fileRef = 07FE2AAA1B1B1A0900CFFF87 /* webview_charts_3_lines_plot_over_time.html */; };
+		1DBFF198CC2BBF10D66E1269 /* Pods_nervousnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E02F23DE03AE89CCB108FCF /* Pods_nervousnet.framework */; };
 		22316DDD19BFB422006FD165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DDC19BFB422006FD165 /* AppDelegate.swift */; };
-		22316DE419BFB422006FD165 /* Latest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22316DE219BFB422006FD165 /* Latest.storyboard */; };
 		22316DF219BFB422006FD165 /* nervousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DF119BFB422006FD165 /* nervousTests.swift */; };
-		22392F371A044AEA008035FA /* blank.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 22392F331A044AEA008035FA /* blank.mbtiles */; };
-		22392F381A044AEA008035FA /* cch0.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 22392F341A044AEA008035FA /* cch0.mbtiles */; };
-		22392F391A044AEA008035FA /* cch2.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 22392F351A044AEA008035FA /* cch2.mbtiles */; };
-		22392F3A1A044AEA008035FA /* cch1.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 22392F361A044AEA008035FA /* cch1.mbtiles */; };
-		22392F3E1A0CF421008035FA /* MapDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22392F3D1A0CF421008035FA /* MapDataController.swift */; };
-		225830191A2807AF00075C8D /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225830181A2807AF00075C8D /* CreditsViewController.swift */; };
-		22653FEF19D6D243004E1AA2 /* SensorDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FEE19D6D243004E1AA2 /* SensorDesc.swift */; };
-		22653FF119D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FF019D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift */; };
-		22653FF419D6E044004E1AA2 /* UploadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FF319D6E044004E1AA2 /* UploadTask.swift */; };
-		22653FF619D6E669004E1AA2 /* BLESensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FF519D6E669004E1AA2 /* BLESensor.swift */; };
-		22653FF919D6FBDB004E1AA2 /* NervousVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22653FF819D6FBDB004E1AA2 /* NervousVM.swift */; };
+		224BB7591C808FD500C09D4F /* Controllers in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7551C808FD500C09D4F /* Controllers */; };
+		224BB75A1C808FD500C09D4F /* Controllers in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7551C808FD500C09D4F /* Controllers */; };
+		224BB75B1C808FD500C09D4F /* Views in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7561C808FD500C09D4F /* Views */; };
+		224BB75C1C808FD500C09D4F /* Views in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7561C808FD500C09D4F /* Views */; };
+		224BB75D1C808FD500C09D4F /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7571C808FD500C09D4F /* Assets */; };
+		224BB75E1C808FD500C09D4F /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7571C808FD500C09D4F /* Assets */; };
+		224BB75F1C808FD500C09D4F /* Stores in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7581C808FD500C09D4F /* Stores */; };
+		224BB7601C808FD500C09D4F /* Stores in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7581C808FD500C09D4F /* Stores */; };
 		22653FFB19D70899004E1AA2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22653FFA19D70898004E1AA2 /* QuartzCore.framework */; };
-		22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B03E5419CE032B00E50D04 /* MapViewController.swift */; };
 		22B03E6019CE102900E50D04 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E5F19CE102900E50D04 /* SpriteKit.framework */; };
 		22B03E6419D04BB500E50D04 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E6319D04BB500E50D04 /* CoreLocation.framework */; };
-		22B912E019D76F96006094C6 /* SensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B912DF19D76F96006094C6 /* SensorViewController.swift */; };
-		22C5D70819FF87E200CD8D26 /* AbstractMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D6FA19FF87E200CD8D26 /* AbstractMessage.swift */; };
-		22C5D70919FF87E200CD8D26 /* CodedInputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D6FB19FF87E200CD8D26 /* CodedInputStream.swift */; };
-		22C5D70A19FF87E200CD8D26 /* CodedOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D6FC19FF87E200CD8D26 /* CodedOutputStream.swift */; };
-		22C5D70B19FF87E200CD8D26 /* ConcreteExtensionField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D6FD19FF87E200CD8D26 /* ConcreteExtensionField.swift */; };
-		22C5D70C19FF87E200CD8D26 /* ExtendableMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D6FE19FF87E200CD8D26 /* ExtendableMessage.swift */; };
-		22C5D70D19FF87E200CD8D26 /* ExtendableMessageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D6FF19FF87E200CD8D26 /* ExtendableMessageBuilder.swift */; };
-		22C5D70E19FF87E200CD8D26 /* ExtensionField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70019FF87E200CD8D26 /* ExtensionField.swift */; };
-		22C5D70F19FF87E200CD8D26 /* ExtensionRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70119FF87E200CD8D26 /* ExtensionRegistry.swift */; };
-		22C5D71019FF87E200CD8D26 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70219FF87E200CD8D26 /* Field.swift */; };
-		22C5D71119FF87E200CD8D26 /* GeneratedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70319FF87E200CD8D26 /* GeneratedMessage.swift */; };
-		22C5D71219FF87E200CD8D26 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70419FF87E200CD8D26 /* RingBuffer.swift */; };
-		22C5D71319FF87E200CD8D26 /* UnknownFieldSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70519FF87E200CD8D26 /* UnknownFieldSet.swift */; };
-		22C5D71419FF87E200CD8D26 /* UnknownFieldSetBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70619FF87E200CD8D26 /* UnknownFieldSetBuilder.swift */; };
-		22C5D71519FF87E200CD8D26 /* WireFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D70719FF87E200CD8D26 /* WireFormat.swift */; };
-		22C5D71919FFADBA00CD8D26 /* SensorDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5D71819FFADBA00CD8D26 /* SensorDetailController.swift */; };
 		22D10CA919D598A1000D6942 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D10CA819D598A1000D6942 /* CFNetwork.framework */; };
-		22D2D66D19C0979E00B11C54 /* Sensorupload.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */; };
 		22D2D66F19C097F900B11C54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D2D66E19C097F900B11C54 /* Foundation.framework */; };
 		22F16C851A1A0E8E00EB97F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F16C841A1A0E8E00EB97F5 /* Images.xcassets */; };
-		22F1A5FB1A10A5E30097B2E4 /* nervous.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22F1A5F91A10A5E30097B2E4 /* nervous.xcdatamodeld */; };
-		22F1A6001A10A8260097B2E4 /* MapEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1A5FF1A10A8260097B2E4 /* MapEdge.swift */; };
-		22F1A6021A10A82E0097B2E4 /* MapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1A6011A10A82E0097B2E4 /* MapNode.swift */; };
 		22FF8A8719F14AFA00AC6783 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */; };
 		22FF8A8D19F14B3A00AC6783 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8C19F14B3A00AC6783 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		240C914C1B986FB000F286FF /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C914B1B986FB000F286FF /* Test.swift */; };
-		240C91501B998DC000F286FF /* BatteryQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C914F1B998DC000F286FF /* BatteryQuery.swift */; };
-		240C91541B9C5BD000F286FF /* ProximityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C91531B9C5BD000F286FF /* ProximityQuery.swift */; };
-		243C613A1B9C8C8400B5D664 /* AccelerometerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C61391B9C8C8400B5D664 /* AccelerometerQuery.swift */; };
-		243C613C1B9C994400B5D664 /* GyroscopeQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C613B1B9C994400B5D664 /* GyroscopeQuery.swift */; };
-		243C613E1B9C99FE00B5D664 /* MagneticQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C613D1B9C99FE00B5D664 /* MagneticQuery.swift */; };
-		243C61401B9C9DDF00B5D664 /* SingleFn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C613F1B9C9DDF00B5D664 /* SingleFn.swift */; };
-		243C61441B9CA9C300B5D664 /* VectorFn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C61431B9CA9C300B5D664 /* VectorFn.swift */; };
-		24756F2D1B0CD17900D31AA2 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24756F2C1B0CD17900D31AA2 /* Query.swift */; };
-		24756F2F1B0CD4A000D31AA2 /* QueryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24756F2E1B0CD4A000D31AA2 /* QueryText.swift */; };
-		24756F311B0CD4E500D31AA2 /* QueryNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24756F301B0CD4E500D31AA2 /* QueryNum.swift */; };
-		24756F331B0E20E900D31AA2 /* QueryNumSingleValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24756F321B0E20E900D31AA2 /* QueryNumSingleValue.swift */; };
-		249F5AA51B14BC9E00C9E198 /* QueryNumVectorValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F5AA41B14BC9E00C9E198 /* QueryNumVectorValue.swift */; };
-		249F5AA71B14BCBE00C9E198 /* SensorQueriesBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F5AA61B14BCBE00C9E198 /* SensorQueriesBattery.swift */; };
-		249F5AA91B14BCE300C9E198 /* SensorQueriesProximity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F5AA81B14BCE300C9E198 /* SensorQueriesProximity.swift */; };
-		249F5AAB1B14BCF800C9E198 /* SensorQueriesAccelerometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F5AAA1B14BCF800C9E198 /* SensorQueriesAccelerometer.swift */; };
-		249F5AAD1B14BD0800C9E198 /* SensorQueriesGyroscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F5AAC1B14BD0800C9E198 /* SensorQueriesGyroscope.swift */; };
-		249F5AAF1B14BD2800C9E198 /* SensorQueriesMagnetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F5AAE1B14BD2800C9E198 /* SensorQueriesMagnetic.swift */; };
-		24E4FFC51B022522002AED24 /* SensorDescAccelerometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4FFC41B022522002AED24 /* SensorDescAccelerometer.swift */; };
-		311E82701A001D8500C176FE /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E826F1A001D8500C176FE /* FilterButtonView.swift */; };
-		E173CD681B0387E200E56ED2 /* SensorDescGyroscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = E173CD671B0387E200E56ED2 /* SensorDescGyroscope.swift */; };
-		E1B3C9221B0E19830089C771 /* SensorCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3C9211B0E19830089C771 /* SensorCollection.swift */; };
-		E1B95CF81B04E1D0004A5E20 /* SensorDescVectorValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B95CF71B04E1D0004A5E20 /* SensorDescVectorValue.swift */; };
-		E1F923CA1B0612B40020CEEA /* SensorDescSingleValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F923C91B0612B40020CEEA /* SensorDescSingleValue.swift */; };
-		E1F923CC1B0615F90020CEEA /* SensorDescMagnetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F923CB1B0615F90020CEEA /* SensorDescMagnetic.swift */; };
-		E1F923CE1B0635470020CEEA /* SensorDescProximity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F923CD1B0635470020CEEA /* SensorDescProximity.swift */; };
-		F8C5EA35C0D248558EACC2AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E28EDAC66246A39191CAA9 /* libPods.a */; };
-		FC1346AD1AD5D04000D9998C /* SQLiteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1346AB1AD5D04000D9998C /* SQLiteDB.swift */; };
-		FC1346AE1AD5D04000D9998C /* String-Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1346AC1AD5D04000D9998C /* String-Extras.swift */; };
 		FC1346B21AD5D09500D9998C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1346B11AD5D09500D9998C /* libsqlite3.0.dylib */; };
-		FC1346B71AD5E99C00D9998C /* SQLiteSensorsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1346B61AD5E99C00D9998C /* SQLiteSensorsDB.swift */; };
-		FC1346B91AD5EC0400D9998C /* SensorsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1346B81AD5EC0400D9998C /* SensorsDB.swift */; };
-		FC31537D1B14CDE10052AED8 /* data.db in Resources */ = {isa = PBXBuildFile; fileRef = FC31537C1B14CDE10052AED8 /* data.db */; };
-		FC9285AC1B026DCE00160A69 /* SensorDescBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9285AB1B026DCE00160A69 /* SensorDescBattery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,127 +40,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		070842B21B18C0A400466D18 /* PrivacyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyTableViewCell.swift; sourceTree = "<group>"; };
-		070842B61B18C18100466D18 /* PrivacyViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController2.swift; sourceTree = "<group>"; };
-		0726FA621B89AFB500422771 /* SensorDescInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescInformation.swift; sourceTree = "<group>"; };
-		07295DB51B17297700360070 /* NervousAppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousAppsViewController.swift; sourceTree = "<group>"; };
-		073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousAppTableViewCell.swift; sourceTree = "<group>"; };
-		076A35621B11F32B0054002A /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
-		076A35641B11FA1F0054002A /* LoggingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingViewController.swift; sourceTree = "<group>"; };
-		076ABAC71B1B4BEE00B2B033 /* GraphSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphSetupViewController.swift; sourceTree = "<group>"; };
-		076ABAC91B1B4D6900B2B033 /* SensorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorTableViewCell.swift; sourceTree = "<group>"; };
-		07824EC71B1602AC0024085E /* ProxyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyViewController.swift; sourceTree = "<group>"; };
-		07C12C391B0CD09400885C50 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		07D307241B10C465009CD2F3 /* SensorStatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorStatisticsViewController.swift; sourceTree = "<group>"; };
-		07FE2A821B1B182C00CFFF87 /* api */ = {isa = PBXFileReference; lastKnownFileType = folder; path = api; sourceTree = "<group>"; };
-		07FE2A831B1B182C00CFFF87 /* examples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = examples; sourceTree = "<group>"; };
-		07FE2A841B1B182C00CFFF87 /* exporting-server */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "exporting-server"; sourceTree = "<group>"; };
-		07FE2A851B1B182C00CFFF87 /* gfx */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gfx; sourceTree = "<group>"; };
-		07FE2A861B1B182C00CFFF87 /* graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; path = graphics; sourceTree = "<group>"; };
-		07FE2A871B1B182C00CFFF87 /* hello.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = hello.htm; sourceTree = "<group>"; };
-		07FE2A881B1B182C00CFFF87 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
-		07FE2AA21B1B1A0900CFFF87 /* Chart.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Chart.js; sourceTree = "<group>"; };
-		07FE2AA31B1B1A0900CFFF87 /* exporting.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = exporting.js; sourceTree = "<group>"; };
-		07FE2AA41B1B1A0900CFFF87 /* highcharts.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highcharts.js; sourceTree = "<group>"; };
-		07FE2AA51B1B1A0900CFFF87 /* jQuery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jQuery.min.js; sourceTree = "<group>"; };
-		07FE2AA61B1B1A0900CFFF87 /* webview_charts_1_basic_columns_over_time.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = webview_charts_1_basic_columns_over_time.html; sourceTree = "<group>"; };
-		07FE2AA71B1B1A0900CFFF87 /* webview_charts_1_line_live_data_over_time.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = webview_charts_1_line_live_data_over_time.html; sourceTree = "<group>"; };
-		07FE2AA81B1B1A0900CFFF87 /* webview_charts_1_line_plot_over_time.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = webview_charts_1_line_plot_over_time.html; sourceTree = "<group>"; };
-		07FE2AA91B1B1A0900CFFF87 /* webview_charts_3_lines_live_data_over_time.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = webview_charts_3_lines_live_data_over_time.html; sourceTree = "<group>"; };
-		07FE2AAA1B1B1A0900CFFF87 /* webview_charts_3_lines_plot_over_time.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = webview_charts_3_lines_plot_over_time.html; sourceTree = "<group>"; };
+		14FAE4EC73BD4C359734208F /* Pods-nervousnet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nervousnet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet.debug.xcconfig"; sourceTree = "<group>"; };
 		22316DD719BFB422006FD165 /* nervous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nervous.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		22316DDB19BFB422006FD165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22316DDC19BFB422006FD165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22316DE319BFB422006FD165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Latest.storyboard; sourceTree = "<group>"; };
 		22316DEB19BFB422006FD165 /* nervousnetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nervousnetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22316DF019BFB422006FD165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22316DF119BFB422006FD165 /* nervousTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nervousTests.swift; sourceTree = "<group>"; };
-		22392F331A044AEA008035FA /* blank.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; name = blank.mbtiles; path = maps/blank.mbtiles; sourceTree = "<group>"; };
-		22392F341A044AEA008035FA /* cch0.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; name = cch0.mbtiles; path = maps/cch0.mbtiles; sourceTree = "<group>"; };
-		22392F351A044AEA008035FA /* cch2.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; name = cch2.mbtiles; path = maps/cch2.mbtiles; sourceTree = "<group>"; };
-		22392F361A044AEA008035FA /* cch1.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; name = cch1.mbtiles; path = maps/cch1.mbtiles; sourceTree = "<group>"; };
-		22392F3D1A0CF421008035FA /* MapDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDataController.swift; sourceTree = "<group>"; };
-		225830181A2807AF00075C8D /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
-		22653FEE19D6D243004E1AA2 /* SensorDesc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDesc.swift; sourceTree = "<group>"; };
-		22653FF019D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescBLEBeacon.swift; sourceTree = "<group>"; };
-		22653FF319D6E044004E1AA2 /* UploadTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadTask.swift; sourceTree = "<group>"; };
-		22653FF519D6E669004E1AA2 /* BLESensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLESensor.swift; sourceTree = "<group>"; };
-		22653FF819D6FBDB004E1AA2 /* NervousVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NervousVM.swift; sourceTree = "<group>"; };
+		224BB7541C808C8000C09D4F /* -Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "-Bridging-Header.h"; sourceTree = "<group>"; };
+		224BB7551C808FD500C09D4F /* Controllers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Controllers; sourceTree = "<group>"; };
+		224BB7561C808FD500C09D4F /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Views; sourceTree = "<group>"; };
+		224BB7571C808FD500C09D4F /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
+		224BB7581C808FD500C09D4F /* Stores */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Stores; sourceTree = "<group>"; };
 		22653FFA19D70898004E1AA2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		2274F01F19FF85DD004FFAA6 /* libPods-ProtocolBuffers.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ProtocolBuffers.a"; path = "Pods/build/Debug-iphoneos/libPods-ProtocolBuffers.a"; sourceTree = "<group>"; };
-		22B03E5419CE032B00E50D04 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		22B03E5F19CE102900E50D04 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		22B03E6319D04BB500E50D04 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		22B912DF19D76F96006094C6 /* SensorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorViewController.swift; sourceTree = "<group>"; };
-		22C5D6F719FF868E00CD8D26 /* libPods-ProtocolBuffers.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ProtocolBuffers.a"; path = "Pods/build/Debug-iphoneos/libPods-ProtocolBuffers.a"; sourceTree = "<group>"; };
-		22C5D6FA19FF87E200CD8D26 /* AbstractMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractMessage.swift; sourceTree = "<group>"; };
-		22C5D6FB19FF87E200CD8D26 /* CodedInputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodedInputStream.swift; sourceTree = "<group>"; };
-		22C5D6FC19FF87E200CD8D26 /* CodedOutputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodedOutputStream.swift; sourceTree = "<group>"; };
-		22C5D6FD19FF87E200CD8D26 /* ConcreteExtensionField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcreteExtensionField.swift; sourceTree = "<group>"; };
-		22C5D6FE19FF87E200CD8D26 /* ExtendableMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendableMessage.swift; sourceTree = "<group>"; };
-		22C5D6FF19FF87E200CD8D26 /* ExtendableMessageBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendableMessageBuilder.swift; sourceTree = "<group>"; };
-		22C5D70019FF87E200CD8D26 /* ExtensionField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionField.swift; sourceTree = "<group>"; };
-		22C5D70119FF87E200CD8D26 /* ExtensionRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionRegistry.swift; sourceTree = "<group>"; };
-		22C5D70219FF87E200CD8D26 /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
-		22C5D70319FF87E200CD8D26 /* GeneratedMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMessage.swift; sourceTree = "<group>"; };
-		22C5D70419FF87E200CD8D26 /* RingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
-		22C5D70519FF87E200CD8D26 /* UnknownFieldSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownFieldSet.swift; sourceTree = "<group>"; };
-		22C5D70619FF87E200CD8D26 /* UnknownFieldSetBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownFieldSetBuilder.swift; sourceTree = "<group>"; };
-		22C5D70719FF87E200CD8D26 /* WireFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireFormat.swift; sourceTree = "<group>"; };
-		22C5D71819FFADBA00CD8D26 /* SensorDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDetailController.swift; sourceTree = "<group>"; };
 		22D10CA819D598A1000D6942 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensorupload.pb.swift; sourceTree = "<group>"; };
 		22D2D66E19C097F900B11C54 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		22E0A19719F15A0A001D4548 /* -Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "-Bridging-Header.h"; sourceTree = "<group>"; };
 		22F16C841A1A0E8E00EB97F5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		22F1A5FA1A10A5E30097B2E4 /* nervous.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nervous.xcdatamodel; sourceTree = "<group>"; };
-		22F1A5FF1A10A8260097B2E4 /* MapEdge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapEdge.swift; sourceTree = "<group>"; };
-		22F1A6011A10A82E0097B2E4 /* MapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNode.swift; sourceTree = "<group>"; };
 		22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		22FF8A8C19F14B3A00AC6783 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		240C914B1B986FB000F286FF /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
-		240C914F1B998DC000F286FF /* BatteryQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryQuery.swift; sourceTree = "<group>"; };
-		240C91531B9C5BD000F286FF /* ProximityQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProximityQuery.swift; sourceTree = "<group>"; };
-		243C61391B9C8C8400B5D664 /* AccelerometerQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerQuery.swift; sourceTree = "<group>"; };
-		243C613B1B9C994400B5D664 /* GyroscopeQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GyroscopeQuery.swift; sourceTree = "<group>"; };
-		243C613D1B9C99FE00B5D664 /* MagneticQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagneticQuery.swift; sourceTree = "<group>"; };
-		243C613F1B9C9DDF00B5D664 /* SingleFn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleFn.swift; sourceTree = "<group>"; };
-		243C61431B9CA9C300B5D664 /* VectorFn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorFn.swift; sourceTree = "<group>"; };
-		24756F2C1B0CD17900D31AA2 /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
-		24756F2E1B0CD4A000D31AA2 /* QueryText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryText.swift; sourceTree = "<group>"; };
-		24756F301B0CD4E500D31AA2 /* QueryNum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryNum.swift; sourceTree = "<group>"; };
-		24756F321B0E20E900D31AA2 /* QueryNumSingleValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryNumSingleValue.swift; sourceTree = "<group>"; };
-		249F5AA41B14BC9E00C9E198 /* QueryNumVectorValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryNumVectorValue.swift; sourceTree = "<group>"; };
-		249F5AA61B14BCBE00C9E198 /* SensorQueriesBattery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorQueriesBattery.swift; sourceTree = "<group>"; };
-		249F5AA81B14BCE300C9E198 /* SensorQueriesProximity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorQueriesProximity.swift; sourceTree = "<group>"; };
-		249F5AAA1B14BCF800C9E198 /* SensorQueriesAccelerometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorQueriesAccelerometer.swift; sourceTree = "<group>"; };
-		249F5AAC1B14BD0800C9E198 /* SensorQueriesGyroscope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorQueriesGyroscope.swift; sourceTree = "<group>"; };
-		249F5AAE1B14BD2800C9E198 /* SensorQueriesMagnetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorQueriesMagnetic.swift; sourceTree = "<group>"; };
-		24E4FFC41B022522002AED24 /* SensorDescAccelerometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescAccelerometer.swift; sourceTree = "<group>"; };
-		311E826F1A001D8500C176FE /* FilterButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
-		945DC94D19FB201D0BBE095C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		AC5F25183B95B2D3730BA466 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		C3E28EDAC66246A39191CAA9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E173CD671B0387E200E56ED2 /* SensorDescGyroscope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescGyroscope.swift; sourceTree = "<group>"; };
-		E1A465BF1B1D165E00BB2AC2 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40@2x.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-40@2x.png"; sourceTree = "<group>"; };
-		E1A465C01B1D165E00BB2AC2 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-60@2x.png"; sourceTree = "<group>"; };
-		E1A465C11B1D165E00BB2AC2 /* Icon-60@3x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@3x-1.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-60@3x-1.png"; sourceTree = "<group>"; };
-		E1A465C21B1D165E00BB2AC2 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@3x.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-60@3x.png"; sourceTree = "<group>"; };
-		E1A465C31B1D165E00BB2AC2 /* Icon-Small@3x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@3x-1.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-Small@3x-1.png"; sourceTree = "<group>"; };
-		E1A465C41B1D165F00BB2AC2 /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@3x.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-Small@3x.png"; sourceTree = "<group>"; };
-		E1B3C9211B0E19830089C771 /* SensorCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorCollection.swift; sourceTree = "<group>"; };
-		E1B95CF71B04E1D0004A5E20 /* SensorDescVectorValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescVectorValue.swift; sourceTree = "<group>"; };
-		E1F923C91B0612B40020CEEA /* SensorDescSingleValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescSingleValue.swift; sourceTree = "<group>"; };
-		E1F923CB1B0615F90020CEEA /* SensorDescMagnetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescMagnetic.swift; sourceTree = "<group>"; };
-		E1F923CD1B0635470020CEEA /* SensorDescProximity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescProximity.swift; sourceTree = "<group>"; };
-		FC1346AB1AD5D04000D9998C /* SQLiteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteDB.swift; sourceTree = "<group>"; };
-		FC1346AC1AD5D04000D9998C /* String-Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Extras.swift"; sourceTree = "<group>"; };
+		2E02F23DE03AE89CCB108FCF /* Pods_nervousnet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nervousnet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D973B0B88CF2E1839C305D57 /* Pods-nervousnet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nervousnet.release.xcconfig"; path = "Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet.release.xcconfig"; sourceTree = "<group>"; };
 		FC1346AF1AD5D08B00D9998C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FC1346B11AD5D09500D9998C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		FC1346B61AD5E99C00D9998C /* SQLiteSensorsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteSensorsDB.swift; sourceTree = "<group>"; };
-		FC1346B81AD5EC0400D9998C /* SensorsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorsDB.swift; sourceTree = "<group>"; };
-		FC31537C1B14CDE10052AED8 /* data.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.db; sourceTree = "<group>"; };
-		FC9285AB1B026DCE00160A69 /* SensorDescBattery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDescBattery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,7 +78,7 @@
 				22B03E6019CE102900E50D04 /* SpriteKit.framework in Frameworks */,
 				22D2D66F19C097F900B11C54 /* Foundation.framework in Frameworks */,
 				22FF8A8D19F14B3A00AC6783 /* UIKit.framework in Frameworks */,
-				F8C5EA35C0D248558EACC2AE /* libPods.a in Frameworks */,
+				1DBFF198CC2BBF10D66E1269 /* Pods_nervousnet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,57 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		074910E81B18777300B787E1 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				076A35641B11FA1F0054002A /* LoggingViewController.swift */,
-				076A35621B11F32B0054002A /* PrivacyViewController.swift */,
-				07824EC71B1602AC0024085E /* ProxyViewController.swift */,
-				07295DB51B17297700360070 /* NervousAppsViewController.swift */,
-				07D307241B10C465009CD2F3 /* SensorStatisticsViewController.swift */,
-				073EDC721B17202B004E8365 /* NervousAppTableViewCell.swift */,
-				07C12C391B0CD09400885C50 /* ViewController.swift */,
-				070842B21B18C0A400466D18 /* PrivacyTableViewCell.swift */,
-				070842B61B18C18100466D18 /* PrivacyViewController2.swift */,
-				076ABAC71B1B4BEE00B2B033 /* GraphSetupViewController.swift */,
-				076ABAC91B1B4D6900B2B033 /* SensorTableViewCell.swift */,
-			);
-			name = UI;
-			sourceTree = "<group>";
-		};
 		22316DCE19BFB422006FD165 = {
 			isa = PBXGroup;
 			children = (
-				E1A465BF1B1D165E00BB2AC2 /* Icon-40@2x.png */,
-				E1A465C01B1D165E00BB2AC2 /* Icon-60@2x.png */,
-				E1A465C11B1D165E00BB2AC2 /* Icon-60@3x-1.png */,
-				E1A465C21B1D165E00BB2AC2 /* Icon-60@3x.png */,
-				E1A465C31B1D165E00BB2AC2 /* Icon-Small@3x-1.png */,
-				E1A465C41B1D165F00BB2AC2 /* Icon-Small@3x.png */,
-				07FE2AA21B1B1A0900CFFF87 /* Chart.js */,
-				07FE2AA31B1B1A0900CFFF87 /* exporting.js */,
-				07FE2AA41B1B1A0900CFFF87 /* highcharts.js */,
-				07FE2AA51B1B1A0900CFFF87 /* jQuery.min.js */,
-				07FE2AA61B1B1A0900CFFF87 /* webview_charts_1_basic_columns_over_time.html */,
-				07FE2AA71B1B1A0900CFFF87 /* webview_charts_1_line_live_data_over_time.html */,
-				07FE2AA81B1B1A0900CFFF87 /* webview_charts_1_line_plot_over_time.html */,
-				07FE2AA91B1B1A0900CFFF87 /* webview_charts_3_lines_live_data_over_time.html */,
-				07FE2AAA1B1B1A0900CFFF87 /* webview_charts_3_lines_plot_over_time.html */,
-				07FE2A821B1B182C00CFFF87 /* api */,
-				07FE2A831B1B182C00CFFF87 /* examples */,
-				07FE2A841B1B182C00CFFF87 /* exporting-server */,
-				07FE2A851B1B182C00CFFF87 /* gfx */,
-				07FE2A861B1B182C00CFFF87 /* graphics */,
-				07FE2A871B1B182C00CFFF87 /* hello.htm */,
-				07FE2A881B1B182C00CFFF87 /* js */,
-				FC31537C1B14CDE10052AED8 /* data.db */,
 				22F16C841A1A0E8E00EB97F5 /* Images.xcassets */,
-				22C5D6F919FF87E200CD8D26 /* runtime-pb-swift */,
 				22316DD919BFB422006FD165 /* nervous */,
 				22316DEE19BFB422006FD165 /* nervousTests */,
 				22316DD819BFB422006FD165 /* Products */,
 				22FF8A8519F14ACB00AC6783 /* Frameworks */,
-				B3B1CCDDCF45FD9E38CABAA7 /* Pods */,
+				2A3EDF2AC2A2DC95F8BB5785 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -341,38 +116,14 @@
 		22316DD919BFB422006FD165 /* nervous */ = {
 			isa = PBXGroup;
 			children = (
-				240C914A1B986F8600F286FF /* TestQueries */,
-				24756F2B1B0CD15600D31AA2 /* SensorQueries */,
-				24756F2A1B0CD14D00D31AA2 /* Queries */,
-				FC1346B51AD5E90A00D9998C /* db */,
-				22E0A19719F15A0A001D4548 /* -Bridging-Header.h */,
-				22316DDA19BFB422006FD165 /* Supporting Files */,
-				22B03E5819CE0D6700E50D04 /* images */,
-				22D2D66C19C0979E00B11C54 /* Sensorupload.pb.swift */,
+				224BB7551C808FD500C09D4F /* Controllers */,
+				224BB7561C808FD500C09D4F /* Views */,
+				224BB7571C808FD500C09D4F /* Assets */,
+				224BB7581C808FD500C09D4F /* Stores */,
+				224BB7541C808C8000C09D4F /* -Bridging-Header.h */,
 				22316DDC19BFB422006FD165 /* AppDelegate.swift */,
-				22316DE219BFB422006FD165 /* Latest.storyboard */,
-				074910E81B18777300B787E1 /* UI */,
-				22B912DF19D76F96006094C6 /* SensorViewController.swift */,
-				22B03E5419CE032B00E50D04 /* MapViewController.swift */,
-				22392F3D1A0CF421008035FA /* MapDataController.swift */,
-				311E826F1A001D8500C176FE /* FilterButtonView.swift */,
-				22C5D71819FFADBA00CD8D26 /* SensorDetailController.swift */,
-				22653FF719D6FBB1004E1AA2 /* vm */,
-				22653FF219D6D3DB004E1AA2 /* sensors */,
-				22653FF319D6E044004E1AA2 /* UploadTask.swift */,
-				22F1A5FC1A10A7E70097B2E4 /* mapdb */,
-				22E0A19A19F15DF2001D4548 /* maps */,
-				225830181A2807AF00075C8D /* CreditsViewController.swift */,
 			);
 			path = nervous;
-			sourceTree = "<group>";
-		};
-		22316DDA19BFB422006FD165 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				22316DDB19BFB422006FD165 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		22316DEE19BFB422006FD165 /* nervousTests */ = {
@@ -392,89 +143,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		22653FF219D6D3DB004E1AA2 /* sensors */ = {
-			isa = PBXGroup;
-			children = (
-				FC9285AB1B026DCE00160A69 /* SensorDescBattery.swift */,
-				E1F923CD1B0635470020CEEA /* SensorDescProximity.swift */,
-				22653FEE19D6D243004E1AA2 /* SensorDesc.swift */,
-				22653FF019D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift */,
-				E173CD671B0387E200E56ED2 /* SensorDescGyroscope.swift */,
-				E1B95CF71B04E1D0004A5E20 /* SensorDescVectorValue.swift */,
-				E1F923C91B0612B40020CEEA /* SensorDescSingleValue.swift */,
-				22653FF519D6E669004E1AA2 /* BLESensor.swift */,
-				24E4FFC41B022522002AED24 /* SensorDescAccelerometer.swift */,
-				E1F923CB1B0615F90020CEEA /* SensorDescMagnetic.swift */,
-				0726FA621B89AFB500422771 /* SensorDescInformation.swift */,
-			);
-			name = sensors;
-			sourceTree = "<group>";
-		};
-		22653FF719D6FBB1004E1AA2 /* vm */ = {
-			isa = PBXGroup;
-			children = (
-				22653FF819D6FBDB004E1AA2 /* NervousVM.swift */,
-				E1B3C9211B0E19830089C771 /* SensorCollection.swift */,
-			);
-			name = vm;
-			sourceTree = "<group>";
-		};
-		22B03E5819CE0D6700E50D04 /* images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
-		22C5D6F919FF87E200CD8D26 /* runtime-pb-swift */ = {
-			isa = PBXGroup;
-			children = (
-				22C5D6FA19FF87E200CD8D26 /* AbstractMessage.swift */,
-				22C5D6FB19FF87E200CD8D26 /* CodedInputStream.swift */,
-				22C5D6FC19FF87E200CD8D26 /* CodedOutputStream.swift */,
-				22C5D6FD19FF87E200CD8D26 /* ConcreteExtensionField.swift */,
-				22C5D6FE19FF87E200CD8D26 /* ExtendableMessage.swift */,
-				22C5D6FF19FF87E200CD8D26 /* ExtendableMessageBuilder.swift */,
-				22C5D70019FF87E200CD8D26 /* ExtensionField.swift */,
-				22C5D70119FF87E200CD8D26 /* ExtensionRegistry.swift */,
-				22C5D70219FF87E200CD8D26 /* Field.swift */,
-				22C5D70319FF87E200CD8D26 /* GeneratedMessage.swift */,
-				22C5D70419FF87E200CD8D26 /* RingBuffer.swift */,
-				22C5D70519FF87E200CD8D26 /* UnknownFieldSet.swift */,
-				22C5D70619FF87E200CD8D26 /* UnknownFieldSetBuilder.swift */,
-				22C5D70719FF87E200CD8D26 /* WireFormat.swift */,
-			);
-			path = "runtime-pb-swift";
-			sourceTree = "<group>";
-		};
-		22E0A19A19F15DF2001D4548 /* maps */ = {
-			isa = PBXGroup;
-			children = (
-				22392F331A044AEA008035FA /* blank.mbtiles */,
-				22392F341A044AEA008035FA /* cch0.mbtiles */,
-				22392F351A044AEA008035FA /* cch2.mbtiles */,
-				22392F361A044AEA008035FA /* cch1.mbtiles */,
-			);
-			name = maps;
-			sourceTree = "<group>";
-		};
-		22F1A5FC1A10A7E70097B2E4 /* mapdb */ = {
-			isa = PBXGroup;
-			children = (
-				22F1A5F91A10A5E30097B2E4 /* nervous.xcdatamodeld */,
-				22F1A5FF1A10A8260097B2E4 /* MapEdge.swift */,
-				22F1A6011A10A82E0097B2E4 /* MapNode.swift */,
-			);
-			name = mapdb;
-			sourceTree = "<group>";
-		};
 		22FF8A8519F14ACB00AC6783 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				FC1346B11AD5D09500D9998C /* libsqlite3.0.dylib */,
 				FC1346AF1AD5D08B00D9998C /* libsqlite3.dylib */,
-				22C5D6F719FF868E00CD8D26 /* libPods-ProtocolBuffers.a */,
-				2274F01F19FF85DD004FFAA6 /* libPods-ProtocolBuffers.a */,
 				22FF8A8C19F14B3A00AC6783 /* UIKit.framework */,
 				22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */,
 				22653FFA19D70898004E1AA2 /* QuartzCore.framework */,
@@ -482,68 +155,18 @@
 				22B03E6319D04BB500E50D04 /* CoreLocation.framework */,
 				22B03E5F19CE102900E50D04 /* SpriteKit.framework */,
 				22D2D66E19C097F900B11C54 /* Foundation.framework */,
-				C3E28EDAC66246A39191CAA9 /* libPods.a */,
+				2E02F23DE03AE89CCB108FCF /* Pods_nervousnet.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		240C914A1B986F8600F286FF /* TestQueries */ = {
+		2A3EDF2AC2A2DC95F8BB5785 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				240C914B1B986FB000F286FF /* Test.swift */,
-			);
-			name = TestQueries;
-			sourceTree = "<group>";
-		};
-		24756F2A1B0CD14D00D31AA2 /* Queries */ = {
-			isa = PBXGroup;
-			children = (
-				24756F2C1B0CD17900D31AA2 /* Query.swift */,
-				243C613F1B9C9DDF00B5D664 /* SingleFn.swift */,
-				243C61431B9CA9C300B5D664 /* VectorFn.swift */,
-				24756F2E1B0CD4A000D31AA2 /* QueryText.swift */,
-				24756F301B0CD4E500D31AA2 /* QueryNum.swift */,
-				24756F321B0E20E900D31AA2 /* QueryNumSingleValue.swift */,
-				249F5AA41B14BC9E00C9E198 /* QueryNumVectorValue.swift */,
-			);
-			name = Queries;
-			sourceTree = "<group>";
-		};
-		24756F2B1B0CD15600D31AA2 /* SensorQueries */ = {
-			isa = PBXGroup;
-			children = (
-				249F5AA61B14BCBE00C9E198 /* SensorQueriesBattery.swift */,
-				249F5AA81B14BCE300C9E198 /* SensorQueriesProximity.swift */,
-				249F5AAA1B14BCF800C9E198 /* SensorQueriesAccelerometer.swift */,
-				249F5AAC1B14BD0800C9E198 /* SensorQueriesGyroscope.swift */,
-				249F5AAE1B14BD2800C9E198 /* SensorQueriesMagnetic.swift */,
-				240C914F1B998DC000F286FF /* BatteryQuery.swift */,
-				240C91531B9C5BD000F286FF /* ProximityQuery.swift */,
-				243C61391B9C8C8400B5D664 /* AccelerometerQuery.swift */,
-				243C613B1B9C994400B5D664 /* GyroscopeQuery.swift */,
-				243C613D1B9C99FE00B5D664 /* MagneticQuery.swift */,
-			);
-			name = SensorQueries;
-			sourceTree = "<group>";
-		};
-		B3B1CCDDCF45FD9E38CABAA7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				945DC94D19FB201D0BBE095C /* Pods.debug.xcconfig */,
-				AC5F25183B95B2D3730BA466 /* Pods.release.xcconfig */,
+				14FAE4EC73BD4C359734208F /* Pods-nervousnet.debug.xcconfig */,
+				D973B0B88CF2E1839C305D57 /* Pods-nervousnet.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		FC1346B51AD5E90A00D9998C /* db */ = {
-			isa = PBXGroup;
-			children = (
-				FC1346AB1AD5D04000D9998C /* SQLiteDB.swift */,
-				FC1346AC1AD5D04000D9998C /* String-Extras.swift */,
-				FC1346B61AD5E99C00D9998C /* SQLiteSensorsDB.swift */,
-				FC1346B81AD5EC0400D9998C /* SensorsDB.swift */,
-			);
-			name = db;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -553,11 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22316DF519BFB422006FD165 /* Build configuration list for PBXNativeTarget "nervousnet" */;
 			buildPhases = (
-				02BA741033E14D45AEAB5DA9 /* Check Pods Manifest.lock */,
+				578FE09805983AE7AEA33879 /* Check Pods Manifest.lock */,
 				22316DD319BFB422006FD165 /* Sources */,
 				22316DD419BFB422006FD165 /* Frameworks */,
 				22316DD519BFB422006FD165 /* Resources */,
-				5A152F32C84D465795199FAE /* Copy Pods Resources */,
+				3BBB7548F2458E955FF62C42 /* Embed Pods Frameworks */,
+				99425FE6A80CDF887AFA48E8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -592,7 +216,9 @@
 		22316DCF19BFB422006FD165 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = ethz;
 				TargetAttributes = {
 					22316DD619BFB422006FD165 = {
@@ -629,29 +255,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07FE2AB21B1B1A0900CFFF87 /* webview_charts_3_lines_live_data_over_time.html in Resources */,
-				FC31537D1B14CDE10052AED8 /* data.db in Resources */,
-				22392F381A044AEA008035FA /* cch0.mbtiles in Resources */,
-				07FE2AB01B1B1A0900CFFF87 /* webview_charts_1_line_live_data_over_time.html in Resources */,
-				07FE2A8B1B1B182C00CFFF87 /* exporting-server in Resources */,
-				07FE2AB11B1B1A0900CFFF87 /* webview_charts_1_line_plot_over_time.html in Resources */,
-				07FE2A8F1B1B182C00CFFF87 /* js in Resources */,
-				22316DE419BFB422006FD165 /* Latest.storyboard in Resources */,
-				07FE2A8E1B1B182C00CFFF87 /* hello.htm in Resources */,
-				22392F391A044AEA008035FA /* cch2.mbtiles in Resources */,
-				07FE2AAD1B1B1A0900CFFF87 /* highcharts.js in Resources */,
-				07FE2AAC1B1B1A0900CFFF87 /* exporting.js in Resources */,
-				07FE2AB31B1B1A0900CFFF87 /* webview_charts_3_lines_plot_over_time.html in Resources */,
-				07FE2A8D1B1B182C00CFFF87 /* graphics in Resources */,
-				07FE2A8C1B1B182C00CFFF87 /* gfx in Resources */,
-				07FE2AAF1B1B1A0900CFFF87 /* webview_charts_1_basic_columns_over_time.html in Resources */,
+				224BB75F1C808FD500C09D4F /* Stores in Resources */,
+				224BB75B1C808FD500C09D4F /* Views in Resources */,
+				224BB75D1C808FD500C09D4F /* Assets in Resources */,
+				224BB7591C808FD500C09D4F /* Controllers in Resources */,
 				22F16C851A1A0E8E00EB97F5 /* Images.xcassets in Resources */,
-				07FE2AAE1B1B1A0900CFFF87 /* jQuery.min.js in Resources */,
-				07FE2A891B1B182C00CFFF87 /* api in Resources */,
-				07FE2A8A1B1B182C00CFFF87 /* examples in Resources */,
-				07FE2AAB1B1B1A0900CFFF87 /* Chart.js in Resources */,
-				22392F371A044AEA008035FA /* blank.mbtiles in Resources */,
-				22392F3A1A044AEA008035FA /* cch1.mbtiles in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,13 +267,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				224BB75A1C808FD500C09D4F /* Controllers in Resources */,
+				224BB75E1C808FD500C09D4F /* Assets in Resources */,
+				224BB7601C808FD500C09D4F /* Stores in Resources */,
+				224BB75C1C808FD500C09D4F /* Views in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02BA741033E14D45AEAB5DA9 /* Check Pods Manifest.lock */ = {
+		3BBB7548F2458E955FF62C42 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		578FE09805983AE7AEA33879 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -680,7 +307,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		5A152F32C84D465795199FAE /* Copy Pods Resources */ = {
+		99425FE6A80CDF887AFA48E8 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -692,7 +319,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -702,78 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				243C613C1B9C994400B5D664 /* GyroscopeQuery.swift in Sources */,
-				22C5D70E19FF87E200CD8D26 /* ExtensionField.swift in Sources */,
-				22C5D71519FF87E200CD8D26 /* WireFormat.swift in Sources */,
-				E1F923CA1B0612B40020CEEA /* SensorDescSingleValue.swift in Sources */,
-				07D307251B10C465009CD2F3 /* SensorStatisticsViewController.swift in Sources */,
-				07C12C3A1B0CD09400885C50 /* ViewController.swift in Sources */,
-				070842B31B18C0A400466D18 /* PrivacyTableViewCell.swift in Sources */,
-				22F1A5FB1A10A5E30097B2E4 /* nervous.xcdatamodeld in Sources */,
-				E173CD681B0387E200E56ED2 /* SensorDescGyroscope.swift in Sources */,
-				22C5D71219FF87E200CD8D26 /* RingBuffer.swift in Sources */,
-				FC1346AD1AD5D04000D9998C /* SQLiteDB.swift in Sources */,
-				240C91541B9C5BD000F286FF /* ProximityQuery.swift in Sources */,
-				22C5D71419FF87E200CD8D26 /* UnknownFieldSetBuilder.swift in Sources */,
-				249F5AA51B14BC9E00C9E198 /* QueryNumVectorValue.swift in Sources */,
-				22653FEF19D6D243004E1AA2 /* SensorDesc.swift in Sources */,
-				22C5D70819FF87E200CD8D26 /* AbstractMessage.swift in Sources */,
-				311E82701A001D8500C176FE /* FilterButtonView.swift in Sources */,
-				FC1346AE1AD5D04000D9998C /* String-Extras.swift in Sources */,
-				243C613E1B9C99FE00B5D664 /* MagneticQuery.swift in Sources */,
-				22653FF919D6FBDB004E1AA2 /* NervousVM.swift in Sources */,
-				22C5D71119FF87E200CD8D26 /* GeneratedMessage.swift in Sources */,
-				22C5D71919FFADBA00CD8D26 /* SensorDetailController.swift in Sources */,
-				076A35631B11F32B0054002A /* PrivacyViewController.swift in Sources */,
-				E1F923CE1B0635470020CEEA /* SensorDescProximity.swift in Sources */,
-				249F5AA71B14BCBE00C9E198 /* SensorQueriesBattery.swift in Sources */,
-				22C5D70B19FF87E200CD8D26 /* ConcreteExtensionField.swift in Sources */,
 				22316DDD19BFB422006FD165 /* AppDelegate.swift in Sources */,
-				22653FF119D6D3CF004E1AA2 /* SensorDescBLEBeacon.swift in Sources */,
-				E1F923CC1B0615F90020CEEA /* SensorDescMagnetic.swift in Sources */,
-				22B912E019D76F96006094C6 /* SensorViewController.swift in Sources */,
-				22F1A6021A10A82E0097B2E4 /* MapNode.swift in Sources */,
-				24756F331B0E20E900D31AA2 /* QueryNumSingleValue.swift in Sources */,
-				243C61441B9CA9C300B5D664 /* VectorFn.swift in Sources */,
-				24756F2D1B0CD17900D31AA2 /* Query.swift in Sources */,
-				249F5AA91B14BCE300C9E198 /* SensorQueriesProximity.swift in Sources */,
-				24E4FFC51B022522002AED24 /* SensorDescAccelerometer.swift in Sources */,
-				240C914C1B986FB000F286FF /* Test.swift in Sources */,
-				22F1A6001A10A8260097B2E4 /* MapEdge.swift in Sources */,
-				240C91501B998DC000F286FF /* BatteryQuery.swift in Sources */,
-				22C5D70C19FF87E200CD8D26 /* ExtendableMessage.swift in Sources */,
-				22C5D70A19FF87E200CD8D26 /* CodedOutputStream.swift in Sources */,
-				243C61401B9C9DDF00B5D664 /* SingleFn.swift in Sources */,
-				249F5AAD1B14BD0800C9E198 /* SensorQueriesGyroscope.swift in Sources */,
-				225830191A2807AF00075C8D /* CreditsViewController.swift in Sources */,
-				22C5D70F19FF87E200CD8D26 /* ExtensionRegistry.swift in Sources */,
-				FC1346B71AD5E99C00D9998C /* SQLiteSensorsDB.swift in Sources */,
-				249F5AAF1B14BD2800C9E198 /* SensorQueriesMagnetic.swift in Sources */,
-				22C5D71319FF87E200CD8D26 /* UnknownFieldSet.swift in Sources */,
-				24756F311B0CD4E500D31AA2 /* QueryNum.swift in Sources */,
-				076A35651B11FA1F0054002A /* LoggingViewController.swift in Sources */,
-				22653FF419D6E044004E1AA2 /* UploadTask.swift in Sources */,
-				22D2D66D19C0979E00B11C54 /* Sensorupload.pb.swift in Sources */,
-				24756F2F1B0CD4A000D31AA2 /* QueryText.swift in Sources */,
-				FC1346B91AD5EC0400D9998C /* SensorsDB.swift in Sources */,
-				22653FF619D6E669004E1AA2 /* BLESensor.swift in Sources */,
-				22C5D71019FF87E200CD8D26 /* Field.swift in Sources */,
-				22392F3E1A0CF421008035FA /* MapDataController.swift in Sources */,
-				073EDC731B17202B004E8365 /* NervousAppTableViewCell.swift in Sources */,
-				22B03E5519CE032B00E50D04 /* MapViewController.swift in Sources */,
-				FC9285AC1B026DCE00160A69 /* SensorDescBattery.swift in Sources */,
-				0726FA631B89AFB500422771 /* SensorDescInformation.swift in Sources */,
-				070842B71B18C18100466D18 /* PrivacyViewController2.swift in Sources */,
-				07824EC81B1602AC0024085E /* ProxyViewController.swift in Sources */,
-				E1B3C9221B0E19830089C771 /* SensorCollection.swift in Sources */,
-				243C613A1B9C8C8400B5D664 /* AccelerometerQuery.swift in Sources */,
-				249F5AAB1B14BCF800C9E198 /* SensorQueriesAccelerometer.swift in Sources */,
-				22C5D70D19FF87E200CD8D26 /* ExtendableMessageBuilder.swift in Sources */,
-				22C5D70919FF87E200CD8D26 /* CodedInputStream.swift in Sources */,
-				076ABAC81B1B4BEE00B2B033 /* GraphSetupViewController.swift in Sources */,
-				E1B95CF81B04E1D0004A5E20 /* SensorDescVectorValue.swift in Sources */,
-				076ABACA1B1B4D6900B2B033 /* SensorTableViewCell.swift in Sources */,
-				07295DB61B17297700360070 /* NervousAppsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,17 +350,6 @@
 			targetProxy = 22316DEC19BFB422006FD165 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		22316DE219BFB422006FD165 /* Latest.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				22316DE319BFB422006FD165 /* Base */,
-			);
-			name = Latest.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		22316DF319BFB422006FD165 /* Debug */ = {
@@ -827,6 +372,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -886,7 +432,7 @@
 		};
 		22316DF619BFB422006FD165 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 945DC94D19FB201D0BBE095C /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 14FAE4EC73BD4C359734208F /* Pods-nervousnet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -907,6 +453,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.ethz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = nervous;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "nervous/nervous-Bridging-Header.h";
@@ -918,7 +465,7 @@
 		};
 		22316DF719BFB422006FD165 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC5F25183B95B2D3730BA466 /* Pods.release.xcconfig */;
+			baseConfigurationReference = D973B0B88CF2E1839C305D57 /* Pods-nervousnet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -938,6 +485,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.ethz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = nervous;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "nervous/nervous-Bridging-Header.h";
@@ -960,6 +508,7 @@
 				);
 				INFOPLIST_FILE = nervousTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.ethz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = nervousnetTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nervous.app/nervous";
 			};
@@ -975,6 +524,7 @@
 				);
 				INFOPLIST_FILE = nervousTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.ethz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = nervousnetTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nervous.app/nervous";
 			};
@@ -1011,19 +561,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		22F1A5F91A10A5E30097B2E4 /* nervous.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				22F1A5FA1A10A5E30097B2E4 /* nervous.xcdatamodel */,
-			);
-			currentVersion = 22F1A5FA1A10A5E30097B2E4 /* nervous.xcdatamodel */;
-			path = nervous.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 22316DCF19BFB422006FD165 /* Project object */;
 }

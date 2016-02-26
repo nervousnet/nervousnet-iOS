@@ -10,7 +10,6 @@
 #define nervous__Bridging_Header_h
 
 #import <UIKit/UIKit.h>
-#import <Mapbox-iOS-SDK/Mapbox.h>
 #import <AFNetworking/AFNetworking.h>
 #import "sqlite3.h"
 #import <time.h>

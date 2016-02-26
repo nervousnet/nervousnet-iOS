@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C620182627BFD52ABA0C929A010ECC9C2EFB0E12",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C620182627BFD52ABA0C929A010ECC9C2EFB0E12" : 0,
+    "23E1215747CC507DB66740642919D35CB5B6A43C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E73EE45C-E9C5-4C46-9E3D-EEED020CB468",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C620182627BFD52ABA0C929A010ECC9C2EFB0E12" : "nervousnet-iOS\/",
+    "23E1215747CC507DB66740642919D35CB5B6A43C" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "nervous",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "nervous.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:bitmorse\/beaconhunt.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "23E1215747CC507DB66740642919D35CB5B6A43C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:nervousnet\/nervousnet-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C620182627BFD52ABA0C929A010ECC9C2EFB0E12"
+    }
+  ]
+}
