@@ -3,7 +3,11 @@ author_name: Nervousnet
 author_url: http://www.nervousnet.ethz.ch
 github_url: https://github.com/nervousnet/nervousnet-iOS
 clean: true
-
+xcodebuild_arguments:
+ -  -workspace
+ - nervousnet.xcworkspace
+ -  -scheme
+ - nervousnet
 
 docset_icon: nervous/Assets/Images.xcassets/AppIcon.appiconset/Icon-40@2x.png
 
