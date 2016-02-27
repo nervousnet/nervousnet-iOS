@@ -1,5 +1,5 @@
 # nervousnet iOS
-__Important__: make sure you open this project with `open nervous.xcworkspace` and follow the [iOS good practices](https://github.com/futurice/ios-good-practices)
+__Important__: make sure you open this project with `open nervousnet.xcworkspace` and follow the [iOS good practices](https://github.com/futurice/ios-good-practices)
 
 ### Features
 _nervousnet iOS_ enables the user to locally log and share their iPhone's sensor data in many interesting ways. Logging sensor data has been implemented by many other apps, some apps even sending all data to a central location out of control of the user. What makes _nervousnet iOS_ different is that the user decides where their data goes.
@@ -12,9 +12,9 @@ As it would be boring to just log cryptic sensor data, _nervousnet iOS_ provides
 
 ### Architecture
 
-We adhere to Apple's recommended MVC architecture and separate code into the respective `models`, `views`, `controllers` directories. The `assets` directory contains media, binaries and other non-swift code.
+We adhere to Apple's recommended MVC architecture and separate code into the respective `Models`, `Views`, `Controllers`, `Stores` directories. The `assets` directory contains media, binaries and other non-swift code.
 
-### Database
+### Database
 The current version of the app does not use Apple's Core Data as the persistent store. Instead it relies on sqlite3, which at the time of development was the preferred choice. It is envisaged to make a switch to Core Data as soon as possible.
 
 ### JSApps
@@ -33,3 +33,13 @@ JSApps must be installed from within the _nervousnet iOS_ app. This is done by d
 
 JSApps specify requested privileges in `package.json`. On first JSApp execution, the user will be prompted to grant or deny access. Once granted, the JSApp can access all authorised [Nervous JS API methods](http://documented.here).
 
+
+### VM
+
+### Auth
+
+### LAE
+
+
+## External HW
+(default HW webview for sensors)
