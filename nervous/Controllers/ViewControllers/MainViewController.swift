@@ -12,7 +12,6 @@ class MainViewController : UIViewController {
     
     override func viewDidLoad() {
         
-        
         super.viewDidLoad()
         
        // Killswitch.setOn(!VM.getKillSwitchStatus(), animated: true)

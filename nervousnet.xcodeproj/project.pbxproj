@@ -8,16 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1DBFF198CC2BBF10D66E1269 /* Pods_nervousnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E02F23DE03AE89CCB108FCF /* Pods_nervousnet.framework */; };
-		22316DDD19BFB422006FD165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DDC19BFB422006FD165 /* AppDelegate.swift */; };
 		22316DF219BFB422006FD165 /* nervousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DF119BFB422006FD165 /* nervousTests.swift */; };
-		224BB7591C808FD500C09D4F /* Controllers in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7551C808FD500C09D4F /* Controllers */; };
-		224BB75A1C808FD500C09D4F /* Controllers in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7551C808FD500C09D4F /* Controllers */; };
-		224BB75B1C808FD500C09D4F /* Views in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7561C808FD500C09D4F /* Views */; };
-		224BB75C1C808FD500C09D4F /* Views in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7561C808FD500C09D4F /* Views */; };
-		224BB75D1C808FD500C09D4F /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7571C808FD500C09D4F /* Assets */; };
-		224BB75E1C808FD500C09D4F /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7571C808FD500C09D4F /* Assets */; };
-		224BB75F1C808FD500C09D4F /* Stores in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7581C808FD500C09D4F /* Stores */; };
-		224BB7601C808FD500C09D4F /* Stores in Resources */ = {isa = PBXBuildFile; fileRef = 224BB7581C808FD500C09D4F /* Stores */; };
+		223847BD1C812A1600C17EFB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223847BB1C812A1600C17EFB /* MainViewController.swift */; };
+		223847BE1C812A1600C17EFB /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223847BC1C812A1600C17EFB /* CreditsViewController.swift */; };
+		223847C31C812A4F00C17EFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223847C21C812A4F00C17EFB /* Main.storyboard */; };
+		223847C61C812A7200C17EFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223847C41C812A7200C17EFB /* AppDelegate.swift */; };
 		22653FFB19D70899004E1AA2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22653FFA19D70898004E1AA2 /* QuartzCore.framework */; };
 		22B03E6019CE102900E50D04 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E5F19CE102900E50D04 /* SpriteKit.framework */; };
 		22B03E6419D04BB500E50D04 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E6319D04BB500E50D04 /* CoreLocation.framework */; };
@@ -42,15 +37,14 @@
 /* Begin PBXFileReference section */
 		14FAE4EC73BD4C359734208F /* Pods-nervousnet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nervousnet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet.debug.xcconfig"; sourceTree = "<group>"; };
 		22316DD719BFB422006FD165 /* nervous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nervous.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		22316DDC19BFB422006FD165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22316DEB19BFB422006FD165 /* nervousnetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nervousnetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22316DF019BFB422006FD165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22316DF119BFB422006FD165 /* nervousTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nervousTests.swift; sourceTree = "<group>"; };
-		224BB7541C808C8000C09D4F /* -Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "-Bridging-Header.h"; sourceTree = "<group>"; };
-		224BB7551C808FD500C09D4F /* Controllers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Controllers; sourceTree = "<group>"; };
-		224BB7561C808FD500C09D4F /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Views; sourceTree = "<group>"; };
-		224BB7571C808FD500C09D4F /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
-		224BB7581C808FD500C09D4F /* Stores */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Stores; sourceTree = "<group>"; };
+		223847BB1C812A1600C17EFB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		223847BC1C812A1600C17EFB /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		223847C21C812A4F00C17EFB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		223847C41C812A7200C17EFB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		223847C51C812A7200C17EFB /* -Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "-Bridging-Header.h"; sourceTree = "<group>"; };
 		22653FFA19D70898004E1AA2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		22B03E5F19CE102900E50D04 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		22B03E6319D04BB500E50D04 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -116,12 +110,13 @@
 		22316DD919BFB422006FD165 /* nervous */ = {
 			isa = PBXGroup;
 			children = (
-				224BB7551C808FD500C09D4F /* Controllers */,
-				224BB7561C808FD500C09D4F /* Views */,
-				224BB7571C808FD500C09D4F /* Assets */,
-				224BB7581C808FD500C09D4F /* Stores */,
-				224BB7541C808C8000C09D4F /* -Bridging-Header.h */,
-				22316DDC19BFB422006FD165 /* AppDelegate.swift */,
+				223847C41C812A7200C17EFB /* AppDelegate.swift */,
+				223847C51C812A7200C17EFB /* -Bridging-Header.h */,
+				223847B91C8129C800C17EFB /* Assets */,
+				223847B81C8129C000C17EFB /* Controllers */,
+				223847B71C8129BB00C17EFB /* Stores */,
+				223847B61C8129B600C17EFB /* Views */,
+				223847B51C8129AF00C17EFB /* Models */,
 			);
 			path = nervous;
 			sourceTree = "<group>";
@@ -141,6 +136,60 @@
 				22316DF019BFB422006FD165 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		223847B51C8129AF00C17EFB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		223847B61C8129B600C17EFB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				223847BF1C812A2E00C17EFB /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		223847B71C8129BB00C17EFB /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		223847B81C8129C000C17EFB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				223847BA1C8129D400C17EFB /* ViewControllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		223847B91C8129C800C17EFB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		223847BA1C8129D400C17EFB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				223847BB1C812A1600C17EFB /* MainViewController.swift */,
+				223847BC1C812A1600C17EFB /* CreditsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		223847BF1C812A2E00C17EFB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				223847C21C812A4F00C17EFB /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		22FF8A8519F14ACB00AC6783 /* Frameworks */ = {
@@ -255,11 +304,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				224BB75F1C808FD500C09D4F /* Stores in Resources */,
-				224BB75B1C808FD500C09D4F /* Views in Resources */,
-				224BB75D1C808FD500C09D4F /* Assets in Resources */,
-				224BB7591C808FD500C09D4F /* Controllers in Resources */,
 				22F16C851A1A0E8E00EB97F5 /* Images.xcassets in Resources */,
+				223847C31C812A4F00C17EFB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,10 +313,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				224BB75A1C808FD500C09D4F /* Controllers in Resources */,
-				224BB75E1C808FD500C09D4F /* Assets in Resources */,
-				224BB7601C808FD500C09D4F /* Stores in Resources */,
-				224BB75C1C808FD500C09D4F /* Views in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +371,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22316DDD19BFB422006FD165 /* AppDelegate.swift in Sources */,
+				223847C61C812A7200C17EFB /* AppDelegate.swift in Sources */,
+				223847BD1C812A1600C17EFB /* MainViewController.swift in Sources */,
+				223847BE1C812A1600C17EFB /* CreditsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

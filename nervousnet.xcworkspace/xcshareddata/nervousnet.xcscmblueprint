@@ -7,14 +7,14 @@
     "C620182627BFD52ABA0C929A010ECC9C2EFB0E12" : 0,
     "23E1215747CC507DB66740642919D35CB5B6A43C" : 0
   },
-  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E73EE45C-E9C5-4C46-9E3D-EEED020CB468",
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D4FF1AC4-63EB-48D3-8F4F-077D7A960B4E",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "C620182627BFD52ABA0C929A010ECC9C2EFB0E12" : "nervousnet-iOS\/",
     "23E1215747CC507DB66740642919D35CB5B6A43C" : ""
   },
-  "DVTSourceControlWorkspaceBlueprintNameKey" : "nervous",
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "nervousnet",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "nervous.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "nervousnet.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:bitmorse\/beaconhunt.git",
