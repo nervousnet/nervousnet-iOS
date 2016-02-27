@@ -26,7 +26,7 @@ my-first-app/
    app.js
    app.html
 ```
-An example app can be downloaded [here](http://n.cg).
+An example app can be downloaded [here](http://nervousnet.ethz.ch/nervous-developers/uploaded_apps/hello-world.zip).
 
 JSApps must be installed from within the _nervousnet iOS_ app. This is done by downloading the ZIP file and unzipping it to the app's home directory. When a user selects to run a JSApp, it opens a modal window containing a WebView displaying the `app.html`. All JSApp resources are served by a local lightweight HTTP server called __JSApp Provider__ (the WebKit engine does not allow file:/// XMLHTTPRequests).
 
