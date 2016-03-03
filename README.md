@@ -48,7 +48,9 @@ The earlier version of the VM used protobuf as the protocol for pushing the data
 
 ### Auth
 Auth (short for Authentication Class) provides the facility to authenticate an application before it is allowed to use other modules of the system - e.g. LAE. This authentication is performed by the Web Server in the system which forms the central module that all other modules interacts with (see ‘### JSApp Provider’).
-Other functionalities to come……
+    Before any application is granted read-access to any sensor Data, the method checkApp is called. This method takes a unique identifier token, the name of the requesting app, as well as booleans for the requested acces as arguments. It then either prompts the user to grant acces and creates a new entry for the app in core data, or, if there is a previous entry, grants permissions based on the values stored in core data, wich can be changed through the app-settings. In case the token is a mismatch, permission will be denied and the user will be notified of the failed access attempt.
+    In 
+    Other functionalities to come……
 
 
 ### LAE
