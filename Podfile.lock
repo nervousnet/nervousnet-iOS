@@ -20,19 +20,17 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - sqlite3 (3.11.0):
-    - sqlite3/common (= 3.11.0)
-  - sqlite3/common (3.11.0)
+  - Swifter (1.1.3)
   - Zip (0.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
-  - sqlite3 (~> 3.11.0)
+  - Swifter (~> 1.1.3)
   - Zip (~> 0.2)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  sqlite3: ec9888870f3b020cf2fdd649ce69b014aed205ae
+  Swifter: 52433dd6616050450a69513ef5d1452a2d089096
   Zip: 4ab1ce7c9d4afc2d04d79fbbc4d774df00e78321
 
 COCOAPODS: 0.39.0
