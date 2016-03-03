@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15E56a" minimumToolsVersion="Xcode 7.0">
-    <elements/>
+    <entity name="Webapp" representedClassName=".nervousnetWebapp" syncable="YES">
+        <attribute name="accAccess" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="batAccess" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="gyrAccess" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="magAccess" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="proxAccess" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="token" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Webapp" positionX="-63" positionY="-18" width="128" height="133"/>
+    </elements>
 </model>

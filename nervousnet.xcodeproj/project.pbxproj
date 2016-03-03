@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07CE67F01C88658D003C0491 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07CE67EE1C88658D003C0491 /* Model.xcdatamodeld */; };
+		07CE67F71C8878B1003C0491 /* nervousnetWebapp+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CE67F51C8878B1003C0491 /* nervousnetWebapp+CoreDataProperties.swift */; };
+		07CE67F81C8878B1003C0491 /* nervousnetWebapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CE67F61C8878B1003C0491 /* nervousnetWebapp.swift */; };
 		1DBFF198CC2BBF10D66E1269 /* Pods_nervousnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E02F23DE03AE89CCB108FCF /* Pods_nervousnet.framework */; };
 		22316DF219BFB422006FD165 /* nervousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DF119BFB422006FD165 /* nervousTests.swift */; };
 		223847BD1C812A1600C17EFB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223847BB1C812A1600C17EFB /* MainViewController.swift */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07CE67EF1C88658D003C0491 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		07CE67F51C8878B1003C0491 /* nervousnetWebapp+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "nervousnetWebapp+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		07CE67F61C8878B1003C0491 /* nervousnetWebapp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nervousnetWebapp.swift; sourceTree = "<group>"; };
 		14FAE4EC73BD4C359734208F /* Pods-nervousnet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nervousnet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet.debug.xcconfig"; sourceTree = "<group>"; };
 		22316DD719BFB422006FD165 /* nervous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nervous.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22316DEB19BFB422006FD165 /* nervousnetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nervousnetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +89,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07CE67F91C887E80003C0491 /* CoreDataAuth */ = {
+			isa = PBXGroup;
+			children = (
+				07CE67F51C8878B1003C0491 /* nervousnetWebapp+CoreDataProperties.swift */,
+				07CE67F61C8878B1003C0491 /* nervousnetWebapp.swift */,
+				07CE67EE1C88658D003C0491 /* Model.xcdatamodeld */,
+			);
+			name = CoreDataAuth;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		22316DCE19BFB422006FD165 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +123,7 @@
 		22316DD919BFB422006FD165 /* nervous */ = {
 			isa = PBXGroup;
 			children = (
+				07CE67F91C887E80003C0491 /* CoreDataAuth */,
 				223847C41C812A7200C17EFB /* AppDelegate.swift */,
 				223847B91C8129C800C17EFB /* Assets */,
 				223847B81C8129C000C17EFB /* Controllers */,
@@ -367,9 +385,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07CE67F81C8878B1003C0491 /* nervousnetWebapp.swift in Sources */,
 				223847C61C812A7200C17EFB /* AppDelegate.swift in Sources */,
 				223847BD1C812A1600C17EFB /* MainViewController.swift in Sources */,
+				07CE67F71C8878B1003C0491 /* nervousnetWebapp+CoreDataProperties.swift in Sources */,
 				223847BE1C812A1600C17EFB /* CreditsViewController.swift in Sources */,
+				07CE67F01C88658D003C0491 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +606,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		07CE67EE1C88658D003C0491 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				07CE67EF1C88658D003C0491 /* Model.xcdatamodel */,
+			);
+			currentVersion = 07CE67EF1C88658D003C0491 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 22316DCF19BFB422006FD165 /* Project object */;
 }
