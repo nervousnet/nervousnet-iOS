@@ -268,7 +268,7 @@
 				TargetAttributes = {
 					22316DD619BFB422006FD165 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = YLA29NJ7FG;
+						DevelopmentTeam = 5R8S596684;
 					};
 					22316DEA19BFB422006FD165 = {
 						CreatedOnToolsVersion = 6.0;
@@ -485,7 +485,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = nervous/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.ethz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = nervous;
@@ -509,7 +509,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = nervous/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.ethz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = nervous;
