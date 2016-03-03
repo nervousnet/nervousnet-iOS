@@ -1,5 +1,5 @@
 import UIKit
-import SensorController
+import Foundation
 
 class MainViewController : UIViewController {
     
