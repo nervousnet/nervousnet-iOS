@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Accelerometer" syncable="YES"/>
+    <entity name="Axon" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isInstalled" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="longDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subtitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="AxonPermissionList" syncable="YES">
+        <attribute name="axonName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hasAccelerometerAccess" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="hasBatteryAccess" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="hasGyroscopeAccess" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="hasMagnetometerAccess" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="hasProximityAccess" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Battery" syncable="YES"/>
+    <entity name="Gyroscope" syncable="YES"/>
+    <entity name="Magnetometer" syncable="YES"/>
+    <entity name="Proximity" syncable="YES"/>
+    <elements>
+        <element name="Gyroscope" positionX="-63" positionY="-18" width="128" height="45"/>
+        <element name="Accelerometer" positionX="-54" positionY="-9" width="128" height="45"/>
+        <element name="Magnetometer" positionX="-36" positionY="9" width="128" height="45"/>
+        <element name="Proximity" positionX="-18" positionY="27" width="128" height="45"/>
+        <element name="Battery" positionX="0" positionY="45" width="128" height="45"/>
+        <element name="Axon" positionX="18" positionY="63" width="128" height="150"/>
+        <element name="AxonPermissionList" positionX="36" positionY="81" width="128" height="150"/>
+    </elements>
+</model>

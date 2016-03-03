@@ -1,0 +1,56 @@
+MagnetometerController.swift
+	class MagnetometerController : NSObject
+AxonController.swift
+	override init()
+GyroscopeController.swift
+	class GyroscopeController : NSObject
+SensorStore.swift
+	func getSensors()
+	func storeSensors()
+InstallableAxonsTableViewController.swift
+	func handleAxonDownloadRequest()
+BatteryController.swift
+	class BatteryController : NSObject,SensorProtocol
+VMController.swift
+	func initialiseSettings()
+	func updateSettings()
+	func initialiseSensors()
+SensorProtocol.swift
+	protocol SensorProtocol
+AppDelegate.swift
+	class AppDelegate: UIResponder, UIApplicationDelegate
+	var window: UIWindow?
+	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+	func applicationWillResignActive(application: UIApplication)
+	func applicationDidEnterBackground(application: UIApplication)
+	func applicationWillEnterForeground(application: UIApplication)
+	func applicationDidBecomeActive(application: UIApplication)
+	func applicationWillTerminate(application: UIApplication)
+	lazy var applicationDocumentsDirectory: NSURL =
+	lazy var managedObjectModel: NSManagedObjectModel =
+	lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator =
+	lazy var managedObjectContext: NSManagedObjectContext =
+	func saveContext ()
+AxonStore.swift
+	func getAxons()
+	func getAxon()
+MainViewController.swift
+	class MainViewController : UIViewController
+	@IBOutlet var Background: UIImageView!
+	@IBOutlet var button: UIButton!
+	@IBOutlet var Killswitch: UISwitch!
+	var UserAgreement = "This what is shown to the user"
+	override func viewDidLoad()
+	override func viewDidAppear(animated: Bool)
+	@IBAction func KillSwitch(sender: UISwitch)
+CreditsViewController.swift
+	class CreditsViewController: UIViewController
+	@IBAction func closeCreditsView(sender: AnyObject)
+AccelerometerController.swift
+	class AccelerometerController : NSObject
+InstalledAxonsTableViewController.swift
+	func runAxon()
+ProximityController.swift
+	class ProximityController : NSObject
+AxonView.swift
+	class AxonView : UIWebView

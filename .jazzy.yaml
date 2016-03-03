@@ -1,16 +1,19 @@
-module_name: nervousnet-iOS
-author_name: Nervousnet
+module_name: nervousnet
+author_name: nervousnet
 author_url: http://www.nervousnet.ethz.ch
 github_url: https://github.com/nervousnet/nervousnet-iOS
+output: ./docs/jazzy
 clean: true
+min_acl: 'internal'
+
 xcodebuild_arguments:
- -  -workspace
- - nervousnet.xcworkspace
- -  -scheme
- - nervousnet
+ -  '-verbose'
+ -  '-workspace'
+ - 'nervousnet.xcworkspace'
+ -  '-scheme'
+ - 'nervousnet'
 
 docset_icon: nervous/Assets/Images.xcassets/AppIcon.appiconset/Icon-40@2x.png
-
 swift_version: 2.1.1
 
 copyright: '© 2016 [ETHZ](http://www.nervousnet.ethz.ch).'

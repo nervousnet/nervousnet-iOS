@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>nervousnet  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="nervousnet  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">nervousnet Docs</a> (14% documented)</p>
+        <p class="header-right"><a href="https://github.com/nervousnet/nervousnet-iOS"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">nervousnet Reference</a>
+        <img id="carat" src="img/carat.png" />
+        nervousnet  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes.html#/s:C10nervousnet23AccelerometerController">AccelerometerController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/AxonController.html">AxonController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/AxonStore.html">AxonStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes.html#/s:C10nervousnet8AxonView">AxonView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes.html#/s:C10nervousnet17BatteryController">BatteryController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CreditsViewController.html">CreditsViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes.html#/s:C10nervousnet19GyroscopeController">GyroscopeController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/InstallableAxonsTableViewController.html">InstallableAxonsTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/InstalledAxonsTableViewController.html">InstalledAxonsTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes.html#/s:C10nervousnet13LAEController">LAEController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes.html#/s:C10nervousnet22MagnetometerController">MagnetometerController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MainViewController.html">MainViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes.html#/s:C10nervousnet19ProximityController">ProximityController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SensorStore.html">SensorStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/VMController.html">VMController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:P10nervousnet14SensorProtocol">SensorProtocol</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <a href='#nervousnet_ios' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='nervousnet_ios'>nervousnet iOS</h1>
+
+<p><strong>Important</strong>: make sure you open this project with <code>open nervousnet.xcworkspace</code> and follow the <a href="https://github.com/futurice/ios-good-practices">iOS good practices</a></p>
+<a href='#features' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='features'>Features</h3>
+
+<p><em>nervousnet iOS</em> enables the user to locally log and share their iPhone&rsquo;s sensor data in many interesting ways. Logging sensor data is nothing new in itself but what makes <em>nervousnet iOS</em> different is that the user has full control over where their data is stored.</p>
+
+<p><em>nervousnet iOS</em> provides special <q>JSApps</q> to visualise, process or share sensor data. These <q>JSApps</q> can use the many functions provided by the <a href="http://documentation.needed!">Global and Local Analytics Engine</a>, like machine learning algorithms. They also have access to third party libraries and if activated by the user P2P networking and internet access.<code>*</code></p>
+
+<p><q>JSApps</q> can be found and installed from within the <em>nervousnet iOS</em> app.</p>
+
+<p><code>*</code> functionality not yet implemented.</p>
+<a href='#architecture' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='architecture'>Architecture</h3>
+
+<p>In this iOS app we adhere to Apple&rsquo;s recommended MVC architecture and separate code into the respective <code>Models</code>, <code>Views</code>, <code>Controllers</code>, <code>Stores</code> directories. The <code>Assets</code> directory contains media, binaries and other non-swift code.</p>
+<a href='#database' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='database'>Database</h3>
+
+<p>The current version of the app uses <a href="https://developer.apple.com/library/watchos/documentation/Cocoa/Conceptual/CoreData/index.html">Apple&rsquo;s Core Data persistence framework</a>.</p>
+<a href='#jsapps' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='jsapps'>JSApps</h3>
+
+<p><q>JSApps</q> are written in JavaScript and HTML. They follow strict view and code separation and must be contained within a single directory. Important external dependencies like jQuery and the Nervous JS API are provided by the nervousnet iOS app. All other libraries must be included by the developer.</p>
+
+<p>The minimal JSApp must provide the following three files zipped within a folder baring the same name as the app in kebab-case:
+<code>
+my-first-app/
+   package.json
+   app.js
+   app.html
+</code>
+An example app can be downloaded <a href="http://nervousnet.ethz.ch/nervous-developers/uploaded_apps/hello-world.zip">here</a>.</p>
+
+<p>JSApps must be installed from within the <em>nervousnet iOS</em> app. This is done by downloading the ZIP file and unzipping it to the app&rsquo;s home directory. When a user selects to run a JSApp, it opens a modal window containing a WebView displaying the <code>app.html</code>. All JSApp resources are served by a local lightweight HTTP server called <strong>JSApp Provider</strong> (the WebKit engine does not allow file:/// XMLHTTPRequests).</p>
+
+<p>JSApps specify requested privileges in <code>package.json</code>. On first JSApp execution, the user will be prompted to grant or deny access. Once granted, the JSApp can access all authorised <a href="http://documented.here">Nervous JS API methods</a>.</p>
+<a href='#jsapp_provider' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='jsapp_provider'>JSApp Provider</h3>
+
+<p>The JSApp Provider is the <strong>HTTP server</strong> running locally on the phone that serves JSApp assets to the webview as well as handles requests sent via  the Nervous JS API. With every JS API method call, the JSApp must send an authentication token known only to the JSApp and the Auth. This token effectively authenticates the JSApp to the Local Analytics Engine and thus authorises the JSApp to access sensor data that it has been given access to (by the user prompt).</p>
+<a href='#vm' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='vm'>VM</h3>
+
+<p>The VM (short for Virtual Machine) will be a separate entity in the backend of the system. LAE interacts with the VM. It is a singleton class and the system cannot create two distinct instances of this class.
+The responsibilities of the VM are to work at the sensor and database level so that a developer does not have to deal with hardware level at all by him-/her-self. The VM collects the sensor data at the sensor level.
+   This sensor data collection can be controlled by the user via UI. This privacy control is handled by the VM directly.
+   The VM pushed the data into a local database on the phone - the current architecture will use CoreData (an in-built iOS application, see ‘### Database’ above).
+   The VM also pushes the collected data not a remote server. The server address can be chosen by the user via UI.
+The earlier version of the VM used protobuf as the protocol for pushing the data. The current version will remove this due to the complex nature of the protocol and replace it with JSON based format. The format will make development easier at the cost of performance (there is a balance between the two that must be maintained).</p>
+<a href='#auth' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='auth'>Auth</h3>
+
+<p>Auth (short for Authentication Class) provides the facility to authenticate an application before it is allowed to use other modules of the system - e.g. LAE. This authentication is performed by the Web Server in the system which forms the central module that all other modules interacts with (see ‘### JSApp Provider’).
+    Before any application is granted read-access to any sensor Data, the method checkApp is called. This method takes a unique identifier token, the name of the requesting app, as well as booleans for the requested acces as arguments. It then either prompts the user to grant acces and creates a new entry for the app in core data, or, if there is a previous entry, grants permissions based on the values stored in core data, wich can be changed through the app-settings. In case the token is a mismatch, permission will be denied and the user will be notified of the failed access attempt.
+    In 
+    Other functionalities to come……</p>
+<a href='#lae' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='lae'>LAE</h3>
+
+<p>The LAE (short for Local Analytics Engine) is an engine that interfaces the VM with any other application in the system architecture. 
+   The LAE provides a high level abstraction of the physical sensors in the database.
+   It also allows all the application to fetch and receive the data from the database (with multiple criteria as given by the user).
+   It also has the capability to not only give out sensor data in the raw format but also provide analytics on it. For example, the LAE will allow an application to fetch
+   mean or standard deviation on the the data. It can be designed to provide even more capabilities like clustering etc.</p>
+<a href='#external_hw' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='external_hw'> External HW</h3>
+
+<p>A default JSApp will be provided which gives easy access to external hardware sensors like weather stations, seismographs, geiger couunters, etc.</p>
+
+<p>A user could select an external sensor to be <q>installed</q>. After <q>installation</q>, the external sensor is available to any JSApp requiring it. Thus one could imagine independant JSApps building upon external sensors provided by the community.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2016 <a class="link" href="http://www.nervousnet.ethz.ch" target="_blank" rel="external">ETHZ</a>.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		1DBFF198CC2BBF10D66E1269 /* Pods_nervousnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E02F23DE03AE89CCB108FCF /* Pods_nervousnet.framework */; };
+		221CAEE61C88C183005D1A20 /* AccelerometerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEDD1C88C183005D1A20 /* AccelerometerController.swift */; };
+		221CAEE71C88C183005D1A20 /* AxonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEDE1C88C183005D1A20 /* AxonController.swift */; };
+		221CAEE81C88C183005D1A20 /* BatteryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEDF1C88C183005D1A20 /* BatteryController.swift */; };
+		221CAEE91C88C183005D1A20 /* GyroscopeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEE01C88C183005D1A20 /* GyroscopeController.swift */; };
+		221CAEEA1C88C183005D1A20 /* LAEController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEE11C88C183005D1A20 /* LAEController.swift */; };
+		221CAEEB1C88C183005D1A20 /* MagnetometerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEE21C88C183005D1A20 /* MagnetometerController.swift */; };
+		221CAEEC1C88C183005D1A20 /* ProximityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEE31C88C183005D1A20 /* ProximityController.swift */; };
+		221CAEED1C88C183005D1A20 /* SensorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEE41C88C183005D1A20 /* SensorProtocol.swift */; };
+		221CAEEE1C88C183005D1A20 /* VMController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEE51C88C183005D1A20 /* VMController.swift */; };
+		221CAEF11C88C190005D1A20 /* InstallableAxonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEEF1C88C190005D1A20 /* InstallableAxonsTableViewController.swift */; };
+		221CAEF21C88C190005D1A20 /* InstalledAxonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEF01C88C190005D1A20 /* InstalledAxonsTableViewController.swift */; };
+		221CAEF51C88C1B2005D1A20 /* AxonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEF31C88C1B2005D1A20 /* AxonStore.swift */; };
+		221CAEF61C88C1B2005D1A20 /* SensorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEF41C88C1B2005D1A20 /* SensorStore.swift */; };
+		221CAEF81C88C1BA005D1A20 /* AxonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEF71C88C1BA005D1A20 /* AxonView.swift */; };
+		221CAF1C1C88C7C8005D1A20 /* MainModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 221CAF1A1C88C7C8005D1A20 /* MainModel.xcdatamodeld */; };
 		22316DF219BFB422006FD165 /* nervousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DF119BFB422006FD165 /* nervousTests.swift */; };
 		223847BD1C812A1600C17EFB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223847BB1C812A1600C17EFB /* MainViewController.swift */; };
 		223847BE1C812A1600C17EFB /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223847BC1C812A1600C17EFB /* CreditsViewController.swift */; };
@@ -35,7 +50,22 @@
 
 /* Begin PBXFileReference section */
 		14FAE4EC73BD4C359734208F /* Pods-nervousnet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nervousnet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet.debug.xcconfig"; sourceTree = "<group>"; };
-		22316DD719BFB422006FD165 /* nervous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nervous.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		221CAEDD1C88C183005D1A20 /* AccelerometerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerController.swift; sourceTree = "<group>"; };
+		221CAEDE1C88C183005D1A20 /* AxonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxonController.swift; sourceTree = "<group>"; };
+		221CAEDF1C88C183005D1A20 /* BatteryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryController.swift; sourceTree = "<group>"; };
+		221CAEE01C88C183005D1A20 /* GyroscopeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GyroscopeController.swift; sourceTree = "<group>"; };
+		221CAEE11C88C183005D1A20 /* LAEController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAEController.swift; sourceTree = "<group>"; };
+		221CAEE21C88C183005D1A20 /* MagnetometerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetometerController.swift; sourceTree = "<group>"; };
+		221CAEE31C88C183005D1A20 /* ProximityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProximityController.swift; sourceTree = "<group>"; };
+		221CAEE41C88C183005D1A20 /* SensorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorProtocol.swift; sourceTree = "<group>"; };
+		221CAEE51C88C183005D1A20 /* VMController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMController.swift; sourceTree = "<group>"; };
+		221CAEEF1C88C190005D1A20 /* InstallableAxonsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallableAxonsTableViewController.swift; sourceTree = "<group>"; };
+		221CAEF01C88C190005D1A20 /* InstalledAxonsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstalledAxonsTableViewController.swift; sourceTree = "<group>"; };
+		221CAEF31C88C1B2005D1A20 /* AxonStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxonStore.swift; sourceTree = "<group>"; };
+		221CAEF41C88C1B2005D1A20 /* SensorStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorStore.swift; sourceTree = "<group>"; };
+		221CAEF71C88C1BA005D1A20 /* AxonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxonView.swift; sourceTree = "<group>"; };
+		221CAF1B1C88C7C8005D1A20 /* MainModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MainModel.xcdatamodel; sourceTree = "<group>"; };
+		22316DD719BFB422006FD165 /* nervousnet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nervousnet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22316DEB19BFB422006FD165 /* nervousnetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nervousnetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22316DF019BFB422006FD165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22316DF119BFB422006FD165 /* nervousTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nervousTests.swift; sourceTree = "<group>"; };
@@ -97,7 +127,7 @@
 		22316DD819BFB422006FD165 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22316DD719BFB422006FD165 /* nervous.app */,
+				22316DD719BFB422006FD165 /* nervousnet.app */,
 				22316DEB19BFB422006FD165 /* nervousnetTests.xctest */,
 			);
 			name = Products;
@@ -136,6 +166,7 @@
 		223847B51C8129AF00C17EFB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				221CAF1A1C88C7C8005D1A20 /* MainModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -143,6 +174,7 @@
 		223847B61C8129B600C17EFB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				221CAEF71C88C1BA005D1A20 /* AxonView.swift */,
 				223847BF1C812A2E00C17EFB /* Storyboards */,
 			);
 			path = Views;
@@ -151,6 +183,8 @@
 		223847B71C8129BB00C17EFB /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				221CAEF31C88C1B2005D1A20 /* AxonStore.swift */,
+				221CAEF41C88C1B2005D1A20 /* SensorStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -158,6 +192,15 @@
 		223847B81C8129C000C17EFB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				221CAEDD1C88C183005D1A20 /* AccelerometerController.swift */,
+				221CAEDE1C88C183005D1A20 /* AxonController.swift */,
+				221CAEDF1C88C183005D1A20 /* BatteryController.swift */,
+				221CAEE01C88C183005D1A20 /* GyroscopeController.swift */,
+				221CAEE11C88C183005D1A20 /* LAEController.swift */,
+				221CAEE21C88C183005D1A20 /* MagnetometerController.swift */,
+				221CAEE31C88C183005D1A20 /* ProximityController.swift */,
+				221CAEE41C88C183005D1A20 /* SensorProtocol.swift */,
+				221CAEE51C88C183005D1A20 /* VMController.swift */,
 				223847BA1C8129D400C17EFB /* ViewControllers */,
 			);
 			path = Controllers;
@@ -175,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				223847BB1C812A1600C17EFB /* MainViewController.swift */,
+				221CAEEF1C88C190005D1A20 /* InstallableAxonsTableViewController.swift */,
+				221CAEF01C88C190005D1A20 /* InstalledAxonsTableViewController.swift */,
 				223847BC1C812A1600C17EFB /* CreditsViewController.swift */,
 			);
 			path = ViewControllers;
@@ -234,7 +279,7 @@
 			);
 			name = nervousnet;
 			productName = nervous;
-			productReference = 22316DD719BFB422006FD165 /* nervous.app */;
+			productReference = 22316DD719BFB422006FD165 /* nervousnet.app */;
 			productType = "com.apple.product-type.application";
 		};
 		22316DEA19BFB422006FD165 /* nervousnetTests */ = {
@@ -367,9 +412,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				221CAF1C1C88C7C8005D1A20 /* MainModel.xcdatamodeld in Sources */,
+				221CAEEB1C88C183005D1A20 /* MagnetometerController.swift in Sources */,
+				221CAEE71C88C183005D1A20 /* AxonController.swift in Sources */,
+				221CAEE91C88C183005D1A20 /* GyroscopeController.swift in Sources */,
+				221CAEF61C88C1B2005D1A20 /* SensorStore.swift in Sources */,
+				221CAEF11C88C190005D1A20 /* InstallableAxonsTableViewController.swift in Sources */,
+				221CAEE81C88C183005D1A20 /* BatteryController.swift in Sources */,
+				221CAEEE1C88C183005D1A20 /* VMController.swift in Sources */,
+				221CAEED1C88C183005D1A20 /* SensorProtocol.swift in Sources */,
 				223847C61C812A7200C17EFB /* AppDelegate.swift in Sources */,
+				221CAEEA1C88C183005D1A20 /* LAEController.swift in Sources */,
+				221CAEF51C88C1B2005D1A20 /* AxonStore.swift in Sources */,
 				223847BD1C812A1600C17EFB /* MainViewController.swift in Sources */,
 				223847BE1C812A1600C17EFB /* CreditsViewController.swift in Sources */,
+				221CAEE61C88C183005D1A20 /* AccelerometerController.swift in Sources */,
+				221CAEF21C88C190005D1A20 /* InstalledAxonsTableViewController.swift in Sources */,
+				221CAEEC1C88C183005D1A20 /* ProximityController.swift in Sources */,
+				221CAEF81C88C1BA005D1A20 /* AxonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,8 +547,8 @@
 				INFOPLIST_FILE = nervous/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.ethz.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = nervous;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.ethz.nervousnet;
+				PRODUCT_NAME = nervousnet;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -511,8 +571,8 @@
 				INFOPLIST_FILE = nervous/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.ethz.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = nervous;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.ethz.nervousnet;
+				PRODUCT_NAME = nervousnet;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -585,6 +645,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		221CAF1A1C88C7C8005D1A20 /* MainModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				221CAF1B1C88C7C8005D1A20 /* MainModel.xcdatamodel */,
+			);
+			currentVersion = 221CAF1B1C88C7C8005D1A20 /* MainModel.xcdatamodel */;
+			path = MainModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 22316DCF19BFB422006FD165 /* Project object */;
 }
