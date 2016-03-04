@@ -20,16 +20,19 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - MotionKit (0.8.1)
   - Swifter (1.1.3)
   - Zip (0.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - MotionKit
   - Swifter (~> 1.1.3)
   - Zip (~> 0.2)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  MotionKit: a88a7d7b5ed6652793a3744f6ca58227d8804236
   Swifter: 52433dd6616050450a69513ef5d1452a2d089096
   Zip: 4ab1ce7c9d4afc2d04d79fbbc4d774df00e78321
 
