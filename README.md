@@ -64,3 +64,16 @@ The LAE (short for Local Analytics Engine) is an engine that interfaces the VM w
 A default JSApp will be provided which gives easy access to external hardware sensors like weather stations, seismographs, geiger couunters, etc.
 
 A user could select an external sensor to be "installed". After "installation", the external sensor is available to any JSApp requiring it. Thus one could imagine independant JSApps building upon external sensors provided by the community.
+
+
+
+## Community
+
+[![Slack](http://s13.postimg.org/ybwy92ktf/Slack.png)](https://nervousnet.slack.com)
+
+Join us on [Slack](https://nervousnet.slack.com).
+
+License
+-------
+
+**nervousnet iOS** is released under the GPL. See LICENSE for details.
