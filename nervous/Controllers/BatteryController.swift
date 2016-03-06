@@ -10,11 +10,8 @@
 
 import Foundation
 
-class BatteryController : NSObject,SensorProtocol {
+class BatteryController : NSObject {
 
-
-// MARK: - SensorProtocol protocol
-
-// MARK: -
+ 
 }
 
