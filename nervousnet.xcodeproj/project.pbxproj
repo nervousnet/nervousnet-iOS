@@ -117,6 +117,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		222066BD1C8CA17F0050DC90 /* axon-resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "axon-resources";
+			path = "nervous/Assets/axon-resources";
+			sourceTree = SOURCE_ROOT;
+		};
+		222066BE1C8CA1B90050DC90 /* included-axons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "included-axons";
+			path = "nervous/Assets/included-axons";
+			sourceTree = SOURCE_ROOT;
+		};
 		22316DCE19BFB422006FD165 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +231,8 @@
 		223847B91C8129C800C17EFB /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				222066BE1C8CA1B90050DC90 /* included-axons */,
+				222066BD1C8CA17F0050DC90 /* axon-resources */,
 				2298F7D61C8198840014CB24 /* Images.xcassets */,
 			);
 			path = Assets;
@@ -553,7 +571,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = nervous/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.ethz.nervousnet;
 				PRODUCT_NAME = nervousnet;
@@ -577,7 +595,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = nervous/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.ethz.nervousnet;
 				PRODUCT_NAME = nervousnet;
