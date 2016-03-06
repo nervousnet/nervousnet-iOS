@@ -1,0 +1,6 @@
+framework module JSON {
+  umbrella header "JSON-umbrella.h"
+
+  export *
+  module * { export * }
+}

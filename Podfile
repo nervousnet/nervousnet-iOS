@@ -7,5 +7,5 @@ target 'nervousnet' do
     pod 'Zip', '~> 0.2'
     pod 'AFNetworking', '~> 2.0'
     pod 'Swifter', '~> 1.1.3'
-    pod 'PocketSocket', '~> 0.6.4'
+    pod 'JSON'
 end

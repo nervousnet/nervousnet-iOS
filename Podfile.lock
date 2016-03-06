@@ -20,19 +20,19 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - PocketSocket (0.6.4)
+  - JSON (4.0.2)
   - Swifter (1.1.3)
   - Zip (0.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
-  - PocketSocket (~> 0.6.4)
+  - JSON
   - Swifter (~> 1.1.3)
   - Zip (~> 0.2)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  PocketSocket: eee7ef375f55b98e7ca79e097d9c61fd688e9494
+  JSON: d08f22c3e523be050d5d5f40bca43ec02d95b2cc
   Swifter: 52433dd6616050450a69513ef5d1452a2d089096
   Zip: 4ab1ce7c9d4afc2d04d79fbbc4d774df00e78321
 
