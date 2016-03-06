@@ -10,8 +10,8 @@
 import Foundation
 
 protocol SensorProtocol {
-
-    func requestAuthorisation()
+    
+    func requestAuthorization()
     
     func startSensorUpdates()
     
