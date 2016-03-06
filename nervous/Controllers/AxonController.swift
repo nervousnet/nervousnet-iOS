@@ -48,6 +48,19 @@ class AxonController {
     
     func mapAxonHTTPServerRoutes(){
         
+        // route to list available services
+        self.server["/"] = { r in
+            var listPage = "<div style='font-family: Helvetica; font-size: 12pt'>Available nervousnet services on this device:<br><ul>"
+            for services in self.server.routes {
+                if !services.isEmpty {
+                    listPage += "<li><a href=\"\(services)\">\(services)</a></li>"
+                }
+            }
+            listPage += "</ul></div>"
+            return .OK(.Html(listPage))
+        }
+        
+        
         // route to get static resources like JS, HTML or assets provided by nervous
         self.server.GET["/nervous-axon-resources/:resource"] = { r in
             if let filename = r.params[":resource"] {
