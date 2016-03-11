@@ -13,25 +13,33 @@ import Foundation
 ///
 /// Tells other things when to write wherever.
 ///
+
+private let _VM = VMController()
+
 class VMController : NSObject {
 
+    public let motionManager: CMMotionManager
     /*
 var hasEnabledAccelerometerLocalLogging:AnyObject
 var accelerometerCollectionFrequency:AnyObject
 var hasEnabledAccelerometerRemoteLogging:AnyObject
 */
     
-func initialiseSettings() {
+    class var sharedInstance: VMController {
+        return _VM
+    }
+    
+    func initialiseSettings() {
 
-}
+    }
 
-func updateSettings() {
+    func updateSettings() {
 
-}
+    }
 
-func initialiseSensors() {
+    func initialiseSensors() {
 
-}
+    }
 
 }
 
