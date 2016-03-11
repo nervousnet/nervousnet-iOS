@@ -1,3 +1,5 @@
+# DRAFT - WORKING DOCUMENT - DRAFT
+
 # nervousnet iOS
 __Important__: make sure you open this project with `open nervousnet.xcworkspace` and follow the [iOS good practices](https://github.com/futurice/ios-good-practices)
 
