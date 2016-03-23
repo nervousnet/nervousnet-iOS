@@ -14,6 +14,7 @@ import CoreLocation
 /// Inits sensor objects. Also uploads sensor data to the server.
 ///
 class SensorStore : BeaconControllerDelegate {
+
     
     let Gyroscope = GyroscopeController();
     let Battery = BatteryController();
@@ -32,6 +33,8 @@ class SensorStore : BeaconControllerDelegate {
         
         Beacon.requestAuthorization()
         Beacon.startSensorUpdates()
+        
+        
         
     }
     

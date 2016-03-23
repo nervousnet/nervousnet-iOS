@@ -11,7 +11,7 @@
 import Foundation
 
 ///
-/// Tells other things when to write wherever.
+/// Tells other things when to write wherever. Stores state of the privacy, permissions, frequency in NSUserDefaults.
 ///
 
 private let _VM = VMController()
@@ -24,14 +24,10 @@ var hasEnabledAccelerometerLocalLogging:AnyObject
 var accelerometerCollectionFrequency:AnyObject
 var hasEnabledAccelerometerRemoteLogging:AnyObject
 */
-    
-    class var sharedInstance: VMController {
-        return _VM
-    }
-    
-    func initialiseSettings() {
-
-    }
+         
+func initialiseSettings() {
+ 
+      }
 
     func updateSettings() {
 
