@@ -10,16 +10,12 @@ import Foundation
 import CoreMotion
 
 class AccelerometerController : NSObject, SensorProtocol {
-
-    var VM = VMController.sharedInstance
-    
-    let manager = VM.motionManager
     
     override init() {
         self.manager = CMMotionManager()
     }
     
-    func startSensorUpdates(Double : freq) {
+    func startSensorUpdates(manager: CMMotionManager, Double : freq) {
         self.manager.accelerometerUpdateInterval = freq
         manager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
             [weak self](data: CMAccelerometerData!, error: NSError!) in

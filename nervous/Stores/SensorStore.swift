@@ -8,12 +8,16 @@
 
 import Foundation
 import CoreLocation
+import CoreMotion
 
 ///
 /// Provides functionality to access Sensor data (historical or live).
 /// Inits sensor objects. Also uploads sensor data to the server.
 ///
 class SensorStore : BeaconControllerDelegate {
+
+    
+    let motionManager = CMMotionManager
     
     let Gyroscope = GyroscopeController();
     let Battery = BatteryController();
@@ -29,9 +33,11 @@ class SensorStore : BeaconControllerDelegate {
         //attach delegates
         Beacon.delegate = self;
         
-        
         Beacon.requestAuthorization()
         Beacon.startSensorUpdates()
+        
+        // initialize the motion manager
+        self.motionManager = CMMotionManager()
         
     }
     

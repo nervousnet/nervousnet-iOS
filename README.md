@@ -18,13 +18,10 @@ In this iOS app we adhere to Apple's recommended MVC architecture and separate c
 ### Data Storage
 The current version of the app uses [Apple's Core Data persistence framework](https://developer.apple.com/library/watchos/documentation/Cocoa/Conceptual/CoreData/index.html).
 
-### VM
-The VM (short for Virtual Machine) will be a separate entity in the backend of the system. LAE interacts with the VM. It is a singleton class and the system cannot create two distinct instances of this class.
-The responsibilities of the VM are to work at the sensor and database level so that a developer does not have to deal with hardware level at all by him-/her-self. The VM collects the sensor data at the sensor level.
-   This sensor data collection can be controlled by the user via UI. This privacy control is handled by the VM directly.
-   The VM pushed the data into a local database on the phone - the current architecture will use CoreData (an in-built iOS application, see ‘### Database’ above).
-   The VM also pushes the collected data not a remote server. The server address can be chosen by the user via UI.
-The earlier version of the VM used protobuf as the protocol for pushing the data. The current version will remove this due to the complex nature of the protocol and replace it with JSON based format. The format will make development easier at the cost of performance (there is a balance between the two that must be maintained).
+### VMCOntroller
+The VMController (short for Virtual Machine COntroller) will be a separate entity in the backend of the system. It falls in the controller group in the app. 
+It interacts and deals with the current state of the app. The state of the app is a collection of the settngs of the app as input by the user. This includes the privacy seetings,
+the frequency collection for different sensors. It mantains the current state in a CoreDate file system (see ### Data Storage).
 
 
 ### Auth
