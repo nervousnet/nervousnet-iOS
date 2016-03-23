@@ -11,7 +11,7 @@
 import Foundation
 
 ///
-/// Tells other things when to write wherever.
+/// Tells other things when to write wherever. Stores state of the privacy, permissions, frequency in NSUserDefaults.
 ///
 class VMController : NSObject {
 
@@ -20,6 +20,13 @@ var hasEnabledAccelerometerLocalLogging:AnyObject
 var accelerometerCollectionFrequency:AnyObject
 var hasEnabledAccelerometerRemoteLogging:AnyObject
 */
+    
+    
+    /*
+    
+    
+    
+    */
     
 func initialiseSettings() {
 
