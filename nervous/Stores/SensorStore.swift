@@ -15,7 +15,6 @@ import CoreMotion
 /// Inits sensor objects. Also uploads sensor data to the server.
 ///
 class SensorStore : BeaconControllerDelegate {
-
     
     let motionManager = CMMotionManager
     
@@ -38,7 +37,6 @@ class SensorStore : BeaconControllerDelegate {
         
         // initialize the motion manager
         self.motionManager = CMMotionManager()
-        
     }
     
     
@@ -50,4 +48,3 @@ class SensorStore : BeaconControllerDelegate {
         print("%d beacons found!", didRangeBeacons.count);
     }
 }
-
