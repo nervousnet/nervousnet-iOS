@@ -7,7 +7,6 @@
 
 import UIKit
 import CoreData
-import PocketSocket
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
