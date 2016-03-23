@@ -9,17 +9,49 @@
 
 
 import Foundation
+import CoreData
+import UIKit
 
 class AuthController : NSObject {
     
     
-    func checkAppPermissions() {
+    func checkAppPermissions(token:UInt64, appname:String, acccaccess:Bool = false, bataccess:Bool = false, gyraccess:Bool = false, magaccess:Bool = false, proxaccess:Bool = false) {
+        
+        
+        //write
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let entity = NSEntityDescription.entityForName("AxonPermissionList", inManagedObjectContext: managedContext)
+        let permissionsList = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        permissionsList.setValue("this worked", forKey: "axonName")
+        do {
+            try managedContext.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+        
+        //readit
+        let fetchRequest = NSFetchRequest(entityName: "AxonPermissionList")
+        
+        do {
+            let results =
+            try managedContext.executeFetchRequest(fetchRequest)
+            let listof = results as! [NSManagedObject]
+            for ress in listof {
+                NSLog(ress.valueForKey("axonName") as! String)
+                
+            }
+            
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+       
         
     }
     
-    ///
+    
     /// Can be called by the UI settings.
-    ///
+    
     func changeAppPermissions() {
         
     }
