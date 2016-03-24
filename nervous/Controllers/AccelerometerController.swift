@@ -10,6 +10,7 @@ import Foundation
 import CoreMotion
 
 class AccelerometerController : NSObject, SensorProtocol {
+
     
     var auth: Int = 0
     
@@ -29,7 +30,9 @@ class AccelerometerController : NSObject, SensorProtocol {
         self.auth = 1
     }
     
+
     func startSensorUpdates(freq: Double) {
+
         requestAuthorization()
         
         if self.auth == 0 {
@@ -50,4 +53,5 @@ class AccelerometerController : NSObject, SensorProtocol {
     func stopSensorUpdates() {
         self.manager.stopAccelerometerUpdates()
     }
+
 }

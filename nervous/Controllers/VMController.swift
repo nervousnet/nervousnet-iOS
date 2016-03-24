@@ -19,7 +19,8 @@ private let _VM = VMController()
 
 class VMController : NSObject {
 
-    let motionManager: CMMotionManager
+
+    private let motionManager: CMMotionManager
     /*
 var hasEnabledAccelerometerLocalLogging:AnyObject
 var accelerometerCollectionFrequency:AnyObject

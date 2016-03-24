@@ -12,7 +12,7 @@ import Foundation
 import CoreMotion
 
 class MagnetometerController : NSObject, SensorProtocol {
-
+    
     var auth: Int = 0
     
     let manager: CMMotionManager

@@ -13,6 +13,7 @@ import CoreMotion
 
 class GyroscopeController : NSObject {
 
+
     var auth: Int = 0
     
     let manager:  CMMotionManager
