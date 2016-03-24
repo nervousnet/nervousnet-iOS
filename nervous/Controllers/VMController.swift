@@ -20,36 +20,11 @@ private let _VM = VMController()
 class VMController : NSObject {
     
     // save the current state of the system in NSUserDefaults
-    private let defaults = NSUserDefaults.standardUserDefaults()
+    internal let defaults = NSUserDefaults.standardUserDefaults()
 
     // Server address and port number
     private var address = "inn.ac"
     private var port = 25600
-
-    // frequencies of the sensors
-    // default is 30 seconds
-    private let freqAcc : Double = 30
-    private let freqgyr : Double = 30
-    private let freqMag : Double = 30
-    private let freqBat : Double = 30
-    private let freqPro : Double = 30
-    
-    // Kill Switch Status
-    private var killSwitchState : Bool = false
-    
-    // Boolean for logging buttons
-    private var logAcc : Bool = true
-    private var logGyr : Bool = true
-    private var logMag : Bool = true
-    private var logBat : Bool = true
-    private var logPro : Bool = true
-    
-    // Boolean for sharing buttons
-    private var shareAcc : Bool = true
-    private var shareGyr : Bool = true
-    private var shareMag : Bool = true
-    private var shareBat : Bool = true
-    private var sharePro : Bool = true
     
     /*
      var hasEnabledAccelerometerLocalLogging:AnyObject
@@ -61,32 +36,56 @@ class VMController : NSObject {
         //super.init()
     }
     
+    
+    
     class var sharedInstance: VMController {
         return _VM
     }
-         
-    func initialiseSettings(dictPrivacy: [Bool : Bool] ,dictFreq: [Double : Double]) {
+    
+    
+    // initialize the initial privacy setting of the sensor
+    // sets all the sensors at the same time
+    func initialiseSettings(dictPrivacy: [String : Bool] ,dictFreq: [String : Double]) {
  
         for (button,privacy) in dictPrivacy{
-            self.defaults.setBool(privacy, forKey: "\(button)")
+            if button == "kill" {
+                continue
+            }
+            self.defaults.setValue(privacy, forKey: "\(button)")
         }
         
         for (button,freq) in dictFreq {
-            self.defaults.setDouble(freq, forKey: "\(button)")
+            self.defaults.setValue(freq, forKey: "\(button)")
         }
     }
-
+    
+    
+    // tchange he current privacy setting for each sensor individually
     func updateSettings(button: String, privacy: Bool) {
         
-        self.defaults.setBool(privacy, forKey: "\(button)")
+        self.defaults.setValue(privacy, forKey: "\(button)")
         
     }
     
     func updateSettings(button: String, freq: Double) {
         
-        self.defaults.setDouble(freq, forKey: "\(button)")
+        self.defaults.setValue(freq, forKey: "\(button)")
         
     }
+    
+    
+    // this is the control to the master switch
+    func setMasterSwitch(button: Bool) {
+        
+        self.defaults.setBool(button, forKey: "kill")
+    }
+    
+    func getMasterSwitch() -> Bool {
+        
+        return defaults.boolForKey("kill")
+    }
+    
+    
 
     func initialiseSensors() {
 

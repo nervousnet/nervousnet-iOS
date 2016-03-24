@@ -38,6 +38,7 @@
 		22F90A6B1C8C76F0006A56FD /* BeaconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F90A6A1C8C76F0006A56FD /* BeaconController.swift */; };
 		22FF8A8719F14AFA00AC6783 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */; };
 		22FF8A8D19F14B3A00AC6783 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8C19F14B3A00AC6783 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		E15BC15D1CA4A1280005EF6D /* VMController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEE51C88C183005D1A20 /* VMController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -463,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15BC15D1CA4A1280005EF6D /* VMController.swift in Sources */,
 				22316DF219BFB422006FD165 /* nervousTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

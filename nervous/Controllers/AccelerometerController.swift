@@ -16,6 +16,8 @@ class AccelerometerController : NSObject, SensorProtocol {
     
     private let manager: CMMotionManager
     
+    private let VM = VMController.sharedInstance
+    
     var timestamp: UInt64 = 0
     var x: Float = 0.0
     var y: Float = 0.0
@@ -28,8 +30,13 @@ class AccelerometerController : NSObject, SensorProtocol {
     func requestAuthorization() {
         print("requesting authorization for acc")
         
-        if self.manager.accelerometerActive && self.manager.accelerometerAvailable {
-            self.auth = 1
+        let val1 = self.VM.defaults.objectForKey("kill") as! Bool
+        let val2 = self.VM.defaults.objectForKey("switchAcc") as! Bool
+        
+        if val1 && val2  {
+            if self.manager.accelerometerActive && self.manager.accelerometerAvailable {
+                self.auth = 1
+            }
         }
     }
     
