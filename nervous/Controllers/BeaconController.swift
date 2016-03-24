@@ -37,7 +37,7 @@ class BeaconController : NSObject, SensorProtocol{
     }
     
     
-    func startSensorUpdates() {
+    func startSensorUpdates(frequency : Double = 0) {
         locationManager.delegate = self
         locationManager.startMonitoringForRegion(beaconRegion)
         locationManager.startRangingBeaconsInRegion(beaconRegion)

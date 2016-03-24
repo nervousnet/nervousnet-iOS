@@ -9,56 +9,52 @@
 
 
 import Foundation
+import CoreMotion
 
 class GyroscopeController : NSObject {
-    
-    
-    func requestAuthorization(){}
-    
-    func startSensorUpdates(){}
-    
-    
-    func stopSensorUpdates(){}
 
-    
-    /*
+
     var auth: Int = 0
     
-    var timestamp: UInt64
-    var x: Float
-    var y: Float
-    var z: Float
+    let manager:  CMMotionManager
+    
+    var timestamp: UInt64 = 0
+    var x: Float = 0.0
+    var y: Float = 0.0
+    var z: Float = 0.0
     
     override init() {
-        //self.manager = CMMotionManager()
+        self.manager = CMMotionManager()
     }
     
     func requestAuthorization() {
         print("requesting authorization for acc")
-        self.auth = 0
+        
+        if self.manager.gyroActive && self.manager.gyroAvailable {
+            self.auth = 1
+        }
     }
     
-    func startSensorUpdates(manager: CMMotionManager, Double : freq) {
+    func startSensorUpdates(freq: Double) {
         requestAuthorization()
         
         if self.auth == 0 {
             return
         }
         
-        self.manager.accelerometerUpdateInterval = freq
-        manager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
-            [weak self](data: CMAccelerometerData!, error: NSError!) in
-            var currentTimeA :NSDate = NSDate()
-            self.timestamp = UInt64(currentTimeA.timeIntervalSince1970*1000) // time to timestamp
+        manager.gyroUpdateInterval = freq
+        let currentTimeA :NSDate = NSDate()
+        
+        self.timestamp = UInt64(currentTimeA.timeIntervalSince1970*1000) // time to timestamp
+        if let data = self.manager.gyroData {
             self.x = Float(data.rotationRate.x)
             self.y = Float(data.rotationRate.y)
             self.z = Float(data.rotationRate.z)
         }
     }
     
-    func stopSensorUpdates(manager: CMMotionManager) {
+    func stopSensorUpdates() {
         self.manager.stopGyroUpdates()
+        self.auth = 0
     }
-    */
 }
-

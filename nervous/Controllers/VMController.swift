@@ -19,12 +19,21 @@ private let _VM = VMController()
 
 class VMController : NSObject {
 
-    private let motionManager: CMMotionManager = CMMotionManager()
+
+    private let motionManager: CMMotionManager
     /*
 var hasEnabledAccelerometerLocalLogging:AnyObject
 var accelerometerCollectionFrequency:AnyObject
 var hasEnabledAccelerometerRemoteLogging:AnyObject
 */
+    override init(){
+        //super.init()
+        self.motionManager = CMMotionManager()
+    }
+    
+    class var sharedInstance: VMController {
+        return _VM
+    }
          
     func initialiseSettings() {
  

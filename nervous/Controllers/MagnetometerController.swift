@@ -9,56 +9,51 @@
 
 
 import Foundation
+import CoreMotion
 
 class MagnetometerController : NSObject, SensorProtocol {
     
-    func requestAuthorization(){}
-    
-    func startSensorUpdates(){}
-
-    func stopSensorUpdates(){}
-
-    
-    /*
     var auth: Int = 0
     
-    var timestamp: UInt64
-    var magx: Float
-    var magy: Float
-    var magz: Float
+    let manager: CMMotionManager
+    
+    var timestamp: UInt64 = 0
+    var x: Float = 0.0
+    var y: Float = 0.0
+    var z: Float = 0.0
     
     override init() {
-        //self.manager = CMMotionManager()
+        self.manager = CMMotionManager()
     }
     
     func requestAuthorization() {
         print("requesting authorization for mag")
-        self.auth = 0
+        
+        if self.manager.magnetometerActive && self.manager.magnetometerAvailable {
+            self.auth = 1
+        }
     }
     
-    func startSensorUpdates(manager: CMMotionManager, Double : freq) {
+    func startSensorUpdates(freq: Double) {
         requestAuthorization()
         
         if self.auth == 0 {
             return
         }
         
-        manager.magnetometerUpdateInterval = freq
-        manager.startMagnetometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
-            [weak self](data: CMMagnetometerData!, error: NSError!) in
-            var currentTimeM :NSDate = NSDate()
-            timestamp = UInt64(currentTimeM.timeIntervalSince1970*1000) // time to timestamp
-            magX = Float(data.magneticField.x)
-            magY = Float(data.magneticField.y)
-            magZ = Float(data.magneticField.z)
+        self.manager.magnetometerUpdateInterval = freq
+        let currentTimeA :NSDate = NSDate()
+        
+        self.timestamp = UInt64(currentTimeA.timeIntervalSince1970*1000) // time to timestamp
+        if let data = self.manager.magnetometerData {
+            self.x = Float(data.magneticField.x)
+            self.y = Float(data.magneticField.y)
+            self.z = Float(data.magneticField.z)
         }
     }
     
-    func stopSensorUpdates(manager: CMMotionManager) {
+    func stopSensorUpdates() {
         self.manager.stopMagnetometerUpdates()
+        self.auth = 0
     }
-
-    */
-
 }
-
