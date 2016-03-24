@@ -18,34 +18,70 @@ import CoreMotion
 private let _VM = VMController()
 
 class VMController : NSObject {
+    
+    // save the current state of the system in NSUserDefaults
+    private let defaults = NSUserDefaults.standardUserDefaults()
 
+    // Server address and port number
+    private var address = "inn.ac"
+    private var port = 25600
 
-    private let motionManager: CMMotionManager
+    // frequencies of the sensors
+    // default is 30 seconds
+    private let freqAcc : Double = 30
+    private let freqgyr : Double = 30
+    private let freqMag : Double = 30
+    private let freqBat : Double = 30
+    private let freqPro : Double = 30
+    
+    // Kill Switch Status
+    private var killSwitchState : Bool = false
+    
+    // Boolean for logging buttons
+    private var logAcc : Bool = true
+    private var logGyr : Bool = true
+    private var logMag : Bool = true
+    private var logBat : Bool = true
+    private var logPro : Bool = true
+    
+    // Boolean for sharing buttons
+    private var shareAcc : Bool = true
+    private var shareGyr : Bool = true
+    private var shareMag : Bool = true
+    private var shareBat : Bool = true
+    private var sharePro : Bool = true
+    
     /*
-var hasEnabledAccelerometerLocalLogging:AnyObject
-var accelerometerCollectionFrequency:AnyObject
-var hasEnabledAccelerometerRemoteLogging:AnyObject
-*/
+     var hasEnabledAccelerometerLocalLogging:AnyObject
+     var accelerometerCollectionFrequency:AnyObject
+     var hasEnabledAccelerometerRemoteLogging:AnyObject
+    */
+    
     override init(){
         //super.init()
-        self.motionManager = CMMotionManager()
     }
     
     class var sharedInstance: VMController {
         return _VM
     }
          
-    func initialiseSettings() {
+    func initialiseSettings(dictPrivacy: [Bool : Bool] ,dictFreq: [Double : Double]) {
  
+        for (button,privacy) in dictPrivacy{
+            self.defaults.setBool(privacy, forKey: "\(button)")
+        }
+        
+        for (button,freq) in dictFreq {
+            self.defaults.setDouble(freq, forKey: "\(button)")
+        }
     }
 
-    func updateSettings() {
-
+    func updateSettings(button: String, privacy: Bool) {
+        
+        self.defaults.setBool(privacy, forKey: "\(button)")
     }
 
     func initialiseSensors() {
 
     }
-
 }
-

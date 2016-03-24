@@ -12,9 +12,9 @@ import CoreMotion
 class AccelerometerController : NSObject, SensorProtocol {
 
     
-    var auth: Int = 0
+    private var auth: Int = 0
     
-    let manager: CMMotionManager
+    private let manager: CMMotionManager
     
     var timestamp: UInt64 = 0
     var x: Float = 0.0

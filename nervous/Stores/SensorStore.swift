@@ -16,8 +16,6 @@ import CoreMotion
 ///
 class SensorStore : BeaconControllerDelegate {
     
-    let motionManager = CMMotionManager()
-    
     let Gyroscope = GyroscopeController();
     let Battery = BatteryController();
     let Magnetometer = MagnetometerController();
