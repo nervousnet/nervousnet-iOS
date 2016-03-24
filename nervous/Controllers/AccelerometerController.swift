@@ -45,16 +45,15 @@ class AccelerometerController : NSObject, SensorProtocol {
     }
     
     
-
+    // requestAuthorization must be before this is function is called
     func startSensorUpdates(freq: Double) {
-
-        requestAuthorization()
         
         if self.auth == 0 {
             return
         }
         
         self.manager.accelerometerUpdateInterval = freq
+        self.manager.startAccelerometerUpdates()
         let currentTimeA :NSDate = NSDate()
         
         self.timestamp = UInt64(currentTimeA.timeIntervalSince1970*1000) // time to timestamp

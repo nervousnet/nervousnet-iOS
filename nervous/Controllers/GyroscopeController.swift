@@ -45,14 +45,15 @@ class GyroscopeController : NSObject {
         }
     }
     
+    // requestAuthorization must be before this is function is called
     func startSensorUpdates(freq: Double) {
-        requestAuthorization()
         
         if self.auth == 0 {
             return
         }
         
-        manager.gyroUpdateInterval = freq
+        self.manager.gyroUpdateInterval = freq
+        self.manager.startGyroUpdates()
         let currentTimeA :NSDate = NSDate()
         
         self.timestamp = UInt64(currentTimeA.timeIntervalSince1970*1000) // time to timestamp

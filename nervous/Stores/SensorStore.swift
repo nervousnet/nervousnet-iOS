@@ -27,12 +27,23 @@ class SensorStore : BeaconControllerDelegate {
     //initialise all sensor controllers
     init(){
         
+        // BEACONS
         //attach delegates
-        Beacon.delegate = self;
+        self.Beacon.delegate = self;
+        self.Beacon.requestAuthorization()
+        self.Beacon.startSensorUpdates()
         
-        Beacon.requestAuthorization()
-
-        Beacon.startSensorUpdates()
+        // ACCELEROMETER
+        self.Accelerometer.requestAuthorization()
+        self.Accelerometer.startSensorUpdates(30.0)
+        
+        // GYROSCOPE
+        self.Gyroscope.requestAuthorization()
+        self.Gyroscope.startSensorUpdates(30.0)
+        
+        // MAGNETOMETER
+        self.Magnetometer.requestAuthorization()
+        self.Magnetometer.startSensorUpdates(30.0)
         
     }
     
