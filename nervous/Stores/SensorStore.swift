@@ -37,7 +37,6 @@ class SensorStore : BeaconControllerDelegate {
     }
     
     
-    
     // MARK: delegate callbacks
     func controller(controller: BeaconController, didRangeBeacons: [CLBeacon]) {
         //here are new beacons: didRangeBeacons, do something with them

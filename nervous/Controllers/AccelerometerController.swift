@@ -27,6 +27,7 @@ class AccelerometerController : NSObject, SensorProtocol {
         self.manager = CMMotionManager()
     }
     
+    
     func requestAuthorization() {
         print("requesting authorization for acc")
         
@@ -38,7 +39,11 @@ class AccelerometerController : NSObject, SensorProtocol {
                 self.auth = 1
             }
         }
+        else {
+            self.auth = 0
+        }
     }
+    
     
 
     func startSensorUpdates(freq: Double) {
@@ -60,9 +65,10 @@ class AccelerometerController : NSObject, SensorProtocol {
         }
     }
 
+    
+    
     func stopSensorUpdates() {
         self.manager.stopAccelerometerUpdates()
         self.auth = 0
     }
-
 }

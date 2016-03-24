@@ -40,6 +40,9 @@ class GyroscopeController : NSObject {
                 self.auth = 1
             }
         }
+        else {
+            self.auth = 0
+        }
     }
     
     func startSensorUpdates(freq: Double) {

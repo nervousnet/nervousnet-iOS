@@ -39,6 +39,9 @@ class MagnetometerController : NSObject, SensorProtocol {
                 self.auth = 1
             }
         }
+        else {
+            self.auth = 0
+        }
     }
     
     func startSensorUpdates(freq: Double) {
