@@ -11,7 +11,17 @@
 import Foundation
 
 class GyroscopeController : NSObject {
+    
+    
+    func requestAuthorization(){}
+    
+    func startSensorUpdates(){}
+    
+    
+    func stopSensorUpdates(){}
 
+    
+    /*
     var auth: Int = 0
     
     var timestamp: UInt64
@@ -49,6 +59,6 @@ class GyroscopeController : NSObject {
     func stopSensorUpdates(manager: CMMotionManager) {
         self.manager.stopGyroUpdates()
     }
-
+    */
 }
 

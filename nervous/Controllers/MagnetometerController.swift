@@ -11,7 +11,15 @@
 import Foundation
 
 class MagnetometerController : NSObject, SensorProtocol {
+    
+    func requestAuthorization(){}
+    
+    func startSensorUpdates(){}
 
+    func stopSensorUpdates(){}
+
+    
+    /*
     var auth: Int = 0
     
     var timestamp: UInt64
@@ -49,6 +57,8 @@ class MagnetometerController : NSObject, SensorProtocol {
     func stopSensorUpdates(manager: CMMotionManager) {
         self.manager.stopMagnetometerUpdates()
     }
+
+    */
 
 }
 

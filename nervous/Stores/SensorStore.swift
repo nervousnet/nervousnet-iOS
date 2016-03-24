@@ -16,7 +16,8 @@ import CoreMotion
 ///
 class SensorStore : BeaconControllerDelegate {
     
-    let motionManager = CMMotionManager
+
+    let motionManager = CMMotionManager();
     
     let Gyroscope = GyroscopeController();
     let Battery = BatteryController();
@@ -35,8 +36,7 @@ class SensorStore : BeaconControllerDelegate {
         Beacon.requestAuthorization()
         Beacon.startSensorUpdates()
         
-        // initialize the motion manager
-        self.motionManager = CMMotionManager()
+
     }
     
     

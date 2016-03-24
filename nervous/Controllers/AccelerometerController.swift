@@ -11,6 +11,16 @@ import CoreMotion
 
 class AccelerometerController : NSObject, SensorProtocol {
     
+    
+    func requestAuthorization(){}
+    
+    func startSensorUpdates(){}
+
+    
+    func stopSensorUpdates(){}
+
+    
+    /*
     var auth: Int = 0
     
     var timestamp: UInt64
@@ -19,7 +29,7 @@ class AccelerometerController : NSObject, SensorProtocol {
     var z: Float
     
     override init() {
-        //self.manager = CMMotionManager()
+        self.manager = CMMotionManager()
     }
     
     func requestAuthorization() {
@@ -27,7 +37,7 @@ class AccelerometerController : NSObject, SensorProtocol {
         self.auth = 0
     }
     
-    func startSensorUpdates(manager: CMMotionManager, Double : freq) {
+    func startSensorUpdates(manager: CMMotionManager,freq:Double) {
         requestAuthorization()
         
         if self.auth == 0 {
@@ -48,4 +58,7 @@ class AccelerometerController : NSObject, SensorProtocol {
     func stopSensorUpdates(manager: CMMotionManager) {
         self.manager.stopAccelerometerUpdates()
     }
+
+
+    */
 }
