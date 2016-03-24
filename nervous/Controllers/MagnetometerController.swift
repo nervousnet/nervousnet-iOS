@@ -10,8 +10,45 @@
 
 import Foundation
 
-class MagnetometerController : NSObject {
+class MagnetometerController : NSObject, SensorProtocol {
 
+    var auth: Int = 0
+    
+    var timestamp: UInt64
+    var magx: Float
+    var magy: Float
+    var magz: Float
+    
+    override init() {
+        //self.manager = CMMotionManager()
+    }
+    
+    func requestAuthorization() {
+        print("requesting authorization for mag")
+        self.auth = 0
+    }
+    
+    func startSensorUpdates(manager: CMMotionManager, Double : freq) {
+        requestAuthorization()
+        
+        if self.auth == 0 {
+            return
+        }
+        
+        manager.magnetometerUpdateInterval = freq
+        manager.startMagnetometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
+            [weak self](data: CMMagnetometerData!, error: NSError!) in
+            var currentTimeM :NSDate = NSDate()
+            timestamp = UInt64(currentTimeM.timeIntervalSince1970*1000) // time to timestamp
+            magX = Float(data.magneticField.x)
+            magY = Float(data.magneticField.y)
+            magZ = Float(data.magneticField.z)
+        }
+    }
+    
+    func stopSensorUpdates(manager: CMMotionManager) {
+        self.manager.stopMagnetometerUpdates()
+    }
 
 }
 
