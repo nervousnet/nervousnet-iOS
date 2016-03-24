@@ -29,7 +29,10 @@ class GyroscopeController : NSObject {
     
     func requestAuthorization() {
         print("requesting authorization for acc")
-        self.auth = 1
+        
+        if self.manager.gyroActive && self.manager.gyroAvailable {
+            self.auth = 1
+        }
     }
     
     func startSensorUpdates(freq: Double) {
@@ -52,6 +55,6 @@ class GyroscopeController : NSObject {
     
     func stopSensorUpdates() {
         self.manager.stopGyroUpdates()
+        self.auth = 0
     }
 }
-

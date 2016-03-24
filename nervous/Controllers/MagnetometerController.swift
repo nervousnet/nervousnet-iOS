@@ -28,7 +28,10 @@ class MagnetometerController : NSObject, SensorProtocol {
     
     func requestAuthorization() {
         print("requesting authorization for mag")
-        self.auth = 0
+        
+        if self.manager.magnetometerActive && self.manager.magnetometerAvailable {
+            self.auth = 1
+        }
     }
     
     func startSensorUpdates(freq: Double) {
@@ -51,6 +54,6 @@ class MagnetometerController : NSObject, SensorProtocol {
     
     func stopSensorUpdates() {
         self.manager.stopMagnetometerUpdates()
+        self.auth = 0
     }
 }
-

@@ -27,7 +27,10 @@ class AccelerometerController : NSObject, SensorProtocol {
     
     func requestAuthorization() {
         print("requesting authorization for acc")
-        self.auth = 1
+        
+        if self.manager.accelerometerActive && self.manager.accelerometerAvailable {
+            self.auth = 1
+        }
     }
     
 
@@ -52,6 +55,7 @@ class AccelerometerController : NSObject, SensorProtocol {
 
     func stopSensorUpdates() {
         self.manager.stopAccelerometerUpdates()
+        self.auth = 0
     }
 
 }
