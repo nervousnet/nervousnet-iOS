@@ -571,7 +571,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = nervous/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.ethz.nervousnet;
 				PRODUCT_NAME = nervousnet;
@@ -595,7 +595,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = nervous/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.ethz.nervousnet;
 				PRODUCT_NAME = nervousnet;

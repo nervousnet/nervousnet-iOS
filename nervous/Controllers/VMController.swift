@@ -9,6 +9,7 @@
 
 
 import Foundation
+import CoreMotion
 
 ///
 /// Tells other things when to write wherever. Stores state of the privacy, permissions, frequency in NSUserDefaults.
@@ -18,16 +19,16 @@ private let _VM = VMController()
 
 class VMController : NSObject {
 
-    public let motionManager: CMMotionManager
+    private let motionManager: CMMotionManager = CMMotionManager()
     /*
 var hasEnabledAccelerometerLocalLogging:AnyObject
 var accelerometerCollectionFrequency:AnyObject
 var hasEnabledAccelerometerRemoteLogging:AnyObject
 */
          
-func initialiseSettings() {
+    func initialiseSettings() {
  
-      }
+    }
 
     func updateSettings() {
 
