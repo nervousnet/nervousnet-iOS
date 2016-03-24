@@ -14,8 +14,8 @@ protocol SensorProtocol {
     
     func requestAuthorization()
     
-    func startSensorUpdates(freq: Double)
-    
+    func startSensorUpdates(frequency: Double)
+        
     func stopSensorUpdates()
 }
 

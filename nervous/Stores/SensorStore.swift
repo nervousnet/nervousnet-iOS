@@ -31,8 +31,8 @@ class SensorStore : BeaconControllerDelegate {
         Beacon.delegate = self;
         
         Beacon.requestAuthorization()
-        
-        Beacon.startSensorUpdates(0.5)
+
+        Beacon.startSensorUpdates()
         
     }
     
