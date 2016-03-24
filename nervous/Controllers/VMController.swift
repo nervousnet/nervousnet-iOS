@@ -79,6 +79,13 @@ class VMController : NSObject {
     func updateSettings(button: String, privacy: Bool) {
         
         self.defaults.setBool(privacy, forKey: "\(button)")
+        
+    }
+    
+    func updateSettings(button: String, freq: Double) {
+        
+        self.defaults.setDouble(freq, forKey: "\(button)")
+        
     }
 
     func initialiseSensors() {
