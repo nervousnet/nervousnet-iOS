@@ -10,31 +10,42 @@ import Foundation
 import CoreMotion
 
 class AccelerometerController : NSObject, SensorProtocol {
-
-    var VM = VMController.sharedInstance
     
-    let manager = VM.motionManager
+    var auth: Int = 0
+    
+    var timestamp: UInt64
+    var x: Float
+    var y: Float
+    var z: Float
     
     override init() {
-        self.manager = CMMotionManager()
+        //self.manager = CMMotionManager()
     }
     
-    func startSensorUpdates(Double : freq) {
+    func requestAuthorization() {
+        print("requesting authorization for acc")
+        self.auth = 0
+    }
+    
+    func startSensorUpdates(manager: CMMotionManager, Double : freq) {
+        requestAuthorization()
+        
+        if self.auth == 0 {
+            return
+        }
+        
         self.manager.accelerometerUpdateInterval = freq
         manager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
             [weak self](data: CMAccelerometerData!, error: NSError!) in
             var currentTimeA :NSDate = NSDate()
-            var sensorDescAcc = SensorDescAccelerometer (
-                timestamp: UInt64(currentTimeA.timeIntervalSince1970*1000), // time to timestamp
-                accX : Float(data.acceleration.x),
-                accY : Float(data.acceleration.y),
-                accZ : Float(data.acceleration.z)
-            )
+            timestamp = UInt64(currentTimeA.timeIntervalSince1970*1000) // time to timestamp
+            self.x = Float(data.acceleration.x)
+            self.y = Float(data.acceleration.y)
+            self.z = Float(data.acceleration.z)
         }
     }
 
-    func stopSensorUpdates() {
+    func stopSensorUpdates(manager: CMMotionManager) {
         self.manager.stopAccelerometerUpdates()
     }
 }
-
