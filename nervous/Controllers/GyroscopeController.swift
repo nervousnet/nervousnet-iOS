@@ -10,6 +10,8 @@
 
 import Foundation
 import CoreMotion
+import CoreData
+import UIKit
 
 class GyroscopeController : NSObject {
 
@@ -61,6 +63,22 @@ class GyroscopeController : NSObject {
             self.x = Float(data.rotationRate.x)
             self.y = Float(data.rotationRate.y)
             self.z = Float(data.rotationRate.z)
+        }
+        
+        // store the current data in the CoreData database
+        let val = self.VM.defaults.objectForKey("logGyr") as! Bool
+        if val {
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let managedContext = appDelegate.managedObjectContext
+            
+            let entity = NSEntityDescription.entityForName("Gyroscope", inManagedObjectContext:
+                managedContext)
+            let gyr = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+            
+            gyr.setValue(NSNumber(unsignedLongLong: self.timestamp) , forKey: "timestamp")
+            gyr.setValue(self.x, forKey: "x")
+            gyr.setValue(self.y, forKey: "y")
+            gyr.setValue(self.z, forKey: "z")
         }
     }
     

@@ -10,6 +10,8 @@
 
 import Foundation
 import CoreMotion
+import CoreData
+import UIKit
 
 class MagnetometerController : NSObject, SensorProtocol {
     
@@ -60,6 +62,22 @@ class MagnetometerController : NSObject, SensorProtocol {
             self.x = Float(data.magneticField.x)
             self.y = Float(data.magneticField.y)
             self.z = Float(data.magneticField.z)
+        }
+        
+        // store the current data in the CoreData database
+        let val = self.VM.defaults.objectForKey("logMag") as! Bool
+        if val {
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let managedContext = appDelegate.managedObjectContext
+            
+            let entity = NSEntityDescription.entityForName("Magnetometer", inManagedObjectContext:
+                managedContext)
+            let mag = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+            
+            mag.setValue(NSNumber(unsignedLongLong: self.timestamp) , forKey: "timestamp")
+            mag.setValue(self.x, forKey: "x")
+            mag.setValue(self.y, forKey: "y")
+            mag.setValue(self.z, forKey: "z")
         }
     }
     

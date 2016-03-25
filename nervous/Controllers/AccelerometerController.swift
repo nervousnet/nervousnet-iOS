@@ -8,6 +8,8 @@
 
 import Foundation
 import CoreMotion
+import CoreData
+import UIKit
 
 class AccelerometerController : NSObject, SensorProtocol {
 
@@ -61,6 +63,22 @@ class AccelerometerController : NSObject, SensorProtocol {
             self.x = Float(data.acceleration.x)
             self.y = Float(data.acceleration.y)
             self.z = Float(data.acceleration.z)
+        }
+        
+        // store the current data in the CoreData database
+        let val = self.VM.defaults.objectForKey("logAcc") as! Bool
+        if val {
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let managedContext = appDelegate.managedObjectContext
+            
+            let entity = NSEntityDescription.entityForName("Accelerometer", inManagedObjectContext:
+                                                            managedContext)
+            let acc = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+            
+            acc.setValue(NSNumber(unsignedLongLong: self.timestamp) , forKey: "timestamp")
+            acc.setValue(self.x, forKey: "x")
+            acc.setValue(self.y, forKey: "y")
+            acc.setValue(self.z, forKey: "z")
         }
     }
 
