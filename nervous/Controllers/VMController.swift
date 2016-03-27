@@ -26,6 +26,8 @@ class VMController : NSObject {
     private var address = "inn.ac"
     private var port = 25600
     
+    private var ss : SensorStore?
+    
     /*
      var hasEnabledAccelerometerLocalLogging:AnyObject
      var accelerometerCollectionFrequency:AnyObject
@@ -34,6 +36,17 @@ class VMController : NSObject {
     
     override init(){
         //super.init()
+        self.defaults.setValue(false, forKey: "switchAcc")
+        self.defaults.setValue(false, forKey: "switchGyr")
+        self.defaults.setValue(false, forKey: "switchMag")
+        
+        self.defaults.setValue(30.0, forKey: "freqMag")
+        self.defaults.setValue(30.0, forKey: "freqMag")
+        self.defaults.setValue(30.0, forKey: "freqMag")
+        
+        self.defaults.setBool(true, forKey: "kill")
+        
+        self.ss = SensorStore()
     }
     
     
@@ -57,6 +70,7 @@ class VMController : NSObject {
         for (button,freq) in dictFreq {
             self.defaults.setValue(freq, forKey: "\(button)")
         }
+        
     }
     
     
@@ -65,11 +79,17 @@ class VMController : NSObject {
         
         self.defaults.setValue(privacy, forKey: "\(button)")
         
+        self.ss = nil
+        self.ss = SensorStore()
+        
     }
     
     func updateSettings(button: String, freq: Double) {
         
         self.defaults.setValue(freq, forKey: "\(button)")
+        
+        self.ss = nil
+        self.ss = SensorStore()
         
     }
     
@@ -78,6 +98,9 @@ class VMController : NSObject {
     func setMasterSwitch(button: Bool) {
         
         self.defaults.setBool(button, forKey: "kill")
+        
+        self.ss = nil
+        self.ss = SensorStore()
     }
     
     func getMasterSwitch() -> Bool {
@@ -88,6 +111,19 @@ class VMController : NSObject {
     
 
     func initialiseSensors() {
-
+    }
+    
+    
+    func getSettings(button: String) -> Dictionary<String,Any> {
+        
+        var dict = Dictionary<String, Any>()
+        
+        let fq = self.defaults.doubleForKey("\(button)")
+        dict["freq"] = fq
+        
+        let st = self.defaults.boolForKey("\(button)")
+        dict["state"] = st
+        
+        return dict
     }
 }

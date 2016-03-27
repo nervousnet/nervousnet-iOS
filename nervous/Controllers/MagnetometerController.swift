@@ -33,8 +33,8 @@ class MagnetometerController : NSObject, SensorProtocol {
     func requestAuthorization() {
         print("requesting authorization for mag")
         
-        let val1 = self.VM.defaults.objectForKey("kill") as! Bool
-        let val2 = self.VM.defaults.objectForKey("switchMag") as! Bool
+        let val1 = self.VM.defaults.boolForKey("kill")   //objectForKey("kill") as! Bool
+        let val2 = self.VM.defaults.boolForKey("switchMag")    //objectForKey("switchMag") as! Bool
         
         if val1 && val2  {
             if self.manager.magnetometerActive && self.manager.magnetometerAvailable {

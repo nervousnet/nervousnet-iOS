@@ -33,8 +33,8 @@ class AccelerometerController : NSObject, SensorProtocol {
     func requestAuthorization() {
         print("requesting authorization for acc")
         
-        let val1 = self.VM.defaults.objectForKey("kill") as! Bool
-        let val2 = self.VM.defaults.objectForKey("switchAcc") as! Bool
+        let val1 = self.VM.defaults.boolForKey("kill")   //objectForKey("kill") as! Bool
+        let val2 = self.VM.defaults.boolForKey("switchAcc")    //objectForKey("switchAcc") as! Bool
         
         if val1 && val2  {
             if self.manager.accelerometerActive && self.manager.accelerometerAvailable {

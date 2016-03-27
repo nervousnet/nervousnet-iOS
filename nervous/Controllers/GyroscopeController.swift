@@ -34,8 +34,8 @@ class GyroscopeController : NSObject {
     func requestAuthorization() {
         print("requesting authorization for acc")
         
-        let val1 = self.VM.defaults.objectForKey("kill") as! Bool
-        let val2 = self.VM.defaults.objectForKey("switchGyr") as! Bool
+        let val1 = self.VM.defaults.boolForKey("kill")   //objectForKey("kill") as! Bool
+        let val2 = self.VM.defaults.boolForKey("switchGyr")    //objectForKey("switchGyr") as! Bool
         
         if val1 && val2  {
             if self.manager.gyroActive && self.manager.gyroAvailable {
