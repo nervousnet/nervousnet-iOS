@@ -16,8 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //initialise axon controller (starts axon server)
     var axonController = AxonController();
     
+    let VM = VMController.sharedInstance
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        VM.initialiseSensors()
+        let ss = SensorStore()
+        ss.controller()
         
         return true
     }

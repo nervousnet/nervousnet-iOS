@@ -20,13 +20,13 @@ private let _VM = VMController()
 class VMController : NSObject {
     
     // save the current state of the system in NSUserDefaults
-    internal let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = NSUserDefaults.standardUserDefaults()
 
     // Server address and port number
     private var address = "inn.ac"
     private var port = 25600
     
-    private var ss : SensorStore?
+    //var ss : SensorStore
     
     /*
      var hasEnabledAccelerometerLocalLogging:AnyObject
@@ -38,15 +38,17 @@ class VMController : NSObject {
         //super.init()
         self.defaults.setValue(false, forKey: "switchAcc")
         self.defaults.setValue(false, forKey: "switchGyr")
-        self.defaults.setValue(false, forKey: "switchMag")
+        self.defaults.setValue(true, forKey: "switchMag")
         
-        self.defaults.setValue(30.0, forKey: "freqMag")
-        self.defaults.setValue(30.0, forKey: "freqMag")
-        self.defaults.setValue(30.0, forKey: "freqMag")
+        self.defaults.setValue(false, forKey: "logAcc")
+        self.defaults.setValue(false, forKey: "logGyr")
+        self.defaults.setValue(false, forKey: "logMag")
         
-        self.defaults.setBool(true, forKey: "kill")
+        self.defaults.setValue(2.0, forKey: "freqAcc")
+        self.defaults.setValue(2.0, forKey: "freqGyr")
+        self.defaults.setValue(2.0, forKey: "freqMag")
         
-        self.ss = SensorStore()
+        self.defaults.setBool(false, forKey: "kill")
     }
     
     
@@ -79,8 +81,8 @@ class VMController : NSObject {
         
         self.defaults.setValue(privacy, forKey: "\(button)")
         
-        self.ss = nil
-        self.ss = SensorStore()
+        //self.ss = nil
+        //self.ss = SensorStore()
         
     }
     
@@ -88,8 +90,8 @@ class VMController : NSObject {
         
         self.defaults.setValue(freq, forKey: "\(button)")
         
-        self.ss = nil
-        self.ss = SensorStore()
+        //self.ss = nil
+        //self.ss = SensorStore()
         
     }
     
@@ -99,8 +101,8 @@ class VMController : NSObject {
         
         self.defaults.setBool(button, forKey: "kill")
         
-        self.ss = nil
-        self.ss = SensorStore()
+        //self.ss = nil
+        //self.ss = SensorStore()
     }
     
     func getMasterSwitch() -> Bool {
@@ -111,6 +113,9 @@ class VMController : NSObject {
     
 
     func initialiseSensors() {
+        
+        //self.ss = SensorStore()
+        //print("started SensorStore....")
     }
     
     

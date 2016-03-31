@@ -33,11 +33,11 @@ class MagnetometerController : NSObject, SensorProtocol {
     func requestAuthorization() {
         print("requesting authorization for mag")
         
-        let val1 = self.VM.defaults.boolForKey("kill")   //objectForKey("kill") as! Bool
+        let val1 = self.VM.defaults.boolForKey("kill")         //objectForKey("kill") as! Bool
         let val2 = self.VM.defaults.boolForKey("switchMag")    //objectForKey("switchMag") as! Bool
         
-        if val1 && val2  {
-            if self.manager.magnetometerActive && self.manager.magnetometerAvailable {
+        if !val1 && val2  {
+            if self.manager.magnetometerAvailable {
                 self.auth = 1
             }
         }
@@ -46,39 +46,52 @@ class MagnetometerController : NSObject, SensorProtocol {
         }
     }
     
+    func initializeUpdate(freq: Double) {
+        
+        self.manager.magnetometerUpdateInterval = freq
+        self.manager.startMagnetometerUpdates()
+        
+    }
+    
     // requestAuthorization must be before this is function is called
-    func startSensorUpdates(freq: Double) {
+    func startSensorUpdates() {
         
         if self.auth == 0 {
             return
         }
         
-        self.manager.magnetometerUpdateInterval = freq
-        self.manager.startMagnetometerUpdates()
+        let queue = NSOperationQueue()
         let currentTimeA :NSDate = NSDate()
         
-        self.timestamp = UInt64(currentTimeA.timeIntervalSince1970*1000) // time to timestamp
-        if let data = self.manager.magnetometerData {
+        self.manager.startMagnetometerUpdatesToQueue(queue, withHandler: {data, error in
+        
+            self.timestamp = UInt64(currentTimeA.timeIntervalSince1970*1000) // time to timestamp
+            guard let data = data else {
+                return
+            }
             self.x = Float(data.magneticField.x)
             self.y = Float(data.magneticField.y)
             self.z = Float(data.magneticField.z)
-        }
+            
+            print("magnetometer")
+            print(self.x)
         
-        // store the current data in the CoreData database
-        let val = self.VM.defaults.objectForKey("logMag") as! Bool
-        if val {
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            let managedContext = appDelegate.managedObjectContext
-            
-            let entity = NSEntityDescription.entityForName("Magnetometer", inManagedObjectContext:
-                managedContext)
-            let mag = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-            
-            mag.setValue(NSNumber(unsignedLongLong: self.timestamp) , forKey: "timestamp")
-            mag.setValue(self.x, forKey: "x")
-            mag.setValue(self.y, forKey: "y")
-            mag.setValue(self.z, forKey: "z")
-        }
+            // store the current data in the CoreData database
+            let val = self.VM.defaults.objectForKey("logMag") as! Bool
+            if val {
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let managedContext = appDelegate.managedObjectContext
+                
+                let entity = NSEntityDescription.entityForName("Magnetometer", inManagedObjectContext:
+                    managedContext)
+                let mag = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+                
+                mag.setValue(NSNumber(unsignedLongLong: self.timestamp) , forKey: "timestamp")
+                mag.setValue(self.x, forKey: "x")
+                mag.setValue(self.y, forKey: "y")
+                mag.setValue(self.z, forKey: "z")
+            }
+        })
     }
     
     func stopSensorUpdates() {
