@@ -41,6 +41,10 @@
 		E1A897101CA7F2D000393545 /* VMController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEE51C88C183005D1A20 /* VMController.swift */; };
 		E1A897111CA7F31900393545 /* SensorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEF41C88C1B2005D1A20 /* SensorStore.swift */; };
 		E1A897121CA7F32000393545 /* AxonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEF31C88C1B2005D1A20 /* AxonStore.swift */; };
+		E1A897161CAD653400393545 /* QueryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A897151CAD653400393545 /* QueryController.swift */; };
+		E1A897181CAD654E00393545 /* ReadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A897171CAD654E00393545 /* ReadController.swift */; };
+		E1A8971A1CAD656900393545 /* WriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A897191CAD656900393545 /* WriteController.swift */; };
+		E1A8971C1CAD657B00393545 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A8971B1CAD657B00393545 /* RegisterController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +94,10 @@
 		22FF8A8C19F14B3A00AC6783 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2E02F23DE03AE89CCB108FCF /* Pods_nervousnet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nervousnet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D973B0B88CF2E1839C305D57 /* Pods-nervousnet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nervousnet.release.xcconfig"; path = "Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet.release.xcconfig"; sourceTree = "<group>"; };
+		E1A897151CAD653400393545 /* QueryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryController.swift; sourceTree = "<group>"; };
+		E1A897171CAD654E00393545 /* ReadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadController.swift; sourceTree = "<group>"; };
+		E1A897191CAD656900393545 /* WriteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteController.swift; sourceTree = "<group>"; };
+		E1A8971B1CAD657B00393545 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		FC1346AF1AD5D08B00D9998C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FC1346B11AD5D09500D9998C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -220,6 +228,7 @@
 				221CAEDF1C88C183005D1A20 /* BatteryController.swift */,
 				221CAEE01C88C183005D1A20 /* GyroscopeController.swift */,
 				221CAEE11C88C183005D1A20 /* LAEController.swift */,
+				E1A897141CAD64AC00393545 /* HubController */,
 				221CAEE21C88C183005D1A20 /* MagnetometerController.swift */,
 				221CAEE31C88C183005D1A20 /* ProximityController.swift */,
 				22F90A6A1C8C76F0006A56FD /* BeaconController.swift */,
@@ -284,6 +293,17 @@
 				D973B0B88CF2E1839C305D57 /* Pods-nervousnet.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E1A897141CAD64AC00393545 /* HubController */ = {
+			isa = PBXGroup;
+			children = (
+				E1A897151CAD653400393545 /* QueryController.swift */,
+				E1A897171CAD654E00393545 /* ReadController.swift */,
+				E1A897191CAD656900393545 /* WriteController.swift */,
+				E1A8971B1CAD657B00393545 /* RegisterController.swift */,
+			);
+			name = HubController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,13 +460,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				221CAF1C1C88C7C8005D1A20 /* MainModel.xcdatamodeld in Sources */,
+				E1A897181CAD654E00393545 /* ReadController.swift in Sources */,
 				22F90A6B1C8C76F0006A56FD /* BeaconController.swift in Sources */,
 				221CAEEB1C88C183005D1A20 /* MagnetometerController.swift in Sources */,
 				221CAEE71C88C183005D1A20 /* AxonController.swift in Sources */,
+				E1A897161CAD653400393545 /* QueryController.swift in Sources */,
 				221CAEE91C88C183005D1A20 /* GyroscopeController.swift in Sources */,
 				221CAF1E1C88FB89005D1A20 /* AuthController.swift in Sources */,
 				221CAEF61C88C1B2005D1A20 /* SensorStore.swift in Sources */,
 				221CAEF11C88C190005D1A20 /* InstallableAxonsTableViewController.swift in Sources */,
+				E1A8971A1CAD656900393545 /* WriteController.swift in Sources */,
 				221CAEE81C88C183005D1A20 /* BatteryController.swift in Sources */,
 				221CAEEE1C88C183005D1A20 /* VMController.swift in Sources */,
 				221CAEED1C88C183005D1A20 /* SensorProtocol.swift in Sources */,
@@ -456,6 +479,7 @@
 				223847BD1C812A1600C17EFB /* MainViewController.swift in Sources */,
 				223847BE1C812A1600C17EFB /* CreditsViewController.swift in Sources */,
 				221CAEE61C88C183005D1A20 /* AccelerometerController.swift in Sources */,
+				E1A8971C1CAD657B00393545 /* RegisterController.swift in Sources */,
 				221CAEF21C88C190005D1A20 /* InstalledAxonsTableViewController.swift in Sources */,
 				221CAEEC1C88C183005D1A20 /* ProximityController.swift in Sources */,
 				221CAEF81C88C1BA005D1A20 /* AxonView.swift in Sources */,
