@@ -11,6 +11,35 @@
 import Foundation
 
 class BatteryController : NSObject {
+    
+    private var auth: Int = 0
+    
+    private let VM = VMController.sharedInstance
+    
+    var timestamp: UInt64 = 0
+    var percent: Float = 0.0
+    var isCharging: Bool = false
+    var charging_type: Int = 0 // 0 - unknown, 1 - USB, 2 - Ac, 3 - Wireless
+    
+    override init() {
+        
+    }
+    
+    func requestAuthorization() {
+        
+    }
+    
+    func initializeUpdate() {
+        
+    }
+    
+    func startSensorUpdates() {
+        
+    }
+    
+    func stopSensorUpdates() {
+        
+    }
 
  
 }

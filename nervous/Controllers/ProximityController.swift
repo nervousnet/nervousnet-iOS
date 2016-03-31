@@ -11,6 +11,33 @@
 import Foundation
 
 class ProximityController : NSObject {
+    
+    private var auth: Int = 0
+    
+    private let VM = VMController.sharedInstance
+    
+    var timestamp: UInt64 = 0
+    var proximity: Float = 0.0
+    
+    override init() {
+        
+    }
+    
+    func requestAuthorization() {
+        
+    }
+    
+    func initializeUpdate() {
+        
+    }
+    
+    func startSensorUpdates() {
+        
+    }
+    
+    func stopSensorUpdates() {
+        
+    }
 
 
 }
