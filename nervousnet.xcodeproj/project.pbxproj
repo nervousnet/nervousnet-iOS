@@ -32,6 +32,7 @@
 		22653FFB19D70899004E1AA2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22653FFA19D70898004E1AA2 /* QuartzCore.framework */; };
 		2298F7D71C8198840014CB24 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2298F7D61C8198840014CB24 /* Images.xcassets */; };
 		22AA3A851CB198B600B03B94 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA3A841CB198B600B03B94 /* MainCollectionViewController.swift */; };
+		22AA3A871CB19DC900B03B94 /* MainCVCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA3A861CB19DC900B03B94 /* MainCVCellCollectionViewCell.swift */; };
 		22B03E6019CE102900E50D04 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E5F19CE102900E50D04 /* SpriteKit.framework */; };
 		22B03E6419D04BB500E50D04 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E6319D04BB500E50D04 /* CoreLocation.framework */; };
 		22D10CA919D598A1000D6942 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D10CA819D598A1000D6942 /* CFNetwork.framework */; };
@@ -87,6 +88,7 @@
 		22653FFA19D70898004E1AA2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2298F7D61C8198840014CB24 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22AA3A841CB198B600B03B94 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
+		22AA3A861CB19DC900B03B94 /* MainCVCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCVCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		22B03E5F19CE102900E50D04 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		22B03E6319D04BB500E50D04 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		22D10CA819D598A1000D6942 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -260,6 +262,7 @@
 				221CAEF01C88C190005D1A20 /* InstalledAxonsTableViewController.swift */,
 				223847BC1C812A1600C17EFB /* CreditsViewController.swift */,
 				22AA3A841CB198B600B03B94 /* MainCollectionViewController.swift */,
+				22AA3A861CB19DC900B03B94 /* MainCVCellCollectionViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				22F90A6B1C8C76F0006A56FD /* BeaconController.swift in Sources */,
 				221CAEEB1C88C183005D1A20 /* MagnetometerController.swift in Sources */,
 				221CAEE71C88C183005D1A20 /* AxonController.swift in Sources */,
+				22AA3A871CB19DC900B03B94 /* MainCVCellCollectionViewCell.swift in Sources */,
 				E1A897161CAD653400393545 /* QueryController.swift in Sources */,
 				221CAEE91C88C183005D1A20 /* GyroscopeController.swift in Sources */,
 				221CAF1E1C88FB89005D1A20 /* AuthController.swift in Sources */,
