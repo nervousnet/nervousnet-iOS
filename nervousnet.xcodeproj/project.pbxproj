@@ -25,12 +25,13 @@
 		221CAF1C1C88C7C8005D1A20 /* MainModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 221CAF1A1C88C7C8005D1A20 /* MainModel.xcdatamodeld */; };
 		221CAF1E1C88FB89005D1A20 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAF1D1C88FB89005D1A20 /* AuthController.swift */; };
 		22316DF219BFB422006FD165 /* nervousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22316DF119BFB422006FD165 /* nervousTests.swift */; };
-		223847BD1C812A1600C17EFB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223847BB1C812A1600C17EFB /* MainViewController.swift */; };
+		223847BD1C812A1600C17EFB /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223847BB1C812A1600C17EFB /* MainNavigationController.swift */; };
 		223847BE1C812A1600C17EFB /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223847BC1C812A1600C17EFB /* CreditsViewController.swift */; };
 		223847C31C812A4F00C17EFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223847C21C812A4F00C17EFB /* Main.storyboard */; };
 		223847C61C812A7200C17EFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223847C41C812A7200C17EFB /* AppDelegate.swift */; };
 		22653FFB19D70899004E1AA2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22653FFA19D70898004E1AA2 /* QuartzCore.framework */; };
 		2298F7D71C8198840014CB24 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2298F7D61C8198840014CB24 /* Images.xcassets */; };
+		22AA3A851CB198B600B03B94 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA3A841CB198B600B03B94 /* MainCollectionViewController.swift */; };
 		22B03E6019CE102900E50D04 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E5F19CE102900E50D04 /* SpriteKit.framework */; };
 		22B03E6419D04BB500E50D04 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E6319D04BB500E50D04 /* CoreLocation.framework */; };
 		22D10CA919D598A1000D6942 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D10CA819D598A1000D6942 /* CFNetwork.framework */; };
@@ -79,12 +80,13 @@
 		22316DEB19BFB422006FD165 /* nervousnetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nervousnetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22316DF019BFB422006FD165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22316DF119BFB422006FD165 /* nervousTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nervousTests.swift; sourceTree = "<group>"; };
-		223847BB1C812A1600C17EFB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		223847BB1C812A1600C17EFB /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		223847BC1C812A1600C17EFB /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		223847C21C812A4F00C17EFB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		223847C41C812A7200C17EFB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22653FFA19D70898004E1AA2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2298F7D61C8198840014CB24 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		22AA3A841CB198B600B03B94 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		22B03E5F19CE102900E50D04 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		22B03E6319D04BB500E50D04 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		22D10CA819D598A1000D6942 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -253,10 +255,11 @@
 		223847BA1C8129D400C17EFB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				223847BB1C812A1600C17EFB /* MainViewController.swift */,
+				223847BB1C812A1600C17EFB /* MainNavigationController.swift */,
 				221CAEEF1C88C190005D1A20 /* InstallableAxonsTableViewController.swift */,
 				221CAEF01C88C190005D1A20 /* InstalledAxonsTableViewController.swift */,
 				223847BC1C812A1600C17EFB /* CreditsViewController.swift */,
+				22AA3A841CB198B600B03B94 /* MainCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				221CAF1C1C88C7C8005D1A20 /* MainModel.xcdatamodeld in Sources */,
+				22AA3A851CB198B600B03B94 /* MainCollectionViewController.swift in Sources */,
 				E1A897181CAD654E00393545 /* ReadController.swift in Sources */,
 				22F90A6B1C8C76F0006A56FD /* BeaconController.swift in Sources */,
 				221CAEEB1C88C183005D1A20 /* MagnetometerController.swift in Sources */,
@@ -476,7 +480,7 @@
 				223847C61C812A7200C17EFB /* AppDelegate.swift in Sources */,
 				221CAEEA1C88C183005D1A20 /* LAEController.swift in Sources */,
 				221CAEF51C88C1B2005D1A20 /* AxonStore.swift in Sources */,
-				223847BD1C812A1600C17EFB /* MainViewController.swift in Sources */,
+				223847BD1C812A1600C17EFB /* MainNavigationController.swift in Sources */,
 				223847BE1C812A1600C17EFB /* CreditsViewController.swift in Sources */,
 				221CAEE61C88C183005D1A20 /* AccelerometerController.swift in Sources */,
 				E1A8971C1CAD657B00393545 /* RegisterController.swift in Sources */,
