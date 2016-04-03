@@ -14,9 +14,20 @@ class MainCollectionViewController: UICollectionViewController  {
     private let reuseIdentifier = "MainCVCell"
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     
+    
     func getNumberOfCellsDisplayable() -> Int {
         return 30;
     }
+    
+    func getTextForCell(cellIndex: NSIndexPath) -> String {
+        return "\(cellIndex.row) text for cell"
+    }
+    
+    
+    func getImageForCell(cellIndex: NSIndexPath) -> UIImage {
+        return UIImage(imageLiteral: "3rd-floor-0")
+    }
+    
 }
 
 extension MainCollectionViewController {
@@ -38,7 +49,9 @@ extension MainCollectionViewController {
         //2
         cell.backgroundColor = UIColor.orangeColor()
         //3
-        cell.imageView.image = UIImage(imageLiteral: "3rd-floor-0")
+        cell.imageView.image = getImageForCell(indexPath)
+        cell.textLabel.text = getTextForCell(indexPath)
+        
         
         return cell
     }}
