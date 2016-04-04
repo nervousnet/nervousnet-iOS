@@ -2,18 +2,18 @@ import UIKit
 import Foundation
 
 class MainNavigationController : UINavigationController {
-    
+
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        
+
         //let navbarHeight = self.navigationBar.frame.size.height
         let navbarWidth = self.navigationBar.frame.size.width
 
         
         let navbarView = UIView(frame: CGRectMake(0, 0, 700, 60))
+        navbarView.backgroundColor = UIColor.clearColor()
         
         
         let navbarLogo = UIImageView(image: UIImage(imageLiteral: "nn"))
@@ -30,7 +30,7 @@ class MainNavigationController : UINavigationController {
         
         let navbarSwitch = UISwitch(frame: CGRectMake(navbarWidth-50, 10, 50, 50));
         navbarSwitch.transform = CGAffineTransformMakeScale(0.5, 0.5);
-        navbarSwitch.addTarget(self, action: Selector("navbarSwitchChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        navbarSwitch.addTarget(self, action: #selector(MainNavigationController.navbarSwitchChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
 
         navbarView.addSubview(navbarLabel)
         navbarView.addSubview(navbarLogo)
@@ -60,6 +60,9 @@ class MainNavigationController : UINavigationController {
         //self.presentViewController(alertController, animated: true, completion:nil)
         //}
     }
+    
+    
+    
     
     @IBAction func navbarSwitchChanged(sender: UISwitch) {
         print("navbar switch toggled");

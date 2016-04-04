@@ -9,8 +9,20 @@
 import Foundation
 import UIKit
 
+
 class MainCollectionViewController: UICollectionViewController  {
     
+    /* view controller routing */
+    private let nextViewController = "ControlPanelTableViewController"
+    @IBAction func handleSwipe(recognizer:UISwipeGestureRecognizer){
+
+        let nextViewControllerObj = self.storyboard?.instantiateViewControllerWithIdentifier(nextViewController) as? ControlPanelTableViewController
+        self.navigationController?.pushViewController(nextViewControllerObj!, animated: true)
+    }
+   
+    
+
+    /* cell handling */
     private let reuseIdentifier = "MainCVCell"
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     
@@ -28,30 +40,32 @@ class MainCollectionViewController: UICollectionViewController  {
         return UIImage(imageLiteral: "3rd-floor-0")
     }
     
+
+
 }
 
 extension MainCollectionViewController {
     
-    //1
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    //2
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return getNumberOfCellsDisplayable();
     }
     
-    //3
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        //1
+    
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MainCVCellCollectionViewCell
-        //2
+    
         cell.backgroundColor = UIColor.orangeColor()
-        //3
+    
         cell.imageView.image = getImageForCell(indexPath)
         cell.textLabel.text = getTextForCell(indexPath)
         
         
         return cell
-    }}
+    }
+}
+
+
