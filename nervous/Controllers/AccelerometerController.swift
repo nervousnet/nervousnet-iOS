@@ -20,10 +20,10 @@ class AccelerometerController : NSObject, SensorProtocol {
     
     private let VM = VMController.sharedInstance
     
-    var timestamp: UInt64 = 0
-    var x: Float = 0.0
-    var y: Float = 0.0
-    var z: Float = 0.0
+    internal var timestamp: UInt64 = 0
+    internal var x: Float = 0.0
+    internal var y: Float = 0.0
+    internal var z: Float = 0.0
     
     override init() {
         self.manager = CMMotionManager()
