@@ -22,11 +22,29 @@ class LAEController : NSObject {
         // it will give real time data of a sensor
         var data = [AnyObject]()
         
+        if sensor == "Accelerometer" {
+            
+            let sen = AccelerometerController.sharedInstance
+            data.append(sen.x)
+            data.append(sen.y)
+            data.append(sen.z)
+        }
         
+        if sensor == "Gyroscope" {
+            
+            let sen = GyroscopeController.sharedInstance
+            data.append(sen.x)
+            data.append(sen.y)
+            data.append(sen.z)
+        }
         
-        data.append(1)
-        data.append(2)
-        data.append(3)
+        if sensor == "Magnetometer" {
+            
+            let sen = MagnetometerController.sharedInstance
+            data.append(sen.x)
+            data.append(sen.y)
+            data.append(sen.z)
+        }
         
         return data
     }
@@ -71,22 +89,22 @@ class LAEController : NSObject {
         
         let data = getData(sensor, from: from, to: to)
         
-        var mean_x : Double = 0.0
-        var mean_y : Double = 0.0
-        var mean_z : Double = 0.0
+        var mean_x : Float = 0.0
+        var mean_y : Float = 0.0
+        var mean_z : Float = 0.0
         
         var mean = [AnyObject]()
         
         for i in 0 ..< data.count {
                 
-                mean_x += Double(data[i][1] as! NSNumber)
-                mean_y += Double(data[i][2] as! NSNumber)
-                mean_z += Double(data[i][3] as! NSNumber)
+                mean_x += Float(data[i][1] as! NSNumber)
+                mean_y += Float(data[i][2] as! NSNumber)
+                mean_z += Float(data[i][3] as! NSNumber)
         }
         
-        mean_x /= Double(data.count)
-        mean_y /= Double(data.count)
-        mean_z /= Double(data.count)
+        mean_x /= Float(data.count)
+        mean_y /= Float(data.count)
+        mean_z /= Float(data.count)
         
         mean.append(mean_x)
         mean.append(mean_y)

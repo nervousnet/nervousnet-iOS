@@ -13,6 +13,7 @@ import CoreMotion
 import CoreData
 import UIKit
 
+private let _GYR = GyroscopeController()
 class GyroscopeController : NSObject {
 
 
@@ -29,6 +30,10 @@ class GyroscopeController : NSObject {
     
     override init() {
         self.manager = CMMotionManager()
+    }
+    
+    class var sharedInstance: GyroscopeController {
+        return _GYR
     }
     
     func requestAuthorization() {
