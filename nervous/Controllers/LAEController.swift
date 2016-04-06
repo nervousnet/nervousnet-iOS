@@ -31,6 +31,7 @@ class LAEController : NSObject {
         return data
     }
     
+    //sensor string is the name of the coredata object
     func getData(sensor: String, from: UInt64, to: UInt64) -> Array<Array<AnyObject>>{
         
         var data = [[AnyObject]]()
