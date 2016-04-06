@@ -9,7 +9,6 @@
 
 
 import Foundation
-import CoreMotion
 
 ///
 /// Tells other things when to write wherever. Stores state of the privacy, permissions, frequency in NSUserDefaults.
@@ -36,15 +35,15 @@ class VMController : NSObject {
     
     override init(){
         //super.init()
-        self.defaults.setValue(false, forKey: "switchAcc")
+        self.defaults.setValue(true, forKey: "switchAcc")
         self.defaults.setValue(false, forKey: "switchGyr")
-        self.defaults.setValue(true, forKey: "switchMag")
+        self.defaults.setValue(false, forKey: "switchMag")
         
         self.defaults.setValue(false, forKey: "logAcc")
         self.defaults.setValue(false, forKey: "logGyr")
         self.defaults.setValue(false, forKey: "logMag")
         
-        self.defaults.setValue(2.0, forKey: "freqAcc")
+        self.defaults.setValue(0.1, forKey: "freqAcc")
         self.defaults.setValue(2.0, forKey: "freqGyr")
         self.defaults.setValue(2.0, forKey: "freqMag")
         

@@ -11,6 +11,7 @@ import CoreMotion
 import CoreData
 import UIKit
 
+private let _ACC = AccelerometerController()
 class AccelerometerController : NSObject, SensorProtocol {
 
     
@@ -27,6 +28,10 @@ class AccelerometerController : NSObject, SensorProtocol {
     
     override init() {
         self.manager = CMMotionManager()
+    }
+    
+    class var sharedInstance: AccelerometerController {
+        return _ACC
     }
     
     
@@ -74,8 +79,8 @@ class AccelerometerController : NSObject, SensorProtocol {
             self.y = Float(data.acceleration.y)
             self.z = Float(data.acceleration.z)
 
-            print("accelerometer")
-            print(self.x)
+            //print("accelerometer")
+            //print(self.x)
 
             // store the current data in the CoreData database
             let val = self.VM.defaults.objectForKey("logAcc") as! Bool

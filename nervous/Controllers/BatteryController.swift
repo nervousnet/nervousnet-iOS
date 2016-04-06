@@ -10,6 +10,7 @@
 
 import Foundation
 
+private let _BAT = BatteryController()
 class BatteryController : NSObject {
     
     private var auth: Int = 0
@@ -23,6 +24,10 @@ class BatteryController : NSObject {
     
     override init() {
         
+    }
+    
+    class var sharedInstance: BatteryController {
+        return _BAT
     }
     
     func requestAuthorization() {

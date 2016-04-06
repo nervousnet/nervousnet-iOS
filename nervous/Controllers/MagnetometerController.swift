@@ -13,6 +13,7 @@ import CoreMotion
 import CoreData
 import UIKit
 
+private let _MAG = MagnetometerController()
 class MagnetometerController : NSObject, SensorProtocol {
     
     private var auth: Int = 0
@@ -28,6 +29,10 @@ class MagnetometerController : NSObject, SensorProtocol {
     
     override init() {
         self.manager = CMMotionManager()
+    }
+    
+    class var sharedInstance: MagnetometerController {
+        return _MAG
     }
     
     func requestAuthorization() {

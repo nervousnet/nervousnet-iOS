@@ -32,13 +32,13 @@ class SensorStore : NSObject, BeaconControllerDelegate {
     //initialise all sensor controllers
     override init(){
         
-        self.Gyroscope = GyroscopeController()
+        self.Gyroscope = GyroscopeController.sharedInstance
         self.Gyroscope.initializeUpdate(self.VM.defaults.doubleForKey("freqGyr"))
         //self.Battery = BatteryController()
-        self.Magnetometer = MagnetometerController()
+        self.Magnetometer = MagnetometerController.sharedInstance
         self.Magnetometer.initializeUpdate(self.VM.defaults.doubleForKey("freqMag"))
         //self.Proximity = ProximityController()
-        self.Accelerometer = AccelerometerController()
+        self.Accelerometer = AccelerometerController.sharedInstance
         self.Accelerometer.initializeUpdate(self.VM.defaults.doubleForKey("freqAcc"))
         //self.Beacon = BeaconController()
         
