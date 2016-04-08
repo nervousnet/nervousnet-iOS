@@ -38,10 +38,12 @@ class VMController : NSObject {
         self.defaults.setValue(true, forKey: "switchAcc")
         self.defaults.setValue(false, forKey: "switchGyr")
         self.defaults.setValue(false, forKey: "switchMag")
+        self.defaults.setValue(false, forKey: "switchBat")
         
         self.defaults.setValue(false, forKey: "logAcc")
         self.defaults.setValue(false, forKey: "logGyr")
         self.defaults.setValue(false, forKey: "logMag")
+        self.defaults.setValue(false, forKey: "logBat")
         
         self.defaults.setValue(0.1, forKey: "freqAcc")
         self.defaults.setValue(2.0, forKey: "freqGyr")
