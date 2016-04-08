@@ -78,22 +78,14 @@ class NervousnetSpaceTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         navigationController!.performSegueWithIdentifier("axonDetailViewControllerSegue", sender: TableData[indexPath.row])
+        
+        
     }
     
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-       if segue.identifier == "axonDetailViewControllerSegue" {
-            
-            if let axonDetailViewController = segue.destinationViewController as? AxonDetailViewController {
-                axonDetailViewController.axon = sender as! Array<String>
-            }
-            
-        }
-        
-    }
+
     
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

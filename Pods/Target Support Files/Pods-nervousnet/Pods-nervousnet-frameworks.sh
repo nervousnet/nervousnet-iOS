@@ -85,6 +85,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-nervousnet/AFNetworking.framework"
+  install_framework "Pods-nervousnet/BluetoothKit.framework"
   install_framework "Pods-nervousnet/DownloadButton.framework"
   install_framework "Pods-nervousnet/LXReorderableCollectionViewFlowLayout.framework"
   install_framework "Pods-nervousnet/MRProgress.framework"
@@ -94,6 +95,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-nervousnet/AFNetworking.framework"
+  install_framework "Pods-nervousnet/BluetoothKit.framework"
   install_framework "Pods-nervousnet/DownloadButton.framework"
   install_framework "Pods-nervousnet/LXReorderableCollectionViewFlowLayout.framework"
   install_framework "Pods-nervousnet/MRProgress.framework"

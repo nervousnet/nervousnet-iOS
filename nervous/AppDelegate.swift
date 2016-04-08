@@ -24,17 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         VM.initialiseSensors()
         let ss = SensorStore()
         ss.controller()
-        
-        // demo to get real time data using the getData() function in LAEController
-        let lae = LAEController()
-        var obj: Array<AnyObject> = [0.0,0.0,0.0]
-        for i in 1...10 {
-            let timeToDelay = Double(i)
-            delay(timeToDelay) {
-                obj = lae.getData("Accelerometer")
-                print(obj)
-            }
-        }
+
         
         return true
     }

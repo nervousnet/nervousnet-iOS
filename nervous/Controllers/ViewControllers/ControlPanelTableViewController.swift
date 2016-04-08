@@ -19,6 +19,8 @@ class ControlPanelTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    self.navigationController?.navigationBar.viewWithTag(97)?.hidden = true
     }
 
     override func didReceiveMemoryWarning() {

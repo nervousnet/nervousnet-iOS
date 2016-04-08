@@ -12,6 +12,7 @@ import UIKit
 
 class MainCollectionViewController: UICollectionViewController, UIGestureRecognizerDelegate  {
     
+
     /* view controller routing */
     private let nextViewController = "ControlPanelTableViewController"
     @IBAction func handleSwipe(recognizer:UISwipeGestureRecognizer){
@@ -73,19 +74,39 @@ class MainCollectionViewController: UICollectionViewController, UIGestureRecogni
 extension MainCollectionViewController {
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+      /*
+        CGRect frame = self.collectionView.frame;
+        frame.size.width = 150;
+        self.collectionView.frame = frame;
+        */
         self.collectionView?.reloadData()
+        self.navigationController?.navigationBar.viewWithTag(97)?.hidden = false
+
+
     }
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.viewWithTag(97)?.hidden = false
+    }
+
+    
+    
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if(section == 0){
+            print("can display cells: ")
+            print(getNumberOfCellsDisplayable())
             return getNumberOfCellsDisplayable()
         }else if(section == 1){
-            return 2
+            return 0
         }else{
             return 0
         }
@@ -95,16 +116,29 @@ extension MainCollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MainCVCellCollectionViewCell
         
+
+        
+        let screenSize = UIScreen.mainScreen().bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+        
+        cell.backgroundColor = UIColor.orangeColor()
+        cell.layer.borderWidth = 10
+        cell.layer.borderColor = UIColor.clearColor().CGColor
+        cell.frame.size.width = (screenWidth / 2 ) - 20
+        cell.frame.size.height = (screenWidth / 2 ) - 20
+        
+        
         
         if(indexPath.section == 0){
-            cell.backgroundColor = UIColor.orangeColor()
         
             cell.imageView.image = getImageForCell(indexPath)
             cell.textLabel.text = getTextForCell(indexPath)
             
         }else if(indexPath.section == 1){
             
-            
+            cell.textLabel.text = "Get Axons"
+
         }
         
         return cell

@@ -28,6 +28,8 @@ class LAEController : NSObject {
             data.append(sen.x)
             data.append(sen.y)
             data.append(sen.z)
+            
+            print(sen.x)
         }
         
         if sensor == "Gyroscope" {

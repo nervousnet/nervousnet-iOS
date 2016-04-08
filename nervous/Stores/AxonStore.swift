@@ -109,8 +109,25 @@ class AxonStore : NSObject {
         
 
     }
-
     
+
+
+
+    class func getRemoteAxonIndexByName(axonName: String) -> Int {
+        
+        for (index,_) in remoteAxonList.enumerate() {
+            
+            if(self.remoteAxonList[index][0] == axonName){
+                return index
+            }
+            
+        }
+        
+        return -1
+        
+    }
+
+
     class func getRemoteAxon(axonIndex: Int) -> Array<String> {
         return remoteAxonList[axonIndex]
     }

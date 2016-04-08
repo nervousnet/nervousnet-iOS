@@ -12,10 +12,36 @@ import DownloadButton
 class AxonDetailViewController: UIViewController {
     
     var axon: Array<String> = []
+    
+    @IBOutlet weak var axonImageView: UIImageView!
     @IBOutlet weak var downloadButton: PKDownloadButton!
+    
+    @IBOutlet weak var axonTextView: UITextView!
+    @IBOutlet weak var axonSubtitle: UILabel!
+    @IBOutlet weak var axonTitle: UILabel!
+    
+    @IBOutlet weak var axonURL: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        downloadButton.delegate = self
+        
+        print("opened details of: ")
+        print(axon[0])
+        
+        //let arrayOfStrings: [String] = [axon["name"].stringValue, axon["title"].stringValue, axon["description"].stringValue, axon["icon"].stringValue, axon["repository"]["url"].stringValue, axon["author"].stringValue]
+
+        
+        
+        axonTitle.text = axon[1]
+        axonSubtitle.text = axon[5]
+        axonTextView.text = axon[2]
+        axonURL.text = "GitHub: \(axon[4])"
+
+        axonImageView.image = UIImage(data: NSData(base64EncodedString: axon[3], options: NSDataBase64DecodingOptions(rawValue: 0))!)
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,14 +75,10 @@ extension AxonDetailViewController: PKDownloadButtonDelegate {
             self.downloadButton.state = PKDownloadButtonState.Downloading;
             
             
-            break;
-        case PKDownloadButtonState.Downloading:
-            
-            
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0)) {
                 
-                if(AxonStore.downloadAndInstall(0)){
+                if(AxonStore.downloadAndInstall(AxonStore.getRemoteAxonIndexByName(self.axon[0]))){
                     print("installed successfully")
                 }else{
                     print("couldn't install")
@@ -69,6 +91,11 @@ extension AxonDetailViewController: PKDownloadButtonDelegate {
             }
             
             break;
+        case PKDownloadButtonState.Downloading:
+            print("cancelling download not yet implemented")
+            break;
+            
+            
         case PKDownloadButtonState.Downloaded:
             self.downloadButton.state =  PKDownloadButtonState.StartDownload
             break;

@@ -20,7 +20,7 @@ class AxonController {
     
     let axonResourceDir = "\(NSBundle.mainBundle().resourcePath!)/Assets/axon-resources/"
     let axonDir = "\(NSHomeDirectory())/Documents/nervousnet-installed-axons/"
-
+    let laeController = LAEController()
 
     init(){
         startAxonHTTPServer()
@@ -78,6 +78,29 @@ class AxonController {
             return .NotFound
 
         }
+        
+        
+        
+        
+        // route to get any axon resource
+        self.server.GET["/nervousnet-api/raw-sensor-data/:sensor/"] = { r in
+            
+            if let sensor = r.params[":sensor"] {
+                
+                let data =  self.laeController.getData(sensor)
+                
+                print(data)
+                
+                let jsonObject: NSDictionary = ["x": data[0], "y":data[1], "z": data[2]]
+                return .OK(.Json(jsonObject))
+ 
+ 
+            }
+            
+            return .NotFound
+            
+        }
+        
         
     }
     

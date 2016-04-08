@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - BluetoothKit (0.2.1)
   - DownloadButton (0.1.0)
   - LXReorderableCollectionViewFlowLayout (0.1.1)
   - MRProgress (0.8.3):
@@ -56,6 +57,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - BluetoothKit
   - DownloadButton
   - LXReorderableCollectionViewFlowLayout
   - MRProgress
@@ -65,6 +67,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  BluetoothKit: c1dfd8f529a1d4d2c0778b97a8937b5b68c75395
   DownloadButton: 49a21a89e0d7d1b42d9134f79aaa40e727cd57c3
   LXReorderableCollectionViewFlowLayout: c89e0f693744c5cb96718822a8455a7de99d90ea
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
