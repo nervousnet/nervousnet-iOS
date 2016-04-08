@@ -85,13 +85,19 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-nervousnet/AFNetworking.framework"
-  install_framework "Pods-nervousnet/JSON.framework"
+  install_framework "Pods-nervousnet/DownloadButton.framework"
+  install_framework "Pods-nervousnet/LXReorderableCollectionViewFlowLayout.framework"
+  install_framework "Pods-nervousnet/MRProgress.framework"
   install_framework "Pods-nervousnet/Swifter.framework"
+  install_framework "Pods-nervousnet/SwiftyJSON.framework"
   install_framework "Pods-nervousnet/Zip.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-nervousnet/AFNetworking.framework"
-  install_framework "Pods-nervousnet/JSON.framework"
+  install_framework "Pods-nervousnet/DownloadButton.framework"
+  install_framework "Pods-nervousnet/LXReorderableCollectionViewFlowLayout.framework"
+  install_framework "Pods-nervousnet/MRProgress.framework"
   install_framework "Pods-nervousnet/Swifter.framework"
+  install_framework "Pods-nervousnet/SwiftyJSON.framework"
   install_framework "Pods-nervousnet/Zip.framework"
 fi

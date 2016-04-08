@@ -1,0 +1,6 @@
+framework module LXReorderableCollectionViewFlowLayout {
+  umbrella header "LXReorderableCollectionViewFlowLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}

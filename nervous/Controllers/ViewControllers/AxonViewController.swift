@@ -10,12 +10,34 @@ import UIKit
 
 class AxonViewController: UIViewController {
 
+    @IBOutlet weak var axonWebView: UIWebView!
+    var axonName = "nil";
+
+    
+    @IBAction func closeAxonButton(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: {});
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        //hide status bar
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade);
+    }
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        print("firing up the axon...")
+        let url = AxonStore.getLocalAxonURL(axonName);
+        let request = NSURLRequest(URL: url!)
 
-        // Do any additional setup after loading the view.
+        axonWebView.loadRequest(request);
+        axonWebView.scrollView.bounces = false;
     }
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

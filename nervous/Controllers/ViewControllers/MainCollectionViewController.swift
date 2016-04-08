@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class MainCollectionViewController: UICollectionViewController  {
+class MainCollectionViewController: UICollectionViewController, UIGestureRecognizerDelegate  {
     
     /* view controller routing */
     private let nextViewController = "ControlPanelTableViewController"
@@ -21,6 +21,23 @@ class MainCollectionViewController: UICollectionViewController  {
     }
    
     
+    @IBAction func handleLongPress(recognizer:UILongPressGestureRecognizer){
+
+        let longPressLocation = recognizer.locationInView(self.collectionView)
+
+        
+        if(recognizer.state != UIGestureRecognizerState.Ended){
+            return
+        }
+        
+        if let indexPath = self.collectionView?.indexPathForItemAtPoint(longPressLocation) {
+            let cell = self.collectionView?.cellForItemAtIndexPath(indexPath) as! MainCVCellCollectionViewCell
+            
+            print("long pressed and item!",  cell.textLabel.text)
+        }
+
+    }
+    
 
     /* cell handling */
     private let reuseIdentifier = "MainCVCell"
@@ -28,16 +45,25 @@ class MainCollectionViewController: UICollectionViewController  {
     
     
     func getNumberOfCellsDisplayable() -> Int {
-        return 30;
+        return AxonStore.getInstalledAxonsList().count;
     }
     
     func getTextForCell(cellIndex: NSIndexPath) -> String {
-        return "\(cellIndex.row) text for cell"
+        return AxonStore.getLocalAxon(cellIndex.row)[1]
     }
     
     
+    func getNameForCell(cellIndex: NSIndexPath) -> String {
+        return AxonStore.getLocalAxon(cellIndex.row)[0]
+    }
+    
+    
+    
     func getImageForCell(cellIndex: NSIndexPath) -> UIImage {
-        return UIImage(imageLiteral: "3rd-floor-0")
+        
+        let imageData = NSData(base64EncodedString: AxonStore.getLocalAxon(cellIndex.row)[3], options: NSDataBase64DecodingOptions(rawValue: 0))
+        
+        return UIImage(data: imageData!)!
     }
     
 
@@ -46,26 +72,65 @@ class MainCollectionViewController: UICollectionViewController  {
 
 extension MainCollectionViewController {
     
+    override func viewWillAppear(animated: Bool) {
+        self.collectionView?.reloadData()
+    }
+    
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return getNumberOfCellsDisplayable();
+        
+        if(section == 0){
+            return getNumberOfCellsDisplayable()
+        }else if(section == 1){
+            return 2
+        }else{
+            return 0
+        }
+    
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MainCVCellCollectionViewCell
-    
-        cell.backgroundColor = UIColor.orangeColor()
-    
-        cell.imageView.image = getImageForCell(indexPath)
-        cell.textLabel.text = getTextForCell(indexPath)
         
+        
+        if(indexPath.section == 0){
+            cell.backgroundColor = UIColor.orangeColor()
+        
+            cell.imageView.image = getImageForCell(indexPath)
+            cell.textLabel.text = getTextForCell(indexPath)
+            
+        }else if(indexPath.section == 1){
+            
+            
+        }
         
         return cell
     }
+    
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        if(indexPath.section == 0){
+            performSegueWithIdentifier("axonViewControllerSegue", sender: self.getNameForCell(indexPath))
+        }
+        
+    }
+    
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "axonViewControllerSegue" {
+            
+            if let axonViewController = segue.destinationViewController as? AxonViewController {
+                axonViewController.axonName = (sender as? String)!;
+            }
+            
+        }
+    }
+
 }
 
 

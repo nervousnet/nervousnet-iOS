@@ -7,5 +7,9 @@ target 'nervousnet' do
     pod 'Zip', '~> 0.2'
     pod 'AFNetworking', '~> 2.0'
     pod 'Swifter', '~> 1.1.3'
-    pod 'JSON'
+    pod 'SwiftyJSON'
+    pod 'MRProgress'
+    pod 'LXReorderableCollectionViewFlowLayout'
+    pod 'DownloadButton'
+    pod 'BluetoothKit'
 end

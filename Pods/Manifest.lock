@@ -20,20 +20,56 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - JSON (4.0.2)
+  - DownloadButton (0.1.0)
+  - LXReorderableCollectionViewFlowLayout (0.1.1)
+  - MRProgress (0.8.3):
+    - MRProgress/ActivityIndicator (= 0.8.3)
+    - MRProgress/Blur (= 0.8.3)
+    - MRProgress/Circular (= 0.8.3)
+    - MRProgress/Icons (= 0.8.3)
+    - MRProgress/NavigationBarProgress (= 0.8.3)
+    - MRProgress/Overlay (= 0.8.3)
+  - MRProgress/ActivityIndicator (0.8.3):
+    - MRProgress/Stopable
+  - MRProgress/Blur (0.8.3):
+    - MRProgress/Helper
+  - MRProgress/Circular (0.8.3):
+    - MRProgress/Helper
+    - MRProgress/ProgressBaseClass
+    - MRProgress/Stopable
+  - MRProgress/Helper (0.8.3)
+  - MRProgress/Icons (0.8.3)
+  - MRProgress/NavigationBarProgress (0.8.3):
+    - MRProgress/ProgressBaseClass
+  - MRProgress/Overlay (0.8.3):
+    - MRProgress/ActivityIndicator
+    - MRProgress/Blur
+    - MRProgress/Circular
+    - MRProgress/Helper
+    - MRProgress/Icons
+  - MRProgress/ProgressBaseClass (0.8.3)
+  - MRProgress/Stopable (0.8.3):
+    - MRProgress/Helper
   - Swifter (1.1.3)
+  - SwiftyJSON (2.3.2)
   - Zip (0.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
-  - JSON
+  - DownloadButton
+  - LXReorderableCollectionViewFlowLayout
+  - MRProgress
   - Swifter (~> 1.1.3)
+  - SwiftyJSON
   - Zip (~> 0.2)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  JSON: d08f22c3e523be050d5d5f40bca43ec02d95b2cc
+  DownloadButton: 49a21a89e0d7d1b42d9134f79aaa40e727cd57c3
+  LXReorderableCollectionViewFlowLayout: c89e0f693744c5cb96718822a8455a7de99d90ea
+  MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
   Swifter: 52433dd6616050450a69513ef5d1452a2d089096
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   Zip: 4ab1ce7c9d4afc2d04d79fbbc4d774df00e78321
 
 COCOAPODS: 0.39.0
