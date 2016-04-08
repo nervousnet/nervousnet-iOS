@@ -96,7 +96,7 @@ extension MainCollectionViewController {
     
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -106,7 +106,7 @@ extension MainCollectionViewController {
             print(getNumberOfCellsDisplayable())
             return getNumberOfCellsDisplayable()
         }else if(section == 1){
-            return 0
+            return 1
         }else{
             return 0
         }
@@ -137,6 +137,7 @@ extension MainCollectionViewController {
             
         }else if(indexPath.section == 1){
             
+            cell.imageView.image = UIImage(imageLiteral: "leaf")
             cell.textLabel.text = "Get Axons"
 
         }
@@ -149,11 +150,11 @@ extension MainCollectionViewController {
         
         if(indexPath.section == 0){
             performSegueWithIdentifier("axonViewControllerSegue", sender: self.getNameForCell(indexPath))
+        }else{
+            self.navigationController!.performSegueWithIdentifier("nervousnetSpaceViewControllerSegue", sender: nil)
         }
-        
+    
     }
-    
-    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "axonViewControllerSegue" {

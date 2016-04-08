@@ -18,7 +18,8 @@ class NervousnetSpaceTableViewController: UITableViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.viewWithTag(97)?.hidden = true
+
         MRProgressOverlayView.showOverlayAddedTo(self.view, title: "Getting Axons..", mode: MRProgressOverlayViewMode.Indeterminate, animated: true)
         
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
@@ -33,6 +34,7 @@ class NervousnetSpaceTableViewController: UITableViewController {
         }
         
     }
+    
 
 
     override func didReceiveMemoryWarning() {
