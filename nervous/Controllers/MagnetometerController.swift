@@ -9,46 +9,98 @@
 
 
 import Foundation
+import CoreMotion
+import CoreData
+import UIKit
 
+private let _MAG = MagnetometerController()
 class MagnetometerController : NSObject, SensorProtocol {
-
-    var auth: Int = 0
     
-    var timestamp: UInt64
-    var magx: Float
-    var magy: Float
-    var magz: Float
+    private var auth: Int = 0
+    
+    private let manager: CMMotionManager
+    
+    private let VM = VMController.sharedInstance
+    
+    var timestamp: UInt64 = 0
+    var x: Float = 0.0
+    var y: Float = 0.0
+    var z: Float = 0.0
     
     override init() {
-        //self.manager = CMMotionManager()
+        self.manager = CMMotionManager()
+    }
+    
+    class var sharedInstance: MagnetometerController {
+        return _MAG
     }
     
     func requestAuthorization() {
         print("requesting authorization for mag")
-        self.auth = 0
+        
+        let val1 = self.VM.defaults.boolForKey("kill")         //objectForKey("kill") as! Bool
+        let val2 = self.VM.defaults.boolForKey("switchMag")    //objectForKey("switchMag") as! Bool
+        
+        if !val1 && val2  {
+            if self.manager.magnetometerAvailable {
+                self.auth = 1
+            }
+        }
+        else {
+            self.auth = 0
+        }
     }
     
-    func startSensorUpdates(manager: CMMotionManager, Double : freq) {
-        requestAuthorization()
+    func initializeUpdate(freq: Double) {
+        
+        self.manager.magnetometerUpdateInterval = freq
+        self.manager.startMagnetometerUpdates()
+        
+    }
+    
+    // requestAuthorization must be before this is function is called
+    func startSensorUpdates() {
         
         if self.auth == 0 {
             return
         }
         
-        manager.magnetometerUpdateInterval = freq
-        manager.startMagnetometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
-            [weak self](data: CMMagnetometerData!, error: NSError!) in
-            var currentTimeM :NSDate = NSDate()
-            timestamp = UInt64(currentTimeM.timeIntervalSince1970*1000) // time to timestamp
-            magX = Float(data.magneticField.x)
-            magY = Float(data.magneticField.y)
-            magZ = Float(data.magneticField.z)
-        }
+        let queue = NSOperationQueue()
+        let currentTimeA :NSDate = NSDate()
+        
+        self.manager.startMagnetometerUpdatesToQueue(queue, withHandler: {data, error in
+        
+            self.timestamp = UInt64(currentTimeA.timeIntervalSince1970*1000) // time to timestamp
+            guard let data = data else {
+                return
+            }
+            self.x = Float(data.magneticField.x)
+            self.y = Float(data.magneticField.y)
+            self.z = Float(data.magneticField.z)
+            
+            print("magnetometer")
+            print(self.x)
+        
+            // store the current data in the CoreData database
+            let val = self.VM.defaults.objectForKey("logMag") as! Bool
+            if val {
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let managedContext = appDelegate.managedObjectContext
+                
+                let entity = NSEntityDescription.entityForName("Magnetometer", inManagedObjectContext:
+                    managedContext)
+                let mag = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+                
+                mag.setValue(NSNumber(unsignedLongLong: self.timestamp) , forKey: "timestamp")
+                mag.setValue(self.x, forKey: "x")
+                mag.setValue(self.y, forKey: "y")
+                mag.setValue(self.z, forKey: "z")
+            }
+        })
     }
     
-    func stopSensorUpdates(manager: CMMotionManager) {
+    func stopSensorUpdates() {
         self.manager.stopMagnetometerUpdates()
+        self.auth = 0
     }
-
 }
-

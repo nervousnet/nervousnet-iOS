@@ -27,11 +27,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Allow to navigate indoors and help build the 31c3 social graph. No GPS location used!</string>
+	<string>Provides access to bluetooth beacons.</string>
 	<key>NSLocationUsageDescription</key>
-	<string>Allow to navigate indoors and help build the 31c3 social graph. No GPS location used!</string>
+	<string>Provides access to bluetooth beacons.</string>
 	<key>NSLocationWhenInUsageDescription</key>
-	<string>Allow to navigate indoors and help build the 31c3 social graph. No GPS location used!</string>
+	<string>Provides access to bluetooth beacons.</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -53,9 +53,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
 </plist>

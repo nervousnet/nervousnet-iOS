@@ -14,31 +14,52 @@ import CoreMotion
 /// Provides functionality to access Sensor data (historical or live).
 /// Inits sensor objects. Also uploads sensor data to the server.
 ///
-class SensorStore : BeaconControllerDelegate {
+class SensorStore : NSObject, BeaconControllerDelegate {
     
-    let motionManager = CMMotionManager
+    let Gyroscope : GyroscopeController
+    //let Battery : BatteryController
+    let Magnetometer : MagnetometerController
+    //let Proximity : ProximityController
+    var Accelerometer : AccelerometerController
+    //let Beacon : BeaconController
     
-    let Gyroscope = GyroscopeController();
-    let Battery = BatteryController();
-    let Magnetometer = MagnetometerController();
-    let Proximity = ProximityController();
-    let Accelerometer = AccelerometerController();
-    let Beacon = BeaconController();
+    
+    var timerAcc = NSTimer()
+    
+    let VM = VMController.sharedInstance
     
     
     //initialise all sensor controllers
-    init(){
+    override init(){
         
+        self.Gyroscope = GyroscopeController.sharedInstance
+        self.Gyroscope.initializeUpdate(self.VM.defaults.doubleForKey("freqGyr"))
+        //self.Battery = BatteryController()
+        self.Magnetometer = MagnetometerController.sharedInstance
+        self.Magnetometer.initializeUpdate(self.VM.defaults.doubleForKey("freqMag"))
+        //self.Proximity = ProximityController()
+        self.Accelerometer = AccelerometerController.sharedInstance
+        self.Accelerometer.initializeUpdate(self.VM.defaults.doubleForKey("freqAcc"))
+        //self.Beacon = BeaconController()
+        
+        // BEACONS
         //attach delegates
-        Beacon.delegate = self;
+        /*self.Beacon.delegate = self;
+        self.Beacon.requestAuthorization()
+        self.Beacon.startSensorUpdates()*/
         
-        Beacon.requestAuthorization()
-        Beacon.startSensorUpdates()
+        // ACCELEROMETER
+        //self.Accelerometer.requestAuthorization()
+        //self.Accelerometer.startSensorUpdates(0.1)
         
-        // initialize the motion manager
-        self.motionManager = CMMotionManager()
+        // GYROSCOPE
+        //self.Gyroscope.requestAuthorization()
+        //self.Gyroscope.startSensorUpdates(30.0)
+        
+        // MAGNETOMETER
+        //self.Magnetometer.requestAuthorization()
+        //self.Magnetometer.startSensorUpdates(30.0)
     }
-    
     
     
     // MARK: delegate callbacks
@@ -46,5 +67,16 @@ class SensorStore : BeaconControllerDelegate {
         //here are new beacons: didRangeBeacons, do something with them
         
         print("%d beacons found!", didRangeBeacons.count);
+    }
+    
+    func controller() {
+        self.Accelerometer.requestAuthorization()
+        self.Accelerometer.startSensorUpdates()
+        
+        self.Gyroscope.requestAuthorization()
+        self.Gyroscope.startSensorUpdates()
+        
+        self.Magnetometer.requestAuthorization()
+        self.Magnetometer.startSensorUpdates()
     }
 }

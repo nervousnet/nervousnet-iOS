@@ -16,10 +16,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //initialise axon controller (starts axon server)
     var axonController = AxonController();
     
+    let VM = VMController.sharedInstance
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        VM.initialiseSensors()
+        let ss = SensorStore()
+        ss.controller()
+        
+        // demo to get real time data using the getData() function in LAEController
+        let lae = LAEController()
+        var obj: Array<AnyObject> = [0.0,0.0,0.0]
+        for i in 1...10 {
+            let timeToDelay = Double(i)
+            delay(timeToDelay) {
+                obj = lae.getData("Accelerometer")
+                print(obj)
+            }
+        }
+        
         return true
+    }
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW,Int64(delay * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), closure)
     }
     
     func applicationWillResignActive(application: UIApplication) {

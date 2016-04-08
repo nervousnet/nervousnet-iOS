@@ -9,12 +9,155 @@
 
 
 import Foundation
+import CoreData
+import UIKit
 
 ///
 /// Takes the raw data from SensorController and “processes” it.
 ///
 class LAEController : NSObject {
 
+    func getData(sensor: String) -> Array<AnyObject>{
+        // this function is to be done
+        // it will give real time data of a sensor
+        var data = [AnyObject]()
+        
+        if sensor == "Accelerometer" {
+            
+            let sen = AccelerometerController.sharedInstance
+            data.append(sen.x)
+            data.append(sen.y)
+            data.append(sen.z)
+        }
+        
+        if sensor == "Gyroscope" {
+            
+            let sen = GyroscopeController.sharedInstance
+            data.append(sen.x)
+            data.append(sen.y)
+            data.append(sen.z)
+        }
+        
+        if sensor == "Magnetometer" {
+            
+            let sen = MagnetometerController.sharedInstance
+            data.append(sen.x)
+            data.append(sen.y)
+            data.append(sen.z)
+        }
+        
+        return data
+    }
+    
+    func getData(sensor: String, from: UInt64, to: UInt64) -> Array<Array<AnyObject>>{
+        
+        var data = [[AnyObject]]()
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context : NSManagedObjectContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: sensor)
+        let predicate = NSPredicate(format: "(timestamp >= %@) AND (timestamp < %@)", to, from)
+        fetchRequest.predicate = predicate
+        
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: true)]
+        
+        do {
+            let result = try context.executeFetchRequest(fetchRequest)
+            
+            for managedObject in result {
+                if let x = managedObject.valueForKey("x"), y = managedObject.valueForKey("y"), z = managedObject.valueForKey("z"), timestamp = managedObject.valueForKey("timestamp"){
+                    var d = [AnyObject]()
+                    d.append(timestamp)
+                    d.append(x)
+                    d.append(y)
+                    d.append(z)
+                    
+                    data.append(d)
+                }
+            }
+            
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+        
+        return data
 
+    }
+    
+    func mean(sensor: String, from: UInt64, to: UInt64) -> Array<AnyObject> {
+        
+        let data = getData(sensor, from: from, to: to)
+        
+        var mean_x : Float = 0.0
+        var mean_y : Float = 0.0
+        var mean_z : Float = 0.0
+        
+        var mean = [AnyObject]()
+        
+        for i in 0 ..< data.count {
+                
+                mean_x += Float(data[i][1] as! NSNumber)
+                mean_y += Float(data[i][2] as! NSNumber)
+                mean_z += Float(data[i][3] as! NSNumber)
+        }
+        
+        mean_x /= Float(data.count)
+        mean_y /= Float(data.count)
+        mean_z /= Float(data.count)
+        
+        mean.append(mean_x)
+        mean.append(mean_y)
+        mean.append(mean_z)
+        
+        
+        return mean
+    }
+    
+    func max(sensor: String, from: UInt64, to: UInt64, dim: String = "all") -> Array<AnyObject> {
+        
+        let data = getData(sensor, from: from, to: to)
+        
+        var max_x : Double = 0.0
+        var max_y : Double = 0.0
+        var max_z : Double = 0.0
+        
+        var max = [AnyObject]()
+        
+        var x : Double
+        var y : Double
+        var z : Double
+        
+        for i in 0 ..< data.count {
+            
+            x = Double(data[i][1] as! NSNumber)
+            if x > max_x {
+                max_x = x
+            }
+            y = Double(data[i][1] as! NSNumber)
+            if y > max_y {
+                max_y = y
+            }
+            z = Double(data[i][1] as! NSNumber)
+            if z > max_z {
+                max_z = z
+            }
+        }
+        
+        if dim == "all" {
+            max.append(max_x)
+            max.append(max_y)
+            max.append(max_z)
+        } else if dim == "x" {
+            max.append(max_x)
+        } else if dim == "y" {
+            max.append(max_y)
+        } else if dim == "z" {
+            max.append(max_z)
+        }else {
+            max.append(0.0)
+        }
+        
+        return max
+    }
 }
-
