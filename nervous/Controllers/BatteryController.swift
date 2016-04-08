@@ -45,7 +45,6 @@ class BatteryController : NSObject {
         else {
             self.auth = 0
         }
-        
     }
     
     func initializeUpdate() {
