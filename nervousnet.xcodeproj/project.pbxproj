@@ -36,6 +36,7 @@
 		22AA3A871CB19DC900B03B94 /* MainCVCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA3A861CB19DC900B03B94 /* MainCVCellCollectionViewCell.swift */; };
 		22B03E6019CE102900E50D04 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E5F19CE102900E50D04 /* SpriteKit.framework */; };
 		22B03E6419D04BB500E50D04 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B03E6319D04BB500E50D04 /* CoreLocation.framework */; };
+		22B31CE61CB85F8F00DEBC42 /* BLEController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B31CE51CB85F8F00DEBC42 /* BLEController.swift */; };
 		22D10CA919D598A1000D6942 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D10CA819D598A1000D6942 /* CFNetwork.framework */; };
 		22D2D66F19C097F900B11C54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D2D66E19C097F900B11C54 /* Foundation.framework */; };
 		22F1F33D1CB5428F00DE5CDA /* AxonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1F33C1CB5428F00DE5CDA /* AxonDetailViewController.swift */; };
@@ -94,6 +95,7 @@
 		22AA3A861CB19DC900B03B94 /* MainCVCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCVCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		22B03E5F19CE102900E50D04 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		22B03E6319D04BB500E50D04 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		22B31CE51CB85F8F00DEBC42 /* BLEController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEController.swift; sourceTree = "<group>"; };
 		22D10CA819D598A1000D6942 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		22D2D66E19C097F900B11C54 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22F1F33C1CB5428F00DE5CDA /* AxonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxonDetailViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				221CAEE21C88C183005D1A20 /* MagnetometerController.swift */,
 				221CAEE31C88C183005D1A20 /* ProximityController.swift */,
 				22F90A6A1C8C76F0006A56FD /* BeaconController.swift */,
+				22B31CE51CB85F8F00DEBC42 /* BLEController.swift */,
 				221CAEE41C88C183005D1A20 /* SensorProtocol.swift */,
 				221CAEE51C88C183005D1A20 /* VMController.swift */,
 				221CAF1D1C88FB89005D1A20 /* AuthController.swift */,
@@ -447,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				221CAF1C1C88C7C8005D1A20 /* MainModel.xcdatamodeld in Sources */,
+				22B31CE61CB85F8F00DEBC42 /* BLEController.swift in Sources */,
 				22AA3A851CB198B600B03B94 /* MainCollectionViewController.swift in Sources */,
 				E1A897181CAD654E00393545 /* ReadController.swift in Sources */,
 				22F90A6B1C8C76F0006A56FD /* BeaconController.swift in Sources */,

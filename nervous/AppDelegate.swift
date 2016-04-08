@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import BluetoothKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,14 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let VM = VMController.sharedInstance
     
+    func central(central: BKCentral, remotePeripheralDidDisconnect remotePeripheral: BKRemotePeripheral) {
+        print("remote disconnected")
+        
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         VM.initialiseSensors()
         let ss = SensorStore()
         ss.controller()
-
-        
         return true
     }
     

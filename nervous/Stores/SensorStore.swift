@@ -22,7 +22,7 @@ class SensorStore : NSObject, BeaconControllerDelegate {
     //let Proximity : ProximityController
     var Accelerometer : AccelerometerController
     //let Beacon : BeaconController
-    
+    let BLE : BLEController
     
     var timerAcc = NSTimer()
     
@@ -40,7 +40,7 @@ class SensorStore : NSObject, BeaconControllerDelegate {
         //self.Proximity = ProximityController()
         self.Accelerometer = AccelerometerController.sharedInstance
         self.Accelerometer.initializeUpdate(self.VM.defaults.doubleForKey("freqAcc"))
-        //self.Beacon = BeaconController()
+        self.BLE = BLEController.sharedInstance
         
         // BEACONS
         //attach delegates
