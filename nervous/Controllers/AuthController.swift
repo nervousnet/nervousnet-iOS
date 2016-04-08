@@ -14,16 +14,64 @@ import UIKit
 
 class AuthController : NSObject {
     
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var managedContext : NSManagedObjectContext
+
+
     
-    func checkAppPermissions(token:UInt64, appname:String, acccaccess:Bool = false, bataccess:Bool = false, gyraccess:Bool = false, magaccess:Bool = false, proxaccess:Bool = false) {
+    override init(){
+        managedContext = appDelegate.managedObjectContext
+
         
+    }
+    
+    func checkAppPermissions (token:UInt64, appname:String, acccaccess:Bool = false, bataccess:Bool = false, gyraccess:Bool = false, magaccess:Bool = false, proxaccess:Bool = false) -> [Bool] {
+        
+        
+        //Check whether permission has already been granted
+        let fetchRequestExisting = NSFetchRequest(entityName: "AxonPermissionList")
+        
+        do {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequestExisting)
+            let listof = results as! [NSManagedObject]
+            for ress in listof {
+                if (ress.valueForKey("axonName") as! String == appname && ress.valueForKey("token") as! UInt64 == token){
+                    var resultStorage : [Bool] = []
+                    
+                    if acccaccess   {resultStorage.append(ress.valueForKey("hasAccelerometerAccess") as! Bool)}
+                    else {
+                    }
+                    if bataccess    {}
+                    else {resultStorage.append(false)}
+                    if gyraccess    {}
+                    else {resultStorage.append(false)}
+                    if magaccess    {}
+                    else {resultStorage.append(false)}
+                    if proxaccess   {}
+                    else {resultStorage.append(false)}
+                    
+                    
+                    //
+                }
+                
+            }
+            
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        
+        
+        
+        
+        
+        //sample
         
         //write
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
         let entity = NSEntityDescription.entityForName("AxonPermissionList", inManagedObjectContext: managedContext)
         let permissionsList = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-        permissionsList.setValue("this worked", forKey: "axonName")
+        permissionsList.setValue( NSDate().timeIntervalSince1970.description, forKey: "axonName")
         do {
             try managedContext.save()
         } catch let error as NSError  {
@@ -46,7 +94,32 @@ class AuthController : NSObject {
             print("Could not fetch \(error), \(error.userInfo)")
         }
        
+        let retrieved = getExistingPermissiondf("1460030317.29031", token: UInt64.max)
+        retrieved?.setValue("this changed and is no longer 1458853566.13866", forKey: "axonName")
+        do {
+            try managedContext.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+
         
+        //just read it out agoin
+        NSLog("_______________")
+        do {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest)
+            let listof = results as! [NSManagedObject]
+            for ress in listof {
+                NSLog(ress.valueForKey("axonName") as! String)
+                
+            }
+            
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+
+    return [false]
+    
     }
     
     
@@ -56,5 +129,33 @@ class AuthController : NSObject {
         
     }
     
+    private func getExistingPermissiondf (axonname : String, token : UInt64)  -> NSManagedObject? {
+        
+        var retObj : NSManagedObject?
+        let fetchRequest = NSFetchRequest(entityName: "AxonPermissionList")
+        do {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest)
+            let listof = results as! [NSManagedObject]
+            for ress in listof {
+                if ( (ress.valueForKey("axonName") as! String) == axonname){ //&&  ress.valueForKey("token") as! UInt64 == token){
+                    retObj = ress
+                    break
+                }
+                
+            }
+            
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        return retObj
+    
+    }
+    
+     func requestUserPermission (token:UInt64, appname:String, permissionsWanted: [String]) -> [Bool]{
+    
+        return [false]
+    }
 }
 

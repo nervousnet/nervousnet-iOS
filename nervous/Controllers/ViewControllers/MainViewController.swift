@@ -19,9 +19,9 @@ class MainViewController : UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        
-        
-        
+        let authcontroller : AuthController = AuthController()
+        authcontroller.checkAppPermissions(UInt64.max, appname: "hellohello")
+    
        
     }
     
