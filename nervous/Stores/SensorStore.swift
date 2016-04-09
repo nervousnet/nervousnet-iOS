@@ -45,6 +45,8 @@ class SensorStore : NSObject, BeaconControllerDelegate {
         
         self.Accelerometer = AccelerometerController.sharedInstance
         self.Accelerometer.initializeUpdate(self.VM.defaults.doubleForKey("freqAcc"))
+        
+        
         self.BLE = BLEController.sharedInstance
         //self.Beacon = BeaconController()
         
