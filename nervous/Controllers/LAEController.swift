@@ -55,6 +55,14 @@ class LAEController : NSObject {
             data.append(sen.charging_type)
         }
         
+        
+        if sensor == "BLE" {
+            
+            let sen = BLEController.sharedInstance
+            data.append(sen.blepacket)
+            print(sen.blepacket)
+        }
+        
         return data
     }
     

@@ -21,7 +21,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Background_Graph_Mockup" translatesAutoresizingMaskIntoConstraints="NO" id="0yO-T0-9Zu">
+                                        <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Background_Graph_Mockup" translatesAutoresizingMaskIntoConstraints="NO" id="0yO-T0-9Zu">
                                             <rect key="frame" x="8" y="15" width="80" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="80" id="Te0-eo-5Fv"/>
@@ -39,6 +39,7 @@
                                         <constraint firstItem="scN-cc-8DG" firstAttribute="centerY" secondItem="MFY-M3-MFN" secondAttribute="centerY" id="3xP-9f-b2c"/>
                                         <constraint firstItem="0yO-T0-9Zu" firstAttribute="leading" secondItem="MFY-M3-MFN" secondAttribute="leadingMargin" constant="20" id="Ab2-IP-ATL"/>
                                         <constraint firstItem="scN-cc-8DG" firstAttribute="leading" secondItem="0yO-T0-9Zu" secondAttribute="trailing" constant="15" id="MCl-Wr-YG9"/>
+                                        <constraint firstItem="0yO-T0-9Zu" firstAttribute="centerY" secondItem="MFY-M3-MFN" secondAttribute="centerY" id="kgV-H8-5cO"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>

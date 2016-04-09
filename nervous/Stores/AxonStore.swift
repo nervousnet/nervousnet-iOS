@@ -143,6 +143,23 @@ class AxonStore : NSObject {
         return url
     }
     
+    class func removeLocalAxon(axonName: String) -> Bool {
+        let path =  "\(installedAxonsDir)/\(axonName)"
+        let fileManager = NSFileManager.defaultManager()
+
+        //DELETE SUBFOLDER
+        do {
+            try fileManager.removeItemAtPath(path)
+            return true
+        }
+        catch let error as NSError {
+            print("Ooops! Something went wrong: \(error)")
+        }
+        
+        return false
+        
+    }
+    
     
     //blocking task, TODO: implement caching
     class func getRemoteAxonList() -> Array<Array<String>>{

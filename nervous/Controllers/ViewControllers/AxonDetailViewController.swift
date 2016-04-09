@@ -41,6 +41,16 @@ class AxonDetailViewController: UIViewController {
 
         axonImageView.image = UIImage(data: NSData(base64EncodedString: axon[3], options: NSDataBase64DecodingOptions(rawValue: 0))!)
         
+        
+        for localaxon in AxonStore.getInstalledAxonsList() {
+            
+            if(localaxon[0] == axon[0]){
+                self.downloadButton.state =  PKDownloadButtonState.Downloaded
+
+            }
+        
+        }
+
 
     }
 
@@ -98,6 +108,15 @@ extension AxonDetailViewController: PKDownloadButtonDelegate {
             
         case PKDownloadButtonState.Downloaded:
             self.downloadButton.state =  PKDownloadButtonState.StartDownload
+            
+            //remove the axon from device
+            if(AxonStore.removeLocalAxon(axon[0])){
+                print("removed axon:")
+                print(axon[0])
+            }
+            
+            
+            
             break;
         default:
             break;

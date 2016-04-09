@@ -90,10 +90,15 @@ class AxonController {
                 let data =  self.laeController.getData(sensor)
                 
                 print(data)
+                if(sensor != "BLE"){
+                    let jsonObject: NSDictionary = ["x": data[0], "y":data[1], "z": data[2]]
+                    return .OK(.Json(jsonObject))
+                }else{
+                    let jsonObject: NSDictionary = ["blepacket": data[0] as! String]
+
+                    return .OK(.Json(jsonObject))
+                }
                 
-                let jsonObject: NSDictionary = ["x": data[0], "y":data[1], "z": data[2]]
-                return .OK(.Json(jsonObject))
- 
  
             }
             

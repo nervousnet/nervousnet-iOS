@@ -137,7 +137,7 @@ extension MainCollectionViewController {
             
         }else if(indexPath.section == 1){
             
-            cell.imageView.image = UIImage(imageLiteral: "leaf")
+            cell.imageView.image = UIImage(imageLiteral: "marker-1")
             cell.textLabel.text = "Get Axons"
 
         }

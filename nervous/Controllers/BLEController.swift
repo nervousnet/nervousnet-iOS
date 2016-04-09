@@ -22,6 +22,8 @@ class BLEController : NSObject, SensorProtocol,  CBCentralManagerDelegate, CBPer
     var activePeripheral: CBPeripheral?
     var blepacketCommaCounter = 0
     var blepacket = ""
+    var blepacketRaw = ""
+
     
     override init() {
         super.init()
@@ -135,20 +137,24 @@ class BLEController : NSObject, SensorProtocol,  CBCentralManagerDelegate, CBPer
     
     func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
 
+        print("characteristic updated")
+        print(blepacketCommaCounter)
+        
         if let characteristicValue = characteristic.value{
             let datastring = NSString(data: characteristicValue, encoding: NSUTF8StringEncoding)
             
             let commacount = (datastring!.componentsSeparatedByString(",").count - 1)
             
             self.blepacketCommaCounter += commacount
-            self.blepacket += datastring as! String
+            self.blepacketRaw += datastring as! String
             //we want to see 19 commas
         }
         
-        if(self.blepacketCommaCounter == 19){
+        if(self.blepacketCommaCounter == 20){
             print("full packet received")
+            self.blepacket = self.blepacketRaw
+            self.blepacketRaw = ""
             print(self.blepacket)
-            self.blepacket = ""
             self.blepacketCommaCounter = 0
         }
     }
