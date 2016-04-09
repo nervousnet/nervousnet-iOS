@@ -50,6 +50,7 @@
 		E1A897181CAD654E00393545 /* ReadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A897171CAD654E00393545 /* ReadController.swift */; };
 		E1A8971A1CAD656900393545 /* WriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A897191CAD656900393545 /* WriteController.swift */; };
 		E1A8971C1CAD657B00393545 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A8971B1CAD657B00393545 /* RegisterController.swift */; };
+		E1A914E91CB9B211007EE2EF /* GPSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A914E81CB9B211007EE2EF /* GPSController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		E1A897171CAD654E00393545 /* ReadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadController.swift; sourceTree = "<group>"; };
 		E1A897191CAD656900393545 /* WriteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteController.swift; sourceTree = "<group>"; };
 		E1A8971B1CAD657B00393545 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		E1A914E81CB9B211007EE2EF /* GPSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSController.swift; sourceTree = "<group>"; };
 		FC1346AF1AD5D08B00D9998C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FC1346B11AD5D09500D9998C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -232,6 +234,7 @@
 				221CAEE51C88C183005D1A20 /* VMController.swift */,
 				221CAF1D1C88FB89005D1A20 /* AuthController.swift */,
 				223847BA1C8129D400C17EFB /* ViewControllers */,
+				E1A914E81CB9B211007EE2EF /* GPSController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				220B7C151CB5524300ABCEC9 /* AxonViewController.swift in Sources */,
 				2222623D1CB3FC1C00E3CA4F /* NervousnetSpaceTableViewController.swift in Sources */,
 				E1A8971A1CAD656900393545 /* WriteController.swift in Sources */,
+				E1A914E91CB9B211007EE2EF /* GPSController.swift in Sources */,
 				221CAEE81C88C183005D1A20 /* BatteryController.swift in Sources */,
 				221CAEEE1C88C183005D1A20 /* VMController.swift in Sources */,
 				221CAEED1C88C183005D1A20 /* SensorProtocol.swift in Sources */,

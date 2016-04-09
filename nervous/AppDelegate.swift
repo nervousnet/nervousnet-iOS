@@ -30,6 +30,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         VM.initialiseSensors()
         let ss = SensorStore()
         ss.controller()
+        
+        /*let GPS = GPSController.sharedInstance
+        for i in 1...10{
+            let timeToDelay = Double(i)
+            delay(timeToDelay) {
+                print("=====")
+                print(GPS.lat)
+                print(GPS.long)
+            }
+        }*/
+
         return true
     }
     

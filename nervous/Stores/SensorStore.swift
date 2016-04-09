@@ -20,9 +20,10 @@ class SensorStore : NSObject, BeaconControllerDelegate {
     let Battery : BatteryController
     let Magnetometer : MagnetometerController
     //let Proximity : ProximityController
-    var Accelerometer : AccelerometerController
+    let Accelerometer : AccelerometerController
     //let Beacon : BeaconController
     let BLE : BLEController
+    let GPS : GPSController
     
     var timerAcc = NSTimer()
     
@@ -48,6 +49,9 @@ class SensorStore : NSObject, BeaconControllerDelegate {
         
         
         self.BLE = BLEController.sharedInstance
+        
+        self.GPS = GPSController.sharedInstance
+        self.GPS.initializeUpdate(self.VM.defaults.doubleForKey("freqGPS"))
         //self.Beacon = BeaconController()
         
         // BEACONS
@@ -77,5 +81,8 @@ class SensorStore : NSObject, BeaconControllerDelegate {
         
         self.Battery.requestAuthorization()
         self.Battery.startSensorUpdates()
+        
+        self.GPS.requestAuthorization()
+        self.GPS.startSensorUpdates()
     }
 }
