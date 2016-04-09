@@ -63,6 +63,13 @@ class LAEController : NSObject {
             print(sen.blepacket)
         }
         
+        if sensor == "GPS" {
+            
+            let sen = GPSController.sharedInstance
+            data.append(sen.lat)
+            data.append(sen.long)
+        }
+        
         return data
     }
     
