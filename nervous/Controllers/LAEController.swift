@@ -27,8 +27,6 @@ class LAEController : NSObject {
             data.append(sen.x)
             data.append(sen.y)
             data.append(sen.z)
-            
-            print(sen.x)
         }
         
         if sensor == "Gyroscope" {
@@ -54,7 +52,6 @@ class LAEController : NSObject {
             data.append(sen.isCharging)
             data.append(sen.charging_type)
         }
-        
         
         if sensor == "BLE" {
             
