@@ -35,10 +35,10 @@ class VMController : NSObject {
     
     override init(){
         //super.init()
-        self.defaults.setValue(false, forKey: "switchAcc")
-        self.defaults.setValue(false, forKey: "switchGyr")
-        self.defaults.setValue(false, forKey: "switchMag")
-        self.defaults.setValue(false, forKey: "switchBat")
+        self.defaults.setValue(true, forKey: "switchAcc")
+        self.defaults.setValue(true, forKey: "switchGyr")
+        self.defaults.setValue(true, forKey: "switchMag")
+        self.defaults.setValue(true, forKey: "switchBat")
         self.defaults.setValue(true, forKey: "switchGPS")
         
         self.defaults.setValue(false, forKey: "logAcc")

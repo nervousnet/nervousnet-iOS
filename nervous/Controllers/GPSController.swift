@@ -34,6 +34,7 @@ class GPSController : NSObject, SensorProtocol, CLLocationManagerDelegate {
         super.init()
         self.manager.delegate = self
         self.manager.requestWhenInUseAuthorization()
+        self.manager.requestAlwaysAuthorization()
     }
     
     class var sharedInstance: GPSController {

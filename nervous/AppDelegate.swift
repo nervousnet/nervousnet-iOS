@@ -31,13 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let ss = SensorStore()
         ss.controller()
         
-        /*let GPS = GPSController.sharedInstance
-        for i in 1...10{
+        /*let GPS = LAEController()
+        for i in 1...100{
             let timeToDelay = Double(i)
             delay(timeToDelay) {
                 print("=====")
-                print(GPS.lat)
-                print(GPS.long)
+                print(GPS.getData("GPS"))
             }
         }*/
 
