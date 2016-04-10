@@ -79,12 +79,33 @@ class GPSController : NSObject, SensorProtocol, CLLocationManagerDelegate {
     func newLocation() {
 
         self.manager.startUpdatingLocation()
-        if let locValue:CLLocationCoordinate2D = self.manager.location!.coordinate {
-            self.lat = locValue.latitude
-            self.long = locValue.longitude
-            self.manager.stopUpdatingLocation()
-        } else {
+        
+        let authorizationStatus = CLLocationManager.authorizationStatus()
+        switch authorizationStatus {
+            case .Authorized:
+                print("authorized")
+                if let locValue:CLLocationCoordinate2D = self.manager.location!.coordinate {
+                    self.lat = locValue.latitude
+                    self.long = locValue.longitude
+                    self.manager.stopUpdatingLocation()
+                } else {
+                }
+            case .AuthorizedWhenInUse:
+                print("authorized when in use")
+                if let locValue:CLLocationCoordinate2D = self.manager.location!.coordinate {
+                    self.lat = locValue.latitude
+                    self.long = locValue.longitude
+                    self.manager.stopUpdatingLocation()
+                } else {
+                }
+            case .Denied:
+                print("denied")
+            case .NotDetermined:
+                print("not determined")
+            case .Restricted:
+                print("restricted")
         }
+        
         let currentTimeA :NSDate = NSDate()
         self.timestamp = UInt64(currentTimeA.timeIntervalSince1970*1000)
     }
