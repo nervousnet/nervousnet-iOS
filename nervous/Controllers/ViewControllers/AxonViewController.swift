@@ -13,6 +13,17 @@ class AxonViewController: UIViewController {
     @IBOutlet weak var axonWebView: UIWebView!
     var axonName = "nil";
 
+    @IBAction func reinstallAxon(sender: AnyObject) {
+        //remove and download
+        if(AxonStore.getRemoteAxonList().count > 0){
+        
+            AxonStore.removeLocalAxon(axonName)
+            AxonStore.downloadAndInstall(AxonStore.getRemoteAxonIndexByName(axonName))
+            
+            axonWebView.reload()
+        }
+        
+    }
     
     @IBAction func closeAxonButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {});

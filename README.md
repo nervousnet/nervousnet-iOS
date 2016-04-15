@@ -3,6 +3,7 @@
 # nervousnet iOS
 __Important__: make sure you open this project with `open nervousnet.xcworkspace` and follow the [iOS good practices](https://github.com/futurice/ios-good-practices)
 
+
 ### Features
 _nervousnet iOS_ enables the user to locally log and share their iPhone's sensor data in many interesting ways. Logging sensor data is nothing new in itself but what makes _nervousnet iOS_ different is that the user has full control over where their data is stored.
 
@@ -15,11 +16,16 @@ _nervousnet iOS_ provides special "Axons" to visualise, process or share sensor 
 ### Architecture
 In this iOS app we adhere to Apple's recommended MVC architecture and separate code into the respective `Models`, `Views`, `Controllers`, `Stores` directories. The `Assets` directory contains media, binaries and other non-swift code.
 
+Overview:
+ [![app](docs/ios_app_arch.png)](docs/nervousnet-iOS.ddsketch/QuickLook/Preview.pdf)
+
+
+
 ### Data Storage
 The current version of the app uses [Apple's Core Data persistence framework](https://developer.apple.com/library/watchos/documentation/Cocoa/Conceptual/CoreData/index.html).
 
 ### VMCOntroller
-The VMController (short for Virtual Machine COntroller) will be a separate entity in the backend of the system. It falls in the controller group in the app. 
+The VMController (short for Virtual Machine COntroller) will be a separate entity in the backend of the system. It falls in the controller group in the app.
 It interacts and deals with the current state of the app. The state of the app is a collection of the settngs of the app as input by the user. This includes the privacy seetings,
 the frequency collection for different sensors. It mantains the current state in a CoreDate file system (see ### Data Storage).
 
@@ -27,12 +33,12 @@ the frequency collection for different sensors. It mantains the current state in
 ### Auth
 Auth (short for Authentication Class) provides the facility to authenticate an application before it is allowed to use other modules of the system - e.g. LAE. This authentication is performed by the Web Server in the system which forms the central module that all other modules interacts with (see ‘### Axon Provider’).
     Before any application is granted read-access to any sensor Data, the method checkApp is called. This method takes a unique identifier token, the name of the requesting app, as well as booleans for the requested acces as arguments. It then either prompts the user to grant acces and creates a new entry for the app in core data, or, if there is a previous entry, grants permissions based on the values stored in core data, wich can be changed through the app-settings. In case the token is a mismatch, permission will be denied and the user will be notified of the failed access attempt.
-    In 
+    In
     Other functionalities to come……
 
 
 ### LAE
-The LAE (short for Local Analytics Engine) is an engine that interfaces the VM with any other application in the system architecture. 
+The LAE (short for Local Analytics Engine) is an engine that interfaces the VM with any other application in the system architecture.
    The LAE provides a high level abstraction of the physical sensors in the database.
    It also allows all the application to fetch and receive the data from the database (with multiple criteria as given by the user).
    It also has the capability to not only give out sensor data in the raw format but also provide analytics on it. For example, the LAE will allow an application to fetch

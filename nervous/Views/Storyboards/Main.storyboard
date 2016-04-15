@@ -261,7 +261,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4a-dr-r8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-729" y="173"/>
+            <point key="canvasLocation" x="-711" y="173"/>
         </scene>
         <!--nervousnet Space-->
         <scene sceneID="StE-DZ-kX6">
@@ -345,6 +345,42 @@
             </objects>
             <point key="canvasLocation" x="772" y="173"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="aEg-5O-Gmk">
+            <objects>
+                <viewController id="apz-Wm-hV1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0AL-cl-RY6"/>
+                        <viewControllerLayoutGuide type="bottom" id="jNz-Oa-MnK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BGS-GP-YS4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GPS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ns-pZ-3Nl">
+                                <rect key="frame" x="117" y="45" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZEP-Yt-kTl">
+                                <rect key="frame" x="53" y="40" width="51" height="31"/>
+                            </switch>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="NervousNetIcon" translatesAutoresizingMaskIntoConstraints="NO" id="BLa-oK-re9">
+                                <rect key="frame" x="268" y="275" width="65" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="HQn-8e-sxq"/>
+                                    <constraint firstAttribute="width" constant="65" id="k8Z-hl-YtD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4iP-rX-aGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772" y="851"/>
+        </scene>
         <!--Axon View Controller-->
         <scene sceneID="um6-vG-K4A">
             <objects>
@@ -376,14 +412,27 @@
                                     <action selector="closeAxonButton:" destination="col-8T-eoq" eventType="touchUpInside" id="bxG-K6-KYM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCG-7R-VNO">
+                                <rect key="frame" x="20" y="8" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="0Y0-Va-iNf"/>
+                                    <constraint firstAttribute="height" constant="30" id="HGN-uy-9hk"/>
+                                </constraints>
+                                <state key="normal" image="reinstall_axon"/>
+                                <connections>
+                                    <action selector="reinstallAxon:" destination="col-8T-eoq" eventType="touchUpInside" id="Iwa-7O-gL9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="sCG-7R-VNO" firstAttribute="leading" secondItem="XgN-2w-Ydp" secondAttribute="leadingMargin" constant="10" id="5it-wz-w3r"/>
                             <constraint firstItem="cKO-gl-Syj" firstAttribute="top" secondItem="FP0-Jx-OVh" secondAttribute="bottom" constant="10" id="C3w-71-CL0"/>
                             <constraint firstItem="cKO-gl-Syj" firstAttribute="trailing" secondItem="XgN-2w-Ydp" secondAttribute="trailingMargin" id="G64-xe-sBl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zf3-NG-z40" secondAttribute="trailing" constant="-20" id="NMA-S8-C7P"/>
                             <constraint firstItem="zf3-NG-z40" firstAttribute="top" secondItem="FP0-Jx-OVh" secondAttribute="bottom" id="TQD-7O-ZNo"/>
                             <constraint firstItem="zf3-NG-z40" firstAttribute="leading" secondItem="XgN-2w-Ydp" secondAttribute="leadingMargin" constant="-20" id="WYb-Ll-Xct"/>
+                            <constraint firstItem="sCG-7R-VNO" firstAttribute="top" secondItem="FP0-Jx-OVh" secondAttribute="bottom" constant="10" id="e2z-gB-qpA"/>
                             <constraint firstItem="AsN-jw-7Y1" firstAttribute="top" secondItem="zf3-NG-z40" secondAttribute="bottom" id="iks-JZ-8qb"/>
                         </constraints>
                     </view>
@@ -401,6 +450,8 @@
     </scenes>
     <resources>
         <image name="Background_Graph_Mockup" width="1456" height="1430"/>
+        <image name="NervousNetIcon" width="1024" height="1024"/>
+        <image name="reinstall_axon" width="64" height="64"/>
         <image name="second" width="26" height="26"/>
     </resources>
 </document>
