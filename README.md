@@ -18,7 +18,7 @@ In this iOS app we adhere to Apple's recommended MVC architecture and separate c
 
 Overview:
  [![app](docs/ios_app_arch.png)](docs/nervousnet-iOS.ddsketch/QuickLook/Preview.pdf)
-
+[Class docs](http://nervousnet.github.io/nervousnet-iOS/docs/jazzy/)
 
 
 ### Data Storage
