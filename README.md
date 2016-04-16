@@ -4,7 +4,7 @@ This in-development app is currently not on Apple's App Store. You can still bec
 
 __[→Get an invite to test the App←](http://eepurl.com/bYfGFP)__
 
-__Note to devs__: make sure you open this project with `open nervousnet.xcworkspace` and follow the [iOS good practices](https://github.com/futurice/ios-good-practices)
+__Note to devs__: make sure you open this project with `open nervousnet.xcworkspace` and follow the [iOS good practices](https://github.com/futurice/ios-good-practices). Below documentation is related to details of the iOS implementation. For Android [check out the repo here](https://github.com/nervousnet/nervousnet-android).
 
 ### Features
 _nervousnet iOS_ enables the user to locally log and share their iPhone's sensor data in many interesting ways. Logging sensor data is nothing new in itself but what makes _nervousnet iOS_ different is that the user has full control over where their data is stored.
