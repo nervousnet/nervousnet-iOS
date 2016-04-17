@@ -25,6 +25,8 @@ class AuthController : NSObject {
         
     }
     
+    //Checks the Permissions of a given App and returns them as a [Bool] in alphabetical order. Authentication is done through a UInt64 Token
+    
     func checkAppPermissions (token:UInt64, appname:String, acccaccess:Bool = false, bataccess:Bool = false, gyraccess:Bool = false, magaccess:Bool = false, proxaccess:Bool = false) -> [Bool] {
         
         
@@ -38,52 +40,66 @@ class AuthController : NSObject {
             for ress in listof {
                 if (ress.valueForKey("axonName") as! String == appname && ress.valueForKey("token") as! UInt64 == token){
                     var resultStorage : [Bool] = []
-                    var requestsNeeded : [String] = []
                     
                     if acccaccess   {
                         if ress.valueForKey("hasAccelerometerAccess") as! Bool{
                             resultStorage.append(ress.valueForKey("hasAccelerometerAccess") as! Bool)
                         }
-                        else {
-                            requestsNeeded.append("Accelerometer")
+                        else if (requestUserPermission(appname, permissionWanted: "Accelerometer")){
+                            resultStorage.append(true)
+                        }
+                        else {resultStorage.append(false)
                         }
                         
                     }
+                    
                     
                     if bataccess   {
                         if ress.valueForKey("hasBatteryAccess") as! Bool{
                             resultStorage.append(ress.valueForKey("hasBatteryAccess") as! Bool)
                         }
-                        else {
-                            requestsNeeded.append("Battery")
+                        else if (requestUserPermission(appname, permissionWanted: "Battery")){
+                            resultStorage.append(true)
                         }
+                        else {resultStorage.append(false)
+                        }
+
                         
                     }
                     if gyraccess   {
                         if ress.valueForKey("hasGyroscopeAccess") as! Bool{
                             resultStorage.append(ress.valueForKey("hasGyroscopeAccess") as! Bool)
                         }
-                        else {
-                            requestsNeeded.append("Gyroscope")
+                        else if (requestUserPermission(appname, permissionWanted: "Gyroscope")){
+                            resultStorage.append(true)
                         }
+                        else {resultStorage.append(false)
+                        }
+
                         
                     }
                     if magaccess   {
                         if ress.valueForKey("hasMagnetometerAccess") as! Bool{
                             resultStorage.append(ress.valueForKey("hasMagnetometerAccess") as! Bool)
                         }
-                        else {
-                            requestsNeeded.append("Magnetometer")
+                        else if (requestUserPermission(appname, permissionWanted: "Magentometer")){
+                            resultStorage.append(true)
                         }
+                        else {resultStorage.append(false)
+                        }
+
                     }
                     
                     if proxaccess   {
                         if ress.valueForKey("hasProximityAccess") as! Bool{
                             resultStorage.append(ress.valueForKey("hasProximityAccess") as! Bool)
                         }
-                        else {
-                            requestsNeeded.append("Proximity")
+                        else if (requestUserPermission(appname, permissionWanted: "Proximity")){
+                            resultStorage.append(true)
                         }
+                        else {resultStorage.append(false)
+                        }
+
                     }
                     
                     
@@ -188,9 +204,9 @@ class AuthController : NSObject {
         
     }
     
-    func requestUserPermission (token:UInt64, appname:String, permissionsWanted: [String]) -> [Bool]{
+    func requestUserPermission (appname:String, permissionWanted: String) -> Bool{
         
-        return [false]
+        return false
     }
 }
 
