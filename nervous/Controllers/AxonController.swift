@@ -18,10 +18,9 @@ class AxonController {
     
     var server = HttpServer()
     
-    
-    let axonResourceDir = "\(NSBundle.mainBundle().resourcePath)/Assets/axon-resources/"
-    let axonDir = "\(NSHomeDirectory())/Documents/nervous-installed-axons/"
-
+    let axonResourceDir = "\(NSBundle.mainBundle().resourcePath!)/Assets/axon-resources/"
+    let axonDir = "\(NSHomeDirectory())/Documents/nervousnet-installed-axons/"
+    let laeController = LAEController()
 
     init(){
         startAxonHTTPServer()
@@ -62,7 +61,7 @@ class AxonController {
         
         
         // route to get static resources like JS, HTML or assets provided by nervous
-        self.server.GET["/nervous-axon-resources/:resource"] = { r in
+        self.server.GET["/nervousnet-axon-resources/:resource"] = { r in
             if let filename = r.params[":resource"] {
                 return self.returnRawResponse("\(self.axonResourceDir)\(filename)");
             }
@@ -72,13 +71,44 @@ class AxonController {
         
         
         // route to get any axon resource
-        self.server.GET["/nervous-axons/:axonname/:resource"] = { r in
+        self.server.GET["/nervousnet-axons/:axonname/:resource"] = { r in
             if let filename = r.params[":resource"], axonname = r.params[":axonname"] {
-                return self.returnRawResponse("\(self.axonDir)/\(axonname)/\(filename)");
+                return self.returnRawResponse("\(self.axonDir)/\(axonname)/\(axonname)-master/\(filename)");
             }
             return .NotFound
 
         }
+        
+        
+        
+        
+        // route to get any axon resource
+        self.server.GET["/nervousnet-api/raw-sensor-data/:sensor/"] = { r in
+            
+            if let sensor = r.params[":sensor"] {
+                
+                let data =  self.laeController.getData(sensor)
+                
+                print(data)
+                if(sensor == "BLE"){
+                    let jsonObject: NSDictionary = ["blepacket": data[0] as! String]
+                    return .OK(.Json(jsonObject))
+                }else if(sensor == "GPS"){
+                    let jsonObject: NSDictionary = ["lat": data[0], "long":data[1]]
+                    return .OK(.Json(jsonObject))
+                }else{
+                    let jsonObject: NSDictionary = ["x": data[0], "y":data[1], "z": data[2]]
+                    return .OK(.Json(jsonObject))
+
+                }
+                
+ 
+            }
+            
+            return .NotFound
+            
+        }
+        
         
     }
     

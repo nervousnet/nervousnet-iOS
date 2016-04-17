@@ -14,7 +14,7 @@
     <a title="AxonController Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">nervousnet Docs</a> (14% documented)</p>
+        <p><a href="../index.html">nervousnet Docs</a> (2% documented)</p>
         <p class="header-right"><a href="https://github.com/nervousnet/nervousnet-iOS"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -32,46 +32,76 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C10nervousnet23AccelerometerController">AccelerometerController</a>
+                <a href="../Classes/AccelerometerController.html">AccelerometerController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/AppDelegate.html">AppDelegate</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/AuthController.html">AuthController</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/AxonController.html">AxonController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AxonDetailViewController.html">AxonDetailViewController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/AxonStore.html">AxonStore</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C10nervousnet8AxonView">AxonView</a>
+                <a href="../Classes/AxonViewController.html">AxonViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C10nervousnet17BatteryController">BatteryController</a>
+                <a href="../Classes/BLEController.html">BLEController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BatteryController.html">BatteryController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BeaconController.html">BeaconController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ControlPanelTableViewController.html">ControlPanelTableViewController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/CreditsViewController.html">CreditsViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C10nervousnet19GyroscopeController">GyroscopeController</a>
+                <a href="../Classes/GPSController.html">GPSController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/InstallableAxonsTableViewController.html">InstallableAxonsTableViewController</a>
+                <a href="../Classes/GyroscopeController.html">GyroscopeController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/InstalledAxonsTableViewController.html">InstalledAxonsTableViewController</a>
+                <a href="../Classes/LAEController.html">LAEController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C10nervousnet13LAEController">LAEController</a>
+                <a href="../Classes/MagnetometerController.html">MagnetometerController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C10nervousnet22MagnetometerController">MagnetometerController</a>
+                <a href="../Classes/MainCVCellCollectionViewCell.html">MainCVCellCollectionViewCell</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/MainViewController.html">MainViewController</a>
+                <a href="../Classes/MainCollectionViewController.html">MainCollectionViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C10nervousnet19ProximityController">ProximityController</a>
+                <a href="../Classes/MainNavigationController.html">MainNavigationController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NervousnetSpaceTableViewController.html">NervousnetSpaceTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProximityController.html">ProximityController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C10nervousnet15QueryController">QueryController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C10nervousnet14ReadController">ReadController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C10nervousnet18RegisterController">RegisterController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/SensorStore.html">SensorStore</a>
@@ -79,13 +109,19 @@
               <li class="nav-group-task">
                 <a href="../Classes/VMController.html">VMController</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C10nervousnet15WriteController">WriteController</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Protocols.html#/s:P10nervousnet14SensorProtocol">SensorProtocol</a>
+                <a href="../Protocols/BeaconControllerDelegate.html">BeaconControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SensorProtocol.html">SensorProtocol</a>
               </li>
             </ul>
           </li>
@@ -97,11 +133,11 @@
             <h1>AxonController</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AxonController</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AxonController</span></code></pre>
 
                 </div>
               </div>
-            <p>Manages the Axon (HTTP) server and its routes. Asks for permission on
+            <p>Manages the Axon (HTTP and Socket) server and its routes. Asks for permission on
 behalf of the Axons.</p>
 
           </section>
@@ -111,9 +147,9 @@ behalf of the Axons.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC10nervousnet14AxonControllercFMS0_FT_S0_"></a>
-                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC10nervousnet14AxonControllercFMS0_FT_S0_">init()</a>
+                    <a name="/s:vC10nervousnet14AxonController6serverC7Swifter10HttpServer"></a>
+                    <a name="//apple_ref/swift/Property/server" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10nervousnet14AxonController6serverC7Swifter10HttpServer">server</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -128,7 +164,223 @@ behalf of the Axons.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AxonController</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AxonController</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10nervousnet14AxonController15axonResourceDirSS"></a>
+                    <a name="//apple_ref/swift/Property/axonResourceDir" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10nervousnet14AxonController15axonResourceDirSS">axonResourceDir</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AxonController</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10nervousnet14AxonController7axonDirSS"></a>
+                    <a name="//apple_ref/swift/Property/axonDir" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10nervousnet14AxonController7axonDirSS">axonDir</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AxonController</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10nervousnet14AxonController13laeControllerCS_13LAEController"></a>
+                    <a name="//apple_ref/swift/Property/laeController" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10nervousnet14AxonController13laeControllerCS_13LAEController">laeController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AxonController</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10nervousnet14AxonControllercFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10nervousnet14AxonControllercFT_S0_">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AxonController</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10nervousnet14AxonController19startAxonHTTPServerFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/startAxonHTTPServer()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10nervousnet14AxonController19startAxonHTTPServerFT_T_">startAxonHTTPServer()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AxonController</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10nervousnet14AxonController21restoreAxonHTTPServerFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/restoreAxonHTTPServer()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10nervousnet14AxonController21restoreAxonHTTPServerFT_T_">restoreAxonHTTPServer()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AxonController</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10nervousnet14AxonController23mapAxonHTTPServerRoutesFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/mapAxonHTTPServerRoutes()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10nervousnet14AxonController23mapAxonHTTPServerRoutesFT_T_">mapAxonHTTPServerRoutes()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AxonController</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10nervousnet14AxonController17returnRawResponseFSSO7Swifter12HttpResponse"></a>
+                    <a name="//apple_ref/swift/Method/returnRawResponse(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10nervousnet14AxonController17returnRawResponseFSSO7Swifter12HttpResponse">returnRawResponse(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AxonController</span></code></pre>
 
                         </div>
                       </div>

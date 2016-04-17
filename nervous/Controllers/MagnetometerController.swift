@@ -78,8 +78,8 @@ class MagnetometerController : NSObject, SensorProtocol {
             self.y = Float(data.magneticField.y)
             self.z = Float(data.magneticField.z)
             
-            print("magnetometer")
-            print(self.x)
+            //print("magnetometer")
+            //print(self.x)
         
             // store the current data in the CoreData database
             let val = self.VM.defaults.objectForKey("logMag") as! Bool

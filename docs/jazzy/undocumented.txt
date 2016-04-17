@@ -1,26 +1,188 @@
-MagnetometerController.swift
-	class MagnetometerController : NSObject
-AxonController.swift
+BLEController.swift
+	class BLEController : NSObject, SensorProtocol,  CBCentralManagerDelegate, CBPeripheralDelegate
+	var timestamp: UInt64 = 0
+	var activeCentralManager: CBCentralManager?
+	var activePeripheral: CBPeripheral?
+	var blepacketCommaCounter = 0
+	var blepacket = ""
+	var blepacketRaw = ""
 	override init()
+	class var sharedInstance: BLEController
+	func requestAuthorization()
+	func initializeUpdate(freq: Double)
+	func startSensorUpdates()
+	func stopSensorUpdates()
+	func centralManagerDidUpdateState(central: CBCentralManager)
+	func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber)
+	func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral)
+	func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?)
+	func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?)
+	func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?)
+MainCollectionViewController.swift
+	class MainCollectionViewController: UICollectionViewController, UIGestureRecognizerDelegate
+	@IBAction func handleSwipe(recognizer:UISwipeGestureRecognizer)
+	@IBAction func handleLongPress(recognizer:UILongPressGestureRecognizer)
+	func getNumberOfCellsDisplayable() -> Int
+	func getTextForCell(cellIndex: NSIndexPath) -> String
+	func getNameForCell(cellIndex: NSIndexPath) -> String
+	func getImageForCell(cellIndex: NSIndexPath) -> UIImage
+	class MainCollectionViewController : UICollectionViewController, UIGestureRecognizerDelegate
+	override func viewWillAppear(animated: Bool)
+	override func viewDidLoad()
+	override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
+	override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+	override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+	override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+ReadController.swift
+	class ReadController : NSObject
+BeaconController.swift
+	protocol BeaconControllerDelegate
+	func controller(controller: BeaconController, didRangeBeacons: [CLBeacon])
+	class BeaconController : NSObject, SensorProtocol
+	var delegate: BeaconControllerDelegate?
+	let locationManager : CLLocationManager
+	let beaconRegion : CLBeaconRegion
+	let beaconUUIDString = NSUUID(UUIDString: "3C77C2A5-5D39-420F-97FD-E7735CC7F317")!
+	let beaconIdentifier = "ch.ethz.nervous"
+	let beaconMajor:CLBeaconMajorValue = 33091
+	override init()
+	func requestAuthorization()
+	func startSensorUpdates()
+	func stopSensorUpdates()
+	class BeaconController : NSObject, SensorProtocol
+	func locationManager(manager: CLLocationManager, monitoringDidFailForRegion region: CLRegion?, withError error: NSError)
+	func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
+	func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion)
+MagnetometerController.swift
+	class MagnetometerController : NSObject, SensorProtocol
+	var timestamp: UInt64 = 0
+	var x: Float = 0.0
+	var y: Float = 0.0
+	var z: Float = 0.0
+	override init()
+	class var sharedInstance: MagnetometerController
+	func requestAuthorization()
+	func initializeUpdate(freq: Double)
+	func startSensorUpdates()
+	func stopSensorUpdates()
+AxonController.swift
+	var server = HttpServer()
+	let axonResourceDir = "\(NSBundle.mainBundle().resourcePath!)/Assets/axon-resources/"
+	let axonDir = "\(NSHomeDirectory())/Documents/nervousnet-installed-axons/"
+	let laeController = LAEController()
+	init()
+	func startAxonHTTPServer()
+	func restoreAxonHTTPServer()
+	func mapAxonHTTPServerRoutes()
+	func returnRawResponse(fileURL:String) -> HttpResponse
+MainCVCellCollectionViewCell.swift
+	class MainCVCellCollectionViewCell: UICollectionViewCell
+	@IBOutlet weak var imageView: UIImageView!
+	@IBOutlet weak var textLabel: UILabel!
+QueryController.swift
+	class QueryController : NSObject
 GyroscopeController.swift
 	class GyroscopeController : NSObject
+	var timestamp: UInt64 = 0
+	var x: Float = 0.0
+	var y: Float = 0.0
+	var z: Float = 0.0
+	override init()
+	class var sharedInstance: GyroscopeController
+	func requestAuthorization()
+	func initializeUpdate(freq: Double)
+	func startSensorUpdates()
+	func stopSensorUpdates()
+AuthController.swift
+	class AuthController : NSObject
+	let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+	var managedContext : NSManagedObjectContext
+	override init()
+	func checkAppPermissions (token:UInt64, appname:String, acccaccess:Bool = false, bataccess:Bool = false, gyraccess:Bool = false, magaccess:Bool = false, proxaccess:Bool = false) -> [Bool]
+	func requestUserPermission (token:UInt64, appname:String, permissionsWanted: [String]) -> [Bool]
 SensorStore.swift
-	func getSensors()
-	func storeSensors()
-InstallableAxonsTableViewController.swift
-	func handleAxonDownloadRequest()
+	let Gyroscope : GyroscopeController
+	let Battery : BatteryController
+	let Magnetometer : MagnetometerController
+	let Accelerometer : AccelerometerController
+	let BLE : BLEController
+	let GPS : GPSController
+	var timerAcc = NSTimer()
+	let VM = VMController.sharedInstance
+	override init()
+	func controller(controller: BeaconController, didRangeBeacons: [CLBeacon])
+	func controller()
+AxonViewController.swift
+	class AxonViewController: UIViewController
+	@IBOutlet weak var axonWebView: UIWebView!
+	var axonName = "nil";
+	@IBAction func reinstallAxon(sender: AnyObject)
+	@IBAction func closeAxonButton(sender: AnyObject)
+	override func viewWillAppear(animated: Bool)
+	override func viewDidLoad()
+	override func didReceiveMemoryWarning()
+NervousnetSpaceTableViewController.swift
+	class NervousnetSpaceTableViewController: UITableViewController
+	var TableData = Array<Array<String>>()
+	override func viewDidLoad()
+	override func didReceiveMemoryWarning()
+	override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+WriteController.swift
+	class WriteController : NSObject
+GPSController.swift
+	class GPSController : NSObject, SensorProtocol, CLLocationManagerDelegate
+	internal var timestamp: UInt64 = 0
+	internal var lat: Double = 0.0
+	internal var long: Double = 0.0
+	internal var freq: Double = 0.0
+	override init()
+	class var sharedInstance: GPSController
+	func requestAuthorization()
+	func initializeUpdate(freq: Double)
+	func startSensorUpdates()
+	func newLocation()
+	func stopSensorUpdates()
 BatteryController.swift
-	class BatteryController : NSObject,SensorProtocol
+	class BatteryController : NSObject
+	var timestamp: UInt64 = 0
+	var percent: Float = 0.0
+	var isCharging: Bool = false
+	var charging_type: Int = 0 // 0 - unknown, 1 - USB, 2 - Ac, 3 - Wireless
+	override init()
+	class var sharedInstance: BatteryController
+	func requestAuthorization()
+	func initializeUpdate()
+	func startSensorUpdates()
+	func stopSensorUpdates()
 VMController.swift
-	func initialiseSettings()
-	func updateSettings()
+	class VMController : NSObject
+	let defaults = NSUserDefaults.standardUserDefaults()
+	override init()
+	class var sharedInstance: VMController
+	func initialiseSettings(dictPrivacy: [String : Bool] ,dictFreq: [String : Double])
+	func updateSettings(button: String, privacy: Bool)
+	func updateSettings(button: String, freq: Double)
+	func setMasterSwitch(button: Bool)
+	func getMasterSwitch() -> Bool
 	func initialiseSensors()
+	func getSettings(button: String) -> Dictionary<String,Any>
 SensorProtocol.swift
 	protocol SensorProtocol
+	func requestAuthorization()
+	func startSensorUpdates()
+	func stopSensorUpdates()
 AppDelegate.swift
 	class AppDelegate: UIResponder, UIApplicationDelegate
 	var window: UIWindow?
+	var axonController = AxonController();
+	let VM = VMController.sharedInstance
+	func central(central: BKCentral, remotePeripheralDidDisconnect remotePeripheral: BKRemotePeripheral)
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+	func delay(delay:Double, closure:()->())
 	func applicationWillResignActive(application: UIApplication)
 	func applicationDidEnterBackground(application: UIApplication)
 	func applicationWillEnterForeground(application: UIApplication)
@@ -31,26 +193,80 @@ AppDelegate.swift
 	lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator =
 	lazy var managedObjectContext: NSManagedObjectContext =
 	func saveContext ()
+LAEController.swift
+	func getData(sensor: String) -> Array<AnyObject>
+	func getData(sensor: String, from: UInt64, to: UInt64) -> Array<Array<AnyObject>>
+	func mean(sensor: String, from: UInt64, to: UInt64) -> Array<AnyObject>
+	func max(sensor: String, from: UInt64, to: UInt64, dim: String = "all") -> Array<AnyObject>
+	func min(sensor: String, from: UInt64, to: UInt64, dim: String = "all") -> Array<AnyObject>
 AxonStore.swift
-	func getAxons()
-	func getAxon()
-MainViewController.swift
-	class MainViewController : UIViewController
-	@IBOutlet var Background: UIImageView!
-	@IBOutlet var button: UIButton!
-	@IBOutlet var Killswitch: UISwitch!
-	var UserAgreement = "This what is shown to the user"
+	static let includedAxonDir = "\(NSBundle.mainBundle().resourcePath)/Assets/included-axons/"
+	static let remoteAxonTestingRepo = "https://api.github.com/repos/nervousnet/nervousnet-axons/contents/testing?ref=master"
+	static let remoteAxonRepoZipSuffix = "/archive/master.zip"
+	static let installedAxonsDir = "\(NSHomeDirectory())/Documents/nervousnet-installed-axons"
+	static let singleAxonRootURL = "http://localhost:8080/nervousnet-axons"
+	static let axonIndexFile = "axon.html"
+	static var remoteAxonList = Array<Array<String>>()
+	class func getInstalledAxonsList() -> Array<Array<String>>
+	class func downloadAndInstall(axonIndex: Int) -> Bool
+	class func getRemoteAxonIndexByName(axonName: String) -> Int
+	class func getRemoteAxon(axonIndex: Int) -> Array<String>
+	class func getLocalAxon(axonIndex: Int) -> Array<String>
+	class func getLocalAxonURL(axonName: String) -> NSURL?
+	class func removeLocalAxon(axonName: String) -> Bool
+	class func getRemoteAxonList() -> Array<Array<String>>
+MainNavigationController.swift
+	class MainNavigationController : UINavigationController
+	let navbarView = UIView()
 	override func viewDidLoad()
 	override func viewDidAppear(animated: Bool)
-	@IBAction func KillSwitch(sender: UISwitch)
+	@IBAction func navbarSwitchChanged(sender: UISwitch)
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
 CreditsViewController.swift
 	class CreditsViewController: UIViewController
 	@IBAction func closeCreditsView(sender: AnyObject)
 AccelerometerController.swift
-	class AccelerometerController : NSObject
-InstalledAxonsTableViewController.swift
-	func runAxon()
+	class AccelerometerController : NSObject, SensorProtocol
+	internal var timestamp: UInt64 = 0
+	internal var x: Float = 0.0
+	internal var y: Float = 0.0
+	internal var z: Float = 0.0
+	override init()
+	class var sharedInstance: AccelerometerController
+	func requestAuthorization()
+	func initializeUpdate(freq: Double)
+	func startSensorUpdates()
+	func stopSensorUpdates()
+RegisterController.swift
+	class RegisterController : NSObject
 ProximityController.swift
 	class ProximityController : NSObject
-AxonView.swift
-	class AxonView : UIWebView
+	var timestamp: UInt64 = 0
+	var proximity: Float = 0.0
+	override init()
+	func requestAuthorization()
+	func initializeUpdate()
+	func startSensorUpdates()
+	func stopSensorUpdates()
+AxonDetailViewController.swift
+	class AxonDetailViewController: UIViewController
+	var axon: Array<String> = []
+	@IBOutlet weak var axonImageView: UIImageView!
+	@IBOutlet weak var downloadButton: PKDownloadButton!
+	@IBOutlet weak var axonTextView: UITextView!
+	@IBOutlet weak var axonSubtitle: UILabel!
+	@IBOutlet weak var axonTitle: UILabel!
+	@IBOutlet weak var axonURL: UITextView!
+	override func viewDidLoad()
+	override func didReceiveMemoryWarning()
+	class AxonDetailViewController : UIViewController
+	func downloadButtonTapped(downloadButton: PKDownloadButton!, currentState state: PKDownloadButtonState)
+ControlPanelTableViewController.swift
+	class ControlPanelTableViewController: UITableViewController
+	var controlPanelOptions = [
+	override func viewDidLoad()
+	override func didReceiveMemoryWarning()
+	override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)

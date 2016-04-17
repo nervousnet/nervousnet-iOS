@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import BluetoothKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let VM = VMController.sharedInstance
     
+    func central(central: BKCentral, remotePeripheralDidDisconnect remotePeripheral: BKRemotePeripheral) {
+        print("remote disconnected")
+        
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -25,17 +31,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let ss = SensorStore()
         ss.controller()
         
-        // demo to get real time data using the getData() function in LAEController
-        let lae = LAEController()
-        var obj: Array<AnyObject> = [0.0,0.0,0.0]
-        for i in 1...10 {
+        /*let GPS = LAEController()
+        for i in 1...100{
             let timeToDelay = Double(i)
             delay(timeToDelay) {
-                obj = lae.getData("Accelerometer")
-                print(obj)
+                print("=====")
+                print(GPS.getData("GPS"))
             }
-        }
-        
+        }*/
+
         return true
     }
     

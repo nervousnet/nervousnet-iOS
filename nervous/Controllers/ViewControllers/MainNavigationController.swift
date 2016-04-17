@@ -2,7 +2,7 @@ import UIKit
 import Foundation
 
 class MainNavigationController : UINavigationController {
-
+    let navbarView = UIView()
     
     override func viewDidLoad() {
         
@@ -14,7 +14,7 @@ class MainNavigationController : UINavigationController {
         
         let navbarView = UIView(frame: CGRectMake(0, 0, 700, 60))
         navbarView.backgroundColor = UIColor.clearColor()
-        
+        navbarView.tag = 97
         
         let navbarLogo = UIImageView(image: UIImage(imageLiteral: "nn"))
         navbarLogo.frame = CGRectMake(15, 11, 100,20)
@@ -36,11 +36,11 @@ class MainNavigationController : UINavigationController {
         navbarView.addSubview(navbarLogo)
         navbarView.addSubview(navbarSwitch)
         
+        
         self.navigationBar.addSubview(navbarView)
     }
     
-    
-    
+
     override func viewDidAppear(animated: Bool) {
         
         /* let alertController = UIAlertController(title: "Nervousnet end-user agreement ", message: UserAgreement, preferredStyle: .Alert)
@@ -66,5 +66,26 @@ class MainNavigationController : UINavigationController {
     
     @IBAction func navbarSwitchChanged(sender: UISwitch) {
         print("navbar switch toggled");
+    }
+    
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        print("segueing from nervounet space...")
+        print(segue.identifier)
+        
+        if segue.identifier == "axonDetailViewControllerSegue" {
+            
+            
+            
+            if let axonDetailViewController = segue.destinationViewController as? AxonDetailViewController {
+                axonDetailViewController.axon = sender as! Array<String>
+                
+                print("opening axon details")
+            }
+            
+        }
+        
     }
 }

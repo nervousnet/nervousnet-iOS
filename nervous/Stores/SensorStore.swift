@@ -17,12 +17,13 @@ import CoreMotion
 class SensorStore : NSObject, BeaconControllerDelegate {
     
     let Gyroscope : GyroscopeController
-    //let Battery : BatteryController
+    let Battery : BatteryController
     let Magnetometer : MagnetometerController
     //let Proximity : ProximityController
-    var Accelerometer : AccelerometerController
+    let Accelerometer : AccelerometerController
     //let Beacon : BeaconController
-    
+    let BLE : BLEController
+    let GPS : GPSController
     
     var timerAcc = NSTimer()
     
@@ -34,12 +35,23 @@ class SensorStore : NSObject, BeaconControllerDelegate {
         
         self.Gyroscope = GyroscopeController.sharedInstance
         self.Gyroscope.initializeUpdate(self.VM.defaults.doubleForKey("freqGyr"))
-        //self.Battery = BatteryController()
+        
+        self.Battery = BatteryController.sharedInstance
+        self.Battery.initializeUpdate()
+        
         self.Magnetometer = MagnetometerController.sharedInstance
         self.Magnetometer.initializeUpdate(self.VM.defaults.doubleForKey("freqMag"))
+        
         //self.Proximity = ProximityController()
+        
         self.Accelerometer = AccelerometerController.sharedInstance
         self.Accelerometer.initializeUpdate(self.VM.defaults.doubleForKey("freqAcc"))
+        
+        
+        self.BLE = BLEController.sharedInstance
+        
+        self.GPS = GPSController.sharedInstance
+        self.GPS.initializeUpdate(self.VM.defaults.doubleForKey("freqGPS"))
         //self.Beacon = BeaconController()
         
         // BEACONS
@@ -47,18 +59,6 @@ class SensorStore : NSObject, BeaconControllerDelegate {
         /*self.Beacon.delegate = self;
         self.Beacon.requestAuthorization()
         self.Beacon.startSensorUpdates()*/
-        
-        // ACCELEROMETER
-        //self.Accelerometer.requestAuthorization()
-        //self.Accelerometer.startSensorUpdates(0.1)
-        
-        // GYROSCOPE
-        //self.Gyroscope.requestAuthorization()
-        //self.Gyroscope.startSensorUpdates(30.0)
-        
-        // MAGNETOMETER
-        //self.Magnetometer.requestAuthorization()
-        //self.Magnetometer.startSensorUpdates(30.0)
     }
     
     
@@ -78,5 +78,11 @@ class SensorStore : NSObject, BeaconControllerDelegate {
         
         self.Magnetometer.requestAuthorization()
         self.Magnetometer.startSensorUpdates()
+        
+        self.Battery.requestAuthorization()
+        self.Battery.startSensorUpdates()
+        
+        self.GPS.requestAuthorization()
+        self.GPS.startSensorUpdates()
     }
 }

@@ -79,8 +79,8 @@ class GyroscopeController : NSObject {
             self.y = Float(data.rotationRate.y)
             self.z = Float(data.rotationRate.z)
             
-            print("groscope")
-            print(self.x)
+            //print("groscope")
+            //print(self.x)
         
             // store the current data in the CoreData database
             let val = self.VM.defaults.objectForKey("logGyr") as! Bool

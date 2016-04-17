@@ -14,7 +14,7 @@
     <a title="SensorStore Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">nervousnet Docs</a> (14% documented)</p>
+        <p><a href="../index.html">nervousnet Docs</a> (2% documented)</p>
         <p class="header-right"><a href="https://github.com/nervousnet/nervousnet-iOS"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -32,46 +32,76 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C10nervousnet23AccelerometerController">AccelerometerController</a>
+                <a href="../Classes/AccelerometerController.html">AccelerometerController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/AppDelegate.html">AppDelegate</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/AuthController.html">AuthController</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/AxonController.html">AxonController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AxonDetailViewController.html">AxonDetailViewController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/AxonStore.html">AxonStore</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C10nervousnet8AxonView">AxonView</a>
+                <a href="../Classes/AxonViewController.html">AxonViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C10nervousnet17BatteryController">BatteryController</a>
+                <a href="../Classes/BLEController.html">BLEController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BatteryController.html">BatteryController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BeaconController.html">BeaconController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ControlPanelTableViewController.html">ControlPanelTableViewController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/CreditsViewController.html">CreditsViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C10nervousnet19GyroscopeController">GyroscopeController</a>
+                <a href="../Classes/GPSController.html">GPSController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/InstallableAxonsTableViewController.html">InstallableAxonsTableViewController</a>
+                <a href="../Classes/GyroscopeController.html">GyroscopeController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/InstalledAxonsTableViewController.html">InstalledAxonsTableViewController</a>
+                <a href="../Classes/LAEController.html">LAEController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C10nervousnet13LAEController">LAEController</a>
+                <a href="../Classes/MagnetometerController.html">MagnetometerController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C10nervousnet22MagnetometerController">MagnetometerController</a>
+                <a href="../Classes/MainCVCellCollectionViewCell.html">MainCVCellCollectionViewCell</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/MainViewController.html">MainViewController</a>
+                <a href="../Classes/MainCollectionViewController.html">MainCollectionViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C10nervousnet19ProximityController">ProximityController</a>
+                <a href="../Classes/MainNavigationController.html">MainNavigationController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NervousnetSpaceTableViewController.html">NervousnetSpaceTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProximityController.html">ProximityController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C10nervousnet15QueryController">QueryController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C10nervousnet14ReadController">ReadController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C10nervousnet18RegisterController">RegisterController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/SensorStore.html">SensorStore</a>
@@ -79,13 +109,19 @@
               <li class="nav-group-task">
                 <a href="../Classes/VMController.html">VMController</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C10nervousnet15WriteController">WriteController</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Protocols.html#/s:P10nervousnet14SensorProtocol">SensorProtocol</a>
+                <a href="../Protocols/BeaconControllerDelegate.html">BeaconControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SensorProtocol.html">SensorProtocol</a>
               </li>
             </ul>
           </li>
@@ -97,7 +133,7 @@
             <h1>SensorStore</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">SensorStore</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">SensorStore</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">BeaconControllerDelegate</span></code></pre>
 
                 </div>
               </div>
@@ -111,9 +147,9 @@ Inits sensor objects. Also uploads sensor data to the server.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC10nervousnet11SensorStore10getSensorsFS0_FT_T_"></a>
-                    <a name="//apple_ref/swift/Method/getSensors()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC10nervousnet11SensorStore10getSensorsFS0_FT_T_">getSensors()</a>
+                    <a name="/s:vC10nervousnet11SensorStore9GyroscopeCS_19GyroscopeController"></a>
+                    <a name="//apple_ref/swift/Property/Gyroscope" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10nervousnet11SensorStore9GyroscopeCS_19GyroscopeController">Gyroscope</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -128,7 +164,7 @@ Inits sensor objects. Also uploads sensor data to the server.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">SensorStore</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">SensorStore</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">BeaconControllerDelegate</span></code></pre>
 
                         </div>
                       </div>
@@ -138,9 +174,9 @@ Inits sensor objects. Also uploads sensor data to the server.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC10nervousnet11SensorStore12storeSensorsFS0_FT_T_"></a>
-                    <a name="//apple_ref/swift/Method/storeSensors()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC10nervousnet11SensorStore12storeSensorsFS0_FT_T_">storeSensors()</a>
+                    <a name="/s:vC10nervousnet11SensorStore7BatteryCS_17BatteryController"></a>
+                    <a name="//apple_ref/swift/Property/Battery" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10nervousnet11SensorStore7BatteryCS_17BatteryController">Battery</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -155,7 +191,261 @@ Inits sensor objects. Also uploads sensor data to the server.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">SensorStore</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">SensorStore</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">BeaconControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10nervousnet11SensorStore12MagnetometerCS_22MagnetometerController"></a>
+                    <a name="//apple_ref/swift/Property/Magnetometer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10nervousnet11SensorStore12MagnetometerCS_22MagnetometerController">Magnetometer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">SensorStore</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">BeaconControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10nervousnet11SensorStore13AccelerometerCS_23AccelerometerController"></a>
+                    <a name="//apple_ref/swift/Property/Accelerometer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10nervousnet11SensorStore13AccelerometerCS_23AccelerometerController">Accelerometer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">SensorStore</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">BeaconControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10nervousnet11SensorStore3BLECS_13BLEController"></a>
+                    <a name="//apple_ref/swift/Property/BLE" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10nervousnet11SensorStore3BLECS_13BLEController">BLE</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">SensorStore</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">BeaconControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10nervousnet11SensorStore3GPSCS_13GPSController"></a>
+                    <a name="//apple_ref/swift/Property/GPS" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10nervousnet11SensorStore3GPSCS_13GPSController">GPS</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">SensorStore</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">BeaconControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10nervousnet11SensorStore8timerAccCSo7NSTimer"></a>
+                    <a name="//apple_ref/swift/Property/timerAcc" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10nervousnet11SensorStore8timerAccCSo7NSTimer">timerAcc</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">SensorStore</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">BeaconControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10nervousnet11SensorStore2VMCS_12VMController"></a>
+                    <a name="//apple_ref/swift/Property/VM" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10nervousnet11SensorStore2VMCS_12VMController">VM</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">SensorStore</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">BeaconControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10nervousnet11SensorStorecFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10nervousnet11SensorStorecFT_S0_">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">SensorStore</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">BeaconControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/delegate%20callbacks"></a>
+                <a name="//apple_ref/swift/Section/delegate callbacks" class="dashAnchor"></a>
+                <a href="#/delegate%20callbacks">
+                  <h3 class="section-name">delegate callbacks</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10nervousnet11SensorStore10controllerFTCS_16BeaconController15didRangeBeaconsGSaCSo8CLBeacon__T_"></a>
+                    <a name="//apple_ref/swift/Method/controller(_:didRangeBeacons:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10nervousnet11SensorStore10controllerFTCS_16BeaconController15didRangeBeaconsGSaCSo8CLBeacon__T_">controller(_:didRangeBeacons:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">SensorStore</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">BeaconControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10nervousnet11SensorStore10controllerFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/controller()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10nervousnet11SensorStore10controllerFT_T_">controller()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">SensorStore</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">BeaconControllerDelegate</span></code></pre>
 
                         </div>
                       </div>

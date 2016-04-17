@@ -24,7 +24,12 @@
         <attribute name="hasProximityAccess" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Battery" syncable="YES"/>
+    <entity name="Battery" syncable="YES">
+        <attribute name="charging_type" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isCharging" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="percent" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
     <entity name="Gyroscope" syncable="YES">
         <attribute name="timestamp" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="x" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -42,7 +47,7 @@
         <element name="Accelerometer" positionX="-54" positionY="-9" width="128" height="30"/>
         <element name="Axon" positionX="18" positionY="63" width="128" height="150"/>
         <element name="AxonPermissionList" positionX="36" positionY="81" width="128" height="150"/>
-        <element name="Battery" positionX="0" positionY="45" width="128" height="45"/>
+        <element name="Battery" positionX="0" positionY="45" width="128" height="105"/>
         <element name="Gyroscope" positionX="-63" positionY="-18" width="128" height="30"/>
         <element name="Magnetometer" positionX="-36" positionY="9" width="128" height="30"/>
         <element name="Proximity" positionX="-18" positionY="27" width="128" height="45"/>

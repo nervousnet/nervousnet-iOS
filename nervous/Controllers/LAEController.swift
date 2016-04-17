@@ -17,9 +17,8 @@ import UIKit
 ///
 class LAEController : NSObject {
 
+    // get the real time data
     func getData(sensor: String) -> Array<AnyObject>{
-        // this function is to be done
-        // it will give real time data of a sensor
         var data = [AnyObject]()
         
         if sensor == "Accelerometer" {
@@ -46,9 +45,33 @@ class LAEController : NSObject {
             data.append(sen.z)
         }
         
+        if sensor == "Battery" {
+            
+            let sen = BatteryController.sharedInstance
+            data.append(sen.percent)
+            data.append(sen.isCharging)
+            data.append(sen.charging_type)
+        }
+        
+        if sensor == "BLE" {
+            
+            let sen = BLEController.sharedInstance
+            data.append(sen.blepacket)
+            print(sen.blepacket)
+        }
+        
+        if sensor == "GPS" {
+            
+            let sen = GPSController.sharedInstance
+            data.append(sen.lat)
+            data.append(sen.long)
+        }
+        
         return data
     }
     
+    
+    //sensor string is the name of the coredata object
     func getData(sensor: String, from: UInt64, to: UInt64) -> Array<Array<AnyObject>>{
         
         var data = [[AnyObject]]()
@@ -85,6 +108,8 @@ class LAEController : NSObject {
 
     }
     
+    
+    // gets the average of the data
     func mean(sensor: String, from: UInt64, to: UInt64) -> Array<AnyObject> {
         
         let data = getData(sensor, from: from, to: to)
@@ -114,6 +139,8 @@ class LAEController : NSObject {
         return mean
     }
     
+    
+    // get the maximum of the data
     func max(sensor: String, from: UInt64, to: UInt64, dim: String = "all") -> Array<AnyObject> {
         
         let data = getData(sensor, from: from, to: to)
@@ -159,5 +186,54 @@ class LAEController : NSObject {
         }
         
         return max
+    }
+    
+    
+    // get the minimum of the data
+    func min(sensor: String, from: UInt64, to: UInt64, dim: String = "all") -> Array<AnyObject> {
+        
+        let data = getData(sensor, from: from, to: to)
+        
+        var min_x : Double = 1000.0
+        var min_y : Double = 1000.0
+        var min_z : Double = 1000.0
+        
+        var min = [AnyObject]()
+        
+        var x : Double
+        var y : Double
+        var z : Double
+        
+        for i in 0 ..< data.count {
+            
+            x = Double(data[i][1] as! NSNumber)
+            if x < min_x {
+                min_x = x
+            }
+            y = Double(data[i][1] as! NSNumber)
+            if y < min_y {
+                min_y = y
+            }
+            z = Double(data[i][1] as! NSNumber)
+            if z < min_z {
+                min_z = z
+            }
+        }
+        
+        if dim == "all" {
+            min.append(min_x)
+            min.append(min_y)
+            min.append(min_z)
+        } else if dim == "x" {
+            min.append(min_x)
+        } else if dim == "y" {
+            min.append(min_y)
+        } else if dim == "z" {
+            min.append(min_z)
+        }else {
+            min.append(0.0)
+        }
+        
+        return min
     }
 }
