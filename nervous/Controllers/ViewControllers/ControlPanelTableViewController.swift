@@ -11,11 +11,10 @@ import UIKit
 class ControlPanelTableViewController: UITableViewController {
     
     var controlPanelOptions = [
-        "Help": ["NervousnetSpaceTableViewController", UIImage(imageLiteral: "info")],
-
-        "Sensors": ["NervousnetSpaceTableViewController", UIImage(imageLiteral: "sensors")],
-        "Settings":["NervousnetSpaceTableViewController", UIImage(imageLiteral: "settings")],
-        "nervousnet Space": ["NervousnetSpaceTableViewController", UIImage(imageLiteral: "nnspace")]
+        "nervousnet Space": ["NervousnetSpaceTableViewController", UIImage(imageLiteral: "space_orange")],
+        "Help": ["NervousnetSpaceTableViewController", UIImage(imageLiteral: "help_orange")],
+        "Sensors": ["NervousnetSpaceTableViewController", UIImage(imageLiteral: "sensors_orange")],
+        "Settings":["SettingsTableViewController", UIImage(imageLiteral: "settings_orange")]
     ]
     
     override func viewDidLoad() {

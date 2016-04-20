@@ -43,6 +43,7 @@
 		22F90A6B1C8C76F0006A56FD /* BeaconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F90A6A1C8C76F0006A56FD /* BeaconController.swift */; };
 		22FF8A8719F14AFA00AC6783 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */; };
 		22FF8A8D19F14B3A00AC6783 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8C19F14B3A00AC6783 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		E01236BA1CC3ADB60071247F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01236B91CC3ADB60071247F /* SettingsTableViewController.swift */; };
 		E1A897101CA7F2D000393545 /* VMController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEE51C88C183005D1A20 /* VMController.swift */; };
 		E1A897111CA7F31900393545 /* SensorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEF41C88C1B2005D1A20 /* SensorStore.swift */; };
 		E1A897121CA7F32000393545 /* AxonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEF31C88C1B2005D1A20 /* AxonStore.swift */; };
@@ -105,6 +106,7 @@
 		22FF8A8C19F14B3A00AC6783 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2E02F23DE03AE89CCB108FCF /* Pods_nervousnet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nervousnet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D973B0B88CF2E1839C305D57 /* Pods-nervousnet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nervousnet.release.xcconfig"; path = "Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet.release.xcconfig"; sourceTree = "<group>"; };
+		E01236B91CC3ADB60071247F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		E1A897151CAD653400393545 /* QueryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryController.swift; sourceTree = "<group>"; };
 		E1A897171CAD654E00393545 /* ReadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadController.swift; sourceTree = "<group>"; };
 		E1A897191CAD656900393545 /* WriteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				223847BC1C812A1600C17EFB /* CreditsViewController.swift */,
 				22F1F33C1CB5428F00DE5CDA /* AxonDetailViewController.swift */,
 				220B7C141CB5524300ABCEC9 /* AxonViewController.swift */,
+				E01236B91CC3ADB60071247F /* SettingsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				223847BE1C812A1600C17EFB /* CreditsViewController.swift in Sources */,
 				221CAEE61C88C183005D1A20 /* AccelerometerController.swift in Sources */,
 				E1A8971C1CAD657B00393545 /* RegisterController.swift in Sources */,
+				E01236BA1CC3ADB60071247F /* SettingsTableViewController.swift in Sources */,
 				221CAEEC1C88C183005D1A20 /* ProximityController.swift in Sources */,
 				22F1F33D1CB5428F00DE5CDA /* AxonDetailViewController.swift in Sources */,
 				222262381CB1CE1D00E3CA4F /* ControlPanelTableViewController.swift in Sources */,
