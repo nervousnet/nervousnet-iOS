@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15A284" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E61b" minimumToolsVersion="Xcode 7.0">
     <entity name="Accelerometer" syncable="YES">
         <attribute name="timestamp" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="x" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -22,7 +22,7 @@
         <attribute name="hasGyroscopeAccess" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="hasMagnetometerAccess" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="hasProximityAccess" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="token" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="Battery" syncable="YES">
         <attribute name="charging_type" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>

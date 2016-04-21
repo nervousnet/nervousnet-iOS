@@ -26,8 +26,9 @@ class AuthController : NSObject {
     }
     
     //Checks the Permissions of a given App and returns them as a [Bool] in alphabetical order. Authentication is done through a UInt64 Token
+    //If the user is to be asked for missing permissions set askUser:Bool = true
     
-    func checkAppPermissions (token:UInt64, appname:String, acccaccess:Bool = false, bataccess:Bool = false, gyraccess:Bool = false, magaccess:Bool = false, proxaccess:Bool = false) -> [Bool] {
+    func checkAxonPermissions (token:Int, axonName:String, accaccess:Bool = false, bataccess:Bool = false, gyraccess:Bool = false, magaccess:Bool = false, proxaccess:Bool = false, askUser:Bool = false) -> [Bool] {
         
         
         //Check whether permission has already been granted
@@ -38,14 +39,14 @@ class AuthController : NSObject {
                 try managedContext.executeFetchRequest(fetchRequestExisting)
             let listof = results as! [NSManagedObject]
             for ress in listof {
-                if (ress.valueForKey("axonName") as! String == appname && ress.valueForKey("token") as! UInt64 == token){
+                if (ress.valueForKey("axonName") as! String == axonName && ress.valueForKey("token") as! Int == token){
                     var resultStorage : [Bool] = []
                     
-                    if acccaccess   {
+                    if accaccess   {
                         if ress.valueForKey("hasAccelerometerAccess") as! Bool{
                             resultStorage.append(ress.valueForKey("hasAccelerometerAccess") as! Bool)
                         }
-                        else if (requestUserPermission(appname, permissionWanted: "Accelerometer")){
+                        else if (askUser && requestUserPermission(axonName, permissionWanted: "Accelerometer")){
                             resultStorage.append(true)
                         }
                         else {resultStorage.append(false)
@@ -58,7 +59,7 @@ class AuthController : NSObject {
                         if ress.valueForKey("hasBatteryAccess") as! Bool{
                             resultStorage.append(ress.valueForKey("hasBatteryAccess") as! Bool)
                         }
-                        else if (requestUserPermission(appname, permissionWanted: "Battery")){
+                        else if (askUser && requestUserPermission(axonName, permissionWanted: "Battery")){
                             resultStorage.append(true)
                         }
                         else {resultStorage.append(false)
@@ -70,7 +71,7 @@ class AuthController : NSObject {
                         if ress.valueForKey("hasGyroscopeAccess") as! Bool{
                             resultStorage.append(ress.valueForKey("hasGyroscopeAccess") as! Bool)
                         }
-                        else if (requestUserPermission(appname, permissionWanted: "Gyroscope")){
+                        else if (askUser && requestUserPermission(axonName, permissionWanted: "Gyroscope")){
                             resultStorage.append(true)
                         }
                         else {resultStorage.append(false)
@@ -82,7 +83,7 @@ class AuthController : NSObject {
                         if ress.valueForKey("hasMagnetometerAccess") as! Bool{
                             resultStorage.append(ress.valueForKey("hasMagnetometerAccess") as! Bool)
                         }
-                        else if (requestUserPermission(appname, permissionWanted: "Magentometer")){
+                        else if (askUser && requestUserPermission(axonName, permissionWanted: "Magentometer")){
                             resultStorage.append(true)
                         }
                         else {resultStorage.append(false)
@@ -94,7 +95,7 @@ class AuthController : NSObject {
                         if ress.valueForKey("hasProximityAccess") as! Bool{
                             resultStorage.append(ress.valueForKey("hasProximityAccess") as! Bool)
                         }
-                        else if (requestUserPermission(appname, permissionWanted: "Proximity")){
+                        else if (askUser && requestUserPermission(axonName, permissionWanted: "Proximity")){
                             resultStorage.append(true)
                         }
                         else {resultStorage.append(false)
@@ -102,9 +103,10 @@ class AuthController : NSObject {
 
                     }
                     
-                    
+                    return resultStorage
                     //
                 }
+                createNewEntry(token, axonName: axonName)
                 
             }
             
@@ -112,13 +114,13 @@ class AuthController : NSObject {
             print("Could not fetch \(error), \(error.userInfo)")
         }
         
-        
-        
+     return [false]
+    }
         
         
         
         //sample
-        
+    func testStuff()-> [Bool]{
         //write
         let entity = NSEntityDescription.entityForName("AxonPermissionList", inManagedObjectContext: managedContext)
         let permissionsList = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
@@ -207,6 +209,27 @@ class AuthController : NSObject {
     func requestUserPermission (appname:String, permissionWanted: String) -> Bool{
         
         return false
+    }
+    
+    func createNewEntry(token:Int, axonName:String, accaccess:Bool = false, bataccess:Bool = false, gyraccess:Bool = false, magaccess:Bool = false, proxaccess:Bool = false){
+        //write
+        let entity = NSEntityDescription.entityForName("AxonPermissionList", inManagedObjectContext: managedContext)
+        let permissionsList = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        permissionsList.setValue( token as NSNumber , forKey: "token")
+        permissionsList.setValue( axonName, forKey: "axonName")
+        permissionsList.setValue( accaccess, forKey: "hasAcceleromterAccess")
+        permissionsList.setValue( bataccess, forKey: "hasBatteryAccess")
+        permissionsList.setValue( gyraccess, forKey: "hasGyroscopeAccess")
+        permissionsList.setValue( magaccess, forKey: "hasMagnetometerAccess")
+        permissionsList.setValue( proxaccess, forKey: "hasProximityAccess")
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+
+        
     }
 }
 
