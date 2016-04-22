@@ -25,8 +25,7 @@ class AxonController {
     init(){
         startAxonHTTPServer()
     }
-    
-    
+	
     func startAxonHTTPServer(){
         
         do {
@@ -69,44 +68,46 @@ class AxonController {
 
         }
         
-        
         // route to get any axon resource
         self.server.GET["/nervousnet-axons/:axonname/:resource"] = { r in
             if let filename = r.params[":resource"], axonname = r.params[":axonname"] {
                 return self.returnRawResponse("\(self.axonDir)/\(axonname)/\(axonname)-master/\(filename)");
             }
             return .NotFound
-
         }
-        
-        
-        
-        
+
+			// route to get any axon resource
+			self.server.POST["/nervousnet-api/log"] = { r in
+				print("axon debug:")
+				print(String(bytes: r.body, encoding: NSUTF8StringEncoding))
+				return .OK(.Json(""))
+			}
+
         // route to get any axon resource
         self.server.GET["/nervousnet-api/raw-sensor-data/:sensor/"] = { r in
-            
+					
             if let sensor = r.params[":sensor"] {
-                
+							print(sensor)
+							
                 let data =  self.laeController.getData(sensor)
                 
                 print(data)
+							
                 if(sensor == "BLE"){
                     let jsonObject: NSDictionary = ["blepacket": data[0] as! String]
                     return .OK(.Json(jsonObject))
-                }else if(sensor == "GPS"){
-                    let jsonObject: NSDictionary = ["lat": data[0], "long":data[1]]
-                    return .OK(.Json(jsonObject))
+								}else if(sensor == "GPS"){
+									let jsonObject: NSDictionary = ["lat": data[0], "long":data[1]]
+									return .OK(.Json(jsonObject))
+								}else if(sensor == "Beacon"){
+									return .OK(.Json(data))
                 }else{
                     let jsonObject: NSDictionary = ["x": data[0], "y":data[1], "z": data[2]]
                     return .OK(.Json(jsonObject))
-
                 }
                 
- 
             }
-            
             return .NotFound
-            
         }
         
         
