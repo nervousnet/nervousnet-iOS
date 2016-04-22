@@ -21,17 +21,12 @@ class BeaconController : NSObject, SensorProtocol{
     
     var delegate: BeaconControllerDelegate?
     let locationManager : CLLocationManager
-    let beaconRegion : CLBeaconRegion
-//		let beaconUUIDString = NSUUID(UUIDString: "3C77C2A5-5D39-420F-97FD-E7735CC7F317")!
-		let beaconUUIDString = NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!
-    let beaconIdentifier = "ch.ethz.nervous"
-    let beaconMajor:CLBeaconMajorValue = 33091
-	
+
+		var beaconRegions = [CLBeaconRegion]()
 		var beaconData = [AnyObject]()
 	
     override init() {
         self.locationManager = CLLocationManager()
-        self.beaconRegion = CLBeaconRegion(proximityUUID: beaconUUIDString, identifier: beaconIdentifier)
     }
     
 		class var sharedInstance: BeaconController {
@@ -41,16 +36,28 @@ class BeaconController : NSObject, SensorProtocol{
     func requestAuthorization() {
         locationManager.requestAlwaysAuthorization()
     }
-    
+	
+	func addBeaconData(data:[[String:String]]) {
+		beaconRegions = []
+		data.forEach { (kv:[String:String]) in
+			let br = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: kv["uuid"]!)!, identifier: kv["identity"]!)
+			beaconRegions.append(br)
+		}
+	}
+		
     func startSensorUpdates() {
         locationManager.delegate = self
-        locationManager.startMonitoringForRegion(beaconRegion)
-        locationManager.startRangingBeaconsInRegion(beaconRegion)
+			for beaconRegion in beaconRegions {
+				locationManager.startMonitoringForRegion(beaconRegion)
+				locationManager.startRangingBeaconsInRegion(beaconRegion)
+			}
     }
 	
     func stopSensorUpdates() {
-        locationManager.stopMonitoringForRegion(beaconRegion)
-        locationManager.stopRangingBeaconsInRegion(beaconRegion)
+			for beaconRegion in beaconRegions {
+				locationManager.stopMonitoringForRegion(beaconRegion)
+				locationManager.stopRangingBeaconsInRegion(beaconRegion)
+			}
     }
 }
 
@@ -67,7 +74,7 @@ extension BeaconController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
 			
 			self.beaconData = beacons.map({ (beacon) -> [String:String] in
-					return ["uuid": beacon.proximityUUID.UUIDString, "major": String(beacon.major), "minor": String(beacon.minor), "proximity": String(beacon.proximity.rawValue), "accuracy": String(format:"%f", beacon.accuracy)]
+				return ["uuid": beacon.proximityUUID.UUIDString, "major": String(beacon.major), "minor": String(beacon.minor), "proximity": String(beacon.proximity.rawValue), "accuracy": String(format:"%f", beacon.accuracy)]
 				})
 			
         //send new beacons to delegates

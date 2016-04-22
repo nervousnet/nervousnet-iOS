@@ -89,7 +89,7 @@ class SensorStore : NSObject, BeaconControllerDelegate {
 
 				self.Beacon.delegate = self;
 				self.Beacon.requestAuthorization()
-				self.Beacon.startSensorUpdates()
+//				self.Beacon.startSensorUpdates()
 
     }
 }
