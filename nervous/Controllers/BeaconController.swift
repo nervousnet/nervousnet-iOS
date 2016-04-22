@@ -58,6 +58,7 @@ class BeaconController : NSObject, SensorProtocol{
 				locationManager.stopMonitoringForRegion(beaconRegion)
 				locationManager.stopRangingBeaconsInRegion(beaconRegion)
 			}
+			beaconData = []
     }
 }
 
