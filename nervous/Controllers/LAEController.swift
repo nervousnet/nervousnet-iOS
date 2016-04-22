@@ -66,7 +66,12 @@ class LAEController : NSObject {
             data.append(sen.lat)
             data.append(sen.long)
         }
-        
+			
+			if sensor == "Beacon" {
+				let sen = BeaconController.sharedInstance
+				data = sen.beaconData
+			}
+				
         return data
     }
     
