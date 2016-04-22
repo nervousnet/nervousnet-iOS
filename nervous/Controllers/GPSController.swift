@@ -84,20 +84,26 @@ class GPSController : NSObject, SensorProtocol, CLLocationManagerDelegate {
         switch authorizationStatus {
             case .Authorized:
                 print("authorized")
-                if let locValue:CLLocationCoordinate2D = self.manager.location!.coordinate {
-                    self.lat = locValue.latitude
-                    self.long = locValue.longitude
-                    self.manager.stopUpdatingLocation()
-                } else {
+                if let locationValue = self.manager.location{
+                    if let locValue:CLLocationCoordinate2D = locationValue.coordinate {
+                        self.lat = locValue.latitude
+                        self.long = locValue.longitude
+                        self.manager.stopUpdatingLocation()
+                    }   else {
+                    }
+                }   else {
                 }
             case .AuthorizedWhenInUse:
                 print("authorized when in use")
-                if let locValue:CLLocationCoordinate2D = self.manager.location!.coordinate {
-                    self.lat = locValue.latitude
-                    self.long = locValue.longitude
-                    self.manager.stopUpdatingLocation()
-                } else {
-                }
+                if let locationValue = self.manager.location{
+                    if let locValue:CLLocationCoordinate2D = locationValue.coordinate {
+                        self.lat = locValue.latitude
+                        self.long = locValue.longitude
+                        self.manager.stopUpdatingLocation()
+                    }   else{
+                        }
+                }   else {
+                    }
             case .Denied:
                 print("denied")
             case .NotDetermined:
