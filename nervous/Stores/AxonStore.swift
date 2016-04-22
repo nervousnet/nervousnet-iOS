@@ -138,16 +138,22 @@ class AxonStore : NSObject {
 		return url
 	}
 	
-	class func getLocalAxonBeacons(axonName: String) -> JSON {
-		var ret = JSON([]);
+	class func getLocalAxonBeacons(axonName: String) -> [[String:String]] {
+		var ret = []
 		let filemanager:NSFileManager = NSFileManager()
 		let path = "\(installedAxonsDir)/\(axonName)/\(axonName)-master/beacons.json"
 		if filemanager.fileExistsAtPath(path) {
 			let beaconJSON = JSON(data: NSData(contentsOfFile: path)!)
-			ret = beaconJSON
+			ret = beaconJSON.arrayValue.map({ (json) -> [String:String] in
+				var dict = [String:String]()
+				for (key, val):(String, JSON) in json {
+					dict[key] = val.stringValue
+				}
+				return dict
+			})
 		}
 		
-		return ret
+		return ret as! [[String : String]]
 	}
 	
 	class func removeLocalAxon(axonName: String) -> Bool {
