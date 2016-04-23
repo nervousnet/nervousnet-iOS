@@ -69,7 +69,8 @@ class LAEController : NSObject {
 			
 			if sensor == "Beacon" {
 				let sen = BeaconController.sharedInstance
-				data = sen.beaconData
+//				data = sen.beaconData
+				data = sen.getdata()
 			}
 				
         return data

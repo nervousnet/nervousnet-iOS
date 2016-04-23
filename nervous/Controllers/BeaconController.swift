@@ -25,6 +25,8 @@ class BeaconController : NSObject, SensorProtocol{
 		var beaconRegions = [CLBeaconRegion]()
 		var beaconData = [AnyObject]()
 	
+	var _tmpBeacons = [String:AnyObject]()
+	
     override init() {
         self.locationManager = CLLocationManager()
     }
@@ -36,6 +38,14 @@ class BeaconController : NSObject, SensorProtocol{
     func requestAuthorization() {
         locationManager.requestAlwaysAuthorization()
     }
+	
+	func getdata() -> [AnyObject] {
+		var xx = [AnyObject]()
+		_tmpBeacons.keys.forEach({ (key:String) in
+			xx.append(_tmpBeacons[key]!)
+		})
+		return xx
+	}
 	
 	func addBeaconData(data:[[String:String]]) {
 		beaconRegions = []
@@ -73,11 +83,13 @@ extension BeaconController: CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
-			
+
 			self.beaconData = beacons.map({ (beacon) -> [String:String] in
-				print(beacon)
-				return ["uuid": beacon.proximityUUID.UUIDString, "major": String(beacon.major), "minor": String(beacon.minor), "proximity": String(beacon.proximity.rawValue), "accuracy": String(format:"%f", beacon.accuracy)]
+				let bb = ["uuid": beacon.proximityUUID.UUIDString, "major": String(beacon.major), "minor": String(beacon.minor), "proximity": String(beacon.proximity.rawValue), "accuracy": String(format:"%f", beacon.accuracy)]
+				_tmpBeacons[bb["uuid"]!] = bb
+				return bb
 				})
+			
 			
         //send new beacons to delegates
         if let delegate = self.delegate {
