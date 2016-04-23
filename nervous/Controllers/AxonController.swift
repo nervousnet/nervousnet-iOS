@@ -82,6 +82,11 @@ class AxonController {
 				print(String(bytes: r.body, encoding: NSUTF8StringEncoding))
 				return .OK(.Json(""))
 			}
+			
+			self.server.GET["/nervousnet-api/deviceid"] = { r in
+				let uuid = UIDevice.currentDevice().identifierForVendor!.UUIDString
+				return .OK(.Json(["uuid": uuid]))
+			}
 
         // route to get any axon resource
         self.server.GET["/nervousnet-api/raw-sensor-data/:sensor/"] = { r in
