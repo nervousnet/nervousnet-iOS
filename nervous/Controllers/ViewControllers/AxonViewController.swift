@@ -41,8 +41,7 @@ class AxonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
+			
         print("firing up the axon...")
         let url = AxonStore.getLocalAxonURL(axonName);
         let request = NSURLRequest(URL: url!)

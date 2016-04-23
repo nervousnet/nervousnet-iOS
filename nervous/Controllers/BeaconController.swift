@@ -75,6 +75,7 @@ extension BeaconController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
 			
 			self.beaconData = beacons.map({ (beacon) -> [String:String] in
+				print(beacon)
 				return ["uuid": beacon.proximityUUID.UUIDString, "major": String(beacon.major), "minor": String(beacon.minor), "proximity": String(beacon.proximity.rawValue), "accuracy": String(format:"%f", beacon.accuracy)]
 				})
 			
