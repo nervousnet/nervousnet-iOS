@@ -21,7 +21,7 @@ class SensorStore : NSObject, BeaconControllerDelegate {
     let Magnetometer : MagnetometerController
     //let Proximity : ProximityController
     let Accelerometer : AccelerometerController
-    //let Beacon : BeaconController
+    let Beacon : BeaconController
     let BLE : BLEController
     let GPS : GPSController
     
@@ -32,7 +32,6 @@ class SensorStore : NSObject, BeaconControllerDelegate {
     
     //initialise all sensor controllers
     override init(){
-        
         self.Gyroscope = GyroscopeController.sharedInstance
         self.Gyroscope.initializeUpdate(self.VM.defaults.doubleForKey("freqGyr"))
         
@@ -52,13 +51,11 @@ class SensorStore : NSObject, BeaconControllerDelegate {
         
         self.GPS = GPSController.sharedInstance
         self.GPS.initializeUpdate(self.VM.defaults.doubleForKey("freqGPS"))
-        //self.Beacon = BeaconController()
-        
-        // BEACONS
-        //attach delegates
-        /*self.Beacon.delegate = self;
-        self.Beacon.requestAuthorization()
-        self.Beacon.startSensorUpdates()*/
+
+				// BEACONS
+				self.Beacon = BeaconController.sharedInstance
+
+				super.init()
     }
     
     
@@ -66,7 +63,12 @@ class SensorStore : NSObject, BeaconControllerDelegate {
     func controller(controller: BeaconController, didRangeBeacons: [CLBeacon]) {
         //here are new beacons: didRangeBeacons, do something with them
         
-        print("%d beacons found!", didRangeBeacons.count);
+//        print("\(didRangeBeacons.count) beacons found!");
+
+//			if didRangeBeacons.count > 0 {
+//				let b = didRangeBeacons.first
+//				print(b.debugDescription)
+//			}
     }
     
     func controller() {
@@ -84,5 +86,10 @@ class SensorStore : NSObject, BeaconControllerDelegate {
         
         self.GPS.requestAuthorization()
         self.GPS.startSensorUpdates()
+
+				self.Beacon.delegate = self;
+				self.Beacon.requestAuthorization()
+//				self.Beacon.startSensorUpdates()
+
     }
 }

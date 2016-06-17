@@ -26,7 +26,10 @@ class AxonViewController: UIViewController {
     }
     
     @IBAction func closeAxonButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: {});
+        self.dismissViewControllerAnimated(true, completion: {
+					let beaconController = BeaconController.sharedInstance
+					beaconController.stopSensorUpdates()
+				});
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -38,11 +41,17 @@ class AxonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
+			
         print("firing up the axon...")
         let url = AxonStore.getLocalAxonURL(axonName);
         let request = NSURLRequest(URL: url!)
+
+				let beacons = AxonStore.getLocalAxonBeacons(axonName)
+			if beacons.count > 0 {
+				let beaconController = BeaconController.sharedInstance
+				beaconController.addBeaconData(beacons)
+				beaconController.startSensorUpdates()
+			}
 
         axonWebView.loadRequest(request);
         axonWebView.scrollView.bounces = false;
