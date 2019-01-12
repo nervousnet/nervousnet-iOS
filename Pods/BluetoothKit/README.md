@@ -1,7 +1,7 @@
 # BluetoothKit
 Easily communicate between iOS devices using BLE.
 
-[![Build Status](https://travis-ci.org/rasmusth/BluetoothKit.svg?branch=master)](https://travis-ci.org/rasmusth/BluetoothKit)
+[![Build Status](https://travis-ci.org/rhummelmose/BluetoothKit.svg?branch=master)](https://travis-ci.org/rhummelmose/BluetoothKit)
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/BluetoothKit.svg)](https://img.shields.io/cocoapods/v/BluetoothKit.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
@@ -32,7 +32,7 @@ BluetoothKit tries to address the challenges this may cause by providing a much 
 
 ## Installation
 
-####Cocoapods
+####CocoaPods
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
 
 CocoaPods 0.38.2 is required to build BluetoothKit. It adds support for Xcode 7, Swift 2.0 and embedded frameworks. You can install it with the following command:
@@ -70,7 +70,7 @@ $ brew install carthage
 To integrate BluetoothKit into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "rasmusth/BluetoothKit" ~> 0.2.0
+github "rasmusth/BluetoothKit" ~> 0.4.0
 ```
 
 ####Manual
@@ -119,12 +119,13 @@ Prepare and start a BKCentral object with a configuration holding the UUIDs you 
 ```swift
 let central = BKCentral()
 central.delegate = self
+central.addAvailabilityObserver(self)
 do {
 	let serviceUUID = NSUUID(UUIDString: "6E6B5C64-FAF7-40AE-9C21-D4933AF45B23")!
 	let characteristicUUID = NSUUID(UUIDString: "477A2967-1FAB-4DC5-920A-DEE5DE685A3D")!
 	let configuration = BKConfiguration(dataServiceUUID: serviceUUID, dataServiceCharacteristicUUID: characteristicUUID)
 	try central.startWithConfiguration(configuration: configuration)
-	// You are now ready to discover and connect to peripherals.
+	// Once the availability observer has been positively notified, you're ready to discover and connect to peripherals.
 } catch let error {
 	// Handle error.
 }

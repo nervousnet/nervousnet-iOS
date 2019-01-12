@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DBFF198CC2BBF10D66E1269 /* Pods_nervousnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E02F23DE03AE89CCB108FCF /* Pods_nervousnet.framework */; };
 		220B7C151CB5524300ABCEC9 /* AxonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B7C141CB5524300ABCEC9 /* AxonViewController.swift */; };
 		220B7C1F1CB56FC200ABCEC9 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 220B7C1E1CB56FC200ABCEC9 /* Assets */; };
 		220B7C231CB570A600ABCEC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 220B7C221CB570A600ABCEC9 /* Images.xcassets */; };
@@ -43,6 +42,7 @@
 		22F90A6B1C8C76F0006A56FD /* BeaconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F90A6A1C8C76F0006A56FD /* BeaconController.swift */; };
 		22FF8A8719F14AFA00AC6783 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */; };
 		22FF8A8D19F14B3A00AC6783 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FF8A8C19F14B3A00AC6783 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		B1DAFA81040C5E580BD61481 /* Pods_nervousnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D2E0B959AF2DF925417D24 /* Pods_nervousnet.framework */; };
 		E01236BA1CC3ADB60071247F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01236B91CC3ADB60071247F /* SettingsTableViewController.swift */; };
 		E1A897101CA7F2D000393545 /* VMController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEE51C88C183005D1A20 /* VMController.swift */; };
 		E1A897111CA7F31900393545 /* SensorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CAEF41C88C1B2005D1A20 /* SensorStore.swift */; };
@@ -65,7 +65,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14FAE4EC73BD4C359734208F /* Pods-nervousnet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nervousnet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet.debug.xcconfig"; sourceTree = "<group>"; };
 		220B7C141CB5524300ABCEC9 /* AxonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxonViewController.swift; sourceTree = "<group>"; };
 		220B7C1E1CB56FC200ABCEC9 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		220B7C221CB570A600ABCEC9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -104,14 +103,15 @@
 		22F90A6A1C8C76F0006A56FD /* BeaconController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconController.swift; sourceTree = "<group>"; };
 		22FF8A8619F14AFA00AC6783 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		22FF8A8C19F14B3A00AC6783 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2E02F23DE03AE89CCB108FCF /* Pods_nervousnet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nervousnet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D973B0B88CF2E1839C305D57 /* Pods-nervousnet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nervousnet.release.xcconfig"; path = "Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet.release.xcconfig"; sourceTree = "<group>"; };
+		37D2E0B959AF2DF925417D24 /* Pods_nervousnet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nervousnet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0D9C66657F73B02ED5D22E1 /* Pods-nervousnet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nervousnet.release.xcconfig"; path = "Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet.release.xcconfig"; sourceTree = "<group>"; };
 		E01236B91CC3ADB60071247F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		E1A897151CAD653400393545 /* QueryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryController.swift; sourceTree = "<group>"; };
 		E1A897171CAD654E00393545 /* ReadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadController.swift; sourceTree = "<group>"; };
 		E1A897191CAD656900393545 /* WriteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteController.swift; sourceTree = "<group>"; };
 		E1A8971B1CAD657B00393545 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		E1A914E81CB9B211007EE2EF /* GPSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSController.swift; sourceTree = "<group>"; };
+		F40299B88E791786D16DEC4C /* Pods-nervousnet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nervousnet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet.debug.xcconfig"; sourceTree = "<group>"; };
 		FC1346AF1AD5D08B00D9998C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FC1346B11AD5D09500D9998C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -128,7 +128,7 @@
 				22B03E6019CE102900E50D04 /* SpriteKit.framework in Frameworks */,
 				22D2D66F19C097F900B11C54 /* Foundation.framework in Frameworks */,
 				22FF8A8D19F14B3A00AC6783 /* UIKit.framework in Frameworks */,
-				1DBFF198CC2BBF10D66E1269 /* Pods_nervousnet.framework in Frameworks */,
+				B1DAFA81040C5E580BD61481 /* Pods_nervousnet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +149,7 @@
 				22316DEE19BFB422006FD165 /* nervousTests */,
 				22316DD819BFB422006FD165 /* Products */,
 				22FF8A8519F14ACB00AC6783 /* Frameworks */,
-				2A3EDF2AC2A2DC95F8BB5785 /* Pods */,
+				375B3B6A20791E837B771E28 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -276,16 +276,16 @@
 				22B03E6319D04BB500E50D04 /* CoreLocation.framework */,
 				22B03E5F19CE102900E50D04 /* SpriteKit.framework */,
 				22D2D66E19C097F900B11C54 /* Foundation.framework */,
-				2E02F23DE03AE89CCB108FCF /* Pods_nervousnet.framework */,
+				37D2E0B959AF2DF925417D24 /* Pods_nervousnet.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2A3EDF2AC2A2DC95F8BB5785 /* Pods */ = {
+		375B3B6A20791E837B771E28 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				14FAE4EC73BD4C359734208F /* Pods-nervousnet.debug.xcconfig */,
-				D973B0B88CF2E1839C305D57 /* Pods-nervousnet.release.xcconfig */,
+				F40299B88E791786D16DEC4C /* Pods-nervousnet.debug.xcconfig */,
+				C0D9C66657F73B02ED5D22E1 /* Pods-nervousnet.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -308,12 +308,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22316DF519BFB422006FD165 /* Build configuration list for PBXNativeTarget "nervousnet" */;
 			buildPhases = (
-				578FE09805983AE7AEA33879 /* Check Pods Manifest.lock */,
+				10BDCB37ED66E3140D6FAD22 /* [CP] Check Pods Manifest.lock */,
 				22316DD319BFB422006FD165 /* Sources */,
 				22316DD419BFB422006FD165 /* Frameworks */,
 				22316DD519BFB422006FD165 /* Resources */,
-				3BBB7548F2458E955FF62C42 /* Embed Pods Frameworks */,
-				99425FE6A80CDF887AFA48E8 /* Copy Pods Resources */,
+				438C9BF5733E38A77F9AA392 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -403,49 +402,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3BBB7548F2458E955FF62C42 /* Embed Pods Frameworks */ = {
+		10BDCB37ED66E3140D6FAD22 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-nervousnet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		438C9BF5733E38A77F9AA392 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/BluetoothKit/BluetoothKit.framework",
+				"${BUILT_PRODUCTS_DIR}/DownloadButton/DownloadButton.framework",
+				"${BUILT_PRODUCTS_DIR}/LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/MRProgress/MRProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/Swifter/Swifter.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BluetoothKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DownloadButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LXReorderableCollectionViewFlowLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MRProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swifter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		578FE09805983AE7AEA33879 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		99425FE6A80CDF887AFA48E8 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nervousnet/Pods-nervousnet-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -590,7 +602,7 @@
 		};
 		22316DF619BFB422006FD165 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14FAE4EC73BD4C359734208F /* Pods-nervousnet.debug.xcconfig */;
+			baseConfigurationReference = F40299B88E791786D16DEC4C /* Pods-nervousnet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -609,13 +621,14 @@
 				PRODUCT_NAME = nervousnet;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		22316DF719BFB422006FD165 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D973B0B88CF2E1839C305D57 /* Pods-nervousnet.release.xcconfig */;
+			baseConfigurationReference = C0D9C66657F73B02ED5D22E1 /* Pods-nervousnet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -632,6 +645,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ch.ethz.nervousnet;
 				PRODUCT_NAME = nervousnet;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -652,7 +666,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.ethz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = nervousnetTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nervous.app/nervous";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nervousnet.app/nervousnet";
 			};
 			name = Debug;
 		};
@@ -668,7 +682,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.ethz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = nervousnetTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nervous.app/nervous";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nervousnet.app/nervousnet";
 			};
 			name = Release;
 		};

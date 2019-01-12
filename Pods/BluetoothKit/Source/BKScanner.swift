@@ -26,65 +26,65 @@ import Foundation
 import CoreBluetooth
 
 internal class BKScanner: BKCBCentralManagerDiscoveryDelegate {
-    
+
     // MARK: Type Aliases
-    
-    internal typealias ScanCompletionHandler = ((result: [BKDiscovery]?, error: Error?) -> Void)
-    
+
+    internal typealias ScanCompletionHandler = ((_ result: [BKDiscovery]?, _ error: BKError?) -> Void)
+
     // MARK: Enums
-    
-    internal enum Error: ErrorType {
-        case NoCentralManagerSet
-        case Busy
-        case Interrupted
+
+    internal enum BKError: Error {
+        case noCentralManagerSet
+        case busy
+        case interrupted
     }
-    
+
     // MARK: Properties
-    
+
     internal var configuration: BKConfiguration!
     internal var centralManager: CBCentralManager!
     private var busy = false
-    private var scanHandlers: ( progressHandler: BKCentral.ScanProgressHandler?, completionHandler: ScanCompletionHandler )?
+    private var scanHandlers: (progressHandler: BKCentral.ScanProgressHandler?, completionHandler: ScanCompletionHandler )?
     private var discoveries = [BKDiscovery]()
-    private var durationTimer: NSTimer?
-    
+    private var durationTimer: Timer?
+
     // MARK: Internal Functions
-    
-    internal func scanWithDuration(duration: NSTimeInterval, progressHandler: BKCentral.ScanProgressHandler? = nil, completionHandler: ScanCompletionHandler) throws {
+
+    internal func scanWithDuration(_ duration: TimeInterval, progressHandler: BKCentral.ScanProgressHandler? = nil, completionHandler: @escaping ScanCompletionHandler) throws {
         do {
             try validateForActivity()
             busy = true
-            scanHandlers = (progressHandler: progressHandler, completionHandler: completionHandler)
-            centralManager.scanForPeripheralsWithServices(configuration.serviceUUIDs, options: nil)
-            durationTimer = NSTimer.scheduledTimerWithTimeInterval(duration, target: self, selector: "durationTimerElapsed", userInfo: nil, repeats: false)
+            scanHandlers = ( progressHandler: progressHandler, completionHandler: completionHandler)
+            centralManager.scanForPeripherals(withServices: configuration.serviceUUIDs, options: nil)
+            durationTimer = Timer.scheduledTimer(timeInterval: duration, target: self, selector: #selector(BKScanner.durationTimerElapsed), userInfo: nil, repeats: false)
         } catch let error {
             throw error
         }
     }
-    
+
     internal func interruptScan() {
         guard busy else {
             return
         }
-        endScan(.Interrupted)
+        endScan(.interrupted)
     }
-    
+
     // MARK: Private Functions
-    
+
     private func validateForActivity() throws {
         guard !busy else {
-            throw Error.Busy
+            throw BKError.busy
         }
         guard centralManager != nil else {
-            throw Error.NoCentralManagerSet
+            throw BKError.noCentralManagerSet
         }
     }
-    
+
     @objc private func durationTimerElapsed() {
         endScan(nil)
     }
-    
-    private func endScan(error: Error?) {
+
+    private func endScan(_ error: BKError?) {
         invalidateTimer()
         centralManager.stopScan()
         let completionHandler = scanHandlers?.completionHandler
@@ -92,19 +92,19 @@ internal class BKScanner: BKCBCentralManagerDiscoveryDelegate {
         scanHandlers = nil
         self.discoveries.removeAll()
         busy = false
-        completionHandler?(result: discoveries, error: error)
+        completionHandler?(discoveries, error)
     }
-    
+
     private func invalidateTimer() {
         if let durationTimer = self.durationTimer {
             durationTimer.invalidate()
             self.durationTimer = nil
         }
     }
-    
+
     // MARK: BKCBCentralManagerDiscoveryDelegate
-    
-    internal func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String: AnyObject], RSSI: NSNumber) {
+
+    internal func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         guard busy else {
             return
         }
@@ -114,8 +114,8 @@ internal class BKScanner: BKCBCentralManagerDiscoveryDelegate {
         let discovery = BKDiscovery(advertisementData: advertisementData, remotePeripheral: remotePeripheral, RSSI: RSSI)
         if !discoveries.contains(discovery) {
             discoveries.append(discovery)
-            scanHandlers?.progressHandler?(newDiscoveries: [ discovery ])
+            scanHandlers?.progressHandler?([ discovery ])
         }
     }
-    
+
 }

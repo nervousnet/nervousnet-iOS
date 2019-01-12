@@ -1,7 +1,7 @@
 platform :ios, '9.0'
 
 use_frameworks!
-link_with 'nervousnet', 'nervousnetTests'
+#link_with 'nervousnet', 'nervousnetTests'
 
 target 'nervousnet' do
     pod 'Zip', '~> 0.2'

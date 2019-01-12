@@ -24,46 +24,51 @@
 
 import Foundation
 
-internal func ==(lhs: BKSendDataTask, rhs: BKSendDataTask) -> Bool {
-    return lhs.destination == rhs.destination && lhs.data.isEqualToData(rhs.data)
+internal func == (lhs: BKSendDataTask, rhs: BKSendDataTask) -> Bool {
+    return lhs.destination == rhs.destination && lhs.data == rhs.data
 }
 
 internal class BKSendDataTask: Equatable {
-    
+
     // MARK: Properties
-    
-    internal let data: NSData
-    internal let destination: BKRemoteCentral
-    internal let completionHandler: ((data: NSData, remoteCentral: BKRemoteCentral, error: BKPeripheral.Error?) -> Void)?
+
+    internal let data: Data
+    internal let destination: BKRemotePeer
+    internal let completionHandler: BKSendDataCompletionHandler?
     internal var offset = 0
-    
+
     internal var maximumPayloadLength: Int {
-        return destination.central.maximumUpdateValueLength
+        return destination.maximumUpdateValueLength
     }
-    
+
     internal var lengthOfRemainingData: Int {
-        return data.length - offset
+        return data.count - offset
     }
-    
+
     internal var sentAllData: Bool {
         return lengthOfRemainingData == 0
     }
-    
-    internal var rangeForNextPayload: NSRange {
+
+    internal var rangeForNextPayload: Range<Int>? {
         let lenghtOfNextPayload = maximumPayloadLength <= lengthOfRemainingData ? maximumPayloadLength : lengthOfRemainingData
-        return NSMakeRange(offset, lenghtOfNextPayload)
+        let payLoadRange = NSRange(location: offset, length: lenghtOfNextPayload)
+        return payLoadRange.toRange()
     }
-    
-    internal var nextPayload: NSData {
-        return data.subdataWithRange(rangeForNextPayload)
+
+    internal var nextPayload: Data? {
+        if let range = rangeForNextPayload {
+             return data.subdata(in: range)
+        } else {
+            return nil
+        }
     }
-    
+
     // MARK: Initialization
-    
-    internal init(data: NSData, destination: BKRemoteCentral, completionHandler: ((data: NSData, remoteCentral: BKRemoteCentral, error: BKPeripheral.Error?) -> Void)?) {
+
+    internal init(data: Data, destination: BKRemotePeer, completionHandler: BKSendDataCompletionHandler?) {
         self.data = data
         self.destination = destination
         self.completionHandler = completionHandler
     }
-    
+
 }
