@@ -86,9 +86,32 @@ extension MainCollectionViewController {
 
     }
     
+    func popupAlert(){
+        let disalert: Bool = NSUserDefaults.standardUserDefaults().boolForKey("disalert")
+        
+        print("disalert: " + (disalert.description ?? "none"))
+        if(disalert){
+            return
+        }
+        
+        
+        let alert = UIAlertController(title: "Terms and Conditions", message: "By using this app, you agree to comply with data protection and other complicable laws in the ways you are using this apllication and the data it collects.\n\nBy pressing the \"I Accept\"-button below, you herewith declare that I understand and accept the Terms of Use", preferredStyle: .Alert)
+        
+        
+        let OKAction = UIAlertAction(title: "I Accept", style: .Default) { (action) in
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "disalert")
+        }
+        
+        alert.addAction(OKAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        print("Success")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        popupAlert()
         
         self.navigationController?.navigationBar.viewWithTag(97)?.hidden = false
     }

@@ -4,10 +4,13 @@ import Foundation
 class MainNavigationController : UINavigationController {
     let navbarView = UIView()
     
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
+        
+        
         //let navbarHeight = self.navigationBar.frame.size.height
         let navbarWidth = self.navigationBar.frame.size.width
 
